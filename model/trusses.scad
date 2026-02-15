@@ -39,7 +39,6 @@ module queen_post_truss(x_pos, alpha = 1.0) {
 }
 
 // All trusses at 24" o.c.
-// End trusses (first and last) at full opacity, middle trusses transparent
 module trusses() {
     truss_spacing = 24;  // 24" on center
     num_trusses = floor(shed_length / truss_spacing) + 1;  // 9 trusses
@@ -47,8 +46,7 @@ module trusses() {
     for (i = [0 : num_trusses - 1]) {
         x_pos = i * truss_spacing;
         is_end_truss = (i == 0) || (i == num_trusses - 1);
-        alpha = is_end_truss ? 1.0 : 0.25;
-        queen_post_truss(x_pos, alpha);
+        queen_post_truss(x_pos);
     }
 }
 
