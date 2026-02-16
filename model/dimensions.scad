@@ -200,6 +200,7 @@ color_stud = [0.85, 0.75, 0.55];     // Lighter wood for studs
 color_wall_ns = [0.9, 0.85, 0.2];    // Yellow for North/South walls
 color_wall_ew = [0.3, 0.5, 0.9];     // Blue for East/West walls
 color_truss = color_stud;              // Wood tone (same as studs)
+color_ladder = [0.75, 0.65, 0.45];    // Slightly darker wood for ladder framing
 
 // ============================================
 // REFERENCE HEIGHT CALCULATIONS
