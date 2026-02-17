@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "trello",
+    "google-calendar"
+  ]
+}
