@@ -16,6 +16,12 @@ include <end_truss_data.scad>
 // Truss sits on top of double top plate of walls
 // alpha parameter controls transparency (1.0 = opaque, 0.25 = mostly transparent)
 module queen_post_truss(x_pos, alpha = 1.0) {
+    echo(str("CUTLIST,Truss bottom chord (x=", x_pos, "),2x4,1,144\""));
+    echo(str("CUTLIST,Truss south rafter (x=", x_pos, "),2x4,1,93.9\" plumb cuts 26.6°"));
+    echo(str("CUTLIST,Truss north rafter (x=", x_pos, "),2x4,1,93.9\" plumb cuts 26.6°"));
+    echo(str("CUTLIST,Truss south queen post (x=", x_pos, "),2x4,1,22.3\" angle cut 26.6°"));
+    echo(str("CUTLIST,Truss north queen post (x=", x_pos, "),2x4,1,22.3\" angle cut 26.6°"));
+    echo(str("CUTLIST,Truss straining beam (x=", x_pos, "),2x4,1,48\""));
     color(color_truss, alpha)
     translate([x_pos, 0, wall_top_z]) {
         truss_bottom_chord();
@@ -30,6 +36,15 @@ module queen_post_truss(x_pos, alpha = 1.0) {
 // End truss at a gable wall position
 // Includes notched rafters and vertical studs (no queen posts/straining beam)
 module end_truss(x_pos, alpha = 1.0) {
+    echo(str("CUTLIST,End truss bottom chord (x=", x_pos, "),2x4,1,144\""));
+    echo(str("CUTLIST,End truss south rafter (x=", x_pos, "),2x4,1,93.9\" plumb cuts"));
+    echo(str("CUTLIST,End truss north rafter (x=", x_pos, "),2x4,1,93.9\" plumb cuts"));
+    echo(str("CUTLIST,End truss south stud 0 (x=", x_pos, "),2x4,1,5.375\" angle cut top 26.6°"));
+    echo(str("CUTLIST,End truss south stud 1 (x=", x_pos, "),2x4,1,15.875\" angle cut top 26.6°"));
+    echo(str("CUTLIST,End truss south stud 2 (x=", x_pos, "),2x4,1,26.375\" angle cut top 26.6°"));
+    echo(str("CUTLIST,End truss north stud 0 (x=", x_pos, "),2x4,1,5.375\" angle cut top 26.6°"));
+    echo(str("CUTLIST,End truss north stud 1 (x=", x_pos, "),2x4,1,15.875\" angle cut top 26.6°"));
+    echo(str("CUTLIST,End truss north stud 2 (x=", x_pos, "),2x4,1,26.375\" angle cut top 26.6°"));
     color(color_truss, alpha)
     translate([x_pos, 0, wall_top_z]) {
         end_truss_assembly();
@@ -39,6 +54,10 @@ module end_truss(x_pos, alpha = 1.0) {
 // Ladder framing for one gable end: outriggers + fly rafters
 // x_pos = end truss X position, side = -1 for west (overhang toward -X), +1 for east
 module ladder_framing(x_pos, side = -1, alpha = 1.0) {
+    side_label = side == -1 ? "west" : "east";
+    echo(str("CUTLIST,Fly rafter south (", side_label, "),2x4,1,93.9\" plumb cuts"));
+    echo(str("CUTLIST,Fly rafter north (", side_label, "),2x4,1,93.9\" plumb cuts"));
+    echo(str("CUTLIST,Outriggers (", side_label, "),2x4,6,36\""));
     color(color_ladder, alpha)
     translate([x_pos, 0, wall_top_z]) {
         // Outriggers are generated with X from -gable_overhang to +24

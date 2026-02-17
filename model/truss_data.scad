@@ -2,12 +2,12 @@
 // Run: node shed/model/generate-truss-data.js
 
 // === CUT LIST (per truss) ===
-// Bottom Chord: 2x4 x 143.75" (11'-11.8")
-// South Rafter: 2x4 x 93.8" (7'-9.8") - plumb cuts both ends at 26.6°
-// North Rafter: 2x4 x 93.8" (7'-9.8") - plumb cuts both ends at 26.6°
-// South Queen Post: 2x4 x 22.0" (1'-10.0") - angle cut top at 26.6°
-// North Queen Post: 2x4 x 22.0" (1'-10.0") - angle cut top at 26.6°
-// Straining Beam: 2x4 x 47.75" (3'-11.8")
+// Bottom Chord: 2x4 x 144.00" (12'-0.0")
+// South Rafter: 2x4 x 93.9" (7'-9.9") - plumb cuts both ends at 26.6°
+// North Rafter: 2x4 x 93.9" (7'-9.9") - plumb cuts both ends at 26.6°
+// South Queen Post: 2x4 x 22.3" (1'-10.3") - angle cut top at 26.6°
+// North Queen Post: 2x4 x 22.3" (1'-10.3") - angle cut top at 26.6°
+// Straining Beam: 2x4 x 48.00" (4'-0.0")
 
 module truss_bottom_chord() {
     polyhedron(

@@ -2,12 +2,12 @@
 // Run: node shed/model/generate-end-truss-data.js
 
 // === CUT LIST (per end truss) ===
-// Bottom Chord: 2x4 x 143.75" (11'-11.8")
+// Bottom Chord: 2x4 x 144.00" (12'-0.0")
 // South Rafter: 2x4 x 93.9" (7'-9.9") - plumb cuts both ends
 // North Rafter: 2x4 x 93.9" (7'-9.9") - plumb cuts both ends
 // South Fly Rafter: 2x4 x 93.9" (7'-9.9") - plumb cuts both ends
 // North Fly Rafter: 2x4 x 93.9" (7'-9.9") - plumb cuts both ends
-// Vertical Studs: 6x 2x4, heights 3.4" to 26.1" - angle cut top at 26.6°
+// Vertical Studs: 6x 2x4, heights 3.6" to 26.4" - angle cut top at 26.6°
 // Outriggers: 6x 2x4 x 36" (3'-0.0") - flat in roof plane
 
 // Outrigger Y positions (for reference)

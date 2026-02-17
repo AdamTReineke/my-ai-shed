@@ -104,9 +104,9 @@ Concrete to Wood (x6):
     Simpson ABU66SS 6x6 Stainless Steel Adjustable Post Base
     $201.96
 
-Post to Beam (x4, two per post):
-    AC6SS
-    https://www.fastenersplus.com/products/simpson-ac6ss-6x-adjustable-post-cap-stainless-steel-2
+Post to Beam (x2, one per post):
+    CC66 Painted (purchased from Dunn Lumber, $132.73 each)
+    Simpson CC66 column cap — heavier-duty than AC6SS, same 6× pocket
 
 TBD: Straps from joists to beams.
 

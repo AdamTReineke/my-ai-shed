@@ -122,7 +122,7 @@ The east and center piers rise to beam level — the beam sits directly on concr
 |----------|----------|-----------------|-------|
 | 1' from east | **East end** | **Beam direct to concrete** | Tall pier; ABU66SS as beam saddle |
 | 8' from east | **Center** | **Beam direct to concrete** | Tall pier; ABU66SS as beam saddle |
-| 15' from east | **West end** | **6×6 post on short pier** | ABU66SS base + AC6SS post cap |
+| 15' from east | **West end** | **6×6 post on short pier** | ABU66SS base + CC66 post cap |
 
 **Post Material (west positions only):** 6×6 pressure-treated Hem-Fir #2 (or better). Exact post heights to be measured on-site after pier curing (beam level minus pier top minus hardware).
 
@@ -138,9 +138,9 @@ All hardware uses post-install anchors (wedge anchors or similar), allowing conc
 |----------|---------------|--------------|-------|
 | **East (1')** | Simpson ABU66SS | — | Beam sits in ABU66SS used as saddle |
 | **Center (8')** | Simpson ABU66SS | — | Beam sits in ABU66SS used as saddle |
-| **West (15')** | Simpson ABU66SS | Simpson AC6SS | 6×6 post in base; beam on post cap |
+| **West (15')** | Simpson ABU66SS | Simpson CC66 | 6×6 post in base; beam on post cap |
 
-*All 6 positions use ABU66SS (stainless, 5.5" pocket fits the built-up beam width). West positions add AC6SS post caps (2 per post). See [`2-beam.md`](2-beam.md) for hardware links and pricing.*
+*All 6 positions use ABU66SS (stainless, 5.5" pocket fits the built-up beam width). West positions add CC66 post caps (1 per post). See [`2-beam.md`](2-beam.md) for hardware links and pricing.*
 
 **Anchor Requirements:**
 - **½" diameter post-install wedge anchor** (Simpson Titen HD, Red Head, or equivalent)
@@ -203,7 +203,7 @@ All hardware uses post-install anchors (wedge anchors or similar), allowing conc
 | Component | Part Number | Quantity | Notes |
 |-----------|-------------|----------|-------|
 | Base brackets (all positions) | Simpson ABU66SS | 6 | Stainless, 5.5" pocket; beam saddle at E/C, post base at W |
-| Post caps (west only) | Simpson AC6SS | 4 | Stainless, 2 per post (beam-to-post) |
+| Post caps (west only) | Simpson CC66 | 2 | Painted, 1 per post (beam-to-post) |
 | Wedge anchors | ½" × 7" | 6 | Post-install, for all bases |
 | Hurricane ties | Simpson H2.5ASS | 26 | Joist-to-beam uplift restraint (stainless) |
 | Framing angles (optional) | Simpson A35 | 48 | For blocking (2 per block) |

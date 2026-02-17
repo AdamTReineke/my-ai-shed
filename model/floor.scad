@@ -2,6 +2,7 @@
 include <dimensions.scad>
 
 module plywood_sheet(width, depth) {
+    echo(str("CUTLIST,Floor decking,PT 3/4\" plywood,1,", width, "\" x ", depth, "\""));
     color(color_plywood, floor_alpha)
         cuboid([width - sheet_gap, depth - sheet_gap, floor_thickness], anchor = BOTTOM);
 }

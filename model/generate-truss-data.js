@@ -202,24 +202,23 @@ function cutList() {
   const lines = [];
   lines.push('// === CUT LIST (per truss) ===');
 
-  // Bottom chord
-  const bcLen = span - 2 * gap;
+  // Bottom chord (physical length, no rendering gap)
+  const bcLen = span;
   lines.push(`// Bottom Chord: 2x4 x ${bcLen.toFixed(2)}" (${toFeetInches(bcLen)})`);
 
-  // Rafters (both same length)
-  // Length along slope from overhang tip to peak (minus gap)
-  const rafterRun = halfSpan + overhang - gap / (2 * cosA);
+  // Rafters (both same length, physical length without rendering gap)
+  const rafterRun = halfSpan + overhang;
   const rafterLen = rafterRun / cosA;
   lines.push(`// South Rafter: 2x4 x ${rafterLen.toFixed(1)}" (${toFeetInches(rafterLen)}) - plumb cuts both ends at ${rafterAngleDeg.toFixed(1)}°`);
   lines.push(`// North Rafter: 2x4 x ${rafterLen.toFixed(1)}" (${toFeetInches(rafterLen)}) - plumb cuts both ends at ${rafterAngleDeg.toFixed(1)}°`);
 
-  // Queen posts (measured along longest edge)
-  const qpMaxHeight = rafterBottomZ(qpInset - D/2) - gap - (D + gap);
+  // Queen posts (measured along longest edge, physical length without rendering gap)
+  const qpMaxHeight = rafterBottomZ(qpInset - D/2) - D;
   lines.push(`// South Queen Post: 2x4 x ${qpMaxHeight.toFixed(1)}" (${toFeetInches(qpMaxHeight)}) - angle cut top at ${rafterAngleDeg.toFixed(1)}°`);
   lines.push(`// North Queen Post: 2x4 x ${qpMaxHeight.toFixed(1)}" (${toFeetInches(qpMaxHeight)}) - angle cut top at ${rafterAngleDeg.toFixed(1)}°`);
 
-  // Straining beam
-  const sbLen = sbWidth - 2 * gap;
+  // Straining beam (physical length, no rendering gap)
+  const sbLen = sbWidth;
   lines.push(`// Straining Beam: 2x4 x ${sbLen.toFixed(2)}" (${toFeetInches(sbLen)})`);
 
   return lines.join('\n');

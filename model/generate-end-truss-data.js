@@ -273,8 +273,8 @@ function cutList(southOutriggerYs, northOutriggerYs) {
   const lines = [];
   lines.push('// === CUT LIST (per end truss) ===');
 
-  // Bottom chord
-  const bcLen = span - 2 * gap;
+  // Bottom chord (physical length, no rendering gap)
+  const bcLen = span;
   lines.push(`// Bottom Chord: 2x4 x ${bcLen.toFixed(2)}" (${toFeetInches(bcLen)})`);
 
   // Rafters
@@ -293,7 +293,7 @@ function cutList(southOutriggerYs, northOutriggerYs) {
   // Heights vary; show range
   const heights = allYs.map(y => {
     const yLeft = y - D / 2;
-    return rafterBottomZ(yLeft) - gap - (D + gap);
+    return rafterBottomZ(yLeft) - D;
   });
   const minH = Math.min(...heights);
   const maxH = Math.max(...heights);

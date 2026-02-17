@@ -30,9 +30,11 @@ osb_sheet_width = 48;    // 4' = 48"
 osb_sheet_height = 96;   // 8' = 96"
 
 module osb_sheet(x, width, z, height) {
-    if (width > cladding_gap && height > cladding_gap)
+    if (width > cladding_gap && height > cladding_gap) {
+        echo(str("CUTLIST,OSB sheathing,7/16\" OSB,1,", width, "\" x ", height, "\""));
         translate([x + width/2, 0, z + height/2])
             cuboid([width - cladding_gap, osb_thickness - cladding_gap, height - cladding_gap], anchor=CENTER);
+    }
 }
 
 module osb_panel(wall_length, wall_ht, door_left=-1, door_right=0, door_top=0) {
@@ -89,6 +91,7 @@ module furring_strips(stud_xs, wall_ht, door_left=-1, door_right=0, door_top=0) 
         strip_center_x = x + stud_thickness/2;
         if (door_left < 0) {
             // No opening
+            echo(str("CUTLIST,Furring strip,1x3,1,", wall_ht, "\""));
             translate([strip_center_x, 0, wall_ht/2])
                 cuboid([furring_width - cladding_gap, furring_thickness - cladding_gap, wall_ht - cladding_gap], anchor=CENTER);
         } else {
@@ -97,14 +100,17 @@ module furring_strips(stud_xs, wall_ht, door_left=-1, door_right=0, door_top=0) 
             strip_right = x + stud_thickness;
             if (strip_right <= door_left || strip_left >= door_right) {
                 // Fully outside opening — full height
+                echo(str("CUTLIST,Furring strip,1x3,1,", wall_ht, "\""));
                 translate([strip_center_x, 0, wall_ht/2])
                     cuboid([furring_width - cladding_gap, furring_thickness - cladding_gap, wall_ht - cladding_gap], anchor=CENTER);
             } else {
                 // In the opening zone — only render above door
                 above_height = wall_ht - door_top;
-                if (above_height > 1)
+                if (above_height > 1) {
+                    echo(str("CUTLIST,Furring strip (above door),1x3,1,", above_height, "\""));
                     translate([strip_center_x, 0, door_top + above_height/2])
                         cuboid([furring_width - cladding_gap, furring_thickness - cladding_gap, above_height - cladding_gap], anchor=CENTER);
+                }
             }
         }
     }
@@ -173,9 +179,11 @@ module siding_planks(plank_data, dir=-1) {
                 plank = course[j];
                 px = plank[0];
                 pw = plank[1] - plank[0];
-                if (pw > 0)
+                if (pw > 0) {
+                    echo(str("CUTLIST,Siding plank (course ", i, "),HardiePlank 5/16\",1,", pw, "\" x ", actual_height, "\""));
                     translate([px, 0, course_bottom])
                         siding_plank(pw - cladding_gap, actual_height - cladding_gap, dir);
+                }
             }
         }
     }

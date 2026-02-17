@@ -7,6 +7,7 @@ include <dimensions.scad>
 //   Part 2 (middle): BigFoot frustum tapering from base dia to tube dia
 //   Part 3 (top):    sonotube cylinder at tube diameter
 module pier(spec) {
+    // echo(str("CUTLIST,Concrete pier (x=", spec[0], " y=", spec[1], "),Concrete + BigFoot + Sonotube,1,", spec[4], "\" total depth"));
     x = spec[0];
     y = spec[1];
     bf = bf_specs[spec[2]];
@@ -44,8 +45,9 @@ module pier(spec) {
     }
 }
 
-// Post base (simplified Simpson ABU66 style) - for positions WITH posts
+// Post base (simplified Simpson ABU66SS style) - for positions WITH posts
 module post_base(x, y) {
+    echo(str("CUTLIST,Post base (x=", x, " y=", y, "),Simpson ABU66SS,1,6\" x 6\" base plate"));
     base_size = 6;
     base_plate_height = 0.25;
     top_z = pier_top_z(x, y);
@@ -63,9 +65,10 @@ module post_base(x, y) {
         }
 }
 
-// Beam saddle (Simpson ABU46Z style) - for east positions with NO post
+// Beam saddle (Simpson ABU66SS style) - for east positions with NO post
 // Beam sits directly in saddle mounted on pier
 module beam_saddle(x, y) {
+    echo(str("CUTLIST,Beam saddle (x=", x, " y=", y, "),Simpson ABU66SS,1,6\" x 6\" saddle"));
     saddle_width = 6;        // Saddle width
     saddle_height = beam_height;  // Tall enough to support beam
     plate_height = 0.25;

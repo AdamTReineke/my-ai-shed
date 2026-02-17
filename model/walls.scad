@@ -13,16 +13,19 @@ board_gap = 0.125;  // Visible gap between boards for clarity
 
 // Single stud (color applied at wall level)
 // x_pos is the position of the stud's LEFT face
-module stud_at(x_pos, height) {
-    if (height > board_gap)
+module stud_at(x_pos, height, label="Stud") {
+    if (height > board_gap) {
+    echo(str("CUTLIST,", label, " (x=", x_pos, "),2x6,1,", height, "\""));
     translate([x_pos + stud_thickness/2, 0, 0])
         cuboid([stud_thickness - board_gap, stud_depth - board_gap, height - board_gap], anchor = BOTTOM);
+    }
 }
 
 // Bottom plate segment
 module plate_segment(start_x, end_x) {
     length = end_x - start_x;
     if (length > 0) {
+        echo(str("CUTLIST,Bottom plate,2x6,1,", length, "\""));
         translate([start_x + length/2, 0, 0])
             cuboid([length - board_gap, plate_depth - board_gap, plate_thickness - board_gap], anchor = BOTTOM);
     }
@@ -32,6 +35,7 @@ module plate_segment(start_x, end_x) {
 module top_plate_segment(start_x, end_x, z_pos) {
     length = end_x - start_x;
     if (length > 0) {
+        echo(str("CUTLIST,Top plate (double),2x6,2,", length, "\""));
         translate([start_x + length/2, 0, z_pos]) {
             cuboid([length - board_gap, plate_depth - board_gap, plate_thickness - board_gap], anchor = BOTTOM);
             translate([0, 0, plate_thickness])
@@ -43,6 +47,7 @@ module top_plate_segment(start_x, end_x, z_pos) {
 // Header
 module header_at(start_x, end_x, z_pos, height) {
     length = end_x - start_x;
+    echo(str("CUTLIST,Door header,2x6 + 1/2\" ply spacer,1,", length, "\""));
     translate([start_x + length/2, 0, z_pos])
         cuboid([length - board_gap, stud_depth - board_gap, height - board_gap], anchor = BOTTOM);
 }
@@ -170,8 +175,8 @@ module north_wall() {
 
     // Jack studs (door height only)
     translate([0, 0, plate_thickness]) {
-        stud_at(jack_left_x, door_ro_height);
-        stud_at(jack_right_x, door_ro_height);
+        stud_at(jack_left_x, door_ro_height, "Jack stud");
+        stud_at(jack_right_x, door_ro_height, "Jack stud");
     }
 
     // Header (bears on jack studs, spans from left jack left face to right jack right face)
@@ -188,7 +193,7 @@ module north_wall() {
         ];
         for (cx = cripple_positions)
             translate([0, 0, cripple_z])
-                stud_at(cx, cripple_height);
+                stud_at(cx, cripple_height, "Cripple stud");
     }
 }
 
@@ -226,11 +231,13 @@ module ew_short_wall() {
 // Short walls (East/West, yellow) fit between them along Y axis
 module walls() {
     // South wall (y = 0, facing north) - BLUE - 16' long, no door
+    echo("CUTLIST,--- South Wall (192\" no door) ---,,,");
     color(color_stud, wall_alpha)
     translate([0, stud_depth / 2, wall_bottom_z])
         south_wall();
 
     // North wall (y = 144", facing south) - BLUE - 16' long, with door
+    echo("CUTLIST,--- North Wall (192\" with door) ---,,,");
     color(color_stud, wall_alpha)
     translate([0, shed_width - stud_depth / 2, wall_bottom_z])
         north_wall();
@@ -253,12 +260,14 @@ module walls() {
     }
 
     // West wall (x = 0, facing east) - YELLOW - shortened, fits between N/S walls
+    echo("CUTLIST,--- West Wall (133\") ---,,,");
     color(color_stud, wall_alpha)
     translate([stud_depth / 2, stud_depth, wall_bottom_z])
         rotate([0, 0, 90])
             ew_short_wall();
 
     // East wall (x = 192", facing west) - YELLOW - shortened, fits between N/S walls
+    echo("CUTLIST,--- East Wall (133\") ---,,,");
     color(color_stud, wall_alpha)
     translate([shed_length - stud_depth / 2, stud_depth, wall_bottom_z])
         rotate([0, 0, 90])

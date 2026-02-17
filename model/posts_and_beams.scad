@@ -9,6 +9,7 @@ module post(x, y) {
 
     // Only render if post height is positive (> min threshold)
     if (height > 2) {
+        echo(str("CUTLIST,Post (x=", x, " y=", y, "),PT 6x6,1,", height, "\""));
         color(color_pt_wood, wood_alpha)
             translate([x, y, post_bottom])
                 cuboid([post_width, post_depth, height], anchor = BOTTOM);
@@ -19,6 +20,8 @@ module post(x, y) {
 // 3-ply built-up: 2x10 + 3x10 + 2x10 (5.5" x 9.25")
 module beam(y_pos) {
     board_gap = 0.125;  // Visible gap between plies for clarity
+    echo(str("CUTLIST,Beam ply outer (y=", y_pos, "),PT 2x10,2,", shed_length, "\""));
+    echo(str("CUTLIST,Beam ply center (y=", y_pos, "),PT 3x10,1,", shed_length, "\""));
 
     color(color_pt_wood, wood_alpha) {
         // Outer ply 1 (south face) - 2x10 (1.5" thick)

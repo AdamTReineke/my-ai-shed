@@ -5,6 +5,7 @@ board_gap = 0.125;  // Visible gap between boards for clarity
 
 // Single joist running along Y axis
 module joist(x_pos) {
+    echo(str("CUTLIST,Floor joist (x=", x_pos, "),PT 2x8,1,", joist_length, "\""));
     color(color_pt_wood, wood_alpha)
         translate([x_pos, shed_width / 2, joist_bottom_z])
             cuboid([joist_thickness - board_gap, joist_length - board_gap, joist_height - board_gap], anchor = BOTTOM);
@@ -12,6 +13,7 @@ module joist(x_pos) {
 
 // Rim joist running along X axis
 module rim_joist(y_pos) {
+    echo(str("CUTLIST,Rim joist (y=", y_pos, "),PT 2x8,1,", shed_length, "\""));
     color(color_pt_wood, wood_alpha)
         translate([shed_length / 2, y_pos, joist_bottom_z])
             cuboid([shed_length - board_gap, rim_thickness - board_gap, rim_height - board_gap], anchor = BOTTOM);
@@ -21,7 +23,7 @@ module rim_joist(y_pos) {
 // BLOCKING AT BEAM LINES
 // ============================================
 // Blocking transfers diaphragm shear from the plywood floor to the beams
-// Material: 2x8 PT (matches joists)
+// Material: PT 2x8 (matches joists)
 // Length: 14.5" each (16" o.c. minus 1.5" joist thickness)
 // Quantity: 12 blocks per beam line x 2 beams = 24 blocks
 // Location: Between each joist pair, directly over each beam
@@ -31,6 +33,7 @@ blocking_stagger = joist_thickness;  // 1.5" offset from beam center for stagger
 
 // Single blocking piece between two joists
 module blocking_piece(x_center, y_pos, length) {
+    echo(str("CUTLIST,Blocking (x=", x_center, " y=", y_pos, "),PT 2x8,1,", length, "\""));
     color(color_pt_wood, wood_alpha)
         translate([x_center, y_pos, joist_bottom_z])
             cuboid([length - board_gap, joist_thickness - board_gap, joist_height - board_gap], anchor = BOTTOM);
@@ -76,6 +79,7 @@ module blocking() {
 // The two flanges share an edge at the corner where beam and joist meet.
 //
 module h25a_tie(x_pos, y_pos, js, bs) {
+    echo(str("CUTLIST,Hurricane tie (x=", x_pos, " y=", y_pos, "),Simpson H2.5ASS,1,1.375\" strap"));
     bt = joist_bottom_z;  // Beam top = joist bottom
     g = h25a_gauge;
     gus = h25a_gusset_height;
