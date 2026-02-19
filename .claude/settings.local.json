@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(git add:*)",
+      "Bash(dir:*)",
+      "Bash(git mv:*)",
+      "WebSearch"
     ]
   },
   "enableAllProjectMcpServers": true,
