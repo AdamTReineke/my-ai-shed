@@ -149,15 +149,13 @@ Alternative: Simpson A35 framing angles (2 per block = 48 angles), each taking (
 
 ## 8. Wall Bottom Plate to Subfloor/Rim
 
-PT 2×6 bottom plates nailed down through subfloor into rim joists and joists below.
+KD Hem-Fir 2×6 bottom plates nailed down through subfloor into rim joists and joists below. The shed is elevated on piers — no ground contact — so the bottom plate is standard (non-PT) lumber.
 
-TODO: Material is wrong. The bottom plate is untreated since building is elevated.
-
-- 16d HDG common nail (3.5" × 0.162")
+- 16d bright common nail (3.5" × 0.162")
   - Qty: ~42 nails (56 lf perimeter ÷ 16" spacing), staggered side to side
-  - In contact with: PT Hem-Fir 2×6 bottom plate, Advantech subfloor (above), PT Hem-Fir rim joist/joists (below)
+  - In contact with: KD Hem-Fir 2×6 bottom plate, Advantech subfloor (above), PT Hem-Fir rim joist/joists (below)
   - Material depth: bottom plate 1.5" + 3/4" Advantech + 1.25" into rim/joist = 3.5" — correct; nail fully penetrates plate and subfloor with 1.25" into framing below (IRC minimum for this connection)
-  - HDG required — bottom plate is PT. At door opening, cut plate after wall is raised.
+  - Bright (plain steel) is acceptable — bottom plate is non-PT. At door opening, cut plate after wall is raised.
 
 ---
 
@@ -173,8 +171,7 @@ Standard platform framing nailing schedule per IRC Table R602.3(1). All connecti
 
 - 16d bright common nail — bottom plate to stud, end-nail
   - Qty: 2 per stud; ~40 studs = ~80 nails
-  - In contact with: KD Hem-Fir stud end grain — note: bottom plate itself is PT and fastened with HDG (§8 above), but these nails go through the KD stud into the plate end grain, not through the plate; bright is acceptable here
-  - TODO: Correct line above, bottom plate isn't PT.
+  - In contact with: KD Hem-Fir stud end grain, KD Hem-Fir bottom plate — both are non-PT; bright is acceptable throughout
   - Through stud into plate
 
 - 16d bright common nail — stud to stud (corner/partition), face-nail
