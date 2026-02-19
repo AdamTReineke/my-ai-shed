@@ -8,8 +8,42 @@ Beam (x2):
     Hem/Fir #2 PT Incised
     16 ft with three-ply: 2x10 + 3x10 (or x12 trimmed) + 2x10
     (Creating a 5.5" × 9.25" beam in Hem/Fir #2)
-    Connection: Structural screws (e.g. GRK RSS) from both faces,
-    staggered at 12" o.c. — ensures plies act as one beam.
+    Connection: 1/2" × 6.5" HDG carriage bolt + nut + 2 washers,
+    staggered top/bottom at 24" o.c., 8 per beam.
+    (Screw and nail+glue options were evaluated and discarded in favor of bolts.)
+
+  Lamination connection design (NDS Table 11A):
+    Fastener: 1/2" A307 carriage bolt, HDG, double shear
+    Members:  side members 1.5" each (2×10 outer plies)
+              main member  2.5" (3×10 center ply)
+    Species:  Hem-Fir, G = 0.43
+
+    Stack check:
+      Beam width (actual):   5.5"  (1.5 + 2.5 + 1.5)
+      Two washers:           0.13"
+      Nut (1/2"):            0.44"
+      Total stack:           6.07"
+      Bolt length:           6.5"  → 0.43" thread past nut ✓
+
+    Lateral design value (NDS Table 11A, 1/2" bolt, double shear, Hem-Fir):
+      Z per shear plane ≈ 1,050 lb
+      Z_bolt = 2 planes × 1,050 = 2,100 lb/bolt
+
+    Inter-ply shear demand:
+      Same-depth plies placed side-by-side share the same neutral axis depth.
+      Theoretical horizontal shear flow at the vertical interface = V·Q/I = 0
+      (Q of one ply about the composite NA = 0 for equal-depth side-by-side plies).
+      Fasteners resist clamping, differential shrinkage, and incidental lateral
+      forces — not primary bending shear transfer.
+
+    Capacity check:
+      8 bolts/beam × 2,100 lb = 16,800 lb capacity
+      V_max = 3,111 lb (at center support, from beam analysis)
+      Utilization = 3,111 / 16,800 = 18% ✓ (governed by beam bending, not lamination)
+
+    Spacing: stagger top/bottom rows at 24" o.c. along beam length;
+    edge distance ≥ 1.5" from beam edges (NDS 11.5.1).
+    HDG required — all plies are PT Hem-Fir (ACQ treatment).
 
   Adjustment factors (Hem/Fir #2 PT Incised, 2x10, normal duration):
     Fb base  = 850 psi  (Table 4A)
@@ -107,7 +141,3 @@ Concrete to Wood (x6):
 Post to Beam (x2, one per post):
     CC66 Painted (purchased from Dunn Lumber, $132.73 each)
     Simpson CC66 column cap — heavier-duty than AC6SS, same 6× pocket
-
-TBD: Straps from joists to beams.
-
-Next: New file joists.md to describe the joists and cutslists.

@@ -1,12 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(node:*)"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "trello",
     "google-calendar"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }

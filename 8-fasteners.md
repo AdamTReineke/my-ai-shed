@@ -10,17 +10,38 @@ All fasteners in contact with PT lumber or exterior exposure must be **stainless
 
 Simpson ABU66SS stainless adjustable post base, one per pier (6 total).
 
-- 1/2" × 7" SS wedge anchor
+- 5/8" × 6-1/2" SS Titen HD screw anchor (Simpson THDB62612H6SS or H4SS, 304 vs 316)
   - Qty: 1 per bracket × 6 piers = 6 total
   - In contact with: cured concrete, SS bracket
-  - Material depth: min 3.5" embedment in concrete (ABU66SS spec); 7" provides ample embedment with head above bracket
-  - Drill 7/16" hole, set anchor, torque to 40 ft-lbs
+  - Drill 5/8" hole with carbide bit (hole diameter = nominal diameter for Titen HD);
+    - Min hole depth 6" per spec sheet for 5-1/2" nominal embedment (overdrill 1/2" past embedment to collect tapping dust)
+  - Drive with 15/16" wrench; max installation torque 85 ft-lbf; min concrete thickness 8-1/2"
+  - Per ABA/ABU/ABW spec sheet: 5/8" anchor required for ABU66
+    - Stack above concrete: ABU66SS base plate (12 ga ~0.105") + included washer (~0.065") + hex head (~0.19") ≈ 0.36";
+    - 6-1/2" anchor gives ~6.14" embedment vs. 5-1/2" nominal ✓
+  - Min edge distance from pier edge: 1-3/4" (absolute minimum); 6" for full rated load capacity.
+    - Center anchor in pier — a 12" diameter pier gives 6" to edge, achieving full capacity ✓
+  - Note on length: no 6.5" version, option was 6" or 8", so selecting 6". 
+  - Cart:
+    - THDB62600H6SSF1 - 5/8" x 6" Strong-Tie THDB62600H6SSF1 Titen HD Screw Anchor, 316 Stainless Steel, Pkg 1
+    - Home Depot 16.86 ea (with shipping delay)
+    -   https://www.homedepot.com/p/Simpson-Strong-Tie-Titen-HD-5-8-in-x-6-in-Type-316-Stainless-Steel-Heavy-Duty-Screw-Anchor-THDB62600H6SSF1/317808332
+    - Or at Dunn Lumber now
 
-- 1/2" × 4.5" SS hex bolt + nut + 2 washers
+- 1/2" × 6.5" SS hex bolt + nut + 2 washers
+  - (Note: order the 7" version. Only quarter inch remaining threads makes me nervous)
   - Qty: 2 per bracket × 6 piers = 12 sets
   - In contact with: PT Hem-Fir beam/post, SS bracket
-  - Material depth: beam/post face is 5.5" (6×6 actual); bolt passes through bracket flanges (~5/16" each side) and one face of the beam — not a through-bolt, flanges bolt to the side face. 4.5" is sufficient for the side-flange connection per ABU66SS template.
-  - Through ABU side flanges into beam/post; SS required for PT contact
+  - Material depth: 6×6 post/beam = 5.5" actual + two 12-ga flanges (~0.21" total) + 2 washers (~0.13") + 1/2" nut (~0.44") = ~6.28" stack; 6.5" provides ~0.22" thread past nut for adequate engagement. Must be structural through-bolt per ABU66SS spec (not lag screw or carriage bolt).
+  - Through ABU side flanges and full post/beam width; SS required for PT contact
+  - Purchase Online:
+    - (x12) Super-Corrosion-Resistant 316 Stainless Steel Hex Head Screw, 1/2"-13 Thread Size, 7" Long, Partially Threaded
+      - https://www.mcmaster.com/92186A738/ (1 @ 4.37)
+    - (x24, extra 1) Highly Corrosion-Resistant 316 Stainless Steel Washer for 1/2" Screw Size, General Purpose, 0.531" ID
+      - https://www.mcmaster.com/90107A033/ (25 @ 10.24)
+    - (x12, extra 3) Highly Corrosion-Resistant 316 Stainless Steel Hex Nut, 1/2"-13 Thread Size
+      - https://www.mcmaster.com/94804A340/ (10 @ 4.71)
+      - https://www.mcmaster.com/94819A055/ (5 @ 3.22)
 
 ---
 
@@ -28,19 +49,23 @@ Simpson ABU66SS stainless adjustable post base, one per pier (6 total).
 
 Simpson CC66 painted column cap, one per west post (2 total, already purchased at $132.73 each). Connects beam to top of 6×6 post.
 
-- 5/8" × 6" HDG machine bolt + nut + 2 washers (beam side)
-  - Qty: 3 per cap × 2 caps = 6 sets
+- 5/8" × 7" HDG machine bolt + nut + 2 washers (4x beam side + 2x post side * 2 posts = 12 sets)
   - In contact with: PT Hem-Fir built-up beam, painted steel cap
-  - Material depth: 3-ply beam = 5.5" total width; 6" bolt clears with room for washers and nut
-  - Through cap flanges into beam; HDG required for PT contact
-
-- 5/8" × 6" HDG machine bolt + nut + 2 washers (post side)
-  - Qty: 3 per cap × 2 caps = 6 sets
-  - In contact with: PT Hem-Fir 6×6 post, painted steel cap
-  - Material depth: 6×6 post = 5.5" actual; 6" bolt clears with room for washers and nut
-  - Through cap flanges into post top; HDG required for PT contact
-
-*Note: 0-readme.md and 2-beam.md reference AC6SS, but CC66 Painted is what was actually ordered (see receipts.csv line 47). The CC66 is a heavier-duty column cap with the same 6× pocket — it works fine here.*
+    - HDG required for PT contact
+  - Material depth:
+    - 3-ply beam 5.5" + two 7-ga flanges (~0.36") + 2 washers (~0.17") + 5/8" nut (~0.55") = ~6.58" stack;
+    - 7" provides ~0.42" thread past nut for adequate engagement.
+    - No 7" available, use 8". Do not cut the ends to maintain coating.
+  - Required strength: All references to bolts are for structural quality through bolts (not lag screws or carriage bolts) equal to or better than ASTM A307, Grade A.
+  - Cart:
+    - (req 12) Hot-Dipped Galvanized Steel Hex Head Screw, Low-Strength, 5/8"-11 Thread Size, 8" Long (1.75" min threads)
+      - meets: ASME B18.2.1, ASTM A307
+      - McM https://www.mcmaster.com/95373A258
+    - (req 12, x25, extra 13) Hot-Dipped Galvanized Low-Strength Steel Hex Nut, SAE Grade 2, 5/8"-11 Thread Size
+      - McM https://www.mcmaster.com/90371A050
+    - (req 24, x25, extra 1) Corrosion-Resistant Galvanized Steel Structural Washer for 5/8" Screw Size, 0.688" ID, 1.312" OD
+      - McM https://www.mcmaster.com/98119A035/
+      - (possibly needs an extra washer for each one to keep from running out of threads, for $9 it's worth ordering extra)
 
 ---
 
@@ -48,29 +73,20 @@ Simpson CC66 painted column cap, one per west post (2 total, already purchased a
 
 3-ply built-up beam: 2×10 + 3×10 + 2×10 (5.5" × 9.25"), per [2-beam.md](2-beam.md).
 
-### Recommended: Structural Screws
-
-- GRK RSS 5/16" × 3-1/8" structural screw (HDG-compatible coating)
-  - Qty: ~30 per beam × 2 beams = ~60 total
-  - In contact with: PT Hem-Fir 2×10 outer plies, PT Hem-Fir 3×10 center ply
-  - Material depth: outer ply 1.5" + center ply 2.5" = 4.0" total; 3-1/8" screw penetrates 1.625" into center ply, which is adequate (GRK RSS spec requires ≥1.5" penetration into main member)
-  - Drive from both faces, staggered 12" o.c.; GRK RSS screws are approved for PT lumber with ACQ treatment.
-
-### Alternative A: Through-Bolts
-
-- 1/2" × 5.5" HDG carriage bolt + nut + 2 washers
-  - Qty: ~8 per beam × 2 beams = ~16 sets
-  - In contact with: PT Hem-Fir 2×10 and 3×10 plies through full 5.5" width
-  - Material depth: total beam width = 1.5" + 2.5" + 1.5" = 5.5"; bolt length matches exactly — add 1/4" thread engagement minimum, so 5.5" is correct with nut flush or just proud
-  - Stagger top/bottom at 24" o.c.; clamp all three plies in one pass. Stronger mechanical clamping and fully reversible, but requires drilling through 5.5" with a long-shank bit and adds ~$20/beam. Good choice if you want the most bomber connection.
-
-### Alternative B: Nails + Adhesive (budget)
-
-- 10d HDG ring-shank nail (3" × 0.148")
-  - Qty: ~30 per face per beam × 2 faces × 2 beams = ~120 total
-  - In contact with: PT Hem-Fir plies
-  - Material depth: outer ply 1.5" + center ply 2.5" = 4.0"; 3" nail penetrates 1.5" into center ply, clinches if it exits the far side
-  - From both faces at 12" o.c. staggered. Add construction adhesive between plies. Lower cost but harder to drive consistently and less clamping force than screws.
+- 1/2" × 6.5" HDG carriage bolt + nut + 2 washers
+  - Qty: 8 per beam × 2 beams = 16 sets total
+  - In contact with: PT Hem-Fir 2×10 outer plies and PT Hem-Fir 3×10 center ply, full 5.5" width
+  - Stack: beam 5.5" + two washers (~0.13") + 1/2" nut (~0.44") = ~6.07"; 6.5" bolt provides ~0.43" thread past nut ✓
+  - Lateral design value (NDS Table 11A, 1/2" bolt, double shear, Hem-Fir G=0.43): Z ≈ 2,100 lb/bolt; 16 bolts × 2,100 = 33,600 lb total capacity vs. 3,111 lb max shear — 18% utilization ✓
+  - Stagger top/bottom rows at 24" o.c.; edge distance ≥ 1.5" per NDS 11.5.1; drill through 5.5" with a long-shank 1/2" bit and clamp all three plies in one pass
+  - HDG required — all plies are PT Hem-Fir (ACQ treatment)
+  - Cart:
+    - (req 16) Hot-Dipped Galvanized Steel Hex Head Screw, Low-Strength, 1/2"-13 Thread Size, 6-1/2" Long
+      - https://www.mcmaster.com/95373A247 1 @ 3.68
+    - (req 16) Hot-Dipped Galvanized Low-Strength Steel Hex Nut, SAE Grade 2, 1/2"-13 Thread Size
+      - https://www.mcmaster.com/90371A045 50 @ 14.80
+    - (req 32) Corrosion-Resistant Galvanized Steel Structural Washer for 1/2" Screw Size, 0.531" ID, 1.062" OD
+      - https://www.mcmaster.com/98119A033/ 50 @ 9.68
 
 ---
 
@@ -78,15 +94,14 @@ Simpson CC66 painted column cap, one per west post (2 total, already purchased a
 
 Simpson H2.5ASS (18-ga stainless), one per joist-beam intersection. Joists sit on top of beams (joist-over-beam framing). 13 joists × 2 beams = 26 ties.
 
-- 0.131" × 2-1/2" SS joist hanger nail
-  - Qty: 10 per tie × 26 ties = 260 total
-  - In contact with: PT Hem-Fir joist face, PT Hem-Fir beam top, SS tie
-  - Material depth: joist face is 1.5" (2×10 width); beam top is 3.5" (3-ply built-up); 2-1/2" nail gives 2.0" penetration into either member — correct Simpson-specified nail for this tie
+- 0.131" × X" SS joist hanger nail
+  - In contact with: PT Hem-Fir joist face, PT Hem-Fir beam face, SS tie
+  - Joist depth is 1.5", Beam depth is 5.5"
+  - Qty: 5 long + 5 short per tie × 26 ties = 130 short + 130 long total
   - 5 into joist face + 5 into beam top; SS required — tie is stainless and lumber is PT
-
-Allowable loads (SPF/HF, 160% duration): Uplift 380 lbs, Lateral F₁ 75 lbs, Lateral F₂ 70 lbs.
-
-*Do NOT substitute screws for nails in hurricane ties unless the screw is Simpson-approved (e.g., SD connector screws). Standard drywall or deck screws are brittle and will snap under shear.*
+  - (Not at Home Depot or McMaster Carr. Drive with pneumatic palm nailer.)
+  - (155 @ $23.36) 1.5" https://www.fastenersplus.com/products/simpson-ssna8-8d-x-1-1-2-ring-shank-connector-nail-316-stainless-steel-1-lb-tub
+  - (94 @ $24.12) 2.5" https://www.fastenersplus.com/products/simpson-ssa8d-8d-x-2-1-2-ring-shank-connector-nail-316-stainless-steel-1-lb-tub
 
 ---
 
@@ -136,6 +151,8 @@ Alternative: Simpson A35 framing angles (2 per block = 48 angles), each taking (
 
 PT 2×6 bottom plates nailed down through subfloor into rim joists and joists below.
 
+TODO: Material is wrong. The bottom plate is untreated since building is elevated.
+
 - 16d HDG common nail (3.5" × 0.162")
   - Qty: ~42 nails (56 lf perimeter ÷ 16" spacing), staggered side to side
   - In contact with: PT Hem-Fir 2×6 bottom plate, Advantech subfloor (above), PT Hem-Fir rim joist/joists (below)
@@ -157,6 +174,7 @@ Standard platform framing nailing schedule per IRC Table R602.3(1). All connecti
 - 16d bright common nail — bottom plate to stud, end-nail
   - Qty: 2 per stud; ~40 studs = ~80 nails
   - In contact with: KD Hem-Fir stud end grain — note: bottom plate itself is PT and fastened with HDG (§8 above), but these nails go through the KD stud into the plate end grain, not through the plate; bright is acceptable here
+  - TODO: Correct line above, bottom plate isn't PT.
   - Through stud into plate
 
 - 16d bright common nail — stud to stud (corner/partition), face-nail
