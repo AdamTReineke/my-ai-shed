@@ -20,13 +20,10 @@ Simpson ABU66SS stainless adjustable post base, one per pier (6 total).
     - Stack above concrete: ABU66SS base plate (12 ga ~0.105") + included washer (~0.065") + hex head (~0.19") ≈ 0.36";
     - 6-1/2" anchor gives ~6.14" embedment vs. 5-1/2" nominal ✓
   - Min edge distance from pier edge: 1-3/4" (absolute minimum); 6" for full rated load capacity.
-    - Center anchor in pier — a 12" diameter pier gives 6" to edge, achieving full capacity ✓
+    - TODO: Measure the final installed location and calculate the derating since we'll be off-center on the 12" pillar.
   - Note on length: no 6.5" version, option was 6" or 8", so selecting 6". 
-  - Cart:
-    - THDB62600H6SSF1 - 5/8" x 6" Strong-Tie THDB62600H6SSF1 Titen HD Screw Anchor, 316 Stainless Steel, Pkg 1
-    - Home Depot 16.86 ea (with shipping delay)
-    -   https://www.homedepot.com/p/Simpson-Strong-Tie-Titen-HD-5-8-in-x-6-in-Type-316-Stainless-Steel-Heavy-Duty-Screw-Anchor-THDB62600H6SSF1/317808332
-    - Or at Dunn Lumber now
+  - Purchased (6):
+    - THDB62600H4SS - 5/8" x 6" Strong-Tie Titen HD Screw Anchor, 304 Stainless Steel
 
 - 1/2" × 6.5" SS hex bolt + nut + 2 washers
   - (Note: order the 7" version. Only quarter inch remaining threads makes me nervous)
@@ -34,14 +31,14 @@ Simpson ABU66SS stainless adjustable post base, one per pier (6 total).
   - In contact with: PT Hem-Fir beam/post, SS bracket
   - Material depth: 6×6 post/beam = 5.5" actual + two 12-ga flanges (~0.21" total) + 2 washers (~0.13") + 1/2" nut (~0.44") = ~6.28" stack; 6.5" provides ~0.22" thread past nut for adequate engagement. Must be structural through-bolt per ABU66SS spec (not lag screw or carriage bolt).
   - Through ABU side flanges and full post/beam width; SS required for PT contact
-  - Purchase Online:
+  - Purchased 2026-02-19 (McMaster-Carr order 3038177):
     - (x12) Super-Corrosion-Resistant 316 Stainless Steel Hex Head Screw, 1/2"-13 Thread Size, 7" Long, Partially Threaded
-      - https://www.mcmaster.com/92186A738/ (1 @ 4.37)
+      - https://www.mcmaster.com/92186A738/ (1 @ 4.37) ✓
     - (x24, extra 1) Highly Corrosion-Resistant 316 Stainless Steel Washer for 1/2" Screw Size, General Purpose, 0.531" ID
-      - https://www.mcmaster.com/90107A033/ (25 @ 10.24)
+      - https://www.mcmaster.com/90107A033/ (25 @ 10.24) ✓
     - (x12, extra 3) Highly Corrosion-Resistant 316 Stainless Steel Hex Nut, 1/2"-13 Thread Size
-      - https://www.mcmaster.com/94804A340/ (10 @ 4.71)
-      - https://www.mcmaster.com/94819A055/ (5 @ 3.22)
+      - https://www.mcmaster.com/94804A340/ (10 @ 4.71) ✓
+      - https://www.mcmaster.com/94819A055/ (5 @ 3.22) ✓
 
 ---
 
@@ -57,15 +54,14 @@ Simpson CC66 painted column cap, one per west post (2 total, already purchased a
     - 7" provides ~0.42" thread past nut for adequate engagement.
     - No 7" available, use 8". Do not cut the ends to maintain coating.
   - Required strength: All references to bolts are for structural quality through bolts (not lag screws or carriage bolts) equal to or better than ASTM A307, Grade A.
-  - Cart:
+  - Purchased 2026-02-19 (McMaster-Carr order 3038177):
     - (req 12) Hot-Dipped Galvanized Steel Hex Head Screw, Low-Strength, 5/8"-11 Thread Size, 8" Long (1.75" min threads)
       - meets: ASME B18.2.1, ASTM A307
-      - McM https://www.mcmaster.com/95373A258
+      - McM https://www.mcmaster.com/95373A258 ✓
     - (req 12, x25, extra 13) Hot-Dipped Galvanized Low-Strength Steel Hex Nut, SAE Grade 2, 5/8"-11 Thread Size
-      - McM https://www.mcmaster.com/90371A050
-    - (req 24, x25, extra 1) Corrosion-Resistant Galvanized Steel Structural Washer for 5/8" Screw Size, 0.688" ID, 1.312" OD
-      - McM https://www.mcmaster.com/98119A035/
-      - (possibly needs an extra washer for each one to keep from running out of threads, for $9 it's worth ordering extra)
+      - McM https://www.mcmaster.com/90371A050 ✓
+    - (req 24, x50, extra 26) Corrosion-Resistant Galvanized Steel Structural Washer for 5/8" Screw Size, 0.688" ID, 1.312" OD
+      - McM https://www.mcmaster.com/98119A035/ ✓ (ordered 2 packs of 25 = 50 total)
 
 ---
 
@@ -80,13 +76,13 @@ Simpson CC66 painted column cap, one per west post (2 total, already purchased a
   - Lateral design value (NDS Table 11A, 1/2" bolt, double shear, Hem-Fir G=0.43): Z ≈ 2,100 lb/bolt; 16 bolts × 2,100 = 33,600 lb total capacity vs. 3,111 lb max shear — 18% utilization ✓
   - Stagger top/bottom rows at 24" o.c.; edge distance ≥ 1.5" per NDS 11.5.1; drill through 5.5" with a long-shank 1/2" bit and clamp all three plies in one pass
   - HDG required — all plies are PT Hem-Fir (ACQ treatment)
-  - Cart:
+  - Purchased 2026-02-19 (McMaster-Carr order 3038177):
     - (req 16) Hot-Dipped Galvanized Steel Hex Head Screw, Low-Strength, 1/2"-13 Thread Size, 6-1/2" Long
-      - https://www.mcmaster.com/95373A247 1 @ 3.68
-    - (req 16) Hot-Dipped Galvanized Low-Strength Steel Hex Nut, SAE Grade 2, 1/2"-13 Thread Size
-      - https://www.mcmaster.com/90371A045 50 @ 14.80
+      - https://www.mcmaster.com/95373A247 1 @ 3.68 ✓
+    - (req 16, x50, extra 34) Hot-Dipped Galvanized Low-Strength Steel Hex Nut, SAE Grade 2, 1/2"-13 Thread Size
+      - https://www.mcmaster.com/90371A045 50 @ 14.80 ✓
     - (req 32) Corrosion-Resistant Galvanized Steel Structural Washer for 1/2" Screw Size, 0.531" ID, 1.062" OD
-      - https://www.mcmaster.com/98119A033/ 50 @ 9.68
+      - https://www.mcmaster.com/98119A033/ 50 @ 9.68 ✓
 
 ---
 
