@@ -16,17 +16,17 @@ There are no build steps, no tests, and no package manager. Just run scripts dir
 ## Running the Calculators
 
 ```bash
-node joist.js                          # floor joist sizing (default config)
-node joist.js --span=108 --live=50    # custom span/load
+node tools/joist.js                          # floor joist sizing (default config)
+node tools/joist.js --span=108 --live=50    # custom span/load
 
-node beam.js                           # beam sizing (default config)
-node beam.js --span=72 --load=800     # custom span/load
+node tools/beam.js                           # beam sizing (default config)
+node tools/beam.js --span=72 --load=800     # custom span/load
 
-node truss.js                          # queen-post truss analysis (default config)
-node truss.js --span=12 --pitch=0.5 --snow=20
+node tools/truss.js                          # queen-post truss analysis (default config)
+node tools/truss.js --span=12 --pitch=0.5 --snow=20
 
-node footing.js                        # pier/footing sizing
-node concrete.js                       # concrete volume calculations
+node tools/footing.js                        # pier/footing sizing
+node tools/concrete.js                       # concrete volume calculations
 
 node tools/siding-cuts.js             # HardiePlank cut list
 node tools/siding-cuts.js --json      # JSON output
@@ -48,7 +48,7 @@ node tools/siding-cuts.js --scad        # writes model/siding_data.scad
 
 ### Node.js Calculators
 
-All calculators share `constants.js` which defines:
+All calculators share `tools/constants.js` which defines:
 - `DIM` — shed dimensions in inches (single source of truth)
 - `MATERIAL` — Hem-Fir #2 NDS design values with PT incising adjustment factors
 - `LUMBER` — section properties (S, I) for each nominal size
@@ -57,11 +57,11 @@ All calculators share `constants.js` which defines:
 
 All lengths are in **inches** internally. The `FT = 12` constant is used as a multiplier (`16 * FT = 192"`).
 
-Each calculator (`beam.js`, `joist.js`, `truss.js`, etc.) is standalone: it `require('./constants')`, parses CLI args, runs the structural checks, and prints a results table.
+Each calculator (`tools/beam.js`, `tools/joist.js`, `tools/truss.js`, etc.) is standalone: it `require('./constants')`, parses CLI args, runs the structural checks, and prints a results table.
 
 ### OpenSCAD Model
 
-`model/dimensions.scad` mirrors the key constants from `constants.js` for use in OpenSCAD. When dimensions change, both files need updating.
+`model/dimensions.scad` mirrors the key constants from `tools/constants.js` for use in OpenSCAD. When dimensions change, both files need updating.
 
 The model is split by structural system:
 - `foundation.scad` — piers, post bases, beam saddles
