@@ -269,7 +269,7 @@ function buildCmd(openscad, view) {
     cmd: [
       `"${openscad}"`,
       `-o "${outFile}"`,
-      `--imgsize=1920,1080`,
+      `--imgsize=3840,2160`,
       `--camera=${camera}`,
       `--projection=perspective`,
       dFlags,
