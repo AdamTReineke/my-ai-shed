@@ -1,4 +1,5 @@
-const lines = require('fs').readFileSync('shed/model/openscad-output.txt', 'utf8').split('\n');
+const path = require('path');
+const lines = require('fs').readFileSync(path.join(__dirname, '..', 'model', 'openscad-output.txt'), 'utf8').split('\n');
 
 // Pre-compute fraction lookup for 1/16th inch increments
 const fractions = new Map();
@@ -48,4 +49,4 @@ const out = [];
 for (const [key, qty] of counts) {
   out.push(`${key},${qty}`);
 }
-require('fs').writeFileSync('shed/model/cutlist.csv', out.join('\n') + '\n', 'utf8');
+require('fs').writeFileSync(path.join(__dirname, '..', 'model', 'cutlist.csv'), out.join('\n') + '\n', 'utf8');

@@ -427,7 +427,7 @@ function generate() {
   output.push('}');
   output.push('');
 
-  const outPath = path.join(__dirname, 'end_truss_data.scad');
+  const outPath = path.join(__dirname, '..', 'model', 'end_truss_data.scad');
   fs.writeFileSync(outPath, output.join('\n'));
   console.log(`Wrote ${outPath}`);
   console.log('');
