@@ -188,6 +188,20 @@ pier_above_ground = 2;       // Pier visibility above ground (post positions onl
 // Post base height (Simpson ABU66 style)
 post_base_height = 1;        // 1" above concrete for drainage
 
+// ABU66SS post base / beam saddle
+abu66ss_length = 5;          // 5" long (E-W, along beam)
+abu66ss_width = 5.5;         // 5.5" wide (N-S, across beam)
+abu66ss_height = 6.0625;     // 6-1/16" tall
+abu66ss_base_h = 1;          // base portion height (~1")
+abu66ss_gauge = 0.0897;      // 11-gauge steel ~0.090"
+
+// CC66 post cap
+cc66_saddle_depth = 5.5;     // N-S (across beam)
+cc66_saddle_width = 5.5;     // E-W (along beam)
+cc66_saddle_height = 11;     // tall dimension of saddle
+cc66_arm_drop = 6.5;         // how far arms extend below beam bottom, down post
+cc66_gauge = 0.1793;         // 7-gauge steel ~0.179"
+
 // ============================================
 // COLORS
 // ============================================

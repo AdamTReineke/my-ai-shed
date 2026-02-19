@@ -24,7 +24,7 @@ module pier(spec) {
     // Pier top position depends on support type
     ground_z = ground_height(x, y);
     pier_top = is_saddle_position(x)
-        ? beam_bottom_z - post_base_height
+        ? beam_bottom_z
         : ground_z + pier_above_ground;
     pier_bottom = pier_top - total_height;
 
@@ -45,45 +45,67 @@ module pier(spec) {
     }
 }
 
-// Post base (simplified Simpson ABU66SS style) - for positions WITH posts
-module post_base(x, y) {
-    echo(str("CUTLIST,Post base (x=", x, " y=", y, "),Simpson ABU66SS,1,6\" x 6\" base plate"));
-    base_size = 6;
-    base_plate_height = 0.25;
-    top_z = pier_top_z(x, y);
-
-    color(color_steel)
-        translate([x, y, top_z]) {
-            // Bottom plate
-            up(base_plate_height / 2)
-                cuboid([base_size, base_size, base_plate_height], anchor = CENTER);
-            // Standoff corners (4 small posts)
-            for (dx = [-2, 2])
-                for (dy = [-2, 2])
-                    translate([dx, dy, base_plate_height])
-                        cuboid([0.5, 0.5, post_base_height], anchor = BOTTOM);
-        }
+// ABU66SS U-channel helper - renders the bracket with base plate at base_z, centered at (cx, cy)
+// interior_w: clear interior width (N-S); the member being held sits inside this gap.
+// The U opens upward; member slides in from above.
+module abu66ss_channel(cx, cy, base_z, interior_w) {
+    wall_h = abu66ss_height - abu66ss_base_h;
+    exterior_width = interior_w + 2 * abu66ss_gauge;
+    color(color_steel) translate([cx, cy, base_z]) {
+        // Base plate (spans exterior width)
+        cuboid([abu66ss_length, exterior_width, abu66ss_base_h], anchor = BOTTOM);
+        // North wall — inner face at +interior_w/2
+        translate([0,  interior_w/2 + abu66ss_gauge/2, abu66ss_base_h])
+            cuboid([abu66ss_length, abu66ss_gauge, wall_h], anchor = BOTTOM);
+        // South wall — inner face at -interior_w/2
+        translate([0, -interior_w/2 - abu66ss_gauge/2, abu66ss_base_h])
+            cuboid([abu66ss_length, abu66ss_gauge, wall_h], anchor = BOTTOM);
+        // No end walls — ABU66SS is open on E and W faces (member slides in from top)
+    }
 }
 
-// Beam saddle (Simpson ABU66SS style) - for east positions with NO post
-// Beam sits directly in saddle mounted on pier
+// Post base (Simpson ABU66SS) - for positions WITH posts
+// Base plate sits on pier top; post slides in from above (interior = post width)
+module post_base(x, y) {
+    echo(str("CUTLIST,Post base (x=", x, " y=", y, "),Simpson ABU66SS,1,post base"));
+    abu66ss_channel(x, y, pier_top_z(x, y), post_width);
+}
+
+// Beam saddle (Simpson ABU66SS) - for positions with NO post
+// Base plate at beam_bottom_z; walls rise up around beam sides (interior = beam visual width)
 module beam_saddle(x, y) {
-    echo(str("CUTLIST,Beam saddle (x=", x, " y=", y, "),Simpson ABU66SS,1,6\" x 6\" saddle"));
-    saddle_width = 6;        // Saddle width
-    saddle_height = beam_height;  // Tall enough to support beam
-    plate_height = 0.25;
+    echo(str("CUTLIST,Beam saddle (x=", x, " y=", y, "),Simpson ABU66SS,1,beam saddle"));
+    beam_visual_width = beam_total_thickness + 2 * board_gap;
+    abu66ss_channel(x, y, beam_bottom_z, beam_visual_width);
+}
 
-    // Saddle mounts at beam bottom elevation (pier must be taller here)
-    saddle_bottom = beam_bottom_z - post_base_height;
+// CC66 post cap - sits at top of post, cradles beam from above
+// Two U-channels sharing a base plate at beam_bottom_z:
+//   Lower U (open upward):  base plate at beam_bottom_z, arms drop down E-W post faces
+//   Upper U (open downward): base plate at beam_bottom_z, walls rise up N/S beam faces then cap plate at top
+module cc66_cap(x, y) {
+    echo(str("CUTLIST,CC66 post cap (x=", x, " y=", y, "),Simpson CC66,1,post cap"));
+    beam_top_z = beam_bottom_z + beam_height;
+    color(color_steel) {
+        translate([x, y, beam_bottom_z]) {
+            // Shared base plate at beam_bottom_z
+            cuboid([cc66_saddle_height, cc66_saddle_depth, cc66_gauge], anchor = BOTTOM);
 
-    color(color_steel)
-        translate([x, y, saddle_bottom]) {
-            // Bottom plate on pier
-            up(plate_height / 2)
-                cuboid([saddle_width, saddle_width, plate_height], anchor = CENTER);
-            // Side flanges that hold beam
-            for (dy = [-beam_total_thickness/2 - 0.25, beam_total_thickness/2 + 0.25])
-                translate([0, dy, plate_height])
-                    cuboid([saddle_width, 0.25, saddle_height], anchor = BOTTOM);
+            // Upper U (open upward) — base plate at beam_bottom_z, walls rise 5.5" up N/S beam faces
+            // Interior = 5.5" (beam width) + 1/16" each side for visual clearance
+            upper_u_inner = 5.5/2 + 1/16;  // inner face offset from center
+            // South wall
+            translate([0, -(upper_u_inner + cc66_gauge/2), cc66_gauge])
+                cuboid([cc66_saddle_height, cc66_gauge, 5.5], anchor = BOTTOM);
+            // North wall
+            translate([0,  (upper_u_inner + cc66_gauge/2), cc66_gauge])
+                cuboid([cc66_saddle_height, cc66_gauge, 5.5], anchor = BOTTOM);
+
+            // Lower U (upright, open upward) — arms drop down E-W post faces
+            translate([-post_width/2 - cc66_gauge/2, 0, 0])
+                cuboid([cc66_gauge, cc66_saddle_depth, cc66_arm_drop], anchor = TOP);
+            translate([ post_width/2 + cc66_gauge/2, 0, 0])
+                cuboid([cc66_gauge, cc66_saddle_depth, cc66_arm_drop], anchor = TOP);
         }
+    }
 }

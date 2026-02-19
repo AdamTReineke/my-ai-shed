@@ -13,6 +13,7 @@ module post(x, y) {
         color(color_pt_wood, wood_alpha)
             translate([x, y, post_bottom])
                 cuboid([post_width, post_depth, height], anchor = BOTTOM);
+        cc66_cap(x, y);
     }
 }
 
