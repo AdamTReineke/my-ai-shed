@@ -6,7 +6,11 @@
       "Bash(git add:*)",
       "Bash(dir:*)",
       "Bash(git mv:*)",
-      "WebSearch"
+      "WebSearch",
+      "mcp__trello__list_boards",
+      "mcp__trello__get_lists",
+      "mcp__trello__add_list_to_board",
+      "mcp__trello__add_card_to_list"
     ]
   },
   "enableAllProjectMcpServers": true,
