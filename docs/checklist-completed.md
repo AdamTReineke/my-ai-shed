@@ -4,6 +4,29 @@
 
 ---
 
+## Open Questions & Design Decisions — Decisions Made
+
+- [x] **Framing**: 2x6 studs at 16" o.c., insulated
+- [x] **Siding**: HardiePlank cedarmill texture, 8.25" plank with ~7" exposure, 16' on back (south), 12' on other sides
+- [x] **Siding finish**: Primed, field-painted to match house
+- [x] **Size**: 16' x 12' (192 sf, under 200 sf threshold)
+- [x] **Permitting**: No structural permit; electrical permitted separately
+- [x] **HVAC**: DIY mini-split and/or dehumidifier
+- [x] **Location**: Redmond, WA (climate zone 4C, marine)
+- [x] **Design life**: 50 years
+- [x] **Primary use**: Storage (all walls clear, minimal electrical)
+- [x] **Wall covering**: 1/2" CDX plywood (from Dunn order), painted if needed
+- [x] **Windows**: None
+- [x] **Door**: Single wood man door (already purchased, measurements TBD), north wall east end
+- [x] **Floor insulation**: Polyiso rigid foam between joists (Rmax ThermoSheath-3, 3" R-20.3, purchased)
+- [x] **Roof insulation**: At roof plane (unvented/hot roof)
+- [x] **Electrical**: Underground trench (DIY), 2 circuits (mini-split dedicated + lights/outlets), electrician for wiring. Two-switch design: one for lights, one master kill switch.
+- [x] **Pier skirting**: None for now
+- [x] **Exterior colors**: Matching house (already selected)
+- [x] **Access**: Steps with landing at door (door opens inward)
+
+---
+
 ## 1. Site Preparation & Layout
 
 ### Survey & Marking
