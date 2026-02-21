@@ -2,6 +2,8 @@
 
 *Building from the ground up - 16' x 12' shed with joist-over-beam floor on concrete piers*
 
+Completed sections should be moved to checklist-completed.md
+
 ---
 
 ## Open Questions & Design Decisions
@@ -18,6 +20,7 @@
 - [x] **Location**: Redmond, WA (climate zone 4C, marine)
 - [x] **Design life**: 50 years
 - [x] **Primary use**: Storage (all walls clear, minimal electrical)
+- [x] **Wall covering**: 1/2" CDX plywood (from Dunn order), painted if needed
 - [x] **Windows**: None
 - [x] **Door**: Single wood man door (already purchased, measurements TBD), north wall east end
 - [x] **Floor insulation**: Polyiso rigid foam between joists (Rmax ThermoSheath-3, 3" R-20.3, purchased)
@@ -29,27 +32,13 @@
 
 ### Still Open
 
-#### Roof
-- [ ] **Metal roof profile?** Standing seam vs exposed fastener - see tradeoffs above. What's your preference?
-- [ ] **Roof color?**
-- [ ] **Gutters?** Recommend yes for pier foundation protection. Aluminum, with downspout extensions 4'+ from piers.
-
-<move to a new file, 11-trades.md. Well insulated with rarely being opened and no heat load, it seems that tiny will be great.>
-#### HVAC Details
-- [ ] **Mini-split sizing?** 9,000 BTU (3/4 ton) is likely right for well-insulated 192 sf storage. 12,000 BTU if you want fast heat-up.
-- [ ] **Mini-split placement?** Which wall for indoor head? Which wall for outdoor unit?
-- [ ] **Dehumidifier?** In Redmond, a mini-split alone may not control humidity in shoulder seasons (50F, 90% RH). A standalone dehumidifier with drain line through the floor is worth considering for protecting stored items.
-
-#### Interior Finish
-- [ ] **Wall covering?** For a storage shed, three reasonable options:
-  - Leave Rockwool exposed with wire stays (cheapest, functional)
-  - 1/2" plywood on walls you want to hang things on, exposed elsewhere
-  - Full plywood all walls (~$200-300 in material)
-- [ ] **Floor finish?** Epoxy, sealer, or bare Advantech?
-
-<move to a new file, 11-trades.md>
-#### Exterior
-- [ ] **Exterior lighting?** Motion-activated, switched from inside, or none?
+- [ ] **Roof profile** — standing seam vs. exposed fastener (see `docs/7-roof.md`)
+- [ ] **Roof color**
+- [ ] **Gutters** — aluminum recommended for pier protection; 4'+ downspout extensions (see `docs/7-roof.md`)
+- [ ] **Mini-split sizing and placement** — 9k vs. 12k BTU; which walls for head and outdoor unit (see `docs/11-trades.md`)
+- [ ] **Dehumidifier** — standalone unit with floor drain line for shoulder-season humidity (see `docs/11-trades.md`)
+- [ ] **Floor finish** — epoxy, sealer, or bare Advantech (see `docs/9-finishings.md`)
+- [ ] **Exterior lighting** — motion-activated, switched from inside, or none (see `docs/11-trades.md`)
 
 ---
 
@@ -70,62 +59,6 @@
 - [x] Framing nailer (optional but recommended)
 - [x] Safety glasses, hearing protection, gloves
 - [x] First aid kit on site
-
----
-
-## 1. Site Preparation & Layout
-
-### Survey & Marking
-- [x] Verify property setbacks with Redmond requirements
-- [x] Mark 16' x 12' footprint corners (16' E-W, 12' N-S)
-- [x] Mark 6 pier center locations (1', 8', 15' from east edge on each beam line)
-- [x] Verify beam lines at 1.5' and 10.5' from north edge
-- [x] Check diagonals for square
-- [x] Set up batter boards for string lines
-- [x] Establish elevation reference point (east = high ground)
-- [x] Survey ground slope (expect ~28" drop east to west)
-- [x] Calculate pier top elevations to achieve level beams
-
-### Site Clearing
-- [x] Remove vegetation from footprint + 2' perimeter
-- [x] Remove roots that could affect pier locations
-- [x] Grade for drainage away from shed location
-
----
-
-## 2. Concrete Piers (6 total)
-
-### Excavation
-- [x] Dig 4 corner pier holes: wide enough for BigFoot 25.5" base × 24" deep
-- [x] Dig 2 center pier holes: wide enough for BigFoot 29.5" base × 24" deep
-- [x] Verify depth below 12" frost line
-- [x] Level and compact bottom of each hole (BigFoot base must sit on undisturbed/compacted soil)
-- [x] Check for groundwater intrusion
-
-**Note:** East and center piers rise to beam level — beam sits directly on concrete via saddle hardware (no posts). Only west piers are short and use 6×6 posts. Verify pier top elevations at east/center positions match beam bottom elevation. See `shed/concrete.js` for as-built measurements.
-
-### Forming & Pouring
-- [x] Check weather - need 48+ hours without rain/freeze
-- [x] Set BigFoot form feet in holes, level on compacted soil
-- [x] Attach sonotubes to BigFoot bases (10" for corners, 12" for centers; cut tubes to length)
-  <actual dimensions as-poured are recorded in concrete.js>
-- [x] Set tube forms plumb
-- [x] Level form tops at correct elevations (accounting for 28" slope)
-- [x] Brace forms securely
-- [x] East and center pier forms taller (beam sits directly on saddle at these 4 positions)
-- [x] Cut GFRP rebar to length (hacksaw — wear dust mask for fiberglass dust)
-- [x] Insert one vertical GFRP bar per pier partway through pour, adjust to keep centered
-- [x] Mix/order 4000 psi concrete
-- [x] Pour and vibrate to consolidate
-- [x] Screed tops flat and level
-- [x] Leave smooth for post-install anchors
-- [x] Cover and protect from rain
-- [x] Cure minimum 7 days before loading
-
-### Post-Pour
-- [x] Strip tube forms
-- [x] Backfill around piers
-- [x] Compact backfill
 
 ---
 
@@ -307,7 +240,7 @@
 
 ## 10. Roof Sheathing
 
-- [ ] Install 1/2" CDX or OSB
+- [ ] Install 7/16" Zip System panels
 - [ ] Start at eave, work up to ridge
 - [ ] Stagger joints
 - [ ] H-clips between panels if required
@@ -341,7 +274,7 @@
 ## 12. Exterior Walls
 
 ### Sheathing
-- [ ] Install 7/16" Zip System panels (purchased — 24 sheets); integrated WRB replaces plain housewrap on sheathing face
+- [ ] Install 7/16" Zip System panels (purchased — 14 sheets); integrated WRB replaces plain housewrap on sheathing face
 - [ ] Nail per diaphragm schedule: 8d (3" ring-shank HDG) 6" o.c. edges / 12" o.c. field into studs
 - [ ] Leave gap at door opening
 
@@ -431,8 +364,8 @@
 - [ ] Optional: add 1-1.5" rigid foam board under rafters for extra R-value (~R-20 to R-23 total)
 - [ ] Optional: install CertainTeed MemBrain smart vapor retarder under rafters (~$50-70 for whole ceiling, good insurance for hot roof)
 
-### Interior Walls (optional - see Open Questions)
-- [ ] Install interior sheathing if desired (plywood recommended over drywall for storage shed)
+### Interior Walls
+- [ ] Install 1/2" CDX plywood on all walls (from Dunn order); paint if desired
 
 ### Floor Finish (optional - see Open Questions)
 - [ ] Apply epoxy, sealer, or leave bare Advantech
@@ -512,9 +445,9 @@
 
 ### Sheathing
 - [ ] 3/4" T&G Advantech subfloor × 6 sheets
-- [ ] 1/2" CDX or OSB roof sheathing × 10 sheets
+- [x] 7/16" Zip System roof sheathing × 10 sheets (purchased — Dunn order)
 - [ ] 1/2" structural plywood for truss gussets × 2 sheets
-- [x] 7/16" Zip System wall panels × 24 sheets (purchased — integrated WRB)
+- [x] 7/16" Zip System wall panels × 14 sheets (purchased — Dunn order, integrated WRB)
 
 ### Roofing
 - [ ] Metal roofing panels (~200 sf)
