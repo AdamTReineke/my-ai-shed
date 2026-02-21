@@ -34,6 +34,7 @@
 - [ ] **Roof color?**
 - [ ] **Gutters?** Recommend yes for pier foundation protection. Aluminum, with downspout extensions 4'+ from piers.
 
+<move to a new file, 11-trades.md. Well insulated with rarely being opened and no heat load, it seems that tiny will be great.>
 #### HVAC Details
 - [ ] **Mini-split sizing?** 9,000 BTU (3/4 ton) is likely right for well-insulated 192 sf storage. 12,000 BTU if you want fast heat-up.
 - [ ] **Mini-split placement?** Which wall for indoor head? Which wall for outdoor unit?
@@ -46,20 +47,9 @@
   - Full plywood all walls (~$200-300 in material)
 - [ ] **Floor finish?** Epoxy, sealer, or bare Advantech?
 
+<move to a new file, 11-trades.md>
 #### Exterior
 - [ ] **Exterior lighting?** Motion-activated, switched from inside, or none?
-
-### Suggestions for 50-Year Life
-
-> **Highest-impact longevity upgrades** (in priority order):
-> 1. **Advantech subfloor** over standard plywood - won't swell from moisture exposure, critical for PNW
-> 2. **Standing seam metal roof** - eliminates the 25-year re-fastening problem
-> 3. **Mineral wool insulation** (~$250 premium) - hydrophobic, fireproof, dimensionally stable forever
-> 4. **Gutters with extensions** - protects pier foundations from decades of splash erosion
-> 5. **HardiBoard siding + HardieTrim** (already chosen) - fiber cement is a 50-year material
-> 6. **Hardware cloth under floor** - protects foam insulation from rodents, critical without skirting
-> 7. **Stainless steel or HDG fasteners throughout** - regular fasteners corrode in PNW marine air
-> 8. **Maintain the wood door** - repaint/reseal every 3-5 years, especially bottom edge
 
 ---
 
@@ -71,15 +61,15 @@
 - [ ] Pull electrical permit for power feed to shed
 
 ### Tools & Safety
-- [ ] Post-hole digger or auger
-- [ ] Level (4' minimum)
-- [ ] String line and line level
-- [ ] Transit or laser level (for elevation control)
-- [ ] Circular saw / miter saw
-- [ ] Drill/impact driver
-- [ ] Framing nailer (optional but recommended)
-- [ ] Safety glasses, hearing protection, gloves
-- [ ] First aid kit on site
+- [x] Post-hole digger or auger
+- [x] Level (4' minimum)
+- [x] String line and line level <used laser level instead>
+- [x] Transit or laser level (for elevation control)
+- [x] Circular saw / miter saw
+- [x] Drill/impact driver
+- [x] Framing nailer (optional but recommended)
+- [x] Safety glasses, hearing protection, gloves
+- [x] First aid kit on site
 
 ---
 
@@ -87,54 +77,55 @@
 
 ### Survey & Marking
 - [x] Verify property setbacks with Redmond requirements
-- [ ] Mark 16' x 12' footprint corners (16' E-W, 12' N-S)
-- [ ] Mark 6 pier center locations (1', 8', 15' from east edge on each beam line)
-- [ ] Verify beam lines at 1.5' and 10.5' from north edge
-- [ ] Check diagonals for square
-- [ ] Set up batter boards for string lines
-- [ ] Establish elevation reference point (east = high ground)
-- [ ] Survey ground slope (expect ~28" drop east to west)
-- [ ] Calculate pier top elevations to achieve level beams
+- [x] Mark 16' x 12' footprint corners (16' E-W, 12' N-S)
+- [x] Mark 6 pier center locations (1', 8', 15' from east edge on each beam line)
+- [x] Verify beam lines at 1.5' and 10.5' from north edge
+- [x] Check diagonals for square
+- [x] Set up batter boards for string lines
+- [x] Establish elevation reference point (east = high ground)
+- [x] Survey ground slope (expect ~28" drop east to west)
+- [x] Calculate pier top elevations to achieve level beams
 
 ### Site Clearing
-- [ ] Remove vegetation from footprint + 2' perimeter
-- [ ] Remove roots that could affect pier locations
-- [ ] Grade for drainage away from shed location
+- [x] Remove vegetation from footprint + 2' perimeter
+- [x] Remove roots that could affect pier locations
+- [x] Grade for drainage away from shed location
 
 ---
 
 ## 2. Concrete Piers (6 total)
 
 ### Excavation
-- [ ] Dig 4 corner pier holes: wide enough for BigFoot 25.5" base × 24" deep
-- [ ] Dig 2 center pier holes: wide enough for BigFoot 29.5" base × 24" deep
-- [ ] Verify depth below 12" frost line
-- [ ] Level and compact bottom of each hole (BigFoot base must sit on undisturbed/compacted soil)
-- [ ] Check for groundwater intrusion
+- [x] Dig 4 corner pier holes: wide enough for BigFoot 25.5" base × 24" deep
+- [x] Dig 2 center pier holes: wide enough for BigFoot 29.5" base × 24" deep
+- [x] Verify depth below 12" frost line
+- [x] Level and compact bottom of each hole (BigFoot base must sit on undisturbed/compacted soil)
+- [x] Check for groundwater intrusion
 
 **Note:** East and center piers rise to beam level — beam sits directly on concrete via saddle hardware (no posts). Only west piers are short and use 6×6 posts. Verify pier top elevations at east/center positions match beam bottom elevation. See `shed/concrete.js` for as-built measurements.
 
 ### Forming & Pouring
-- [ ] Check weather - need 48+ hours without rain/freeze
-- [ ] Set BigFoot form feet in holes, level on compacted soil
-- [ ] Attach sonotubes to BigFoot bases (10" for corners, 12" for centers; cut tubes to length)
-- [ ] Set tube forms plumb
-- [ ] Level form tops at correct elevations (accounting for 28" slope)
-- [ ] Brace forms securely
-- [ ] East and center pier forms taller (beam sits directly on saddle at these 4 positions)
-- [ ] Cut GFRP rebar to length (hacksaw — wear dust mask for fiberglass dust)
-- [ ] Insert one vertical GFRP bar per pier partway through pour, adjust to keep centered
-- [ ] Mix/order 4000 psi concrete
-- [ ] Pour and vibrate to consolidate
-- [ ] Screed tops flat and level
-- [ ] Leave smooth for post-install anchors
-- [ ] Cover and protect from rain
-- [ ] Cure minimum 7 days before loading
+- [x] Check weather - need 48+ hours without rain/freeze
+- [x] Set BigFoot form feet in holes, level on compacted soil
+- [x] Attach sonotubes to BigFoot bases (10" for corners, 12" for centers; cut tubes to length)
+  <actual dimensions as-poured are recorded in concrete.js>
+- [x] Set tube forms plumb
+- [x] Level form tops at correct elevations (accounting for 28" slope)
+- [x] Brace forms securely
+- [x] East and center pier forms taller (beam sits directly on saddle at these 4 positions)
+- [x] Cut GFRP rebar to length (hacksaw — wear dust mask for fiberglass dust)
+- [x] Insert one vertical GFRP bar per pier partway through pour, adjust to keep centered
+- [x] Mix/order 4000 psi concrete
+- [x] Pour and vibrate to consolidate
+- [x] Screed tops flat and level
+- [x] Leave smooth for post-install anchors
+- [x] Cover and protect from rain
+- [x] Cure minimum 7 days before loading
 
 ### Post-Pour
-- [ ] Strip tube forms
-- [ ] Backfill around piers
-- [ ] Compact backfill
+- [x] Strip tube forms
+- [x] Backfill around piers
+- [x] Compact backfill
 
 ---
 
@@ -146,11 +137,11 @@
 - [ ] Verify elevations match design (east piers highest)
 
 ### Anchor Installation
-- [ ] Drill for 1/2" × 7" wedge anchors
-- [ ] Install Simpson ABU66SS at east positions (2) - beam direct to concrete
-- [ ] Install Simpson ABU66SS at center positions (2) - beam direct to concrete
-- [ ] Install Simpson ABU66SS at west positions (2) - for 6×6 posts
-- [ ] Torque all anchors to spec
+- [ ] Drill 5/8" holes for Titen HD screw anchors (min 6" deep, overdrill 1/2" past embedment)
+- [ ] Install Simpson ABU66SS at east positions (2) - beam direct to concrete, using 5/8" × 6" Titen HD (THDB62600H4SS)
+- [ ] Install Simpson ABU66SS at center positions (2) - beam direct to concrete, using 5/8" × 6" Titen HD
+- [ ] Install Simpson ABU66SS at west positions (2) - for 6×6 posts, using 5/8" × 6" Titen HD
+- [ ] Torque all anchors to spec (max 85 ft-lbf)
 
 ---
 
@@ -167,27 +158,27 @@
 - [ ] Set posts in ABU66SS bases at west positions
 - [ ] Check plumb on two faces
 - [ ] Temporarily brace posts
-- [ ] Install Simpson AC6SS post caps on both west posts
+- [ ] Install Simpson CC66 post caps on both west posts
 
 ---
 
 ## 5. Beams (2 × 16')
 
-### Fabrication (if built-up)
-- [ ] Select straight 2×12 stock
-- [ ] Cut 4 pieces at 16'
-- [ ] Face-nail pairs with 10d HDG nails at 16" o.c., staggered
+### Fabrication
+- [ ] Select straight stock: 2×10 outer plies (4 pcs) + 3×10 center ply (2 pcs), all 16' PT Hem-Fir #2
 - [ ] Crown all pieces same direction
+- [ ] Clamp all 3 plies together, drill 1/2" holes through full 5.5" width
+- [ ] Laminate with 1/2" × 6.5" HDG carriage bolt + nut + 2 washers, staggered top/bottom at 24" o.c. (8 bolts per beam); edge distance ≥ 1.5"
 
 ### Installation
 - [ ] Set beams in ABU66SS saddles at east end (beam direct to concrete)
 - [ ] Set beams in ABU66SS saddles at center (beam direct to concrete)
 - [ ] Shim all 4 ABU66SS positions with 1/2" structural plywood each side of beam
-- [ ] Set beams in AC6SS post caps at west posts
+- [ ] Set beams in CC66 post caps at west posts
 - [ ] Verify beams are level east-to-west
 - [ ] Verify beams are parallel (9' apart center-to-center)
 - [ ] Verify 1' cantilever at each end
-- [ ] Nail post caps to beams
+- [ ] Bolt post caps to beams per CC66 spec (5/8" × 8" HDG bolts)
 
 ---
 
@@ -195,14 +186,13 @@
 
 ### Layout
 - [ ] Mark joist locations on beams at 16" o.c.
-- [ ] Verify 13 joists fit in 16' span
-- [ ] Install Simpson LUS28 joist hangers at all locations (26 total)
+- [ ] Verify 13 joists fit in 16' span (joist-over-beam framing — no hangers)
 
 ### Joist Installation
-- [ ] Cut 13 joists: 2×8 × 12'
-- [ ] Set joists in hangers
-- [ ] Verify 1.5' cantilever past each beam
-- [ ] Nail hangers per Simpson schedule
+- [ ] Cut 11 field joists: 2×8 × 12'
+- [ ] Set joists on top of beams, bear directly (joist-over-beam)
+- [ ] Verify 1.5' cantilever past each beam on both N and S sides
+- [ ] Install Simpson H2.5ASS hurricane ties at each joist-beam intersection (26 total — 13 joists × 2 beams); SS nails per Simpson schedule
 - [ ] Check joists for level and adjust as needed
 
 ### Rim Joists
@@ -243,7 +233,7 @@
 ### Bottom Plates
 - [ ] Cut PT bottom plates to length
 - [ ] Mark stud layout at 16" o.c.
-- [ ] Mark door rough opening on north wall (east end, 38" wide)
+- [ ] Mark door rough opening on north wall (east end, ~33" wide × ~78" tall)
 - ~~Mark window rough openings~~ - No windows
 
 ### Stud Walls (2×6 at 16" o.c.)
@@ -351,24 +341,28 @@
 ## 12. Exterior Walls
 
 ### Sheathing
-- [ ] Install OSB or plywood sheathing
-- [ ] Nail per diaphragm schedule
+- [ ] Install 7/16" Zip System panels (purchased — 24 sheets); integrated WRB replaces plain housewrap on sheathing face
+- [ ] Nail per diaphragm schedule: 8d (3" ring-shank HDG) 6" o.c. edges / 12" o.c. field into studs
 - [ ] Leave gap at door opening
 
 ### Weather Barrier
-- [ ] Install house wrap or building paper (shingle-lap from bottom up)
-- [ ] Tape all horizontal and vertical seams
-- [ ] Wrap into door opening, fold to inside
-- [ ] Tape or integrate flashing at door jambs, then head (in order)
+- [ ] Tape all Zip panel seams with Zip tape
+- [ ] At door opening: apply flexible flashing tape (Vycor or similar) at sill, jambs, head (in that order)
 - [ ] Integrate with roof underlayment at top
+- [ ] Install Tyvek at sill and any areas not covered by Zip panels
 
-### Siding (HardiePlank Cedarmill, 8.25" plank, ~7" exposure)
-- [ ] Install starter strip at bottom of each wall
-- [ ] Install aluminum siding corner trim
-- [ ] Install door trim/casing
-- [ ] Install HardiePlank courses from bottom up, 16' lengths on south wall, 12' on other walls
-- [ ] Blind-nail per James Hardie spec (1" from top of plank, into studs)
-- [ ] Caulk all penetrations and trim joints
+### Rainscreen
+- [ ] Install Cor-A-Vent SV-3 bug screen strip at base of each wall (¾" gap for air intake)
+- [ ] Install 1×3 vertical furring strips at 16" o.c. over Zip panels, aligned with studs (#8 × 3" SS screws)
+- [ ] Leave top gap open behind fascia for exhaust
+
+### Siding (HardiePlank Cedarmill, 8.25" plank, 6.25" exposure)
+- [ ] Install HardiePlank starter strip at bottom of each wall (behind first course)
+- [ ] Install aluminum outside corner pieces course-by-course (4 corners, 16 courses = 64 pieces)
+- [ ] Install door trim/casing (PVC or HardieTrim)
+- [ ] Install HardiePlank courses from bottom up — all walls use 12' planks; N/S walls need 2 planks per course with butt joints staggered ≥24" between courses
+- [ ] Blind-nail 1" from top of plank with 3" SS ring-shank siding nails, into studs (through furring + Zip OSB)
+- [ ] Leave 1/8" gap at butt joints; caulk with paintable exterior sealant
 - [ ] Prime and paint all cut edges immediately (exposed fiber cement absorbs water)
 - [ ] Field-paint to match house
 
@@ -482,17 +476,18 @@
 - [ ] Sonotubes 12" dia × 48" × 2 (centers, cut to length on site)
 - [ ] GFRP (fiberglass) rebar #4 - ~12 lf total (one ~2' vertical bar per pier)
 - [ ] Zip ties (for securing rebar to tube tops during pour)
-- [ ] Simpson ABU66SS × 4 (east + center — beam direct to concrete)
-- [ ] Simpson ABU66SS × 2 (west only — for 6×6 posts)
-- [ ] Simpson AC6SS × 2 (west only — beam-to-post)
-- [ ] Wedge anchors 1/2" × 7" × 6
+- [ ] Simpson ABU66SS × 6 (all positions — beam saddle at east/center, post base at west)
+- [ ] Simpson CC66 × 2 (west only — beam-to-post column caps)
+- [ ] Titen HD screw anchors 5/8" × 6" (THDB62600H4SS) × 6 — purchased
+- [ ] 1/2" × 7" SS hex bolts + nuts + washers × 12 sets (ABU66SS beam attachment) — purchased
+- [ ] 5/8" × 8" HDG bolts + nuts + washers × 12 sets (CC66 beam/post attachment) — purchased
 - [ ] Structural shims 1/2" plywood × 8 pcs (for ABU66SS, each side of beam at 4 positions)
 
 ### Framing Lumber (PT for ground contact)
 - [ ] 6×6 PT posts - 2 pcs for west positions only (measure after pier cure)
 - [ ] 2×10 PT × 16' × 4 (beam outer plies: 2 per beam × 2 beams)
 - [ ] 3×10 PT × 16' × 2 (beam center ply: 1 per beam × 2 beams)
-- [ ] 2×8 PT × 12' × 13 (joists)
+- [ ] 2×8 PT × 12' × 11 (field joists)
 - [ ] 2×8 PT × 16' × 2 (rim joists)
 - [ ] 2×8 PT blocking stock
 
@@ -503,20 +498,23 @@
 - [ ] 2×6, 2×8 header stock (only door opening, no windows)
 
 ### Hardware
-- [ ] Simpson LUS28 × 26
-- [ ] Simpson A35 × 48 (optional for blocking)
-- [ ] Hurricane ties/clips
-- [ ] Joist hanger nails
-- [ ] 10d HDG nails
-- [ ] 8d ring-shank nails
-- [ ] Framing screws
-- [ ] Structural screws for headers
+- [ ] Simpson H2.5ASS hurricane ties × 26 (joist-over-beam uplift restraint — stainless)
+- [ ] Simpson H2.5A hurricane ties × 18 (truss-to-top-plate — HDG)
+- [ ] Simpson A35 × 48 (optional for blocking — alternative to toe-nailing)
+- [ ] Simpson SD9 × 1-1/2" connector screws × 200 (truss ties) — purchased
+- [ ] 1/2" × 6.5" HDG carriage bolts + nuts + washers × 16 sets (beam lamination) — purchased
+- [ ] 3" × 0.131" HDG ring-shank framing nails (blocking, subfloor, wall sheathing, roof sheathing) — purchased
+- [ ] 2" × 0.113" HDG ring-shank nails × 3,000 ct (truss gussets) — purchased
+- [ ] 16d HDG smooth common nails (rim joists) — purchased
+- [ ] 16d bright common nails (wall framing, lookouts) — purchased (short ~100, buy one more box)
+- [ ] 3" SS ring-shank siding nails (HardiePlank)
+- [ ] #8 × 3" SS deck screws (furring strips)
 
 ### Sheathing
-- [ ] 3/4" subfloor × 6 sheets
-- [ ] 1/2" roof sheathing × 10 sheets
-- [ ] 1/2" plywood for gussets × 2 sheets
-- [ ] Wall sheathing - OSB or plywood (required as nail base for HardiePlank + structural bracing)
+- [ ] 3/4" T&G Advantech subfloor × 6 sheets
+- [ ] 1/2" CDX or OSB roof sheathing × 10 sheets
+- [ ] 1/2" structural plywood for truss gussets × 2 sheets
+- [x] 7/16" Zip System wall panels × 24 sheets (purchased — integrated WRB)
 
 ### Roofing
 - [ ] Metal roofing panels (~200 sf)
@@ -528,12 +526,17 @@
 - [ ] Drip edge
 
 ### Siding & Exterior
-- [ ] HardiePlank 8.25" cedarmill - calculate lf: south wall 16' lengths, other walls 12' lengths
-- [ ] Aluminum siding corner trim - to be purchased (~56 lf for 4 corners)
-- [ ] Door casing - TBD
-- [ ] House wrap
-- [ ] Tape for house wrap
-- [ ] HardiePlank-compatible nails (HDG siding nails, blind-nail type)
+- [ ] HardiePlank 8.25" cedarmill 12' planks — ~70 to start (all walls use 12' stock; buy more as needed)
+- [ ] HardiePlank starter strip — 5 strips (12' each, covers 53 lf perimeter minus door)
+- [ ] Aluminum outside corner pieces — 64 pcs (4 corners × 16 courses, sold individually)
+- [ ] 1×3 furring strips × 8' — ~58 strips (rainscreen)
+- [ ] Cor-A-Vent SV-3 bug screen — ~60 lf (base of rainscreen gap)
+- [ ] Metal Z-flashing — ~60 lf (base of wall)
+- [ ] Zip tape (Zip System seam tape)
+- [ ] Tyvek (for sill/jamb flashing areas not covered by Zip panels)
+- [ ] Door casing/trim — PVC or HardieTrim
+- [ ] 3" SS ring-shank siding nails (~1,500 ct)
+- [ ] #8 × 3" SS deck screws (~120 ct, furring strips)
 - [ ] Caulk (exterior grade, paintable)
 - [ ] Primer + paint (match house)
 
