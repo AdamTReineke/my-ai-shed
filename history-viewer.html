@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude History Viewer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.5; }
+
+  #drop-zone {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100vh; gap: 16px; text-align: center; padding: 32px;
+  }
+  #drop-zone.drag-over { background: #161b22; }
+  #drop-zone h1 { font-size: 1.5rem; color: #e6edf3; }
+  #drop-zone p { color: #8b949e; }
+  #file-input { display: none; }
+  .btn {
+    display: inline-block; padding: 10px 20px; background: #238636; color: #fff;
+    border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;
+  }
+  .btn:hover { background: #2ea043; }
+
+  #viewer { display: none; }
+
+  .toolbar {
+    position: sticky; top: 0; z-index: 10; background: #161b22;
+    border-bottom: 1px solid #30363d; padding: 10px 16px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .toolbar h1 { font-size: 1rem; color: #e6edf3; flex: 1; }
+  .toolbar input[type=search] {
+    background: #0d1117; border: 1px solid #30363d; color: #c9d1d9;
+    border-radius: 6px; padding: 6px 10px; font-size: 0.85rem; width: 240px;
+  }
+  .toolbar input[type=search]:focus { outline: none; border-color: #388bfd; }
+  .session-jump { display: flex; gap: 6px; align-items: center; }
+  .session-jump button {
+    background: #21262d; border: 1px solid #30363d; color: #c9d1d9;
+    border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem;
+  }
+  .session-jump button:hover { background: #30363d; }
+  .session-jump select {
+    background: #21262d; border: 1px solid #30363d; color: #c9d1d9;
+    border-radius: 6px; padding: 4px 8px; font-size: 0.8rem;
+  }
+
+  #content { padding: 16px; max-width: 960px; margin: 0 auto; }
+
+  .session-marker {
+    display: flex; align-items: center; gap: 12px; margin: 24px 0 16px;
+  }
+  .session-marker:first-child { margin-top: 8px; }
+  .session-marker .line { flex: 1; height: 1px; background: #30363d; }
+  .session-marker .label {
+    font-size: 0.75rem; font-weight: 600; color: #8b949e; white-space: nowrap;
+    background: #161b22; border: 1px solid #30363d; border-radius: 12px;
+    padding: 2px 10px;
+  }
+
+  .entry { margin-bottom: 12px; border-radius: 8px; overflow: hidden; border: 1px solid #21262d; }
+  .entry.hidden { display: none; }
+  .entry-header {
+    display: flex; align-items: baseline; gap: 8px; padding: 8px 12px;
+    background: #161b22; border-bottom: 1px solid #21262d; cursor: pointer;
+  }
+  .entry-header:hover { background: #1c2128; }
+  .entry-num { font-size: 0.7rem; color: #484f58; min-width: 2.5em; text-align: right; }
+  .entry-time { font-size: 0.75rem; color: #8b949e; white-space: nowrap; }
+  .entry-display {
+    flex: 1; font-size: 0.9rem; color: #c9d1d9;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .entry-display .at-ref { color: #58a6ff; }
+  .pasted-count {
+    font-size: 0.7rem; color: #8b949e; background: #21262d;
+    border-radius: 4px; padding: 1px 6px; white-space: nowrap;
+  }
+  .expand-icon { font-size: 0.7rem; color: #484f58; }
+
+  .entry-body { padding: 12px; background: #0d1117; }
+  .entry-body.collapsed { display: none; }
+
+  .display-full {
+    font-size: 0.9rem; color: #c9d1d9; white-space: pre-wrap; word-break: break-word;
+    margin-bottom: 12px; padding: 10px; background: #161b22;
+    border-radius: 6px; border-left: 3px solid #388bfd;
+  }
+  .display-full .at-ref { color: #58a6ff; }
+
+  .pasted-section { margin-top: 8px; }
+  .pasted-label {
+    font-size: 0.75rem; font-weight: 600; color: #8b949e; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .pasted-label .type-badge {
+    background: #21262d; border-radius: 4px; padding: 1px 6px; font-weight: normal;
+  }
+  pre.pasted-content {
+    background: #161b22; border: 1px solid #30363d; border-radius: 6px;
+    padding: 12px; font-size: 0.8rem; overflow-x: auto;
+    white-space: pre-wrap; word-break: break-all; color: #c9d1d9;
+    max-height: 400px; overflow-y: auto;
+  }
+
+  .highlight { background: #b17e00; color: #fff; border-radius: 2px; padding: 0 1px; }
+
+  #stats { font-size: 0.75rem; color: #8b949e; }
+</style>
+</head>
+<body>
+
+<div id="drop-zone">
+  <h1>Claude History Viewer</h1>
+  <p>Drop a <code>.jsonl</code> history file here, or click to browse</p>
+  <label class="btn" for="file-input">Choose File</label>
+  <input type="file" id="file-input" accept=".jsonl,.json,.txt">
+  <p id="drop-hint" style="font-size:0.8rem; color:#484f58;">You can also drag and drop the file onto this page</p>
+</div>
+
+<div id="viewer">
+  <div class="toolbar">
+    <h1>Claude History — <span id="file-name"></span></h1>
+    <span id="stats"></span>
+    <input type="search" id="search" placeholder="Search messages…">
+    <div class="session-jump">
+      <button onclick="jumpSession(-1)">◀ Session</button>
+      <select id="session-select" onchange="jumpToSession(this.value)"></select>
+      <button onclick="jumpSession(1)">▶ Session</button>
+    </div>
+  </div>
+  <div id="content"></div>
+</div>
+
+<script>
+let allEntries = [];
+let sessionMarkers = [];
+let currentSessionIdx = 0;
+
+// Auto-load history.jsonl from same directory
+fetch('history.jsonl')
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(text => render(text, 'history.jsonl'))
+  .catch(() => { /* fall through to manual file picker */ });
+
+// File loading
+const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file) loadFile(file);
+});
+fileInput.addEventListener('change', e => { if (e.target.files[0]) loadFile(e.target.files[0]); });
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => render(e.target.result, file.name);
+  reader.readAsText(file);
+}
+
+function isSessionBreak(display) {
+  const t = (display || '').trim();
+  return t === '/clear' || t === '/exit' || t === '/clear ' || t === '/exit ';
+}
+
+function formatTime(ts) {
+  const d = new Date(ts);
+  return d.toLocaleString(undefined, {
+    month: 'short', day: 'numeric', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  });
+}
+
+function highlightAtRefs(text) {
+  return text.replace(/@[\w\\/\-.]+/g, m => `<span class="at-ref">${escHtml(m)}</span>`);
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function render(text, fileName) {
+  const lines = text.trim().split('\n').filter(l => l.trim());
+  allEntries = [];
+  for (const line of lines) {
+    try { allEntries.push(JSON.parse(line)); } catch {}
+  }
+
+  document.getElementById('file-name').textContent = fileName;
+  document.getElementById('drop-zone').style.display = 'none';
+  document.getElementById('viewer').style.display = 'block';
+
+  buildContent(allEntries, '');
+}
+
+function buildContent(entries, searchTerm) {
+  const content = document.getElementById('content');
+  content.innerHTML = '';
+  sessionMarkers = [];
+
+  let sessionNum = 0;
+  let sessionId = null;
+  let entryCount = 0;
+
+  for (let i = 0; i < entries.length; i++) {
+    const e = entries[i];
+
+    // Session break or new sessionId = new session
+    const newSession = isSessionBreak(e.display) || (e.sessionId !== sessionId && sessionId !== null);
+
+    if (sessionId === null || newSession) {
+      sessionNum++;
+      sessionId = e.sessionId;
+      const ts = formatTime(e.timestamp);
+      const marker = document.createElement('div');
+      marker.className = 'session-marker';
+      marker.dataset.sessionNum = sessionNum;
+      marker.innerHTML = `<div class="line"></div><div class="label">Session ${sessionNum} &mdash; ${ts}</div><div class="line"></div>`;
+      content.appendChild(marker);
+      sessionMarkers.push(marker);
+    }
+
+    // Skip /clear and /exit lines (they're just markers)
+    if (isSessionBreak(e.display)) continue;
+
+    // Search filter
+    if (searchTerm) {
+      const haystack = (e.display || '').toLowerCase() +
+        Object.values(e.pastedContents || {}).map(p => (p.content || '')).join(' ').toLowerCase();
+      if (!haystack.includes(searchTerm.toLowerCase())) continue;
+    }
+
+    entryCount++;
+    const pastedKeys = Object.keys(e.pastedContents || {});
+    const hasPasted = pastedKeys.length > 0;
+
+    const entry = document.createElement('div');
+    entry.className = 'entry';
+    entry.dataset.idx = i;
+
+    const displayPreview = (e.display || '').replace(/@[\w\\/\-.]+/g, m => `<span class="at-ref">${escHtml(m)}</span>`);
+
+    entry.innerHTML = `
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <span class="entry-num">#${i + 1}</span>
+        <span class="entry-time">${formatTime(e.timestamp)}</span>
+        <span class="entry-display">${displayPreview}</span>
+        ${hasPasted ? `<span class="pasted-count">${pastedKeys.length} pasted</span>` : ''}
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="entry-body collapsed">
+        <div class="display-full">${highlightAtRefs(escHtml(e.display || ''))}</div>
+        ${hasPasted ? renderPasted(e.pastedContents) : ''}
+      </div>`;
+
+    if (searchTerm) {
+      // Auto-expand when searching
+      entry.querySelector('.entry-body').classList.remove('collapsed');
+      entry.querySelector('.expand-icon').textContent = '▲';
+    }
+
+    content.appendChild(entry);
+  }
+
+  // Update stats
+  document.getElementById('stats').textContent =
+    `${entryCount} message${entryCount !== 1 ? 's' : ''}, ${sessionMarkers.length} session${sessionMarkers.length !== 1 ? 's' : ''}`;
+
+  // Build session jump dropdown
+  const sel = document.getElementById('session-select');
+  sel.innerHTML = sessionMarkers.map((m, i) =>
+    `<option value="${i}">Session ${i + 1}</option>`
+  ).join('');
+
+  // Highlight search terms
+  if (searchTerm) highlightSearchTerms(content, searchTerm);
+}
+
+function renderPasted(pastedContents) {
+  return Object.values(pastedContents).map(p => `
+    <div class="pasted-section">
+      <div class="pasted-label">
+        Pasted content <span class="type-badge">${escHtml(p.type || 'text')}</span>
+      </div>
+      <pre class="pasted-content">${escHtml(p.content || '')}</pre>
+    </div>`
+  ).join('');
+}
+
+function toggleEntry(header) {
+  const body = header.nextElementSibling;
+  const icon = header.querySelector('.expand-icon');
+  const collapsed = body.classList.toggle('collapsed');
+  icon.textContent = collapsed ? '▼' : '▲';
+}
+
+function highlightSearchTerms(container, term) {
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  let node;
+  while ((node = walker.nextNode())) nodes.push(node);
+  const re = new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+  for (const n of nodes) {
+    if (!n.nodeValue.toLowerCase().includes(term.toLowerCase())) continue;
+    const span = document.createElement('span');
+    span.innerHTML = escHtml(n.nodeValue).replace(re, m => `<span class="highlight">${escHtml(m)}</span>`);
+    n.parentNode.replaceChild(span, n);
+  }
+}
+
+// Search
+let searchTimeout;
+document.getElementById('search').addEventListener('input', function () {
+  clearTimeout(searchTimeout);
+  const val = this.value.trim();
+  searchTimeout = setTimeout(() => buildContent(allEntries, val), 200);
+});
+
+// Session navigation
+function jumpToSession(idx) {
+  currentSessionIdx = parseInt(idx);
+  const marker = sessionMarkers[currentSessionIdx];
+  if (marker) {
+    marker.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('session-select').value = currentSessionIdx;
+  }
+}
+
+function jumpSession(delta) {
+  const next = Math.max(0, Math.min(sessionMarkers.length - 1, currentSessionIdx + delta));
+  jumpToSession(next);
+}
+</script>
+</body>
+</html>
