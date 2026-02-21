@@ -20,7 +20,7 @@
 - [x] **Primary use**: Storage (all walls clear, minimal electrical)
 - [x] **Windows**: None
 - [x] **Door**: Single wood man door (already purchased, measurements TBD), north wall east end
-- [x] **Floor insulation**: Rigid foam (XPS) between joists
+- [x] **Floor insulation**: Polyiso rigid foam between joists (Rmax ThermoSheath-3, 3" R-20.3, purchased)
 - [x] **Roof insulation**: At roof plane (unvented/hot roof)
 - [x] **Electrical**: Underground trench (DIY), 2 circuits (mini-split dedicated + lights/outlets), electrician for wiring. Two-switch design: one for lights, one master kill switch.
 - [x] **Pier skirting**: None for now
@@ -29,96 +29,37 @@
 
 ### Follow-Up Responses
 
-#### Floor Insulation - Thickness & Pest Protection
-Your 2x8 joists give you a 7.25" deep cavity. XPS rigid foam is R-5 per inch, so:
-- **3" (two 1.5" layers or one 2" + one 1")** = R-15 - adequate for a storage shed
-- **4" (two 2" layers)** = R-20 - better if you want the mini-split to be efficient
-- Stack multiple layers with staggered seams to eliminate thermal bridging through joints. Cut snug between joists; foam-seal edges with canned spray foam.
+#### Floor Insulation — Purchased
 
-**Mice: Yes, this is a real concern** - especially without skirting. Rigid foam is soft enough for rodents to burrow into. Protect the underside of the *entire* floor, not just the shallow end:
-- Staple **1/4" galvanized hardware cloth** (not regular window screen - mice chew through it) across the bottom of all joists after insulation is installed
-- Galvanized is fine for this - it won't be in direct ground contact. Stainless is overkill here.
-- This also holds the foam in place. Win-win.
+Purchased: **Rmax ThermoSheath-3 Polyiso, 3" R-20.3, foil-faced, 4×8 sheets × 6** (covers 192 sf — exact match for floor area). Polyiso is R-6.5/inch nominal; foil facing adds radiant benefit facing down toward ground.
 
-#### Skirting Correction
-Open piers actually *invite* nesting rather than discourage it - the sheltered underside of the floor is prime real estate for rats, mice, and raccoons. However, with hardware cloth on the underside of the floor (see above), the insulation is protected regardless. Skirting can always be added later. Just make sure the hardware cloth goes on.
+Install sequence:
+1. From above, drop hardware cloth down between joists and staple to joist sides or bottom edges (cloth acts as a shelf)
+2. Lower polyiso boards onto the cloth — foam rests between cloth (below) and subfloor (above)
+3. Seal board edges with canned spray foam for air sealing
+4. Cut boards snug to minimize gaps; stagger seams if layering
 
-#### Gravel Pad
-Fine to skip. Just be aware that weeds will eventually grow under the shed and be hard to reach. If it bothers you later, you can lay landscape fabric and gravel from the outside edges.
+**Rodent protection:** Hardware cloth also serves as a rodent barrier — purchased (4'×25' galvanized rolls × 2).
 
-#### Wall Insulation - Price Comparison
-For your ~430 sf of wall area (56 lf perimeter x 8' minus door):
-| Material | R-Value (2x6) | Cost for Shed | Notes |
-|---|---|---|---|
-| **Rockwool ComfortBatt** | R-23 | ~$500-650 | Hydrophobic, fireproof, lasts forever |
-| Fiberglass batts | R-19 | ~$260-350 | Cheaper, but absorbs moisture, degrades faster |
-| Closed-cell spray foam | R-37 | ~$2,000-3,000 | Overkill for storage shed |
+#### Wall Insulation — Purchased
 
-**The Rockwool premium is only ~$250-300 for the whole shed.** For a 50-year building in Redmond's wet climate, this is the single best value upgrade. Rockwool is also stiffer and easier to cut/install than floppy fiberglass. Strongly recommended.
+Purchased: **Rockwool ComfortBatt R-23 × 15" × 10 packs** (10 packs × 39.8 sf = 398 sf; wall area ~430 sf minus door — may need 1-2 more packs). Hydrophobic, fireproof, dimensionally stable. No vapor barrier needed in zone 4C — unfaced Rockwool + latex paint on interior plywood is code-compliant.
 
-You'll also need insulation for the roof plane. With 2x4 truss top chords, the cavity is only 3.5" deep:
-- Rockwool ComfortBatt: R-15 in 3.5"
-- Fiberglass: R-13 in 3.5"
-- This is thin for a roof. Consider adding 1" or 1.5" rigid foam board under the rafters to boost to ~R-20 to R-23 total.
+#### Roof Plane Insulation — See `docs/7-roof.md`
 
-#### Roof Plane Insulation - Practical Approach
-You're right that insulating at the roof plane is harder to finish than a flat ceiling. Here's a practical approach for a storage shed:
-1. Friction-fit batts between the truss top chords (rafters)
-2. Hold in place with **insulation support wire** (zig-zag wire stapled between rafters) - cheap, fast, no interior finish needed
-3. Optionally add rigid foam board underneath for extra R-value, held with cap screws into the truss chords
-4. Leave exposed or cover with thin plywood only if you want a finished look
+#### Vapor Strategy
 
-You do **not** need to cover every inch with drywall or plywood. For a storage shed, exposed insulation held by wire stays is perfectly functional.
-
-**Important note on unvented (hot) roof**: With no ventilation above the insulation, moisture management is more critical. You'll want to ensure:
-- The roof sheathing has good underlayment/barrier above it (already in your plan)
-- Air sealing is thorough at the wall-to-roof connection
-- The mini-split or dehumidifier controls interior humidity
-
-#### Vapor Strategy - Simplified for Storage Shed
-Given that this is a storage shed (low moisture generation) with a mini-split (dehumidifies when cooling):
-- **Walls**: Use **unfaced Rockwool batts + latex paint on interior plywood** (if you cover walls) or just leave Rockwool exposed with wire stays. In zone 4C, no dedicated vapor barrier is needed on walls. Latex paint is a Class III retarder and is code-compliant.
-- **Roof plane**: This is where it matters more with a hot roof. A layer of **CertainTeed MemBrain** ($50-70 for the whole ceiling) stapled under the rafters before any interior finish is good insurance. It's a smart retarder - breathable in summer, vapor-tight in winter.
-- **Skip poly sheeting entirely** - it would trap moisture in this climate.
+- **Walls**: Unfaced Rockwool + latex paint on 1/2" CDX interior plywood. No poly sheeting — it traps moisture in zone 4C.
+- **Roof plane**: 1/2" CDX over Rockwool, painted if desired. Optional: CertainTeed MemBrain smart vapor retarder (~$50-70) under CDX for extra insurance on the hot roof.
 
 #### Door Maintenance Note
 Wood doors look great but need maintenance in PNW rain. Plan to **repaint/reseal all six sides every 3-5 years** to prevent swelling and rot. Pay special attention to the bottom edge - water wicks up end grain. Seal the bottom edge well before installation and keep it off the threshold.
 
-#### Trim Material - Cost Comparison
-For ~56 lf of corner trim + door casing (~80-100 lf total):
-| Material | Cost/lf (4" trim) | 100 lf Total | Maintenance | Life |
-|---|---|---|---|---|
-| **HardieTrim** | ~$1.00-1.50 | ~$100-150 | Paint every 10-15 yr | 50 yr |
-| PVC/Azek | ~$2.50-3.50 | ~$250-350 | Paint optional | 50+ yr |
-| Cedar | ~$1.50-2.50 | ~$150-250 | Paint/stain every 3-5 yr | 20-30 yr |
+#### Corner Trim
 
-**HardieTrim is the best value** - same fiber cement material as your siding, same paint schedule, same 50-year life. It's the natural match. PVC costs more but never rots. Cedar is the worst option for your goals.
+Corner trim will be **aluminum siding corners — to be purchased** (Dunn Lumber didn't have sufficient stock). Door casing TBD.
 
-#### Z-Flashing / Courses Explained
-A **course** is just one horizontal row of siding. Each plank going up the wall is one course - first course at the bottom, second course overlapping it, and so on up to the top. Your shed will have roughly 13-14 courses per wall at 7" exposure.
-
-**Z-flashing** is a Z-shaped metal strip that goes behind horizontal joints to redirect water outward. With HardiePlank lap siding, you **don't need it** - the overlap between courses already sheds water. Z-flashing is more relevant for panel siding with butt joints. You can skip this entirely.
-
-#### Epoxy Floor - Details
-A 2-part garage epoxy on Advantech subfloor creates a hard, waterproof, easy-to-clean surface:
-
-**Process:**
-1. Sand Advantech lightly (120-grit) for adhesion
-2. Clean thoroughly, let dry completely
-3. Apply epoxy primer coat with roller
-4. Apply color coat (choose a color)
-5. Optionally broadcast paint chips/flakes while wet for texture + grip
-6. Let cure 24-48 hours before foot traffic, 72 hours before heavy items
-
-**Cost:** ~$100-150 for a DIY kit covering 192 sf (e.g., Rust-Oleum RockSolid, EpoxyShield)
-
-**Pros:** Spills wipe up, moisture can't penetrate subfloor, extremely durable (10-20 years before recoat), makes sweeping easy
-**Cons:** Prep is critical (must be clean/dry), can be slippery when wet unless you add anti-slip flakes, needs a dry day with 50-80F temps to apply
-
-For a storage shed, this is a solid choice. The main alternative - a penetrating sealer like Bona or polyurethane - is simpler to apply but doesn't provide the same moisture barrier.
-
-#### Landing at Door
-Good call on the landing. Since the door opens inward, the landing doesn't need to be as deep as for an outswing door, but you still want at least **36" deep** for comfortable entry. With the 28" slope east-to-west and the door on the north wall at the east end, the floor will be closest to grade on that end - so the steps/landing may only need to be 1-2 steps. Exact height depends on final pier/floor elevation.
+#### Floor Finish & Stairs — See `docs/9-finishings.md`, `docs/10-stairs.md`
 
 ### Still Open
 
@@ -457,7 +398,7 @@ Good call on the landing. Since the door opens inward, the landing doesn't need 
 
 ### Siding (HardiePlank Cedarmill, 8.25" plank, ~7" exposure)
 - [ ] Install starter strip at bottom of each wall
-- [ ] Install HardieTrim corner boards
+- [ ] Install aluminum siding corner trim
 - [ ] Install door trim/casing
 - [ ] Install HardiePlank courses from bottom up, 16' lengths on south wall, 12' on other walls
 - [ ] Blind-nail per James Hardie spec (1" from top of plank, into studs)
@@ -516,9 +457,9 @@ Good call on the landing. Since the door opens inward, the landing doesn't need 
 ## 15. Insulation & Interior Finishing
 
 ### Floor Insulation (before or after subfloor - see Section 7)
-- [ ] Cut XPS rigid foam to fit snug between joists (3-4" thick, stack layers with staggered seams)
-- [ ] Seal edges with canned spray foam for air sealing
-- [ ] Staple 1/4" galvanized hardware cloth across bottom of all joists (rodent barrier + holds foam)
+- [ ] Drop hardware cloth between joists from above; staple to joist sides or bottom edges (cloth acts as shelf for foam)
+- [ ] Lower 3" polyiso boards (Rmax ThermoSheath-3 R-20.3) onto cloth — foam rests between cloth (below) and subfloor (above)
+- [ ] Cut boards snug; seal edges with canned spray foam for air sealing
 
 ### Wall Insulation
 - [ ] Install batts in all wall cavities (Rockwool R-23 recommended - see cost comparison in Open Questions)
@@ -621,8 +562,8 @@ Good call on the landing. Since the door opens inward, the landing doesn't need 
 
 ### Siding & Exterior
 - [ ] HardiePlank 8.25" cedarmill - calculate lf: south wall 16' lengths, other walls 12' lengths
-- [ ] HardieTrim corner boards (~56 lf for 4 corners × 8' + spare)
-- [ ] HardieTrim door casing
+- [ ] Aluminum siding corner trim - to be purchased (~56 lf for 4 corners)
+- [ ] Door casing - TBD
 - [ ] House wrap
 - [ ] Tape for house wrap
 - [ ] HardiePlank-compatible nails (HDG siding nails, blind-nail type)
@@ -638,11 +579,11 @@ Good call on the landing. Since the door opens inward, the landing doesn't need 
 - [ ] Threshold
 
 ### Insulation & Vapor
-- [ ] Wall insulation batts - ~430 sf (Rockwool ComfortBatt R-23 recommended)
+- [x] Wall insulation batts - Rockwool ComfortBatt R-23 15" × 10 packs ~398 sf (purchased; may need 1-2 more packs)
 - [ ] Roof plane insulation batts - ~192 sf (Rockwool R-15 or fiberglass R-13)
-- [ ] XPS rigid foam for floor - ~192 sf × 3-4" thick (multiple layers)
+- [x] Polyiso rigid foam for floor - Rmax ThermoSheath-3 3" R-20.3 foil-faced 4×8 sheets × 6 (purchased)
 - [ ] Canned spray foam for sealing foam edges
-- [ ] 1/4" galvanized hardware cloth - enough to cover full floor underside (~200 sf)
+- [x] 1/4" galvanized hardware cloth - 4'×25' rolls × 2 (purchased; ~200 sf coverage)
 - [ ] Insulation support wire (for holding roof batts in place)
 - [ ] Optional: CertainTeed MemBrain smart vapor retarder (~200 sf for roof plane)
 - [ ] Optional: 1-1.5" rigid foam for under-rafter boost
