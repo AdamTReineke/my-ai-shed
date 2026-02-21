@@ -27,40 +27,6 @@
 - [x] **Exterior colors**: Matching house (already selected)
 - [x] **Access**: Steps with landing at door (door opens inward)
 
-### Follow-Up Responses
-
-#### Floor Insulation — Purchased
-
-Purchased: **Rmax ThermoSheath-3 Polyiso, 3" R-20.3, foil-faced, 4×8 sheets × 6** (covers 192 sf — exact match for floor area). Polyiso is R-6.5/inch nominal; foil facing adds radiant benefit facing down toward ground.
-
-Install sequence:
-1. From above, drop hardware cloth down between joists and staple to joist sides or bottom edges (cloth acts as a shelf)
-2. Lower polyiso boards onto the cloth — foam rests between cloth (below) and subfloor (above)
-3. Seal board edges with canned spray foam for air sealing
-4. Cut boards snug to minimize gaps; stagger seams if layering
-
-**Rodent protection:** Hardware cloth also serves as a rodent barrier — purchased (4'×25' galvanized rolls × 2).
-
-#### Wall Insulation — Purchased
-
-Purchased: **Rockwool ComfortBatt R-23 × 15" × 10 packs** (10 packs × 39.8 sf = 398 sf; wall area ~430 sf minus door — may need 1-2 more packs). Hydrophobic, fireproof, dimensionally stable. No vapor barrier needed in zone 4C — unfaced Rockwool + latex paint on interior plywood is code-compliant.
-
-#### Roof Plane Insulation — See `docs/7-roof.md`
-
-#### Vapor Strategy
-
-- **Walls**: Unfaced Rockwool + latex paint on 1/2" CDX interior plywood. No poly sheeting — it traps moisture in zone 4C.
-- **Roof plane**: 1/2" CDX over Rockwool, painted if desired. Optional: CertainTeed MemBrain smart vapor retarder (~$50-70) under CDX for extra insurance on the hot roof.
-
-#### Door Maintenance Note
-Wood doors look great but need maintenance in PNW rain. Plan to **repaint/reseal all six sides every 3-5 years** to prevent swelling and rot. Pay special attention to the bottom edge - water wicks up end grain. Seal the bottom edge well before installation and keep it off the threshold.
-
-#### Corner Trim
-
-Corner trim will be **aluminum siding corners — to be purchased** (Dunn Lumber didn't have sufficient stock). Door casing TBD.
-
-#### Floor Finish & Stairs — See `docs/9-finishings.md`, `docs/10-stairs.md`
-
 ### Still Open
 
 #### Roof
@@ -494,6 +460,7 @@ Corner trim will be **aluminum siding corners — to be purchased** (Dunn Lumber
 - [ ] Install downspout extensions if needed
 
 ### Hardware & Security
+- [ ] Seal all six sides of wood door (especially bottom edge) before installation — repaint/reseal every 3-5 years in PNW
 - [ ] Install door locks
 - [ ] Install any shelving brackets
 - [ ] Install any wall-mounted storage
