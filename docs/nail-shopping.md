@@ -24,55 +24,35 @@
 
 ## Shopping List
 
-### FastenersPlus.com (online — connector nails, not at HD/Lowe's)
+### Still Needed — FastenersPlus.com (online — not at hardware stores)
 
-| Item | Qty | Price | Used For |
-|------|-----|-------|----------|
-| Simpson SSNA8 — 1.5" 316 SS ring-shank connector nail, 1 lb | 1 | $23.36 | §4 joist hurricane ties (H2.5ASS) — 130 nails needed |
-| Simpson SSA8D — 2.5" 316 SS ring-shank connector nail, 1 lb | 1 | $24.12 | §4 joist hurricane ties (H2.5ASS) — 130 nails needed |
+| Item | Qty | Used For |
+|------|-----|----------|
+| Simpson SSNA8D 8d × 1-1/2" 316 SS ring-shank connector nail, pkg 150 | 1 | §4 H2.5ASS joist ties — 130 short nails needed |
+| Simpson SSA8D 8d × 2-1/2" 316 SS ring-shank connector nail, 1 lb tub (~94) | 2 | §4 H2.5ASS joist ties — 130 long nails needed |
+| 3" × .131" 20-22° collated ring-shank nails, 304 SS, pkg 1000 | 2 | §16 HardiePlank siding — ~1,500 needed |
 
-> Note: These are the only nails not available at hardware stores. Order before you need them.
+> Order before you need them — not available at HD/Lowe's.
 
-Buying:
-- Simpson SSNA8D 8d x 1-1/2" Ring Connector Nail - 316 Stainless, Pkg 150
-- Simpson SSA8D 8d x 2-1/2" Ring Shank Connector Nail - 316 Stainless Steel, 1 lb Tub (qty ~94)
-- Simpson SSA8D 8d x 2-1/2" Ring Shank Connector Nail - 316 Stainless Steel, 1 lb Tub (qty ~94)
+### Still Needed — Hardware Store
 
+| Item | Qty | Used For |
+|------|-----|----------|
+| Grip-Rite 16d 3-1/2" Bright Smooth Common Nails, 1 lb | 1 | §8/§9/§14 — short ~100 nails |
 
 ---
 
-### Hardware Store (Home Depot / Lowe's)
+### Purchased — Home Depot 2026-02-20
 
-Verify HDG strip nails are in stock before buying the Ryobi nailer. Match the collation angle to what's on the shelf.
+| Item | Purchased | Sections | Status |
+|------|-----------|----------|--------|
+| DeWalt 3" .131 Ring Shank HDG Framing Nails, 2,000 ct (DWRHS10DR131G) | 2 boxes = 4,000 | §6 blocking (144), §7 subfloor (600), §10 wall sheathing (1,200), §13 roof sheathing (700) | ✓ ~2,644 needed, 4,000 on hand |
+| Grip-Rite 2" .113 Ring Shank HDG Framing Nails, 1,000 ct (GR04HG1M) | 3 boxes = 3,000 | §11 truss gussets (~2,500) | ✓ |
+| Grip-Rite 16d 3-1/2" Bright Smooth Common Nails (1 lb + 2×5 lb) | ~11 lbs = ~517 | §8 bottom plate (42), §9 wall framing (250), §14 lookouts (128) | ⚠ short ~100 |
+| Grip-Rite 16d 3-1/2" HDG Smooth Common Nails, 1 lb | 2 lbs = ~94 | §5 rim joists (78) | ✓ |
+| Simpson SD9112 #9 × 1-1/2" SD Connector Screws, 100 ct | 2 packs = 200 | §12 H2.5A truss ties (180) — Simpson-approved nail substitute | ✓ |
 
-#### HDG Nails (PT lumber contact)
-
-| Nail | Size | Shank | Qty Needed | Sections | Notes |
-|------|------|-------|------------|----------|-------|
-| **8d HDG common** | 2.5" × 0.131" | Smooth | ~2,200 | §6 blocking (144), §10 wall sheathing (1,200), §13 roof sheathing (700), §12 truss ties backup (toe-nails) | Largest single need — buy in bulk |
-| **8d HDG ring-shank** | 2.5" × 0.131" | Ring | ~600 | §7 subfloor | Confirm Ryobi accepts ring-shank strips |
-| **16d HDG common** | 3.5" × 0.162" | Smooth | ~78 | §5 rim joists | |
-| **10d HDG hanger nail** | 1.5" × ~0.131" | Smooth | ~180 | §12 truss hurricane ties (H2.5A) | Too short for Ryobi — palm nailer |
-
-#### Bright (Plain Steel) Nails (interior framing, no PT contact)
-
-| Nail | Size | Shank | Qty Needed | Sections | Notes |
-|------|------|-------|------------|----------|-------|
-| **16d bright common** | 3.5" × 0.162" | Smooth | ~450 | §8 bottom plate (42), §9 wall framing (250), §14 lookouts/fly rafters (128) | Buy one 5-lb box |
-(not collated)
-
-
-| **8d bright common** | 2.5" × 0.131" | Smooth | ~2,500 | §11 truss gussets | Can use Ryobi |
-(not collated, at home depot)
-
-#### SS Nails (fiber cement siding)
-
-| Nail | Size | Shank | Qty Needed | Sections | Notes |
-|------|------|-------|------------|----------|-------|
-| **3" SS ring-shank siding nail** | 3" | Ring | ~1,500 | §16 HardiePlank siding | James Hardie requires SS or HDG; SS preferred |
-
-FastenersPlus.com (2x1000 pkg) 3" x .131" 20-22 Degree Collated Ring-Shank Nails - 304 Stainless Steel, Pkg 1000
-
+> Note: 3" ring-shank was substituted for 2.5" smooth common in §6/§10/§13. Ring-shank is a deviation from IRC smooth-shank spec for structural sheathing diaphragm — acceptable for unpermitted build.
 
 ---
 
@@ -82,5 +62,6 @@ FastenersPlus.com (2x1000 pkg) 3" x .131" 20-22 Degree Collated Ring-Shank Nails
 - **CC66 bolts/nuts/washers** — purchased 2026-02-19 McMaster-Carr
 - **Beam lamination bolts/nuts/washers** — purchased 2026-02-19 McMaster-Carr
 - **Titen HD screw anchors** — purchased 2026-02-19 Dunn Lumber
+- **Simpson SD9112 connector screws** (§12) — purchased 2026-02-20 Home Depot
 - **#8 × 3" SS deck screws** (§16 furring) — ~120, not yet purchased
 - **Metal roofing fasteners** (§15) — TBD pending roofing profile selection

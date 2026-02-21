@@ -113,6 +113,7 @@ Simpson H2.5ASS (18-ga stainless), one per joist-beam intersection. Joists sit o
   - Material depth (rim to beam, face-nail): rim joist 1.5" + 2.0" penetration into beam face = 3.5" — correct
   - Material depth (rim to field joist, end-nail): rim joist 1.5" + 2.0" penetration into joist end grain = 3.5" — correct
   - HDG required throughout — all lumber is PT
+  - Purchased 2026-02-20 (Home Depot): Grip-Rite 16d 3-1/2" HDG Smooth Shank Common Nails, 2 × 1 lb (~94 nails). Need 78. ✓
 
 ---
 
@@ -120,11 +121,12 @@ Simpson H2.5ASS (18-ga stainless), one per joist-beam intersection. Joists sit o
 
 2×8 PT blocks (14.5" each) between joists at each beam line, per [3-joists.md](3-joists.md).
 
-- 8d HDG common nail (2.5" × 0.131")
+- 8d HDG common nail (2.5" × 0.131") — **substituting 3" × 0.131" HDG ring-shank**
   - Qty: 6 per block (3 per end) × 24 blocks = 144 nails
   - In contact with: PT Hem-Fir block, PT Hem-Fir joist
-  - Material depth: block is 1.5" wide (2×8); toe-nail driven at ~30° through block face into joist face (1.5"); effective penetration ~1.5"+ into joist — 2.5" nail is correct IRC minimum for toe-nailing 2× members
+  - Material depth: block is 1.5" wide (2×8); toe-nail driven at ~30° through block face into joist face (1.5"); effective penetration ~1.5"+ into joist — 3" nail is longer than the 2.5" IRC minimum, acceptable for toe-nailing
   - Toe-nail each end per IRC Table R602.3(1); HDG required — all lumber is PT
+  - Purchased 2026-02-20 (Home Depot): DeWalt 3" .131 Ring Shank HDG Framing Nails, 2 × 2,000 ct (DWRHS10DR131G). Used across §6, §7, §10, §13 — see those sections. ✓
 
 Alternative: Simpson A35 framing angles (2 per block = 48 angles), each taking (4) 10d × 1.5" HDG nails. Stronger but adds cost and complexity — toe-nailing is standard and adequate.
 
@@ -134,12 +136,13 @@ Alternative: Simpson A35 framing angles (2 per block = 48 angles), each taking (
 
 6 sheets of 3/4" Advantech T&G, glued and nailed.
 
-- 8d ring-shank HDG nail (2.5" × 0.131")
+- 8d ring-shank HDG nail (2.5" × 0.131") — **substituting 3" × 0.131" HDG ring-shank**
   - Qty: ~100 per sheet × 6 sheets = ~600 nails
   - In contact with: PT Hem-Fir joists and blocking (below), Advantech OSB panel (above)
-  - Material depth: 3/4" Advantech + 1.75" penetration into joist = 2.5" — correct; IRC requires minimum 1.5" penetration into framing
+  - Material depth: 3/4" Advantech + 2.25" penetration into joist = 3" — exceeds 1.5" IRC minimum; acceptable
   - Panel edges over joists/blocking at 6" o.c.; field at 12" o.c. into joists. Ring-shank provides better withdrawal resistance. HDG required — joists are PT.
   - Plus: construction adhesive (PL Premium or Liquid Nails Subfloor) on joist tops before setting panels; reduces squeaks and increases diaphragm stiffness.
+  - Purchased 2026-02-20 (Home Depot): DeWalt 3" .131 Ring Shank HDG Framing Nails (shared pool with §6, §10, §13). ✓
 
 ---
 
@@ -152,6 +155,7 @@ KD Hem-Fir 2×6 bottom plates nailed down through subfloor into rim joists and j
   - In contact with: KD Hem-Fir 2×6 bottom plate, Advantech subfloor (above), PT Hem-Fir rim joist/joists (below)
   - Material depth: bottom plate 1.5" + 3/4" Advantech + 1.25" into rim/joist = 3.5" — correct; nail fully penetrates plate and subfloor with 1.25" into framing below (IRC minimum for this connection)
   - Bright (plain steel) is acceptable — bottom plate is non-PT. At door opening, cut plate after wall is raised.
+  - Purchased 2026-02-20 (Home Depot): Grip-Rite 16d 3-1/2" Bright Smooth Common Nails, 1 lb + 2 × 5 lb = ~11 lbs (~517 nails). Used across §8, §9, §14. Need ~620 total — buy one more 1-lb box (~47 nails). ✓ (short ~100)
 
 ---
 
@@ -190,7 +194,7 @@ Standard platform framing nailing schedule per IRC Table R602.3(1). All connecti
   - Qty: 2 per cripple above header
   - In contact with: KD Hem-Fir cripple, KD Hem-Fir header
 
-Estimated wall framing nails: ~250 total. Buy a 5-lb box of 16d bright common.
+Estimated wall framing nails: ~250 total. Purchased 2026-02-20: 16d bright common shared pool with §8 and §14 (see §8 note). ✓
 
 ---
 
@@ -198,13 +202,14 @@ Estimated wall framing nails: ~250 total. Buy a 5-lb box of 16d bright common.
 
 24 sheets of 7/16" Zip System panels (per receipts.csv — substituted for plain OSB), nailed per structural diaphragm schedule (Seismic D, 110 mph wind zone).
 
-- 8d HDG common nail (2.5" × 0.131")
+- 8d HDG common nail (2.5" × 0.131") — **substituting 3" × 0.131" HDG ring-shank**
   - Qty (panel edges): 6" o.c., all edges including intermediate studs at panel edges
   - Qty (field): 12" o.c. into studs
   - Total: ~15 sheets × ~80 nails/sheet = ~1,200 nails
   - In contact with: KD Hem-Fir studs and plates (below), Zip OSB panel (above)
-  - Material depth: 7/16" Zip OSB (0.44") + 2.06" into stud = 2.5" — correct; IRC requires minimum 1.5" penetration into framing for structural sheathing
-  - HDG specified for exterior exposure. IRC requires 8d common (not box, not ring-shank) for structural sheathing diaphragm. Some jurisdictions require 6"/6" for high-wind/seismic — confirm with inspector if pulling a permit.
+  - Material depth: 7/16" Zip OSB (0.44") + 2.56" into stud = 3.0" — exceeds minimum
+  - HDG specified for exterior exposure. IRC Table R602.3(1) specifies 8d common (smooth shank) for structural sheathing diaphragm — ring-shank is a deviation. Ring-shank increases withdrawal resistance (positive) but is not listed in the IRC sheathing diaphragm table. Since this shed is likely unpermitted, this is an acceptable field substitution; if an inspector is involved, note the deviation.
+  - Purchased 2026-02-20 (Home Depot): DeWalt 3" .131 Ring Shank HDG Framing Nails (shared pool with §6, §7, §13). ✓
 
 ---
 
@@ -214,12 +219,13 @@ Estimated wall framing nails: ~250 total. Buy a 5-lb box of 16d bright common.
 
 ### Recommended: Plywood Gussets + Adhesive
 
-- 8d bright common nail (2.5") or #8 × 2" bright steel screw
+- 8d bright common nail (2.5") or #8 × 2" bright steel screw — **substituting 2" × 0.113" HDG ring-shank**
   - Qty: ~20 fasteners per gusset × ~126 gussets (9 trusses × 8 joints × 2 sides) = ~2,500 fasteners
   - In contact with: KD SPF/Hem-Fir truss members (interior, non-PT), 1/2" structural plywood gusset
-  - Material depth: 1/2" gusset + 1.5" truss member = 2.0" minimum; 2.5" nail gives 2.0" penetration into member; 2" screw gives 1.5" penetration into member (minimum acceptable). Do not use 1-5/8" screws — only 1-1/8" penetration into the member.
-  - Bright (plain steel) is fine — trusses are interior/protected. 3" o.c. around gusset perimeter, 1/2" edge distance.
+  - Material depth: 1/2" gusset + 1.5" truss member = 2.0"; 2" nail gives 1.5" penetration into member (same as screw minimum). Ring-shank improves withdrawal resistance vs smooth shank.
+  - Shank is 0.113" (box gauge) vs 0.131" common — acceptable here because adhesive carries primary shear; nails are clamping fasteners. HDG is overkill for interior/protected use but not harmful.
   - Plus: construction adhesive (PL Premium or Titebond III) full coverage under each gusset. Critical — adhesive carries most of the shear.
+  - Purchased 2026-02-20 (Home Depot): Grip-Rite 2" .113 Ring Shank HDG Framing Nails, 3 × 1,000 ct = 3,000 nails. Need ~2,500. ✓
 
 Gusset sizes per joint:
 - Peak: 12" × 12" — 1 per truss, 18 total (9 trusses × 2 sides)
@@ -242,11 +248,12 @@ Each truss bears on the double top plate at 2 points (north and south walls). 9 
 
 Simpson H2.5A hot-dip galvanized (HDG) — interior use, no PT contact.
 
-- 10d × 1.5" HDG joist hanger nail
-  - Qty: 10 per tie × 18 ties = 180 nails
+- 10d × 1.5" HDG joist hanger nail — **substituting Simpson SD9 × 1-1/2" Structural Connector Screw**
+  - Qty: 10 per tie × 18 ties = 180 fasteners
   - In contact with: KD Hem-Fir truss bottom chord, KD Hem-Fir double top plate, HDG steel tie
-  - Material depth: truss bottom chord face 1.5" (2×4 or 2×6 width); top plate face 1.5"; 1.5" nail is the Simpson-specified short nail that seats fully in the tie hole without blow-through — correct for this connector
-  - 5 into truss, 5 into plate. HDG on the tie matches; bright nails would also be acceptable here (no PT contact), but HDG is called out by Simpson for this tie and is the safer choice.
+  - Simpson explicitly approves SD connector screws as a nail substitute in H2.5A ties. SD9 × 1-1/2" (#9 × 1.5") meets or exceeds the load values of 10d × 1.5" nails per Simpson load tables.
+  - Drive with a #2 square or Robertson bit; do not overdrive.
+  - Purchased 2026-02-20 (Home Depot): Simpson SD9112 #9 × 1-1/2" SD Strong Drive Structural Connector Screws, 2 × 100 ct = 200 screws. Need 180. ✓
 
 Allowable loads (SPF/HF): Uplift 615 lbs, Lateral 110 lbs each direction.
 
@@ -263,11 +270,12 @@ Plus toe-nailing as backup:
 
 10 sheets of 1/2" CDX or OSB, per [6-trusses.md](6-trusses.md).
 
-- 8d HDG common nail (2.5" × 0.131")
+- 8d HDG common nail (2.5" × 0.131") — **substituting 3" × 0.131" HDG ring-shank**
   - Qty: ~70 per sheet × 10 sheets = ~700 nails
   - In contact with: KD Hem-Fir truss top chords (below), CDX/OSB panel (above)
-  - Material depth: 1/2" CDX/OSB + 2.0" into truss top chord (1.5" wide) = 2.5" — correct; 2.0" penetration into the chord exceeds minimum
-  - Panel edges at 6" o.c. along trusses; field at 12" o.c. HDG specified for exterior/roof exposure, even though the underlayment and roofing provide weather protection — the sheathing edges will see moisture during construction.
+  - Material depth: 1/2" CDX/OSB + 2.5" into truss top chord = 3.0" — exceeds minimum; 2.5" penetration into the chord is fine
+  - Panel edges at 6" o.c. along trusses; field at 12" o.c. HDG specified for exterior/roof exposure, even though the underlayment and roofing provide weather protection — the sheathing edges will see moisture during construction. Ring-shank substitution same note as §10.
+  - Purchased 2026-02-20 (Home Depot): DeWalt 3" .131 Ring Shank HDG Framing Nails (shared pool with §6, §7, §10). ✓
 
 ---
 
@@ -286,6 +294,8 @@ Ladder framing at each gable end, per [6-trusses.md](6-trusses.md).
   - In contact with: KD Hem-Fir fly rafter, KD Hem-Fir lookout
   - Material depth: fly rafter 1.5" + 2.0" into lookout = 3.5" — correct
   - Plain steel is fine — no PT contact
+
+Purchased 2026-02-20: 16d bright common shared pool with §8 and §9 (see §8 note). ✓
 
 ---
 

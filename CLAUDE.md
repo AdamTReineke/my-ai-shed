@@ -2,6 +2,8 @@
 
 Environment note: You're running on Windows. Node scripts are probably preferred over bash scripts for anything with a little complexity.
 
+The preferred way to check things in: run `git add . && git commit -m "<your message>" && git push`
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
