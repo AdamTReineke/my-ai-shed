@@ -27,7 +27,7 @@ Completed sections should be moved to checklist-completed.md
 - [x] ~~Check if permit required~~ - Under 200 sf, no structural permit
 - [x] Confirm setback requirements (property lines, easements) - *still applies even without permit*
 - [x] Verify utility locations (call 811) - *required for electrical trench if underground feed*
-- [ ] Pull electrical permit for power feed to shed
+- [x] ~~Pull electrical permit for power feed to shed~~ - Later.
 
 ### Tools & Safety
 - [x] Post-hole digger or auger
