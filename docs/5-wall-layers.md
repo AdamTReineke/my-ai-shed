@@ -106,9 +106,9 @@ Bare studs. Optional future upgrade: ½" OSB or plywood for tool-hanging surface
 |------|-------------|----------|-----------|
 | North (16') | 16 × 8 = 128 | Door: 2.75' × 6.5' = 17.9 | 110 |
 | South (16') | 128 | — | 128 |
-| East (12') | 12 × 8 = 96 | — | 96 |
-| West (12') | 96 | — | 96 |
-| **Total** | **448** | **17.9** | **430** |
+| East (12' rect + gable peak) | 96 + ½×12×3 = 114 | — | 114 |
+| West (12' rect + gable peak) | 114 | — | 114 |
+| **Total** | **484** | **17.9** | **466** |
 
 ### Siding Plank Breakdown
 
@@ -140,7 +140,7 @@ Note: The 48" offcuts from N/S walls can supply the 3" pieces needed for E/W but
 | Furring strips 1×3×8' | 4 walls, studs at 16" o.c. ≈ 56 studs × 1 strip each | **58 strips** (8' each) |
 | HardiePlank 8.25"×144" (12') | 96 planks total (see breakdown above) | **~70 planks** to start |
 | HardiePlank starter strip | 56 lf perimeter − 2.75' door = 53 lf | **5 strips** (12' each) |
-| 3" SS ring-shank nails | siding nailing | **5 lb box** |
+| 3" × .131" SS ring-shank nails (collated, 20-22°) | siding nailing | **1 box (1000 ct)** |
 | 8d common nails (2.5") | OSB sheathing | **10 lb box** |
 | #8 × 3" deck screws | furring strips | **2 lb box** |
 | Aluminum outside siding corners | 4 corners × 16 courses | **64 pieces** |
