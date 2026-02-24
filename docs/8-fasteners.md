@@ -266,15 +266,15 @@ Plus toe-nailing as backup:
 
 ---
 
-## 13. Roof Sheathing — 1/2" CDX/OSB to Trusses
+## 13. Roof Sheathing — 7/16" Zip System Panel to Trusses
 
-10 sheets of 1/2" CDX or OSB, per [6-trusses.md](6-trusses.md).
+~10 sheets of 7/16" Zip System panels (from the same 24-sheet purchase as wall sheathing), taped and rolled per Zip System instructions. Integrated WRB eliminates need for separate roof underlayment beneath metal roofing.
 
 - 8d HDG common nail (2.5" × 0.131") — **substituting 3" × 0.131" HDG ring-shank**
   - Qty: ~70 per sheet × 10 sheets = ~700 nails
-  - In contact with: KD Hem-Fir truss top chords (below), CDX/OSB panel (above)
-  - Material depth: 1/2" CDX/OSB + 2.5" into truss top chord = 3.0" — exceeds minimum; 2.5" penetration into the chord is fine
-  - Panel edges at 6" o.c. along trusses; field at 12" o.c. HDG specified for exterior/roof exposure, even though the underlayment and roofing provide weather protection — the sheathing edges will see moisture during construction. Ring-shank substitution same note as §10.
+  - In contact with: KD Hem-Fir truss top chords (below), Zip panel (above)
+  - Material depth: 7/16" Zip (0.44") + 2.56" into truss top chord = 3.0" — exceeds minimum
+  - Panel edges at 6" o.c. along trusses; field at 12" o.c. HDG specified for exterior/roof exposure. Ring-shank substitution same note as §10.
   - Purchased 2026-02-20 (Home Depot): DeWalt 3" .131 Ring Shank HDG Framing Nails (shared pool with §6, §7, §10). ✓
 
 ---

@@ -8,36 +8,6 @@ Cross-referencing docs, receipts, cutlist, and code as of 2026-02-24.
 
 ---
 
-## 5. Wall Sheathing: OSB vs Zip System
-
-| Source | Description |
-|--------|-------------|
-| `5-wall-layers.md` §3 | "7/16" OSB" |
-| `cutlist.csv` line 15 | "7/16" OSB (or zip?) x 4' x 8', 14" |
-| `receipts.csv` line 41 | "Huber **Zip System** Zip Panel Roof/Wall Combo 4'x8'-7/16", **24**" |
-| `8-fasteners.md` §10 | "24 sheets of 7/16" Zip System panels (per receipts.csv — substituted for plain OSB)" |
-
-**Reality**: 24 Zip panels were purchased. The cutlist says 14, but that was the original OSB estimate for walls only. The Zip panels serve double duty — walls (14–15 sheets) plus roof sheathing (10 sheets). `8-fasteners.md` correctly notes the substitution.
-
-**Fix needed**: Update cutlist to reflect 24 Zip panels. Update `5-wall-layers.md` to acknowledge Zip System instead of plain OSB. Note that Zip's integrated WRB may make the Tyvek layer optional (as `8-fasteners.md` already mentions).
-
-<fix this, remove the Tyvek references. we'll need to buy zip tape and roller still.>
----
-
-## 6. Roof Sheathing: CDX vs Zip
-
-| Source | Description |
-|--------|-------------|
-| `6-trusses.md` line 159 | "Roof sheathing: 1/2" × 4×8, 10 sheets, CDX or OSB" |
-| `8-fasteners.md` §13 | "1/2" CDX or OSB" |
-| `cutlist.csv` line 20 | "CDX 1/2" Plywood Sheathing 4-ply 4'x8', 14" |
-
-The cutlist says 14 sheets of 1/2" CDX were purchased (receipts.csv line 44 confirms). But these are listed as "wall interior" in the cutlist. The roof sheathing appears to be covered by the Zip panels (7/16"), not 1/2" CDX. The `6-trusses.md` still says "10 sheets CDX or OSB" for the roof.
-
-**Fix needed**: Clarify whether roof uses Zip panels (7/16") or CDX (1/2"). The 14 sheets of CDX appear to be for interior wall finish (per cutlist line 20), not roof sheathing. Update `6-trusses.md` materials list accordingly.
-
-<fix this, the roof sheeting will be zip, taped and rolled>
-
 ---
 
 ## 7. Hurricane Ties: H2.5ASS vs H2.5AZ (Two Different Products)

@@ -156,7 +156,7 @@ At 24" truss spacing:
 | Gusset plates | 1/2" plywood | ~2 sheets | Structural plywood |
 | Lookouts | 2×4 × 36" | 16 | SPF (8 per gable end) |
 | Fly rafters | 2×4 × 14' | 2 | SPF |
-| Roof sheathing | 1/2" × 4×8 | 10 sheets | CDX or OSB |
+| Roof sheathing | 7/16" × 4×8 | ~10 sheets | Zip System (taped + rolled) |
 | Metal roofing | (TBD) | ~200 sf | Standing seam or corrugated |
 | Fascia | 1×6 or 1×8 | 32 lf | Cedar or primed pine |
 | Barge boards | 1×6 or 1×8 | 32 lf | Cedar or primed pine |

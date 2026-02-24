@@ -11,16 +11,14 @@ Interior
   │     ┌───────────────────────────────┐
   │     │  ░░░░░░░░░░░░░░░░░░░░░░░░░░  │ ← studs 16" o.c.
   │     └───────────────────────────────┘
-  │  3. 7/16" OSB sheathing
+  │  3. 7/16" Zip System sheathing (integrated WRB)
   │     ════════════════════════════════
+  │     Seams taped with Zip System tape + rolled
   │
-  │  4. Housewrap (Tyvek HomeWrap)
-  │     ────────────────────────────────
-  │
-  │  5. Furring strips (1×3 vertical, 16" o.c.)  → ¾" rainscreen gap
+  │  4. Furring strips (1×3 vertical, 16" o.c.)  → ¾" rainscreen gap
   │     ║            ║            ║
   │
-  │  6. HardiPlank lap siding, 6.25" exposure
+  │  5. HardiPlank lap siding, 6.25" exposure
   │     ┌──────────────────────────────┐
   │     │ ═══════════════════════════  │
   │     │ ═══════════════════════════  │
@@ -29,7 +27,7 @@ Interior
 Exterior
 ```
 
-**Total wall thickness from interior stud face to siding face:** 5.5" (stud) + 7/16" + housewrap (negligible) + ¾" (furring) + 5/16" (HardiPlank) ≈ **7"**
+**Total wall thickness from interior stud face to siding face:** 5.5" (stud) + 7/16" (Zip) + ¾" (furring) + 5/16" (HardiPlank) ≈ **7"**
 
 This matters for door/window jamb extensions and trim depth.
 
@@ -46,17 +44,14 @@ Bare studs. Optional future upgrade: ½" OSB or plywood for tool-hanging surface
 - **Fire rating:** Non-combustible, melts at 2150°F
 - **Moisture:** Hydrophobic, does not absorb water, dries readily
 
-### 3. Sheathing — 7/16" OSB
+### 3. Sheathing — 7/16" Zip System Panel (Wall/Roof Combo)
 - **Panel size:** 4×8 sheets, installed vertically
 - **Nailing:** 8d common (2.5"), 6" o.c. edges / 12" o.c. field, into studs
-- **Provides:** Shear bracing (racking resistance) and nail base for siding
+- **Provides:** Shear bracing (racking resistance), nail base for siding, and integrated weather-resistive barrier (WRB)
+- **Seam treatment:** Zip System tape on all panel seams, rolled with J-roller per manufacturer instructions. Eliminates the need for a separate housewrap layer.
+- **Still needed (not yet purchased):** Zip System tape and J-roller
 
-### 4. Weather-Resistive Barrier — Tyvek HomeWrap (or similar)
-- **Install:** Horizontal courses, bottom-up, 6" overlap at horizontal seams
-- **Tape:** Tyvek tape at all seams and penetrations
-- **Sequence:** Applied over OSB before furring strips
-
-### 5. Rainscreen — Furring Strips
+### 4. Rainscreen — Furring Strips
 - **Material:** 1×3 lumber (actual ¾" × 2½"), vertical over studs
 - **Spacing:** 16" o.c. (aligned with studs for nailing)
 - **Fastening:** #8 × 3" deck screws through housewrap/OSB into studs
@@ -69,7 +64,7 @@ Bare studs. Optional future upgrade: ½" OSB or plywood for tool-hanging surface
 - **Plank size:** 8.25" wide × 12' long, 5/16" thick
 - **Profile:** Cedarmill (textured) or smooth, 6.25" exposure (match house)
 - **Nailing:** Blind-nailed 1" from top of plank
-  - Nails must penetrate into studs (through ¾" furring + 7/16" OSB = 1.19" before stud)
+  - Nails must penetrate into studs (through ¾" furring + 7/16" Zip = 1.19" before stud)
   - Minimum 1¼" penetration into stud → minimum nail length: 1.19" + 0.31" (siding) + 1.25" = **2.75"** (use 3" stainless ring-shank)
 - **Outside corners:** Aluminum outside siding corners (slip over plank ends at each corner, installed course-by-course)
   - 4 corners × 16 courses = **64 pieces** (sold individually, one per corner per course)
@@ -82,18 +77,18 @@ Bare studs. Optional future upgrade: ½" OSB or plywood for tool-hanging surface
 ## Flashing Details
 
 ### Bottom of Wall (Sill Flashing)
-- Metal Z-flashing or peel-and-stick membrane at base of OSB, lapping over bottom plate
+- Metal Z-flashing or peel-and-stick membrane at base of Zip sheathing, lapping over bottom plate
 - Bug screen at bottom of rainscreen gap (Cor-A-Vent or equivalent)
 - Maintain 1" minimum gap between siding and any horizontal surface
 
 ### Top of Wall
 - Rainscreen gap vents at top behind fascia
-- Housewrap laps under any roof underlayment or flashing
+- Zip tape laps under any roof underlayment or flashing
 
 ### Door Opening
 - Flexible flashing tape (Vycor or similar) at R.O. jambs and head
-- Head flashing: metal drip cap over door head casing, tucked under housewrap above
-- Jamb/head trim must account for total buildup: ¾" furring + 5/16" siding = ~1-1/16" proud of housewrap plane
+- Head flashing: metal drip cap over door head casing, tucked under Zip sheathing above
+- Jamb/head trim must account for total buildup: ¾" furring + 5/16" siding = ~1-1/16" proud of Zip sheathing plane
 - Trim boards (1× PVC or HardieTrim) wrap jambs and head, siding butts to trim with 1/8" caulked gap
 
 ---
@@ -134,14 +129,14 @@ Note: The 48" offcuts from N/S walls can supply the 3" pieces needed for E/W but
 | Material | Calculation | Quantity |
 |----------|-------------|---------|
 | Rockwool R-23 (15.25"×47") | 430 sf ÷ 4.98 sf/batt = 87 batts; bags of 8 | **11 bags** (88 batts) |
-| 7/16" OSB 4×8 | 448 sf ÷ 32 sf/sheet = 14 sheets | **15 sheets** (7% waste) |
-| Tyvek HomeWrap 9'×150' roll | 448 sf; one roll = 1350 sf | **1 roll** |
-| Tyvek tape | seams + penetrations | **1 roll** |
+| 7/16" Zip System 4×8 | 24 purchased (walls ~15 + roof ~10) | **~15 sheets** for walls |
+| Zip System tape | all panel seams | **TBD — not yet purchased** |
+| Zip System J-roller | for tape application | **TBD — not yet purchased** |
 | Furring strips 1×3×8' | Ripped from 15× PT 1×6-16' → 60 strips of 8' | **60 strips** (8' each) |
 | HardiePlank 8.25"×144" (12') | 96 planks total (see breakdown above) | **~70 planks** to start |
 | HardiePlank starter strip | 56 lf perimeter − 2.75' door = 53 lf | **5 strips** (12' each) |
 | 3" × .131" SS ring-shank nails (collated, 20-22°) | siding nailing | **1 box (1000 ct)** |
-| 8d common nails (2.5") | OSB sheathing | **10 lb box** |
+| 8d common nails (2.5") | Zip sheathing | **10 lb box** |
 | #8 × 3" deck screws | furring strips | **2 lb box** |
 | Aluminum outside siding corners | 4 corners × 16 courses | **64 pieces** |
 | Metal Z-flashing (base) | 56 lf | **60 lf** |
@@ -154,8 +149,8 @@ Note: The 48" offcuts from N/S walls can supply the 3" pieces needed for E/W but
 ## Installation Sequence
 
 1. **Insulate** stud bays (Rockwool friction-fit, no vapor barrier needed)
-2. **Sheathe** with OSB — nail schedule: 6"/12"
-3. **Wrap** with housewrap — bottom-up, tape all seams
+2. **Sheathe** with Zip System panels — nail schedule: 6"/12"
+3. **Tape** all Zip panel seams with Zip System tape, roll with J-roller
 4. **Flash** door opening — sill, jambs, head (in that order)
 5. **Fur out** with 1×3 strips over studs, install bug screen at base
 6. **Side** with HardiePlank — starter strip, then courses bottom-up
