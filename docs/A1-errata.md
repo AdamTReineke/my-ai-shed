@@ -6,20 +6,6 @@ Cross-referencing docs, receipts, cutlist, and code as of 2026-02-24.
 
 ---
 
-## 4. Cutlist: 1×3 Furring Strips
-
-| Source | Description |
-|--------|-------------|
-| `cutlist.csv` line 1 | "1x3 x 8', 50" |
-| `5-wall-layers.md` line 140 | "58 strips (8' each)" |
-| `receipts.csv` line 27 | "Pressure Treated Hem/Fir **1x6**-16' Utility Grade, 15" |
-
-**Reality**: 15 pieces of 1×6-16' PT were purchased. If ripped in half, each 1×6 yields two 1×3 strips, so 15 boards → 30 strips of 16' = 60 strips of 8' equivalent. The cutlist says 50, the wall layers doc says 58, and the purchased material (if ripped) yields ~60.
-
-**Fix needed**: Reconcile the cutlist quantity (50 vs 58). The purchase of 1×6 to be ripped should be noted somewhere — the cutlist currently says "1×3 × 8'" which doesn't match what was bought.
-
-<fix this, we'll cut 60 strips from the PT stock we purchased, it may be more than we need, but that's ok>
-
 ---
 
 ## 5. Wall Sheathing: OSB vs Zip System

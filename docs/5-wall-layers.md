@@ -137,7 +137,7 @@ Note: The 48" offcuts from N/S walls can supply the 3" pieces needed for E/W but
 | 7/16" OSB 4×8 | 448 sf ÷ 32 sf/sheet = 14 sheets | **15 sheets** (7% waste) |
 | Tyvek HomeWrap 9'×150' roll | 448 sf; one roll = 1350 sf | **1 roll** |
 | Tyvek tape | seams + penetrations | **1 roll** |
-| Furring strips 1×3×8' | 4 walls, studs at 16" o.c. ≈ 56 studs × 1 strip each | **58 strips** (8' each) |
+| Furring strips 1×3×8' | Ripped from 15× PT 1×6-16' → 60 strips of 8' | **60 strips** (8' each) |
 | HardiePlank 8.25"×144" (12') | 96 planks total (see breakdown above) | **~70 planks** to start |
 | HardiePlank starter strip | 56 lf perimeter − 2.75' door = 53 lf | **5 strips** (12' each) |
 | 3" × .131" SS ring-shank nails (collated, 20-22°) | siding nailing | **1 box (1000 ct)** |
