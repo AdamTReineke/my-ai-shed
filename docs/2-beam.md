@@ -8,12 +8,12 @@ Beam (x2):
     Hem/Fir #2 PT Incised
     16 ft with three-ply: 2x10 + 3x10 (or x12 trimmed) + 2x10
     (Creating a 5.5" × 9.25" beam in Hem/Fir #2)
-    Connection: 1/2" × 6.5" HDG carriage bolt + nut + 2 washers,
+    Connection: 1/2" × 6.5" HDG hex bolt + nut + 2 washers,
     staggered top/bottom at 24" o.c., 8 per beam.
     (Screw and nail+glue options were evaluated and discarded in favor of bolts.)
 
   Lamination connection design (NDS Table 11A):
-    Fastener: 1/2" A307 carriage bolt, HDG, double shear
+    Fastener: 1/2" A307 hex bolt, HDG, double shear
     Members:  side members 1.5" each (2×10 outer plies)
               main member  2.5" (3×10 center ply)
     Species:  Hem-Fir, G = 0.43

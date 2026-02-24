@@ -163,7 +163,7 @@ All hardware uses post-install anchors (wedge anchors or similar), allowing conc
       Post 1         Post 2         Post 3
 ```
 
-**Beam:** 2×10 + 3×10 + 2×10 built-up (5.5" × 9.25"), Hem-Fir #2 PT Incised. Connected with structural screws (GRK RSS) from both faces at 12" o.c. staggered.
+**Beam:** 2×10 + 3×10 + 2×10 built-up (5.5" × 9.25"), Hem-Fir #2 PT Incised. Connected with 1/2" × 6-1/2" HDG hex bolts + nuts + washers, staggered top/bottom at 24" o.c., 8 per beam.
 
 **Utilization:** 89% bending, 77% shear, 15% deflection — all pass. Run `node shed/beam.js` for full analysis. See [`2-beam.md`](2-beam.md) for design notes, NDS adjustment factors, and solid 6×10 comparison.
 

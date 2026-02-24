@@ -69,7 +69,7 @@ Simpson CC66 painted column cap, one per west post (2 total, already purchased a
 
 3-ply built-up beam: 2×10 + 3×10 + 2×10 (5.5" × 9.25"), per [2-beam.md](2-beam.md).
 
-- 1/2" × 6.5" HDG carriage bolt + nut + 2 washers
+- 1/2" × 6.5" HDG hex bolt + nut + 2 washers
   - Qty: 8 per beam × 2 beams = 16 sets total
   - In contact with: PT Hem-Fir 2×10 outer plies and PT Hem-Fir 3×10 center ply, full 5.5" width
   - Stack: beam 5.5" + two washers (~0.13") + 1/2" nut (~0.44") = ~6.07"; 6.5" bolt provides ~0.43" thread past nut ✓

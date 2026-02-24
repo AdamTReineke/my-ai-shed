@@ -91,7 +91,7 @@ post_depth = 5.5;
 
 // Beams: 3-ply built-up 2x10 + 3x10 + 2x10 (per 2-beam.md)
 // Creates 5.5" x 9.25" section (Hem-Fir #2 PT Incised)
-// Connected with structural screws (GRK RSS) from both faces at 12" o.c. staggered
+// Connected with 1/2" x 6-1/2" HDG hex bolts, staggered top/bottom at 24" o.c., 8 per beam
 // Utilization: 89% bending, 77% shear, 15% deflection
 beam_height = 9.25;                // 2x10 actual depth
 beam_outer_ply = 1.5;             // 2x10 outer plies (actual thickness)

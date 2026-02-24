@@ -4,26 +4,6 @@ Cross-referencing docs, receipts, cutlist, and code as of 2026-02-24.
 
 ---
 
-## 1. Beam Lamination Fastener: Bolts vs Screws vs Carriage Bolts
-
-Three different fastener descriptions appear for the beam lamination:
-
-| Source | Fastener |
-|--------|----------|
-| `0-readme.md` line 166 | "Connected with structural screws (GRK RSS) from both faces at 12" o.c. staggered" |
-| `dimensions.scad` line 94 | Same — "structural screws (GRK RSS) from both faces at 12" o.c. staggered" |
-| `2-beam.md` line 11–12 | "1/2" × 6.5" HDG carriage bolt + nut + 2 washers, staggered top/bottom at 24" o.c., 8 per beam" |
-| `8-fasteners.md` §3 | "1/2" × 6.5" HDG carriage bolt + nut + 2 washers" — 16 sets purchased |
-| `receipts.csv` line 61 | 16× HDG Hex Head Screw 1/2"-13 × 6-1/2" (McMaster 95373A247) |
-
-**Reality**: Hex head bolts were purchased (not carriage bolts, not structural screws). `2-beam.md` says "carriage bolt" but the McMaster item is a hex head screw. `0-readme.md` and `dimensions.scad` still reference GRK RSS structural screws — an earlier design that was discarded. `2-beam.md` line 13 acknowledges screws were evaluated and discarded in favor of bolts.
-
-**Fix needed**: Update `0-readme.md` line 166 and `dimensions.scad` line 94 to say "1/2" × 6-1/2" HDG hex bolt" instead of "structural screws (GRK RSS)". Update `2-beam.md` and `8-fasteners.md` to say "hex head bolt" instead of "carriage bolt" to match what was actually purchased.
-
-<fix this, we are using the hex bolt>
-
----
-
 ## 2. Beam Center Ply: 3×10 vs 3×12 Trimmed
 
 | Source | Description |
