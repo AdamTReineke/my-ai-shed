@@ -4,31 +4,6 @@ Cross-referencing docs, receipts, cutlist, and code as of 2026-02-24.
 
 ---
 
-## 2. Beam Center Ply: 3×10 vs 3×12 Trimmed
-
-| Source | Description |
-|--------|-------------|
-| `2-beam.md` line 9 | "3x10 (or x12 trimmed)" |
-| `cutlist.csv` line 9 | "PT 3x10 x 16', 2" |
-| `receipts.csv` line 35 | "Pressure Treated Hem/Fir **3x12**-16'" — 2 purchased |
-
-**Reality**: 3×12s were purchased, presumably to be ripped to 9.25" to match 2×10 depth. The cutlist says 3×10, but 3×10 isn't a standard PT lumber size at Dunn Lumber (their PT timber list goes 3×6, 3×8, 3×12). The `2-beam.md` parenthetical "(or x12 trimmed)" is the accurate plan.
-
-**Fix needed**: Update `cutlist.csv` line 9 to "PT 3x12 x 16' (rip to 9.25"), 2". The structural analysis in `2-beam.md` is correct — it uses the 9.25" depth regardless of starting stock.
-
-
-<fix this, we're ripping down to 3x10>
-
----
-
-## 3. Beam Section Properties Note: Screws vs Bolts
-
-`2-beam.md` lines 96–99 say "Structural screws prevent inter-ply slip" and reference a 75% composite stiffness factor "conservative for structural screws." The actual fastener is now bolts, not screws. The composite stiffness reasoning still applies (bolts are at least as good as screws for composite action), but the text is misleading.
-
-**Fix needed**: Change "Structural screws" to "Through-bolts" in the section properties note.
-
-
-<fix this, we're using through-bolts.>
 ---
 
 ## 4. Cutlist: 1×3 Furring Strips

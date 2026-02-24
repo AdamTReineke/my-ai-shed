@@ -93,9 +93,9 @@ Beam (x2):
     The 2x10 + 3x10 + 2x10 layup is 5.5" wide (1.5 + 2.5 + 1.5).
     S and I are full geometric values — for same-depth plies, section
     properties are identical whether plies act compositely or independently
-    (S = b_total × d²/6 either way). Structural screws prevent inter-ply
+    (S = b_total × d²/6 either way). Through-bolts prevent inter-ply
     slip, ensuring all plies share load. A 75% composite stiffness factor
-    is applied to EI for deflection (conservative for structural screws),
+    is applied to EI for deflection (conservative for through-bolts),
     but deflection is so far from governing (15%) that this is academic.
     Verified with `node shed/beam.js` — results match.
 
