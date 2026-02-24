@@ -36,20 +36,6 @@ These are all consistent. No issue found.
 
 ---
 
-## 10. Titen HD Anchor Length: 6" vs 6.5"
-
-| Source | Description |
-|--------|-------------|
-| `8-fasteners.md` §1 line 13 | "5/8" × 6-1/2" SS Titen HD screw anchor" |
-| `8-fasteners.md` §1 line 24 | "Note on length: no 6.5" version... so selecting 6"" |
-| `8-fasteners.md` §1 line 26 | "Purchased: THDB62**600**H4SS - 5/8" x **6"**" |
-
-**Reality**: The spec calls for 6.5" but 6" was purchased because 6.5" doesn't exist. The header of §1 still says "6-1/2"" which is misleading.
-
-**Fix needed**: Update the §1 header/description to say 6" to match what was purchased, or add a clearer note that the 6" version satisfies the requirement.
-
-<fix to match the purchase>
-
 ---
 
 ## 11. ABU66SS Price Discrepancy

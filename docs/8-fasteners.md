@@ -10,7 +10,7 @@ All fasteners in contact with PT lumber or exterior exposure must be **stainless
 
 Simpson ABU66SS stainless adjustable post base, one per pier (6 total).
 
-- 5/8" × 6-1/2" SS Titen HD screw anchor (Simpson THDB62612H6SS or H4SS, 304 vs 316)
+- 5/8" × 6" SS Titen HD screw anchor (Simpson THDB62600H4SS, 304 stainless)
   - Qty: 1 per bracket × 6 piers = 6 total
   - In contact with: cured concrete, SS bracket
   - Drill 5/8" hole with carbide bit (hole diameter = nominal diameter for Titen HD);
@@ -18,10 +18,9 @@ Simpson ABU66SS stainless adjustable post base, one per pier (6 total).
   - Drive with 15/16" wrench; max installation torque 85 ft-lbf; min concrete thickness 8-1/2"
   - Per ABA/ABU/ABW spec sheet: 5/8" anchor required for ABU66
     - Stack above concrete: ABU66SS base plate (12 ga ~0.105") + included washer (~0.065") + hex head (~0.19") ≈ 0.36";
-    - 6-1/2" anchor gives ~6.14" embedment vs. 5-1/2" nominal ✓
+    - 6" anchor gives ~5.64" embedment vs. 5-1/2" nominal ✓
   - Min edge distance from pier edge: 1-3/4" (absolute minimum); 6" for full rated load capacity.
     - TODO: Measure the final installed location and calculate the derating since we'll be off-center on the 12" pillar.
-  - Note on length: no 6.5" version, option was 6" or 8", so selecting 6". 
   - Purchased (6):
     - THDB62600H4SS - 5/8" x 6" Strong-Tie Titen HD Screw Anchor, 304 Stainless Steel
 
