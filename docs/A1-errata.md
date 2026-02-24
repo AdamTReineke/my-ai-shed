@@ -10,22 +10,6 @@ Cross-referencing docs, receipts, cutlist, and code as of 2026-02-24.
 
 ---
 
-## 7. Hurricane Ties: H2.5ASS vs H2.5AZ (Two Different Products)
-
-| Source | Description | Use |
-|--------|-------------|-----|
-| `receipts.csv` line 46 | "S.O. H2.5A**SS**, 26" (Dunn Lumber, stainless) | Joist-to-beam (floor) |
-| `receipts.csv` line 77 | "Simpson H2.5A**Z**, 18" (Home Depot, galvanized) | Truss-to-top-plate (roof) |
-| `8-fasteners.md` §4 | "H2.5ASS" — 26 for joists | ✓ Matches |
-| `8-fasteners.md` §12 | "H2.5A" (HDG) — 18 for trusses | ✓ Matches |
-| `cutlist.csv` line 17 | "Simpson H2.5ASS, 26" | Only lists the joist ties |
-
-**Findings**: Two separate purchases of two different finishes — this is correct (SS for PT joist contact, HDG for non-PT truss contact). The cutlist only lists the 26 stainless ties and omits the 18 galvanized ones.
-
-**Fix needed**: Add "Simpson H2.5AZ, 18" to the cutlist for truss-to-plate hurricane ties.
-
-<fix this>
-
 ---
 
 ## 8. Joist Lumber Quantities
