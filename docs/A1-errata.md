@@ -38,18 +38,6 @@ These are all consistent. No issue found.
 
 ---
 
-## 11. ABU66SS Price Discrepancy
-
-| Source | Price |
-|--------|-------|
-| `2-beam.md` line 139 | "$201.96" (FastenersPlus URL) |
-| `receipts.csv` line 45 | "$241.25 each" (6 × $241.25 = $1,447.50, Dunn Lumber) |
-
-**Reality**: The ABU66SS was purchased from Dunn Lumber at $241.25 each, not FastenersPlus at $201.96. The `2-beam.md` reference is to the FastenersPlus listing (which may have been the original price check) but the actual purchase was from Dunn Lumber at a higher price.
-
-**Fix needed**: Update `2-beam.md` price to reflect actual purchase price, or note that the listed price is a reference and the actual purchase was from Dunn Lumber.
-
-<fix, remove pricing from the markdown file>
 ---
 
 ## 12. Connector Nail Quantities vs Need

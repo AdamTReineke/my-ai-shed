@@ -133,11 +133,9 @@ Post (2x):
     Height: < 3ft each?, TBD, cut to length on site from (likely) a 6-8 ft beam.
 
 Concrete to Wood (x6):
-    ABU66SS
-    https://www.fastenersplus.com/products/simpson-abu66ss-6x6-stainless-steel-adjustable-post-base
     Simpson ABU66SS 6x6 Stainless Steel Adjustable Post Base
-    $201.96
+    (Purchased from Dunn Lumber — see receipts.csv)
 
 Post to Beam (x2, one per post):
-    CC66 Painted (purchased from Dunn Lumber, $132.73 each)
     Simpson CC66 column cap — heavier-duty than AC6SS, same 6× pocket
+    (Purchased from Dunn Lumber — see receipts.csv)
