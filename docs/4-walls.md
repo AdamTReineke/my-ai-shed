@@ -2,7 +2,7 @@
 
 ## General
 
-- **Studs:** 2×6 at 16" o.c., Hem-Fir #2 (insulated walls)
+- **Studs:** 2×6 at 16" o.c., SPF #2 (insulated walls)
 - **Bottom plate:** Pressure-treated 2×6 (contact with subfloor)
 - **Top plate:** Double 2×6
 - **Wall height:** 8' (92⅝" pre-cut studs)

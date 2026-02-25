@@ -53,19 +53,6 @@ These are all consistent. No issue found.
 <leave this for now>
 ---
 
-## 13. Wall Studs: Species Mismatch
-
-| Source | Species |
-|--------|---------|
-| `4-walls.md` line 5 | "2×6 at 16" o.c., **Hem-Fir** #2" |
-| `receipts.csv` line 30 | "**SPF** 2x6-96" Premium Framing Stud #2&Btr KD S4S, 48" |
-
-**Reality**: SPF studs were purchased, not Hem-Fir. SPF has similar (slightly lower) design values to Hem-Fir for wall studs, so this is not a structural concern, but the documentation doesn't match what was bought. The 2×4 framing lumber is also SPF (receipts line 28–29).
-
-**Fix needed**: Update `4-walls.md` to reflect SPF #2, or note the substitution.
-
-<fix this: document the usage of SPF for framing and trusses. we shold re-run the truss.js tool with the updated load values for SPF to make sure we're still ok.>
-
 ---
 
 ## 14. Subfloor: Advantech vs CDX
