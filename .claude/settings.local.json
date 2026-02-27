@@ -13,7 +13,8 @@
       "mcp__trello__add_card_to_list",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(git rm:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

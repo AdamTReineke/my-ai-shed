@@ -69,8 +69,8 @@ const CAMERAS = {
   low:             '96,72,0,65,0,45,800',
   frontCornerMid:  '96,72,90,55,0,45,900',
   postBaseClose:   '12,18,35,55,0,315,120',
-  hurricaneTieClose: '176,18,65,55,0,135,80',
-  sideEast:        '192,72,100,90,0,270,500',
+  hurricaneTieClose: '16,126,65,55,0,315,80',
+  sideEast:        '192,72,60,90,0,270,500',
   underfloor:      '96,0,55,75,0,0,400',
   roofCorner:      '96,72,150,45,0,45,1000',
 };
@@ -163,14 +163,14 @@ const VIEWS = [
   },
   {
     name: 'iso-foundation',
-    camera: 'low',
+    camera: '96,72,0,65,0,45,500',
     show: ['show_piers', 'show_post_bases', 'show_compass_labels'],
   },
 
   // --- Isolation views: Posts & Beams ---
   {
     name: 'iso-post',
-    camera: 'frontCorner',
+    camera: '96,72,48,55,0,45,550',
     show: ['show_piers', 'show_post_bases', 'show_posts', 'show_compass_labels'],
   },
   {
@@ -180,16 +180,11 @@ const VIEWS = [
   },
   {
     name: 'iso-posts-and-beams',
-    camera: 'frontCorner',
+    camera: '96,72,48,55,0,45,550',
     show: ['show_piers', 'show_post_bases', 'show_posts', 'show_beams', 'show_compass_labels'],
   },
 
   // --- Isolation views: Floor System ---
-  {
-    name: 'iso-joist',
-    camera: 'frontCorner',
-    show: ['show_beams', 'show_joists', 'show_compass_labels'],
-  },
   {
     name: 'iso-rim-joist',
     camera: 'frontCorner',
@@ -197,8 +192,8 @@ const VIEWS = [
   },
   {
     name: 'iso-blocking',
-    camera: 'underfloor',
-    show: ['show_beams', 'show_joists', 'show_blocking', 'show_compass_labels'],
+    camera: '96,72,80,20,0,45,500',
+    show: ['show_joists', 'show_blocking', 'show_compass_labels'],
   },
   {
     name: 'iso-hurricane-tie',
@@ -207,7 +202,7 @@ const VIEWS = [
   },
   {
     name: 'iso-floor-framing',
-    camera: 'frontCorner',
+    camera: '96,72,48,55,0,45,600',
     show: [
       'show_piers', 'show_post_bases', 'show_posts', 'show_beams',
       'show_joists', 'show_rim_joists', 'show_blocking', 'show_hurricane_ties',

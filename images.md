@@ -79,9 +79,6 @@
 **Posts-and-beams skeleton**
 ![Posts and Beams](renders/iso-posts-and-beams.png)
 
-**Floor joists spanning between beams**
-![Joist](renders/iso-joist.png)
-
 **Joists and rim joists forming the floor frame perimeter**
 ![Rim Joist](renders/iso-rim-joist.png)
 
