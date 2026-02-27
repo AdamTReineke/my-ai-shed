@@ -63,9 +63,8 @@ Completed sections should be moved to checklist-completed.md
 *East and center positions have no posts — beam sits directly on tall piers via ABU66SS saddles.*
 
 ### Cutting
-- [ ] Measure beam-bottom-to-pier-top gap at each west position (after pier cure)
-- [ ] Cut 2 west posts: 6×6 × measured height (subtract hardware heights)
-- [ ] Allow ~1" extra for final leveling cuts
+- [x] Measure beam-bottom-to-pier-top gap at each west position (after pier cure)
+- [ ] Cut 2 west posts: 6×6 — south 16.5", north 17.25" (as-built, wood height only)
 
 ### Installation
 - [ ] Set posts in ABU66SS bases at west positions

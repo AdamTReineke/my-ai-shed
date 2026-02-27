@@ -124,7 +124,7 @@ The east and center piers rise to beam level — the beam sits directly on concr
 | 8' from east | **Center** | **Beam direct to concrete** | Tall pier; ABU66SS as beam saddle |
 | 15' from east | **West end** | **6×6 post on short pier** | ABU66SS base + CC66 post cap |
 
-**Post Material (west positions only):** 6×6 pressure-treated Hem-Fir #2 (or better). Exact post heights to be measured on-site after pier curing (beam level minus pier top minus hardware).
+**Post Material (west positions only):** 6×6 pressure-treated Hem-Fir #2 (or better). As-built post heights (wood only, excluding metal brackets): south 16.5", north 17.25".
 
 **Column Capacity Check:**
 - 6×6 actual dimensions: 5.5" × 5.5"
@@ -228,7 +228,7 @@ All hardware uses post-install anchors (wedge anchors or similar), allowing conc
 - Beams run E-W (parallel to 16' dimension), cantilever 1' past corner posts
 - All cantilevers support exterior wall loads
 - East and center positions have no wood posts — beam sits directly in ABU66SS on concrete
-- Post heights include ~1" extra for trimming to exact level
+- As-built post heights: south 16.5", north 17.25" (wood only, excluding brackets)
 
 ---
 

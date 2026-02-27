@@ -224,14 +224,20 @@ color_gusset = [0.45, 0.35, 0.2];     // Dark brown plywood gussets
 // Posts extend from pier top to beam bottom
 // Beam bottom elevation is set to clear the highest ground + post + clearance
 
-// We need a consistent beam bottom elevation for a level floor
-// Highest ground is at east side (~24-26"), add pier_above_ground + post_base + min post
-// Let's set beam bottom at a fixed elevation that works for all positions
-beam_bottom_z = 60;          // Fixed beam bottom elevation
+// Beam bottom elevation derived from as-built south post:
+// ground(12,18) + pier_above_ground + post_base_height + post_height_south
+// = 25.5 + 2 + 1 + 16.5 = 45.0
+beam_bottom_z = 45;          // Fixed beam bottom elevation (as-built)
 
-// Calculate post heights based on ground elevation at each position
+// Calculate pier top Z (for post base positions, 2" above ground)
 function pier_top_z(x, y) = ground_height(x, y) + pier_above_ground;
-function post_height_at(x, y) = beam_bottom_z - pier_top_z(x, y) - post_base_height;
+
+// As-built post heights (wood only, excluding metal brackets)
+// South post (x=12, y=18, pier P6): 16.5"
+// North post (x=12, y=126, pier P3): 17.25"
+post_height_south = 16.5;
+post_height_north = 17.25;
+function post_height_at(x, y) = (y < shed_width / 2) ? post_height_south : post_height_north;
 
 // Derived elevations
 joist_bottom_z = beam_bottom_z + beam_height;

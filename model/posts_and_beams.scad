@@ -1,11 +1,10 @@
 // Shed Model - Posts and Beams
 include <dimensions.scad>
 
-// 6x6 Post - height varies based on ground elevation
+// 6x6 Post - as-built heights: south 16.5", north 17.25"
 module post(x, y) {
-    top_z = pier_top_z(x, y);
-    post_bottom = top_z + post_base_height;
     height = post_height_at(x, y);
+    post_bottom = beam_bottom_z - height;  // Position from beam down
 
     // Only render if post height is positive (> min threshold)
     if (height > 2) {

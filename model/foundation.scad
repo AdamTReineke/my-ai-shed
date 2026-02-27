@@ -22,10 +22,9 @@ module pier(spec) {
     below_cone = total_height - bf_height - above_cone;
 
     // Pier top position depends on support type
-    ground_z = ground_height(x, y);
     pier_top = is_saddle_position(x)
         ? beam_bottom_z
-        : ground_z + pier_above_ground;
+        : beam_bottom_z - post_height_at(spec[0], spec[1]) - post_base_height;
     pier_bottom = pier_top - total_height;
 
     color(color_concrete, pier_alpha) {
@@ -68,7 +67,8 @@ module abu66ss_channel(cx, cy, base_z, interior_w) {
 // Base plate sits on pier top; post slides in from above (interior = post width)
 module post_base(x, y) {
     echo(str("CUTLIST,Post base (x=", x, " y=", y, "),Simpson ABU66SS,1,post base"));
-    abu66ss_channel(x, y, pier_top_z(x, y), post_width);
+    base_z = beam_bottom_z - post_height_at(x, y) - post_base_height;
+    abu66ss_channel(x, y, base_z, post_width);
 }
 
 // Beam saddle (Simpson ABU66SS) - for positions with NO post
