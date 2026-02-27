@@ -30,4 +30,26 @@ I expected the bolts for the beam lamination to arrive today, but tracking shows
 
 # 02/25/2026
 
-Day 2.
+Day 2. Mostly a sick day with kid pickup and doctor appointment. Got one end of the south wood post set up to soak overnight. The bolts for beam lamination arrived.
+
+# 02/26/2026
+
+Day 3.
+
+On the north beam, I struggled a lot getting straight holes through the wood beams. The holes would be slightly off and I struggled to get the bolt to thread out into the exit hole in the hardware. I think there's a technique where you drill a long hole from the exit side and then make a short, cone-shaped hole on the entry side that can find the exit hole. This gives the entrance side more flexibility in finding the hole, then it will hopefully follow the long hole out the desired position. The 5/8ths bolts are not really bendy at all though, so this is tough.
+
+I was also stalling the 8amp drill I borrowed. The 5.5" PT beams are just too much wet material. I'd have to basically run a handful of rotations forward, then reverse to clear chips, then repeat. I'd use the 5/8" spade bit to basically ream out the holes and try to get a straighter through-hole between the hardware saddles.
+
+On the south side, I had to pull the bolt and drill deeper on the southwest piller, the bolt hit 100 ft/lbs of torque and was still not all the way down. I think the hole just didn't go deep enough. I'm curious if that was the first one I drilled. I got all three boards set in the south brackets. I cut six shims to go under the south middle pier inside the saddle, it was just too short to have a level beam. This probably makes the bottom hole in the ABU66 too close to the edge of the beam on that pillar, so maybe we'll send a few nails through the extra holes in the bracket as backups.
+
+I ended the day cutting the post for the south side to the correct length and set the newly cut end in copper to soak overnight.
+
+The 21 degree stainless siding (framing) nails arrived. Expecting the SS joist hanger nails tomorrow.
+
+End of day state: North beam fully bolted to the ABU66 and the bottom two bolts of the CC66 are installed. South ABU66 are torqued to the concrete, beam is set and leveled, and nailed to align the three boards. Post is cut and soaking.
+Goal for tomorrow: get south beam fully secured. My technique is improving, so I'm optimistic.
+
+# 02/27/2026
+
+Day 4.
+

@@ -22,6 +22,13 @@ module queen_post_truss(x_pos, alpha = 1.0) {
     echo(str("CUTLIST,Truss south queen post (x=", x_pos, "),2x4,1,22.3\" angle cut 26.6°"));
     echo(str("CUTLIST,Truss north queen post (x=", x_pos, "),2x4,1,22.3\" angle cut 26.6°"));
     echo(str("CUTLIST,Truss straining beam (x=", x_pos, "),2x4,1,48\""));
+    echo(str("CUTLIST,Peak gusset (x=", x_pos, "),1/2\" plywood,2,12\" x 19.4\" pentagon"));
+    echo(str("CUTLIST,QP top gusset south (x=", x_pos, "),1/2\" plywood,2,10\" x 8\""));
+    echo(str("CUTLIST,QP top gusset north (x=", x_pos, "),1/2\" plywood,2,10\" x 8\""));
+    echo(str("CUTLIST,QP bottom gusset south (x=", x_pos, "),1/2\" plywood,2,10\" x 8\""));
+    echo(str("CUTLIST,QP bottom gusset north (x=", x_pos, "),1/2\" plywood,2,10\" x 8\""));
+    echo(str("CUTLIST,Eave gusset south (x=", x_pos, "),1/2\" plywood,2,10\" x 8\""));
+    echo(str("CUTLIST,Eave gusset north (x=", x_pos, "),1/2\" plywood,2,10\" x 8\""));
     color(color_truss, alpha)
     translate([x_pos, 0, wall_top_z]) {
         truss_bottom_chord();
@@ -30,6 +37,16 @@ module queen_post_truss(x_pos, alpha = 1.0) {
         truss_south_queen_post();
         truss_north_queen_post();
         truss_straining_beam();
+    }
+    color(color_gusset, alpha)
+    translate([x_pos, 0, wall_top_z]) {
+        truss_peak_gusset();
+        truss_south_qp_top_gusset();
+        truss_north_qp_top_gusset();
+        truss_south_qp_bottom_gusset();
+        truss_north_qp_bottom_gusset();
+        truss_south_eave_gusset();
+        truss_north_eave_gusset();
     }
 }
 

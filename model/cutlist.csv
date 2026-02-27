@@ -1,21 +1,61 @@
-1x3 x 8' (rip from PT 1x6-16'), 60
-2x4 x 8', 36
-2x4 x 12', 9
-2x6 x 8', 48
-2x6 x 12', 6
-2x6 x 16', 6
-HardiePlank 5/16" x 12', 80
-PT 2x10 x 16', 4
-PT 3x12 x 16' (rip to 9.25"), 2
-PT 2x8 x 8', 5
-PT 2x8 x 12', 13
-PT 2x8 x 16', 2
-PT 6x6 x 8', 1
-Advantech 3/4" T&G OSB Underlayment x 4x8', 6
-7/16" Zip System Panel (wall + roof) x 4' x 8', 24
-Simpson ABU66SS, 6
-Simpson H2.5ASS (joist-to-beam), 26
-Simpson H2.5AZ (truss-to-plate), 18
-floor insulation: Rmax® 3.1" · R-21 ThermoSheath-3 Foil Faced Closed Cell Polyisocyanurate Foam Insulation 4x8 Panel, 6
-wall insulation: Rockwool ComfortBatt™ Stone Wool Insulation Batts R-23x15" · (8 batts@5½"x47") 39.8sf, 10
-wall interior: CDX 1/2" Plywood Sheathing 4-ply 4'x8' (net 15/32"), 14
+Simpson ABU66SS,post base,2
+Simpson ABU66SS,beam saddle,4
+PT 6x6,031-1/2",1
+Simpson CC66,post cap,2
+PT 6x6,033",1
+PT 2x10,192",4
+PT 3x10,192",2
+PT 2x8,141",13
+PT 2x8,192",2
+PT 2x8,014-1/2",22
+PT 2x8,013",2
+Simpson H2.5ASS,001-3/8" strap,26
+PT 3/4" plywood,096" x 048",5
+PT 3/4" plywood,048" x 048",2
+2x6,192",5
+2x6,091-1/2",45
+2x6,145-1/2",1
+2x6,013-1/2",1
+2x6,078",2
+2x6 + 1/2" ply spacer,036",1
+2x6,008",3
+2x6,133",6
+7/16" OSB,048" x 096",13
+1x3,096",47
+HardiePlank 5/16",063-1/16" x 008-1/4",10
+HardiePlank 5/16",128-9/16" x 008-1/4",5
+HardiePlank 5/16",095-1/16" x 008-1/4",10
+HardiePlank 5/16",096-9/16" x 008-1/4",6
+HardiePlank 5/16",127-1/16" x 008-1/4",10
+HardiePlank 5/16",064-9/16" x 008-1/4",6
+HardiePlank 5/16",063-1/16" x 002-1/4",2
+HardiePlank 5/16",128-9/16" x 002-1/4",2
+7/16" OSB,001-1/2" x 096",1
+7/16" OSB,013-1/2" x 096",1
+7/16" OSB,033" x 018",1
+HardiePlank 5/16",082-3/16" x 008-1/4",5
+HardiePlank 5/16",013-3/8" x 008-1/4",13
+HardiePlank 5/16",050-3/16" x 008-1/4",4
+HardiePlank 5/16",018-3/16" x 008-1/4",4
+HardiePlank 5/16",007-9/16" x 008-1/4",6
+HardiePlank 5/16",139-1/16" x 008-1/4",6
+HardiePlank 5/16",039-9/16" x 008-1/4",6
+HardiePlank 5/16",107-1/16" x 008-1/4",6
+HardiePlank 5/16",071-9/16" x 008-1/4",6
+HardiePlank 5/16",075-1/16" x 008-1/4",6
+HardiePlank 5/16",103-9/16" x 008-1/4",6
+HardiePlank 5/16",043-1/16" x 008-1/4",6
+HardiePlank 5/16",135-9/16" x 008-1/4",6
+HardiePlank 5/16",011-1/16" x 008-1/4",6
+HardiePlank 5/16",007-9/16" x 002-1/4",2
+HardiePlank 5/16",139-1/16" x 002-1/4",2
+2x4,144",9
+2x4,093-7/8" plumb cuts,4
+2x4,005-3/8" angle cut top 26.6°,4
+2x4,015-7/8" angle cut top 26.6°,4
+2x4,026-3/8" angle cut top 26.6°,4
+2x4,093-7/8" plumb cuts 26.6°,14
+2x4,022-5/16" angle cut 26.6°,14
+2x4,048",7
+1/2" plywood,012" x 20",14
+1/2" plywood,010" x 008",84
