@@ -49,7 +49,48 @@ The 21 degree stainless siding (framing) nails arrived. Expecting the SS joist h
 End of day state: North beam fully bolted to the ABU66 and the bottom two bolts of the CC66 are installed. South ABU66 are torqued to the concrete, beam is set and leveled, and nailed to align the three boards. Post is cut and soaking.
 Goal for tomorrow: get south beam fully secured. My technique is improving, so I'm optimistic.
 
-# 02/27/2026
+# 02/27/2026, Friday
 
 Day 4.
 
+Getting bolts into beams. Based on the progress, I must have installed 4 bolts on the north, then 8 on the south side. They're tough so that probably was the full day.
+
+The notable bit was getting the post set between the CC66 above and the ABU66 below. The brackets are turned opposite ways, so you can't slide it in with the beam in the final position. I used a car jack placed just west of the middle bracket to lift the beam up high enough I can fit the post it, then lower it back down. I used a piece of large dimension lumber I had sitting around as a sledge to pound the beam deep into the bracket.
+
+End of day state: just 4 big bolts remaining, at the top of the CC66 to the south beam.
+
+# 02/28/2026, Saturday
+
+Day 5.
+
+Just had a couple hours. First two bolts were perfect. The next two bolts were a bit of a struggle. But I had enough technique to get through quick.
+
+Talking technique: the big auger bit just stalls. The drill I'm borrowing just doesn't have the torque to push through, and I think the chips from the wet pressure treated wood is compacting rather than ejecting. I can drill and back, but eventually the auger still gets stuck and it's a bear to withdraw. I'm mostly using a shorter spade bit. I use a short level, first as a square to make sure I'm lined up left/right, then to make sure I'm shooting up just a hair (thanks to a YouTube clip where someone pointed out the bit slopes down). When I'm lucky, I can hit the 5/8ths hole on the other side of the 5.5" beam.
+
+But when I'm off? My bolts are long, so I have some threads to spare. I'm usually off by less than half the diameter. I don't have a bench grinder or I'd round the whole thing to have a point that would direct it out the hole. (I tried this technique... with a file clamped to a board, while spinning the bolt in my impact driver and holding the shaft with my leather gloves. I tried it once, it worked but... yikes.) The thing I settled on was using the jigsaw with a metal blade to cut the tip of the bolt at a 45 degree angle. Then turning the bolt so the angle allowed the narrower tip to slip into the exit hole and guide the rest of the bolt. It worked, repeatable and fast. The downside is it's galvanized metal, so I probably need to paint the exposed metal now. 
+
+The bolts that have to thread the holes are done now.
+
+The next bolts are just going through the beam to tie the layers together. I tried the auger, it stalled, got stuck and was a bear to extract. I used my smaller diameter bit for running cords through walls (3/8", 48" long). It's got a design that gives more room for chips behind it and the smaller diameter means less surface contact to overcome for the torque of the drill. This worked better, just a little bit of in and out at the beginning to clear a few chips, then it punches all the way through. Then I come back with the impact driver and spade bit and hit each side, clearing chips as I go with the air compressor from the opposite side.
+
+The last battery died with 2 left to install on the south beam and 7 left on the north beam.
+
+The other task I'd done earlier was trim the beams to exactly 16' and begin to trim the top of the beam. My two big batteries died pretty early in this task. One thing I noticed is that the wood I'm removing from the top of the beam wants to grab down on my blade, so I have to remove the offcut periodically. I wonder if just relief cross-cuts would be sufficient and faster. I don't need the offcuts, so creating this trash is fine.
+
+End of day state: beams need tops trimmed flush, still need 9 more through-bolts to tie the beam together.
+Goal for next day: Last bolts done, beams trimmed and painted with copper green.
+
+# 03/01/2026, Sunday [Future]
+
+(Likely little, I gotta get tax paperwork together. Will focus on using battery and getting stuff painted so it can dry. I can set the rim joists over the top of the beam so it doesn't get too wet on Tuesday, if I have to.)
+
+# 03/02/2026, Monday [Future]
+
+(nice day, plywood delivery expected)
+(goal: 11x joists cut to 11'-9" and painted green? 24x 14.5" blocks cut?)
+
+# 03/03/2026, Tuesday [Future]
+Rain forecast.
+
+# 03/04/2026, Wednesday [Future]
+Rain forecast.
