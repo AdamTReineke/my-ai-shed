@@ -101,28 +101,24 @@ function rafterTopZ(y, isSouth) {
 }
 
 function southRafter() {
-  // From south overhang tip to peak
-  // Plumb cut at overhang end (vertical face)
+  // From south eave to peak
+  // Plumb cut (vertical) at eave end — keeps rafter within wall plane
   // Vertical cut at peak so both rafters meet flush
   const yStart = -overhang;
   const yPeak = halfSpan - gap / 2;  // vertical cut face at peak, gap/2 from center
-
-  // Perpendicular offset from bottom edge to top edge of rafter
-  const dyPerp = -D * sinA;
-  const dzPerp = D * cosA;
 
   // Bottom edge Z at start and peak
   const zBottomStart = rafterBottomZ(yStart);
   const zBottomPeak = rafterBottomZ(yPeak);
 
-  // Peak end: vertical cut — top point is directly above bottom at same Y
-  const zTopPeak = zBottomPeak + D / cosA;  // vertical height of rafter cross-section
+  // Both ends: vertical (plumb) cut — top point directly above bottom at same Y
+  const plumbTopOffset = D / cosA;  // vertical height of rafter cross-section
 
   const profile = [
-    [yStart, zBottomStart],                          // bottom-south (overhang tip)
+    [yStart, zBottomStart],                          // bottom-south (eave)
     [yPeak, zBottomPeak],                            // bottom-north (peak)
-    [yPeak, zTopPeak],                               // top-north (peak, vertical cut)
-    [yStart + dyPerp, zBottomStart + dzPerp],        // top-south (overhang tip)
+    [yPeak, zBottomPeak + plumbTopOffset],            // top-north (peak, plumb cut)
+    [yStart, zBottomStart + plumbTopOffset],          // top-south (eave, plumb cut)
   ];
   return extrudeProfile(profile);
 }
@@ -131,21 +127,17 @@ function northRafter() {
   const yPeak = halfSpan + gap / 2;  // vertical cut face at peak
   const yEnd = span + overhang;
 
-  // Perpendicular offset (north rafter slopes down toward north)
-  const dyPerp = D * sinA;
-  const dzPerp = D * cosA;
-
   const zBottomPeak = rafterBottomZ(yPeak);
   const zBottomEnd = rafterBottomZ(yEnd);
 
-  // Peak end: vertical cut
-  const zTopPeak = zBottomPeak + D / cosA;
+  // Both ends: vertical (plumb) cut
+  const plumbTopOffset = D / cosA;
 
   const profile = [
     [yPeak, zBottomPeak],                            // bottom-south (peak)
-    [yEnd, zBottomEnd],                              // bottom-north (overhang tip)
-    [yEnd + dyPerp, zBottomEnd + dzPerp],            // top-north (overhang tip)
-    [yPeak, zTopPeak],                               // top-south (peak, vertical cut)
+    [yEnd, zBottomEnd],                              // bottom-north (eave)
+    [yEnd, zBottomEnd + plumbTopOffset],             // top-north (eave, plumb cut)
+    [yPeak, zBottomPeak + plumbTopOffset],           // top-south (peak, plumb cut)
   ];
   return extrudeProfile(profile);
 }

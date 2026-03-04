@@ -164,11 +164,6 @@ queen_post_height = queen_post_inset * truss_pitch;  // 23.125" at queen post ce
 straining_beam_inset = (truss_span - straining_beam_width) / 2;  // 48"
 straining_beam_z_above_chord = straining_beam_inset * truss_pitch;  // 24" above chord top
 
-// Ladder framing parameters (gable end overhangs)
-gable_overhang = 12;                    // 1' overhang past gable walls
-lookout_spacing = 24;                   // Lookouts at 24" o.c. along rafter
-lookout_width = 1.5;                    // 2x4 lookout thickness
-lookout_depth = 3.5;                    // 2x4 lookout depth
 
 // ============================================
 // PIER DIMENSIONS (from concrete.js as-built measurements)
@@ -221,9 +216,8 @@ color_stud = [0.85, 0.75, 0.55];     // Lighter wood for studs
 color_wall_ns = [0.9, 0.85, 0.2];    // Yellow for North/South walls
 color_wall_ew = [0.3, 0.5, 0.9];     // Blue for East/West walls
 color_truss = color_stud;              // Wood tone (same as studs)
-color_ladder = [0.75, 0.65, 0.45];    // Slightly darker wood for ladder framing
 color_gusset = [0.45, 0.35, 0.2];     // Dark brown plywood gussets
-color_zip = [0.65, 0.25, 0.25];       // Zip System sheathing (red/maroon)
+color_zip = [0.25, 0.55, 0.25];       // Zip System sheathing (green)
 
 // Roof sheathing
 roof_sheathing_thickness = 7/16;      // 7/16" Zip System roof sheathing

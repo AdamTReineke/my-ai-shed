@@ -1,4 +1,4 @@
-// Shed Model - Trusses and Ladder Framing
+// Shed Model - Trusses
 include <dimensions.scad>
 include <truss_data.scad>
 include <end_truss_data.scad>
@@ -68,30 +68,6 @@ module end_truss(x_pos, alpha = 1.0) {
     }
 }
 
-// Ladder framing for one gable end: outriggers + fly rafters
-// x_pos = end truss X position, side = -1 for west (overhang toward -X), +1 for east
-module ladder_framing(x_pos, side = -1, alpha = 1.0) {
-    side_label = side == -1 ? "west" : "east";
-    echo(str("CUTLIST,Fly rafter south (", side_label, "),2x4,1,80.5\" plumb cuts"));
-    echo(str("CUTLIST,Fly rafter north (", side_label, "),2x4,1,80.5\" plumb cuts"));
-    echo(str("CUTLIST,Outriggers (", side_label, "),2x4,6,36\""));
-    color(color_ladder, alpha)
-    translate([x_pos, 0, wall_top_z]) {
-        // Outriggers are generated with X from -gable_overhang to +24
-        // For west end (side=-1): outriggers extend from X=-12 to X=+24 relative to end truss — correct as-is
-        // For east end (side=+1): mirror in X so overhang goes the other way
-        if (side == 1) {
-            mirror([1, 0, 0]) {
-                end_truss_outriggers();
-                end_truss_fly_rafters();
-            }
-        } else {
-            end_truss_outriggers();
-            end_truss_fly_rafters();
-        }
-    }
-}
-
 // All trusses at 24" o.c.
 module trusses() {
     truss_spacing = 24;  // 24" on center
@@ -99,16 +75,15 @@ module trusses() {
 
     for (i = [0 : num_trusses - 1]) {
         x_pos = i * truss_spacing;
-        if (i == 0 || i == num_trusses - 1) {
-            end_truss(x_pos);
+        if (i == 0) {
+            // West end truss: shift inward so outer face is flush with wall
+            end_truss(x_pos + truss_member_width/2);
+        } else if (i == num_trusses - 1) {
+            // East end truss: shift inward so outer face is flush with wall
+            end_truss(x_pos - truss_member_width/2);
         } else {
             queen_post_truss(x_pos);
         }
     }
 }
 
-// All ladder framing (called separately from shed_model.scad)
-module ladder_framing_all() {
-    ladder_framing(0, -1);                    // West end, overhang toward -X
-    ladder_framing(shed_length, 1);           // East end, overhang toward +X
-}

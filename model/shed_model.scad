@@ -11,7 +11,7 @@
 //   floor.scad          - Plywood floor decking
 //   walls.scad          - Wall framing (N/S/E/W with door)
 //   wall_cladding.scad  - OSB sheathing, furring strips, lap siding
-//   trusses.scad        - Queen-post trusses and ladder framing
+//   trusses.scad        - Queen-post trusses
 //   labels.scad         - Compass direction labels
 
 $vpf=34;
@@ -32,7 +32,6 @@ show_hurricane_ties = true;      // Simpson H2.5ASS hurricane ties (joist-to-bea
 show_floor_decking = true;
 show_walls = true;
 show_trusses = true;            // Queen-post roof trusses
-show_ladder_framing = false;     // Gable end ladder framing (lookouts + fly rafters)
 show_roof = true;               // Zip System roof sheathing
 show_osb = true;                 // 7/16" OSB sheathing (wall exterior)
 show_furring = true;             // 1×3 furring strips (rainscreen gap)
@@ -175,11 +174,6 @@ if (show_trusses) {
     trusses();
 }
 
-// Ladder framing (gable end overhangs)
-if (show_ladder_framing) {
-    echo("CUTLIST,=== LADDER FRAMING ===,,,");
-    ladder_framing_all();
-}
 
 // Roof sheathing (Zip System)
 if (show_roof) {
