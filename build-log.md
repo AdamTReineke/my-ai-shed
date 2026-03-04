@@ -80,17 +80,25 @@ The other task I'd done earlier was trim the beams to exactly 16' and begin to t
 End of day state: beams need tops trimmed flush, still need 9 more through-bolts to tie the beam together.
 Goal for next day: Last bolts done, beams trimmed and painted with copper green.
 
-# 03/01/2026, Sunday [Future]
+# 03/01/2026, Sunday
 
 (Likely little, I gotta get tax paperwork together. Will focus on using battery and getting stuff painted so it can dry. I can set the rim joists over the top of the beam so it doesn't get too wet on Tuesday, if I have to.)
 
-# 03/02/2026, Monday [Future]
+Rented a recriprocating saw to cut the tops off the beam. It was killing my battery too fast to use my existing tools.
 
-(nice day, plywood delivery expected)
-(goal: 11x joists cut to 11'-9" and painted green? 24x 14.5" blocks cut?)
+Joists all cut to length. Exposed ends and beam top all painted with Copper Green.
 
-# 03/03/2026, Tuesday [Future]
-Rain forecast.
+# 03/02/2026, Monday
 
-# 03/04/2026, Wednesday [Future]
-Rain forecast.
+Got all the blocking cut and painted with Copper Green. Nailed the joists to the rim. Tried to level the top of the beam on the north side a little with a detail sander.
+
+Zip and truss plywood was delivered.
+
+# 03/03/2026, Tuesday
+
+Light enough rain that I got the joists fully secured to the beams. The palm nailer made quick work of the hurricane ties. Experimented with a way to cut the foam for the floor.
+
+# 03/04/2026, Wednesday
+
+Rain was too heavy to realistically do any work. I put a tarp over the structure to help keep the framing from getting any wetter.
+
