@@ -108,8 +108,8 @@ Simpson H2.5ASS (18-ga stainless), one per joist-beam intersection. Joists sit o
   - Qty (rim to beam): 3 per beam crossing × 2 beams × 2 rims = 12 nails
   - Qty (rim to field joist): 3 per joist end × 11 joists × 2 rims = 66 nails
   - Total: ~78 nails
-  - In contact with: PT Hem-Fir rim joist, PT Hem-Fir beam (face-nail) and PT Hem-Fir field joists (end-nail)
-  - Material depth (rim to beam, face-nail): rim joist 1.5" + 2.0" penetration into beam face = 3.5" — correct
+  - In contact with: PT Hem-Fir rim joist, PT Hem-Fir beam (toe-nail) and PT Hem-Fir field joists (end-nail)
+  - Material depth (rim to beam, toe-nail): rim sits on top of beam; nail driven at ~30° through rim into beam side grain; 3.5" nail gives ~2.0" penetration into beam — correct
   - Material depth (rim to field joist, end-nail): rim joist 1.5" + 2.0" penetration into joist end grain = 3.5" — correct
   - HDG required throughout — all lumber is PT
   - Purchased 2026-02-20 (Home Depot): Grip-Rite 16d 3-1/2" HDG Smooth Shank Common Nails, 2 × 1 lb (~94 nails). Need 78. ✓

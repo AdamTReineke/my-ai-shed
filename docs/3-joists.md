@@ -149,7 +149,7 @@ Utilization: 57%  ✓
 ### Hurricane Ties (Uplift Restraint)
 - **Hardware:** Simpson H2.5ASS (18-gauge, 316 stainless steel)
 - **Quantity:** 26 (13 joists × 2 beams)
-- **Fasteners:** (5) 0.131" × 2½" SS nails to joist, (5) 0.131" × 2½" SS nails to beam
+- **Fasteners:** (5) 0.131" × 1½" SS ring-shank nails to joist face, (5) 0.131" × 2½" SS ring-shank nails to beam top
 - **Installation:** Single-sided L-shaped tie; nails to joist face and beam top. Symmetrical design — no left/right distinction.
 
 **Allowable Loads (SPF/HF, 160% load duration):**
@@ -165,7 +165,7 @@ Utilization: 57%  ✓
 
 ### Rim Joist Connection
 - Rim joists at x=0" and x=192" (east and west ends)
-- Face-nailed to beam ends: 3-16d nails per connection
+- Toe-nailed to beam top: 3-16d nails per connection
 - End-nailed through rim into field joists: 3-16d nails per joist end
 
 ---
