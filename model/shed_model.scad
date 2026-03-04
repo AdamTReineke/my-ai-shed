@@ -33,7 +33,7 @@ show_floor_decking = true;
 show_walls = true;
 show_trusses = true;            // Queen-post roof trusses
 show_ladder_framing = false;     // Gable end ladder framing (lookouts + fly rafters)
-show_roof = true;               // Future: roof sheathing
+show_roof = true;               // Zip System roof sheathing
 show_osb = true;                 // 7/16" OSB sheathing (wall exterior)
 show_furring = true;             // 1×3 furring strips (rainscreen gap)
 show_siding = true;              // HardiePlank lap siding
@@ -58,6 +58,7 @@ include <floor.scad>
 include <walls.scad>
 include <wall_cladding.scad>
 include <trusses.scad>
+include <roof_sheathing.scad>
 include <labels.scad>
 
 // ============================================
@@ -178,6 +179,12 @@ if (show_trusses) {
 if (show_ladder_framing) {
     echo("CUTLIST,=== LADDER FRAMING ===,,,");
     ladder_framing_all();
+}
+
+// Roof sheathing (Zip System)
+if (show_roof) {
+    echo("CUTLIST,=== ROOF SHEATHING ===,,,");
+    roof_sheathing();
 }
 
 // Compass labels

@@ -5,19 +5,28 @@
 | Parameter | Value |
 |-----------|-------|
 | **Pitch** | 6/12 |
-| **Overhang** | 1' at eaves (N/S), 1' at gable ends (E/W) |
+| **Eave overhang (N/S)** | None (rafters flush with wall face) |
+| **Gable overhang (E/W)** | 1' (ladder framing) |
 | **Insulation** | At roof plane (unvented/hot roof assembly) |
 
 ---
 
-## Roof Sheathing
+## Roof Sheathing — Zip System Envelope
 
-*TBD — details to be added before installation.*
+Wall and roof sheathing form a continuous Zip System envelope:
 
-- Material: 1/2" CDX or OSB
-- Nail schedule: 6" o.c. edges, 12" o.c. field
-- H-clips between panels if required
-- Extend to cover fascia edge for drip edge support
+- **Material**: 7/16" Zip System sheathing (wall + roof)
+- **Wall panels**: 4×8 sheets cover 1.75" below subfloor + 87.25" wall frame + 7" truss end = 96" exactly
+- **Roof panels**: 7/16" Zip on top of rafters, from eave (wall face) to ridge
+- **Seams**: Zip System tape + roller at all panel joints
+- **Nail schedule**: 6" o.c. edges, 12" o.c. field
+
+### Layers Above Zip (TBD)
+
+Future assembly above roof Zip sheathing:
+- [ ] Rigid foam insulation (polyiso)
+- [ ] Furring strips / purlins
+- [ ] Metal roofing (standing seam or exposed fastener)
 
 ---
 

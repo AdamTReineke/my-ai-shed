@@ -27,7 +27,7 @@ const DIM = {
   JOIST_CANTILEVER: 1.5 * FT, // 18" cantilever each end
   BEAM_SPAN: 7 * FT,        // 84" between posts
   BEAM_CANTILEVER: 1 * FT,  // 12" past end posts
-  WALL_HEIGHT: 8 * FT,      // 96"
+  WALL_HEIGHT: 87.25,        // Shortened for Zip envelope (1.75 + 87.25 + 7 = 96")
 };
 
 // =============================================================================

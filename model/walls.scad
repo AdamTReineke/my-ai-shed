@@ -118,7 +118,7 @@ module north_wall() {
 
     // Door dimensions
     door_ro_width = door_width + door_rough_opening_extra;  // 33"
-    door_ro_height = door_height + 1.5;  // 78" (½" bottom gap + 1" top shimming)
+    door_ro_height = door_height + 0.75;  // 77.25" (¾" shimming above frame)
 
     // Door position: 13.5" from east end to R.O. right edge
     // R.O. clear opening: 145.5" to 178.5"

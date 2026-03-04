@@ -19,10 +19,12 @@ include <BOSL2/std.scad>
 shed_length = 16 * 12;       // 16' = 192" (X direction, East-West)
 shed_width = 12 * 12;        // 12' = 144" (N-S direction)
 
-// Wall height - ADJUST THIS to control sheathing coverage
-// Standard 8' walls = 96", but you may want taller so 4x8 sheathing
-// covers the floor framing (add ~12-15" for joist + beam depth)
-wall_height = 96;            // 8' standard - adjust as needed
+// Wall height - sized so 4×8 Zip panel covers:
+//   below_floor + 87.25" wall + truss_end = 96"
+// Truss end height = D + D/cos(angle) = 3.5 + 3.5/cos(26.57°) = 7.417"
+// below_floor = 96 - 87.25 - 7.417 = 1.333"
+wall_height = 87.25;
+// wall_sheathing_below_floor computed after truss params are defined (see below)
 
 // Door dimensions (east end of north wall)
 // Measured frame: 31.5" wide × 76.5" tall, 6.75" thick, 29⅛" interior
@@ -134,7 +136,7 @@ plate_depth = 5.5;           // Top/bottom plate depth
 // Truss parameters
 truss_member_width = 1.5;    // 2x4 actual thickness
 truss_member_depth = 3.5;    // 2x4 actual depth
-truss_overhang = 12;         // 1' overhang past each wall
+truss_overhang = 0;          // No N/S eave overhang (gable E/W overhang stays)
 truss_pitch = 6/12;          // 6/12 pitch (rise per run)
 truss_span = shed_width;     // 144" span between walls
 truss_total_length = truss_span + 2 * truss_overhang;  // 168" total
@@ -143,6 +145,11 @@ truss_total_length = truss_span + 2 * truss_overhang;  // 168" total
 truss_half_span = truss_span / 2;                      // 72" from center to wall
 truss_rise = truss_half_span * truss_pitch;           // 36" rise at peak
 truss_rafter_angle = atan(truss_pitch);               // ~26.57 degrees
+
+// Zip panel math: 4×8 sheet = below_floor + wall_height + truss_end_height
+// Truss end vertical height at plumb cut = D + D/cos(angle)
+truss_end_height = truss_member_depth + truss_member_depth / cos(truss_rafter_angle);
+wall_sheathing_below_floor = 96 - wall_height - truss_end_height;  // ~1.337"
 
 // Straining beam width (matches truss.js --sb-width=48)
 straining_beam_width = 48;                            // 48" straining beam
@@ -216,6 +223,10 @@ color_wall_ew = [0.3, 0.5, 0.9];     // Blue for East/West walls
 color_truss = color_stud;              // Wood tone (same as studs)
 color_ladder = [0.75, 0.65, 0.45];    // Slightly darker wood for ladder framing
 color_gusset = [0.45, 0.35, 0.2];     // Dark brown plywood gussets
+color_zip = [0.65, 0.25, 0.25];       // Zip System sheathing (red/maroon)
+
+// Roof sheathing
+roof_sheathing_thickness = 7/16;      // 7/16" Zip System roof sheathing
 
 // ============================================
 // REFERENCE HEIGHT CALCULATIONS

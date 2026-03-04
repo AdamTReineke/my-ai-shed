@@ -9,7 +9,7 @@
 | **Span** | 12' (144") between walls |
 | **Rise at peak** | 36" above bottom chord |
 | **Spacing** | 24" o.c. (9 trusses total) |
-| **Eave overhang** | 1' (12") past N/S walls (rafter tails) |
+| **Eave overhang** | None (rafters flush with wall exterior) |
 | **Lumber** | All 2×4 (1.5" × 3.5" actual) |
 | **Count** | 9 trusses (at 0", 24", 48", …, 192") |
 
@@ -38,7 +38,7 @@
 | Component | Location | Stress Type | Function |
 |-----------|----------|-------------|----------|
 | Bottom chord | Horizontal, full span (144") | Tension + bending | Ties rafter ends together, supports attic storage |
-| Rafters | Angled, eave to peak (~84" each) | Compression + bending | Supports roof sheathing and loads |
+| Rafters | Angled, wall face to peak (~80.5" each) | Compression + bending | Supports roof sheathing and loads |
 | Queen posts | Vertical at 46.25" and 97.75" from south | Compression | Supports rafters mid-span, transfers load to bottom chord |
 | Straining beam | Horizontal between QP tops (48") | Compression | Keeps queen posts from tilting inward |
 
@@ -88,9 +88,9 @@ Ladder framing attaches to the second truss inboard (at x=24" for west, x=168" f
 
 ```
 Tributary width: 2'
-Roof area per truss: 2' × 14' (with overhangs) = 28 sf
-Total load per truss: 28 sf × 30 psf = 840 lbs
-Load per rafter: 420 lbs (split between two sides)
+Roof area per truss: 2' × 12' = 24 sf
+Total load per truss: 24 sf × 30 psf = 720 lbs
+Load per rafter: 360 lbs (split between two sides)
 ```
 
 ### Rafter Check (2×4 SPF #2 — conservative)
@@ -98,11 +98,11 @@ Load per rafter: 420 lbs (split between two sides)
 Queen posts at 1/3 points break each rafter into supported segments:
 - Wall to queen post: 48" (4') — **governs**
 - Queen post to peak: 24" (2')
-- Overhang cantilever: 12" (trivial)
+- No eave overhang (rafters terminate at wall face)
 
 ```
 Fb = 875 psi, S = 3.06 in³ (SPF #2 — lower Fc/Ft than Hem-Fir, similar Fb)
-Distributed load: 420 lbs over 7' = 60 plf
+Distributed load: 360 lbs over 6' = 60 plf
 
 Max moment (48" span): M = wL²/8 = 60 × 4² / 8 = 120 ft-lbs = 1,440 in-lbs
 Allowable moment: Mr = Fb × S = 875 × 3.06 = 2,678 in-lbs

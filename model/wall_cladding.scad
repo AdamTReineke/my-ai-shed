@@ -1,12 +1,13 @@
 // Shed Model - Wall Cladding Layers
-// Layers (inside → outside): studs → OSB → [housewrap] → furring → siding
-// Housewrap and insulation are not rendered.
+// Layers (inside → outside): studs → Zip sheathing → furring → siding
+// Zip sheathing is continuous wall+roof envelope.
+// Wall panels: 4×8 sheets extending 1.75" below subfloor and 7" above wall top (truss end).
 include <dimensions.scad>
 
 // ============================================
 // CLADDING DIMENSIONS (from 5-wall-layers.md)
 // ============================================
-osb_thickness = 7/16;           // 7/16" OSB sheathing
+osb_thickness = 7/16;           // 7/16" Zip System sheathing
 furring_thickness = 0.75;       // 1×3 furring strip (actual ¾")
 furring_width = 2.5;            // 1×3 actual width
 siding_thickness = 5/16;        // HardiePlank 5/16"
@@ -202,6 +203,8 @@ module siding_planks(plank_data, dir=-1) {
 module wall_cladding() {
     // Common dimensions
     wall_ht = wall_height;
+    zip_ht = 96;  // Full 4×8 panel: 1.75 below subfloor + 87.25 wall + 7 truss end
+    zip_z_offset = -wall_sheathing_below_floor;  // Start below subfloor
     ns_length = shed_length;       // 192"
     ew_length = shed_width - 2 * stud_depth;  // 133" (short walls)
 
@@ -209,7 +212,7 @@ module wall_cladding() {
     door_ro_width = door_width + door_rough_opening_extra;  // 33"
     door_left_n = shed_length - 13.5 - door_ro_width;       // 145.5"
     door_right_n = shed_length - 13.5;                       // 178.5"
-    door_ro_height = door_height + 1.5;                      // 78"
+    door_ro_height = door_height + 0.75;                      // 77.25"
 
     // Stud positions for each wall (matching walls.scad)
     south_studs = [0, 14.5, 30.5, 46.5, 62.5, 78.5, 94.5, 110.5, 126.5, 142.5, 158.5, 174.5, 190.5];
@@ -232,9 +235,9 @@ module wall_cladding() {
     // Exterior stud face at local Y = -stud_depth/2. Cladding goes further -Y.
     translate([0, stud_depth/2, wall_bottom_z]) {
         if (show_osb)
-            color(color_osb)
-            translate([0, -stud_depth/2 - osb_offset, 0])
-                osb_panel(ns_length, wall_ht);
+            color(color_zip)
+            translate([0, -stud_depth/2 - osb_offset, zip_z_offset])
+                osb_panel(ns_length, zip_ht);
         if (show_furring)
             color(color_furring)
             translate([0, -stud_depth/2 - furring_offset, 0])
@@ -250,9 +253,9 @@ module wall_cladding() {
     // Exterior stud face at local Y = +stud_depth/2. Cladding goes further +Y.
     translate([0, shed_width - stud_depth/2, wall_bottom_z]) {
         if (show_osb)
-            color(color_osb)
-            translate([0, stud_depth/2 + osb_offset, 0])
-                osb_panel(ns_length, wall_ht, door_left_n, door_right_n, door_ro_height);
+            color(color_zip)
+            translate([0, stud_depth/2 + osb_offset, zip_z_offset])
+                osb_panel(ns_length, zip_ht, door_left_n, door_right_n, door_ro_height - zip_z_offset);
         if (show_furring)
             color(color_furring)
             translate([0, stud_depth/2 + furring_offset, 0])
@@ -272,9 +275,9 @@ module wall_cladding() {
     translate([stud_depth/2, stud_depth, wall_bottom_z])
     rotate([0, 0, 90]) {
         if (show_osb)
-            color(color_osb)
-            translate([-stud_depth, stud_depth/2 + osb_offset, 0])
-                osb_panel(shed_width, wall_ht);
+            color(color_zip)
+            translate([-stud_depth, stud_depth/2 + osb_offset, zip_z_offset])
+                osb_panel(shed_width, zip_ht);
         if (show_furring)
             color(color_furring)
             translate([0, stud_depth/2 + furring_offset, 0])
@@ -293,9 +296,9 @@ module wall_cladding() {
     translate([shed_length - stud_depth/2, stud_depth, wall_bottom_z])
     rotate([0, 0, 90]) {
         if (show_osb)
-            color(color_osb)
-            translate([-stud_depth, -stud_depth/2 - osb_offset, 0])
-                osb_panel(shed_width, wall_ht);
+            color(color_zip)
+            translate([-stud_depth, -stud_depth/2 - osb_offset, zip_z_offset])
+                osb_panel(shed_width, zip_ht);
         if (show_furring)
             color(color_furring)
             translate([0, -stud_depth/2 - furring_offset, 0])
