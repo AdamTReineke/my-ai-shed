@@ -84,11 +84,11 @@ module south_wall() {
     top_plate_z = plate_thickness + stud_height;
 
     // Explicit stud positions (left face of each stud)
-    // 16" o.c. from east end to align with joists
+    // 16" o.c. from west end to align with joists
     stud_x = [
         0,                                              // West end stud
-        14.5, 30.5, 46.5, 62.5, 78.5, 94.5,           // 16" o.c. from east
-        110.5, 126.5, 142.5, 158.5, 174.5,             // continue
+        15.25, 31.25, 47.25, 63.25, 79.25, 95.25,     // 16" o.c. from west
+        111.25, 127.25, 143.25, 159.25, 175.25,        // continue
         length - stud_thickness                         // East end stud (190.5")
     ];
 
@@ -110,7 +110,7 @@ module south_wall() {
 // Door: 33" rough opening (31.5" + 1.5") at east end
 // Door R.O. from x=145.5" to x=178.5"
 // Layout: king(142.5") | jack(144") | R.O.(145.5"-178.5") | jack(178.5") | king(180")
-// Note: West king stud at 142.5" coincides with 16" o.c. stud, saving one board
+// Note: West king stud at 142.5" does NOT land on a 16" o.c. mark (west-aligned)
 module north_wall() {
     length = shed_length;  // 192"
     stud_height = wall_height - 3 * plate_thickness;
@@ -138,14 +138,14 @@ module north_wall() {
     header_z = plate_thickness + door_ro_height;
     header_height = stud_depth;  // 5.5" (actual depth of 2×6)
 
-    // Regular studs - 16" o.c. from east end, aligned with joists
+    // Regular studs - 16" o.c. from west end, aligned with joists
     // West section: 0 to king_left (142.5")
-    // King stud at 142.5" IS the 16" o.c. stud — no extra stud needed
+    // King stud at 142.5" is NOT on a 16" o.c. mark — extra stud
     west_studs = [
         0,                          // West end stud
-        14.5, 30.5, 46.5, 62.5, 78.5, 94.5,  // 16" o.c. from east
-        110.5, 126.5,              // last regular stud before king
-        king_left_x                 // King stud (142.5") = 16" o.c. position
+        15.25, 31.25, 47.25, 63.25, 79.25, 95.25,  // 16" o.c. from west
+        111.25, 127.25,            // last regular stud before king
+        king_left_x                 // King stud (142.5") — extra, not on layout
     ];
 
     // East section: king_right to end
@@ -245,7 +245,7 @@ module walls() {
     // Door frame and slab (rendered outside wall color for independent colors)
     translate([0, shed_width - stud_depth / 2, wall_bottom_z]) {
         door_ro_width = door_width + door_rough_opening_extra;
-        door_left = shed_length - 12 - door_ro_width;
+        door_left = shed_length - 13.5 - door_ro_width;
         door_frame(door_left, door_ro_width);
 
         // Door slab (closed position, inside the frame)

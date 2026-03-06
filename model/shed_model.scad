@@ -33,9 +33,9 @@ show_floor_decking = true;
 show_walls = true;
 show_trusses = true;            // Queen-post roof trusses
 show_roof = true;               // Zip System roof sheathing
-show_osb = true;                 // 7/16" OSB sheathing (wall exterior)
-show_furring = true;             // 1×3 furring strips (rainscreen gap)
-show_siding = true;              // HardiePlank lap siding
+show_osb = false;                 // 7/16" OSB sheathing (wall exterior)
+show_furring = false;             // 1×3 furring strips (rainscreen gap)
+show_siding = false;              // HardiePlank lap siding
 show_compass_labels = true;      // Direction labels (N/S/E/W)
 
 // Transparency settings (0-1, where 1 is opaque)
@@ -142,7 +142,7 @@ if (show_hurricane_ties) {
     for (i = [0 : num_joists - 1]) {
         x_pos = joist_x(i);
         // Joist side: east for the two westernmost, west for the rest
-        js = (x_pos <= joist_x_east - (num_regular_joists - 2) * joist_spacing) ? 1 : -1;
+        js = (x_pos <= joist_x(1)) ? 1 : -1;
         // South beam: ties on north (interior) side
         h25a_tie(x_pos, beam_y[0], js, -1);
         // North beam: ties on south (interior) side

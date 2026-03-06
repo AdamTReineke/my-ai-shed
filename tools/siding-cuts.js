@@ -40,8 +40,8 @@ const NS_SIDING_LENGTH = SHED_LENGTH;  // 192"
 const EW_SIDING_LENGTH = SHED_WIDTH + 2 * (OSB_THICK + FURRING_THICK + SIDING_THICK);  // 147"
 
 // Stud positions (furring strip locations) — X from wall left edge
-const SOUTH_STUDS = [0, 14.5, 30.5, 46.5, 62.5, 78.5, 94.5, 110.5, 126.5, 142.5, 158.5, 174.5, 190.5];
-const NORTH_STUDS = [0, 14.5, 30.5, 46.5, 62.5, 78.5, 94.5, 110.5, 126.5, 142.5, 144, 178.5, 180, 190.5];
+const SOUTH_STUDS = [0, 15.25, 31.25, 47.25, 63.25, 79.25, 95.25, 111.25, 127.25, 143.25, 159.25, 175.25, 190.5];
+const NORTH_STUDS = [0, 15.25, 31.25, 47.25, 63.25, 79.25, 95.25, 111.25, 127.25, 142.5, 144, 178.5, 180, 190.5];
 
 // E/W walls: stud positions in cladding local coords
 // Local 0 = south siding outer face. Studs start after osb+furring+siding+stud buildup.

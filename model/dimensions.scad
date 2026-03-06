@@ -110,18 +110,18 @@ joist_height = 7.25;         // 2x8 actual height
 joist_spacing = 16;          // 16" on center
 joist_length = shed_width - 2 * rim_thickness;  // 141" (12' minus two 1.5" rims)
 
-// Joist layout: 16" o.c. from east end, short last bay at west
-// East-most joist center at shed_length - joist_thickness/2, stepping west
-joist_x_east = shed_length - joist_thickness/2;          // 191.25"
+// Joist layout: 16" o.c. from west end, short last bay at east
+// West-most joist center at joist_thickness/2, stepping east
 joist_x_west = joist_thickness/2;                         // 0.75"
+joist_x_east = shed_length - joist_thickness/2;           // 191.25"
 num_regular_joists = floor((shed_length - joist_thickness) / joist_spacing) + 1;  // 12 joists at 16" o.c.
-num_joists = num_regular_joists + 1;                      // +1 for west-end short bay joist (13 total)
+num_joists = num_regular_joists + 1;                      // +1 for east-end short bay joist (13 total)
 
-// Joist X positions: 12 at 16" o.c. from east, plus west-end closer
+// Joist X positions: 12 at 16" o.c. from west, plus east-end closer
 function joist_x(i) =
     (i < num_regular_joists)
-        ? joist_x_east - i * joist_spacing
-        : joist_x_west;
+        ? joist_x_west + i * joist_spacing
+        : joist_x_east;
 
 // Floor decking: 3/4" plywood
 floor_thickness = 0.75;

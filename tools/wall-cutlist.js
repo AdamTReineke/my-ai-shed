@@ -133,6 +133,14 @@ function ewWall(label) {
   }
   studs.push(length - stud_thickness);
 
+  // NOTE: The 2nd-to-last stud (north end) should NOT be nailed in during
+  // wall assembly on the ground. There's no room for a nailgun between the
+  // last two studs to secure the E/W wall to the north wall. Instead, leave
+  // this stud out during assembly and toenail it into place after the wall
+  // is standing and fastened to the north wall.
+  const secondToLastIdx = studs.length - 2;
+  const secondToLastX = studs[secondToLastIdx];
+
   return {
     name: `${label} (11\'1" / 133")`,
     direction: 'South → North',
@@ -140,11 +148,15 @@ function ewWall(label) {
       { type: 'Bottom plate', size: '2x6', qty: 1, length },
       { type: 'Top plate (double)', size: '2x6', qty: 2, length },
     ],
-    studs: studs.map(x => ({
+    studs: studs.map((x, i) => ({
       type: 'Stud', size: '2x6', qty: 1, length: stud_height,
-      note: `pos=${x}"`
+      note: `pos=${x}"` + (i === secondToLastIdx ? ' ⚠ INSTALL AFTER WALL IS UP — toenail in place' : '')
     })),
-    layout: studs.map(x => ({ left: x, right: x + stud_thickness, label: 'stud', height: stud_height })),
+    layout: studs.map((x, i) => ({
+      left: x, right: x + stud_thickness,
+      label: i === secondToLastIdx ? 'stud ⚠' : 'stud',
+      height: stud_height
+    })),
   };
 }
 
@@ -303,6 +315,8 @@ console.log('  - Jack stud height: ' + fmtLen(door_ro_height) + ' (door R.O. hei
 console.log('  - Cripple stud height: ' + fmtLen(stud_height - door_ro_height - header_height));
 console.log('  - Header span: ' + fmtLen(door_ro_width + 2 * stud_thickness) + ' (jack-to-jack outer)');
 console.log('  - E/W walls are shortened to fit between N/S walls');
+console.log('  - ⚠ E/W walls: leave 2nd-to-last stud (north end) OUT during assembly.');
+console.log('    Toenail it in after the wall is up — no room for nailgun otherwise.');
 console.log('  - Top plates are doubled (qty shown as 2)');
 console.log('  - Plates over 8\' will need to be spliced from shorter stock');
 console.log('');

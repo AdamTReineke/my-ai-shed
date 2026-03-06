@@ -392,8 +392,8 @@ module wall_cladding() {
     door_ro_height = door_height + 0.75;                      // 77.25"
 
     // Stud positions for each wall (matching walls.scad)
-    south_studs = [0, 14.5, 30.5, 46.5, 62.5, 78.5, 94.5, 110.5, 126.5, 142.5, 158.5, 174.5, 190.5];
-    north_studs = [0, 14.5, 30.5, 46.5, 62.5, 78.5, 94.5, 110.5, 126.5, 142.5, 144, 178.5, 180, 190.5];
+    south_studs = [0, 15.25, 31.25, 47.25, 63.25, 79.25, 95.25, 111.25, 127.25, 143.25, 159.25, 175.25, 190.5];
+    north_studs = [0, 15.25, 31.25, 47.25, 63.25, 79.25, 95.25, 111.25, 127.25, 142.5, 144, 178.5, 180, 190.5];
     ew_studs = [0, 16, 32, 48, 64, 80, 96, 112, 128, ew_length - stud_thickness];
 
     // All cladding is placed in the same coordinate frame as walls() in walls.scad.
