@@ -301,43 +301,70 @@ module gable_peak_sheathing(gable_x_start, total_width) {
     z_bottom = _zip_z_offset + _zip_ht;  // ~94.66" above wall_bottom_z
 
     // Rafter top Z at a given local X position (where local X = world Y)
-    // world_Y = local_X - gable_x_start (since gable_x_start = -stud_depth)
-    // At eave: rafter_top = wall_height + truss_end_height
-    // Moving inward: rises at truss_pitch per inch
     function rafter_top_z(local_x) =
         let(world_y = local_x - gable_x_start,
             dist_from_eave = min(world_y, shed_width - world_y))
         wall_height + truss_end_height + dist_from_eave * truss_pitch;
 
     // Ridge peak in local X coords
-    peak_local_x = shed_width / 2 + gable_x_start;  // gable_x_start is negative
+    peak_local_x = shed_width / 2 + gable_x_start;
     peak_z = rafter_top_z(peak_local_x);
 
-    // Break into 48"-wide columns
-    num_full = floor(total_width / osb_sheet_width);
-    remainder = total_width - num_full * osb_sheet_width;
+    t = osb_thickness;
+    gap = cladding_gap;
 
-    if (num_full > 0) for (i = [0 : num_full - 1]) {
-        xl = gable_x_start + i * osb_sheet_width;
-        xr = xl + osb_sheet_width;
-        ztl = rafter_top_z(xl);
-        ztr = rafter_top_z(xr);
-        // Check if this panel straddles the ridge peak
-        has_peak = (xl < peak_local_x && xr > peak_local_x);
-        if (ztl > z_bottom || ztr > z_bottom || (has_peak && peak_z > z_bottom))
-            gable_peak_panel(xl, xr, z_bottom, ztl, ztr,
-                             has_peak ? peak_local_x : -1, peak_z);
-    }
-    if (remainder > cladding_gap) {
-        xl = gable_x_start + num_full * osb_sheet_width;
-        xr = xl + remainder;
-        ztl = rafter_top_z(xl);
-        ztr = rafter_top_z(xr);
-        has_peak = (xl < peak_local_x && xr > peak_local_x);
-        if (ztl > z_bottom || ztr > z_bottom || (has_peak && peak_z > z_bottom))
-            gable_peak_panel(xl, xr, z_bottom, ztl, ztr,
-                             has_peak ? peak_local_x : -1, peak_z);
-    }
+    // Two right triangles: one for each side of the ridge.
+    // Each is cut from a single 4×8 sheet (base ~72", height ~36").
+    half_w = total_width / 2;
+
+    // Left triangle: eave (bottom-left) to ridge (top-right)
+    xl_left = gable_x_start;
+    xr_left = gable_x_start + half_w;
+    hl = max(0, peak_z - z_bottom);  // height at ridge
+
+    echo(str("CUTLIST,Gable OSB,7/16\" OSB,1,", half_w, "\" x ", hl, "\" (right triangle, left half)"));
+    translate([xl_left + gap/2, 0, z_bottom + gap/2])
+    polyhedron(
+        points = [
+            [0,            0, 0],          // 0: bottom-left (eave)
+            [half_w - gap, 0, 0],          // 1: bottom-right (ridge base)
+            [half_w - gap, 0, hl - gap],   // 2: top-right (peak)
+            [0,            t, 0],          // 3: bottom-left (eave)
+            [half_w - gap, t, 0],          // 4: bottom-right (ridge base)
+            [half_w - gap, t, hl - gap],   // 5: top-right (peak)
+        ],
+        faces = [
+            [2, 1, 0],      // back
+            [3, 4, 5],      // front
+            [0, 1, 4, 3],   // bottom
+            [1, 2, 5, 4],   // right (vertical at ridge)
+            [0, 3, 5, 2],   // hypotenuse (roof slope)
+        ]
+    );
+
+    // Right triangle: ridge (top-left) to eave (bottom-right)
+    xl_right = gable_x_start + half_w;
+    xr_right = gable_x_start + total_width;
+
+    echo(str("CUTLIST,Gable OSB,7/16\" OSB,1,", half_w, "\" x ", hl, "\" (right triangle, right half)"));
+    translate([xl_right + gap/2, 0, z_bottom + gap/2])
+    polyhedron(
+        points = [
+            [0,            0, hl - gap],   // 0: top-left (peak)
+            [0,            0, 0],          // 1: bottom-left (ridge base)
+            [half_w - gap, 0, 0],          // 2: bottom-right (eave)
+            [0,            t, hl - gap],   // 3: top-left (peak)
+            [0,            t, 0],          // 4: bottom-left (ridge base)
+            [half_w - gap, t, 0],          // 5: bottom-right (eave)
+        ],
+        faces = [
+            [0, 1, 2],      // back
+            [5, 4, 3],      // front
+            [1, 4, 5, 2],   // bottom
+            [0, 3, 4, 1],   // left (vertical at ridge)
+            [2, 5, 3, 0],   // hypotenuse (roof slope)
+        ]
+    );
 }
 
 // ============================================

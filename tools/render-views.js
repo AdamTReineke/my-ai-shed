@@ -126,7 +126,7 @@ const VIEWS = [
     camera: 'frontCorner',
     show: [
       'show_posts', 'show_beams', 'show_floor_decking', 'show_walls',
-      'show_osb', 'show_furring', 'show_siding',
+      'show_trusses', 'show_osb', 'show_furring', 'show_siding',
     ],
   },
   {
@@ -146,7 +146,7 @@ const VIEWS = [
       'show_piers', 'show_post_bases', 'show_posts', 'show_beams',
       'show_joists', 'show_rim_joists', 'show_blocking', 'show_hurricane_ties',
       'show_floor_decking', 'show_walls', 'show_trusses', 'show_ladder_framing',
-      'show_osb', 'show_furring', 'show_siding', 'show_compass_labels',
+      'show_roof', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels',
     ],
   },
 
@@ -219,22 +219,22 @@ const VIEWS = [
   {
     name: 'iso-osb',
     camera: 'frontCornerMid',
-    show: ['show_walls', 'show_osb', 'show_compass_labels'],
+    show: ['show_walls', 'show_trusses', 'show_osb', 'show_compass_labels'],
   },
   {
     name: 'iso-furring',
     camera: 'frontCornerMid',
-    show: ['show_walls', 'show_osb', 'show_furring', 'show_compass_labels'],
+    show: ['show_walls', 'show_trusses', 'show_osb', 'show_furring', 'show_compass_labels'],
   },
   {
     name: 'iso-siding',
     camera: 'frontCornerMid',
-    show: ['show_walls', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels'],
+    show: ['show_walls', 'show_trusses', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels'],
   },
   {
     name: 'iso-cladding',
     camera: 'frontCornerMid',
-    show: ['show_walls', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels'],
+    show: ['show_walls', 'show_trusses', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels'],
   },
 
   // --- Isolation views: Roof ---
@@ -252,6 +252,11 @@ const VIEWS = [
     name: 'iso-roof-framing',
     camera: 'elevated',
     show: ['show_walls', 'show_trusses', 'show_ladder_framing', 'show_compass_labels'],
+  },
+  {
+    name: 'iso-roof-sheathing',
+    camera: 'roofCorner',
+    show: ['show_walls', 'show_trusses', 'show_ladder_framing', 'show_roof', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels'],
   },
 ];
 

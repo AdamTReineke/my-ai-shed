@@ -32,6 +32,7 @@
 - [Queen-post trusses on the walls](#queen-post-trusses-on-the-walls)
 - [Trusses with gable-end ladder framing](#trusses-with-gable-end-ladder-framing)
 - [Complete roof framing system](#complete-roof-framing-system)
+- [Roof sheathing (Zip System panels)](#roof-sheathing-zip-system-panels)
 
 ## Progressive Assembly
 
@@ -114,3 +115,6 @@
 
 **Complete roof framing system**
 ![Roof Framing](renders/iso-roof-framing.png)
+
+**Roof sheathing (Zip System panels)**
+![Roof Sheathing](renders/iso-roof-sheathing.png)
