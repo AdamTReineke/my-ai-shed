@@ -62,8 +62,9 @@ module end_truss(x_pos, alpha = 1.0) {
     echo(str("CUTLIST,End truss north stud 0 (x=", x_pos, "),2x4,1,5.375\" angle cut top 26.6°"));
     echo(str("CUTLIST,End truss north stud 1 (x=", x_pos, "),2x4,1,15.875\" angle cut top 26.6°"));
     echo(str("CUTLIST,End truss north stud 2 (x=", x_pos, "),2x4,1,26.375\" angle cut top 26.6°"));
+    // End truss sits plate_thickness lower — its bottom chord acts as E/W wall's 2nd top plate
     color(color_truss, alpha)
-    translate([x_pos, 0, wall_top_z]) {
+    translate([x_pos, 0, wall_top_z - plate_thickness]) {
         end_truss_assembly();
     }
 }
@@ -76,11 +77,11 @@ module trusses() {
     for (i = [0 : num_trusses - 1]) {
         x_pos = i * truss_spacing;
         if (i == 0) {
-            // West end truss: shift inward so outer face is flush with wall
-            end_truss(x_pos + truss_member_width/2);
+            // West end truss: outer face flush with wall stud face
+            end_truss(x_pos + stud_depth/2);
         } else if (i == num_trusses - 1) {
-            // East end truss: shift inward so outer face is flush with wall
-            end_truss(x_pos - truss_member_width/2);
+            // East end truss: outer face flush with wall stud face
+            end_truss(x_pos - stud_depth/2);
         } else {
             queen_post_truss(x_pos);
         }

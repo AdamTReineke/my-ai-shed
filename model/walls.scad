@@ -44,6 +44,37 @@ module top_plate_segment(start_x, end_x, z_pos) {
     }
 }
 
+// Split top plate for N/S walls: full-length lower + shortened upper (end truss acts as 2nd plate at ends)
+module ns_top_plate_segment(start_x, end_x, z_pos) {
+    length = end_x - start_x;
+    inset = stud_depth;  // 5.5" — end truss bottom chord overlaps here
+    upper_start = start_x + inset;
+    upper_end = end_x - inset;
+    upper_length = upper_end - upper_start;
+    if (length > 0) {
+        // Lower top plate — full length
+        echo(str("CUTLIST,Lower top plate,2x6,1,", length, "\""));
+        translate([start_x + length/2, 0, z_pos])
+            cuboid([length - board_gap, plate_depth - board_gap, plate_thickness - board_gap], anchor = BOTTOM);
+        // Upper top plate — shortened by 5.5" each end
+        if (upper_length > 0) {
+            echo(str("CUTLIST,Upper top plate (shortened),2x6,1,", upper_length, "\""));
+            translate([upper_start + upper_length/2, 0, z_pos + plate_thickness])
+                cuboid([upper_length - board_gap, plate_depth - board_gap, plate_thickness - board_gap], anchor = BOTTOM);
+        }
+    }
+}
+
+// Single top plate segment (for E/W walls — end truss bottom chord is the second plate)
+module single_top_plate_segment(start_x, end_x, z_pos) {
+    length = end_x - start_x;
+    if (length > 0) {
+        echo(str("CUTLIST,Top plate (single),2x6,1,", length, "\""));
+        translate([start_x + length/2, 0, z_pos])
+            cuboid([length - board_gap, plate_depth - board_gap, plate_thickness - board_gap], anchor = BOTTOM);
+    }
+}
+
 // Header
 module header_at(start_x, end_x, z_pos, height) {
     length = end_x - start_x;
@@ -95,8 +126,8 @@ module south_wall() {
     // Bottom plate - full length
     plate_segment(0, length);
 
-    // Top plate - full length
-    top_plate_segment(0, length, top_plate_z);
+    // Top plate - lower full length, upper shortened for end truss overlap
+    ns_top_plate_segment(0, length, top_plate_z);
 
     // All studs
     for (x = stud_x) {
@@ -158,8 +189,8 @@ module north_wall() {
     plate_segment(0, door_left);                    // West of door: 0 to 147"
     plate_segment(door_right, length);              // East of door: 180" to 192"
 
-    // Top plate - full length (continuous over door)
-    top_plate_segment(0, length, top_plate_z);
+    // Top plate - lower full length, upper shortened for end truss overlap
+    ns_top_plate_segment(0, length, top_plate_z);
 
     // West section studs (full height)
     for (x = west_studs) {
@@ -216,8 +247,8 @@ module ew_short_wall() {
     // Bottom plate - full length
     plate_segment(0, length);
 
-    // Top plate - full length
-    top_plate_segment(0, length, top_plate_z);
+    // Top plate - single (end truss bottom chord acts as second plate)
+    single_top_plate_segment(0, length, top_plate_z);
 
     // All studs
     for (y = stud_y) {
