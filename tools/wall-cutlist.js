@@ -42,7 +42,8 @@ function southWall() {
     direction: 'West → East',
     plates: [
       { type: 'Bottom plate', size: '2x6', qty: 1, length: length },
-      { type: 'Top plate (double)', size: '2x6', qty: 2, length: length },
+      { type: 'Lower top plate', size: '2x6', qty: 1, length: length },
+      { type: 'Upper top plate (shortened for end truss overlap)', size: '2x6', qty: 1, length: length - 2 * stud_depth },
     ],
     studs: studs.map(x => ({
       type: 'Stud', size: '2x6', qty: 1, length: stud_height,
@@ -77,7 +78,8 @@ function northWall() {
 
   // Plates (build full-length, cut out door opening after wall is stood up)
   pieces.push({ type: 'Bottom plate (cut out door after stand-up)', size: '2x6', qty: 1, length: length });
-  pieces.push({ type: 'Top plate (double)', size: '2x6', qty: 2, length: length });
+  pieces.push({ type: 'Lower top plate', size: '2x6', qty: 1, length: length });
+  pieces.push({ type: 'Upper top plate (shortened for end truss overlap)', size: '2x6', qty: 1, length: length - 2 * stud_depth });
 
   // Full-height studs (west section)
   for (const x of west_studs) {
@@ -146,7 +148,7 @@ function ewWall(label) {
     direction: 'South → North',
     plates: [
       { type: 'Bottom plate', size: '2x6', qty: 1, length },
-      { type: 'Top plate (double)', size: '2x6', qty: 2, length },
+      { type: 'Top plate (single — end truss is 2nd plate)', size: '2x6', qty: 1, length },
     ],
     studs: studs.map((x, i) => ({
       type: 'Stud', size: '2x6', qty: 1, length: stud_height,
@@ -297,11 +299,6 @@ const north = northWall();
 const west = ewWall('West Wall');
 const east = ewWall('East Wall');
 
-console.log('╔══════════════════════════════════════════════════════════════════╗');
-console.log('║            SHED WALL FRAMING — CUT LIST                        ║');
-console.log('║            12\' × 16\' Shed, 2×6 walls, 87.25" wall height      ║');
-console.log('╚══════════════════════════════════════════════════════════════════╝');
-
 printWall(south);
 printWall(north);
 printWall(west);
@@ -314,9 +311,9 @@ console.log('  - Stud height: ' + fmtLen(stud_height) + ' (wall height minus 3 p
 console.log('  - Jack stud height: ' + fmtLen(door_ro_height) + ' (door R.O. height)');
 console.log('  - Cripple stud height: ' + fmtLen(stud_height - door_ro_height - header_height));
 console.log('  - Header span: ' + fmtLen(door_ro_width + 2 * stud_thickness) + ' (jack-to-jack outer)');
+console.log('  - N/S walls: lower top plate full-length, upper shortened 5½" each end (end truss overlaps)');
+console.log('  - E/W walls: single top plate only (end truss bottom chord acts as 2nd plate)');
 console.log('  - E/W walls are shortened to fit between N/S walls');
 console.log('  - ⚠ E/W walls: leave 2nd-to-last stud (north end) OUT during assembly.');
 console.log('    Toenail it in after the wall is up — no room for nailgun otherwise.');
-console.log('  - Top plates are doubled (qty shown as 2)');
-console.log('  - Plates over 8\' will need to be spliced from shorter stock');
 console.log('');

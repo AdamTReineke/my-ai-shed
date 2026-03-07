@@ -102,3 +102,10 @@ Light enough rain that I got the joists fully secured to the beams. The palm nai
 
 Rain was too heavy to realistically do any work. I put a tarp over the structure to help keep the framing from getting any wetter.
 
+# 03/05/2026, Thursday
+
+Got some good work done on the floor. We cut majority of the insulation and nailed down the first floor panels.
+
+# 03/06/2026, Friday
+
+Finished cutting the insulation. However, we should have covered the floor panels last night. Just too much rain got down under the floor panels. I've covered it now with the tarp, but we'll need to use the shop vac to suck up the water before finishing the floor panels.
