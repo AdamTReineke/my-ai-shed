@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Truss Reference Sheets &mdash; 12x16 Shed</title>
+<style>
+  @page { size: letter; margin: 0.5in; }
+  @media print {
+    .page { page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  .page {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 0.5in 0;
+  }
+  h1 {
+    font-size: 16pt;
+    border-bottom: 3px solid #000;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+  h1 .sub {
+    font-size: 11pt;
+    font-weight: normal;
+    color: #555;
+    margin-left: 12px;
+  }
+  h2 {
+    font-size: 11pt;
+    margin: 10px 0 4px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 2px;
+  }
+  h3 {
+    font-size: 10.5pt;
+    margin: 8px 0 3px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 10.5pt;
+  }
+  th {
+    text-align: left;
+    border-bottom: 2px solid #000;
+    padding: 3px 6px;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 2px 6px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .note {
+    font-size: 9.5pt;
+    color: #333;
+    margin-top: 8px;
+    padding: 6px 8px;
+    border-left: 3px solid #999;
+    background: #f8f8f8;
+  }
+  .note p { margin-bottom: 3px; }
+  .summary-box {
+    border: 2px solid #000;
+    padding: 10px 14px;
+    margin: 12px 0;
+  }
+  .summary-box h3 {
+    font-size: 11pt;
+    margin-bottom: 6px;
+  }
+  .two-col {
+    display: flex;
+    gap: 24px;
+  }
+  .two-col > div { flex: 1; }
+  .diagram {
+    font-family: "Courier New", monospace;
+    font-size: 9pt;
+    line-height: 1.2;
+    white-space: pre;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    margin: 6px 0 12px;
+    overflow-x: auto;
+  }
+  .center { text-align: center; }
+  td.center { text-align: center; }
+  .warn { color: #b00; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<!-- ==================== INTERIOR TRUSS (QUEEN-POST) ==================== -->
+<div class="page">
+  <h1>Interior Truss (Queen-Post) <span class="sub">7 trusses &mdash; All 2x4 &mdash; 24" o.c.</span></h1>
+
+  <h2>Configuration</h2>
+  <table>
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Type</td><td>Queen-post (no diagonal webs)</td></tr>
+    <tr><td>Pitch</td><td>6/12 (26.57&deg;)</td></tr>
+    <tr><td>Span</td><td>12'-0" (144") &mdash; wall to wall</td></tr>
+    <tr><td>Rise at peak</td><td>36" above bottom chord</td></tr>
+    <tr><td>Lumber</td><td>All 2x4 (1.5" &times; 3.5")</td></tr>
+    <tr><td>Connections</td><td>1/2" plywood gussets both sides, glue + 8d nails @ 3" o.c.</td></tr>
+    <tr><td>Positions (X)</td><td>24", 48", 72", 96", 120", 144", 168"</td></tr>
+  </table>
+
+  <h2>Cut List (per truss &times; 7)</h2>
+  <table>
+    <tr><th>Piece</th><th>Size</th><th>Qty</th><th>Cut Length</th><th>Notes</th></tr>
+    <tr><td>Bottom chord</td><td>2x4</td><td class="center">1</td><td>12'-0" (144")</td><td>Square cuts both ends</td></tr>
+    <tr><td>South rafter</td><td>2x4</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends @ 26.6&deg;</td></tr>
+    <tr><td>North rafter</td><td>2x4</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends @ 26.6&deg;</td></tr>
+    <tr><td>South queen post</td><td>2x4</td><td class="center">1</td><td>1'-10-1/4" (22.3")</td><td>Angle cut top @ 26.6&deg;, square bottom</td></tr>
+    <tr><td>North queen post</td><td>2x4</td><td class="center">1</td><td>1'-10-1/4" (22.3")</td><td>Angle cut top @ 26.6&deg;, square bottom</td></tr>
+    <tr><td>Straining beam</td><td>2x4</td><td class="center">1</td><td>4'-0" (48")</td><td>Square cuts both ends</td></tr>
+  </table>
+
+  <h2>Gusset Plates (per truss &times; 7)</h2>
+  <table>
+    <tr><th>Joint</th><th>Material</th><th>Size</th><th>Qty</th><th>Notes</th></tr>
+    <tr><td>Peak</td><td>1/2" plywood</td><td>12" &times; 19.4" pentagon</td><td class="center">2</td><td>One each side</td></tr>
+    <tr><td>Queen post tops (each)</td><td>1/2" plywood</td><td>10" &times; 8" rectangle</td><td class="center">4</td><td>2 joints &times; 2 sides, roof-aligned</td></tr>
+    <tr><td>Queen post bottoms (each)</td><td>1/2" plywood</td><td>10" &times; 8" rectangle</td><td class="center">4</td><td>2 joints &times; 2 sides</td></tr>
+    <tr><td>Eave joints (each)</td><td>1/2" plywood</td><td>10" &times; 8" pentagon</td><td class="center">4</td><td>2 joints &times; 2 sides, clipped to rafter</td></tr>
+  </table>
+
+  <div class="note">
+    <p><strong>Queen post inset:</strong> 46-1/4" from each eave (SB butts against QP inside depth face)</p>
+    <p><strong>Queen post height:</strong> 23-1/8" (at QP center, longest edge 22.3")</p>
+    <p><strong>Straining beam:</strong> top edge flush with rafter bottom at 24" above chord top</p>
+    <p><strong>Assembly:</strong> Build flat on shed floor deck using it as a jig. Attach gussets with construction adhesive + nails.</p>
+  </div>
+</div>
+
+<!-- ==================== INTERIOR TRUSS CUT OPTIMIZATION ==================== -->
+<div class="page">
+  <h1>Interior Truss &mdash; Stock &amp; Cut Optimization</h1>
+
+  <h2>Per-Truss Stock Summary</h2>
+  <table>
+    <tr><th>Piece</th><th>Cut Length</th><th>Stock</th><th>Waste</th></tr>
+    <tr><td>Bottom chord</td><td>144" (12'-0")</td><td>2x4 &times; 12'</td><td>0"</td></tr>
+    <tr><td>South rafter</td><td>80.5" (6'-8.5")</td><td>2x4 &times; 8'</td><td>15.5"</td></tr>
+    <tr><td>North rafter</td><td>80.5" (6'-8.5")</td><td>2x4 &times; 8'</td><td>15.5"</td></tr>
+    <tr><td>Straining beam</td><td>48" (4'-0")</td><td rowspan="3">2x4 &times; 8' (cut all 3)</td><td rowspan="3">2.7"</td></tr>
+    <tr><td>South queen post</td><td>22.3" (1'-10.3")</td></tr>
+    <tr><td>North queen post</td><td>22.3" (1'-10.3")</td></tr>
+  </table>
+
+  <h2>Total for 7 Interior Trusses</h2>
+  <div class="two-col">
+    <div>
+      <h3>2x4 Lumber</h3>
+      <table>
+        <tr><th>Qty</th><th>Stock</th><th>Yields</th></tr>
+        <tr><td>7</td><td>2x4 &times; 12'</td><td>Bottom chords</td></tr>
+        <tr><td>14</td><td>2x4 &times; 8'</td><td>Rafters (2 per truss)</td></tr>
+        <tr><td>7</td><td>2x4 &times; 8'</td><td>SB + 2 QPs from each</td></tr>
+      </table>
+      <div class="summary-box">
+        <h3>28 boards (7&times;12' + 21&times;8')</h3>
+      </div>
+    </div>
+    <div>
+      <h3>1/2" Plywood Gussets</h3>
+      <table>
+        <tr><th>Joint</th><th>Per Truss</th><th>Total</th></tr>
+        <tr><td>Peak</td><td>2</td><td>14</td></tr>
+        <tr><td>QP tops</td><td>4</td><td>28</td></tr>
+        <tr><td>QP bottoms</td><td>4</td><td>28</td></tr>
+        <tr><td>Eaves</td><td>4</td><td>28</td></tr>
+      </table>
+      <div class="summary-box">
+        <h3>98 gussets total (~2 sheets 4&times;8)</h3>
+      </div>
+    </div>
+  </div>
+
+  <h2>Load Analysis Summary</h2>
+  <table>
+    <tr><th>Load</th><th>Value</th><th>Notes</th></tr>
+    <tr><td>Dead load (roofing)</td><td>10 psf</td><td>Metal roofing + sheathing</td></tr>
+    <tr><td>Ground snow load</td><td>15 psf</td><td>Per ASCE 7-10</td></tr>
+    <tr><td>Rain-on-snow surcharge</td><td>5 psf</td><td>Per ASCE 7-10 7.10</td></tr>
+    <tr><td><strong>Total roof load</strong></td><td><strong>30 psf</strong></td><td>Conservative design value</td></tr>
+    <tr><td>Per-truss total</td><td>720 lbs</td><td>24 sf trib area &times; 30 psf</td></tr>
+    <tr><td>Rafter bending utilization</td><td>54%</td><td>2x4 adequate</td></tr>
+    <tr><td>Attic storage capacity</td><td>55 psf</td><td>Between queen posts (light storage)</td></tr>
+  </table>
+</div>
+
+<!-- ==================== END TRUSS ==================== -->
+<div class="page">
+  <h1>End Truss (Gable) <span class="sub">2 trusses &mdash; All 2x6 &mdash; East &amp; West walls</span></h1>
+
+  <h2>Configuration</h2>
+  <table>
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Type</td><td>Gable end wall &mdash; vertical studs (no queen posts / straining beam)</td></tr>
+    <tr><td>Pitch</td><td>6/12 (26.57&deg;)</td></tr>
+    <tr><td>Span</td><td>12'-0" (144")</td></tr>
+    <tr><td>Lumber</td><td>All 2x6 (1.5" &times; 5.5")</td></tr>
+    <tr><td>Bottom chord</td><td>2x6 laid flat (1.5" tall) &mdash; acts as E/W wall 2nd top plate</td></tr>
+    <tr><td>Rafter thickness</td><td>1.5" (2x6 turned, thin edge out) &mdash; tops aligned with interior truss roof plane</td></tr>
+    <tr><td>Studs</td><td>2x6 @ 16" o.c. (aligned with E/W wall studs below)</td></tr>
+    <tr><td>Positions (X)</td><td>West: 2.75", East: 189.25" (centered on E/W wall studs)</td></tr>
+  </table>
+
+  <h2>Cut List (per end truss &times; 2)</h2>
+  <table>
+    <tr><th>Piece</th><th>Size</th><th>Qty</th><th>Cut Length</th><th>Notes</th></tr>
+    <tr><td>Bottom chord</td><td>2x6</td><td class="center">1</td><td>12'-0" (144")</td><td>Laid flat (1.5" tall), acts as wall 2nd plate</td></tr>
+    <tr><td>South rafter</td><td>2x6</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends</td></tr>
+    <tr><td>North rafter</td><td>2x6</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends</td></tr>
+  </table>
+
+  <h2>Vertical Studs (per end truss &times; 2)</h2>
+  <table>
+    <tr><th>#</th><th>Y Position</th><th>Height (long edge)</th><th>Notes</th></tr>
+    <tr><td>End S</td><td>0.1" (south eave)</td><td>6-1/4"</td><td>Short filler at eave</td></tr>
+    <tr><td>0</td><td>6-1/4"</td><td>8-1/2"</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>1</td><td>22-1/4"</td><td>16-1/2" (1'-4-1/2")</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>2</td><td>38-1/4"</td><td>24-1/2" (2'-0-1/2")</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>3</td><td>54-1/4"</td><td>32-1/2" (2'-8-1/2")</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>4</td><td>70-1/4" (near peak)</td><td>40-1/2" (3'-4-1/2")</td><td>Tallest stud, angle cut top</td></tr>
+    <tr><td>5</td><td>86-1/4"</td><td>35" (2'-11")</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>6</td><td>102-1/4"</td><td>27" (2'-3")</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>7</td><td>118-1/4"</td><td>19" (1'-7")</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>8</td><td>134-1/4"</td><td>11" (0'-11")</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>9</td><td>137-3/4"</td><td>9-1/4"</td><td>Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>End N</td><td>143.9" (north eave)</td><td>6-1/4"</td><td>Short filler at eave</td></tr>
+  </table>
+
+  <div class="note">
+    <p><strong>All studs are 2x6 turned 90&deg;:</strong> 1.5" thin edge facing out, 5.5" depth into wall (insulation cavity).</p>
+    <p><strong>Bottom chord sits 1.5" lower</strong> than interior trusses so it doubles as E/W wall's second top plate.</p>
+    <p><strong>Rafter top alignment:</strong> end rafter is 1.5" thick (vs 3.5" interior), bottom raised to match roof sheathing plane.</p>
+    <p><strong>No gussets</strong> &mdash; studs are toenailed to chord and rafter.</p>
+  </div>
+</div>
+
+<!-- ==================== LUMBER SUMMARY ==================== -->
+<div class="page">
+  <h1>Lumber Summary &mdash; All Trusses</h1>
+
+  <div class="two-col">
+    <div>
+      <h2>Interior Trusses (&times;7)</h2>
+      <table>
+        <tr><th>Qty</th><th>Size</th><th>Length</th><th>Use</th></tr>
+        <tr><td>7</td><td>2x4</td><td>12'-0"</td><td>Bottom chords</td></tr>
+        <tr><td>14</td><td>2x4</td><td>6'-8-1/2"</td><td>Rafters</td></tr>
+        <tr><td>14</td><td>2x4</td><td>1'-10-1/4"</td><td>Queen posts</td></tr>
+        <tr><td>7</td><td>2x4</td><td>4'-0"</td><td>Straining beams</td></tr>
+      </table>
+
+      <h2>End Trusses (&times;2)</h2>
+      <table>
+        <tr><th>Qty</th><th>Size</th><th>Length</th><th>Use</th></tr>
+        <tr><td>2</td><td>2x6</td><td>12'-0"</td><td>Bottom chords</td></tr>
+        <tr><td>4</td><td>2x6</td><td>6'-8-1/2"</td><td>Rafters</td></tr>
+        <tr><td>24</td><td>2x6</td><td>8-1/2" to 40-1/2"</td><td>Vertical studs</td></tr>
+      </table>
+
+    </div>
+
+    <div>
+      <h2>Stock Lengths to Buy</h2>
+      <table>
+        <tr><th>Qty</th><th>Stock</th><th>For</th></tr>
+        <tr><td>7</td><td>2x4 &times; 12'</td><td>Interior chords</td></tr>
+        <tr><td>21</td><td>2x4 &times; 8'</td><td>Rafters (14) + SB/QP combos (7)</td></tr>
+        <tr><td>2</td><td>2x6 &times; 12'</td><td>End truss bottom chords</td></tr>
+        <tr><td>4</td><td>2x6 &times; 8'</td><td>End truss rafters</td></tr>
+        <tr><td>~6</td><td>2x6 &times; 8'</td><td>End truss studs (various cuts)</td></tr>
+      </table>
+
+      <h3>Sheathing &amp; Gussets</h3>
+      <table>
+        <tr><th>Qty</th><th>Material</th><th>For</th></tr>
+        <tr><td>~10</td><td>7/16" Zip 4&times;8</td><td>Roof sheathing</td></tr>
+        <tr><td>~2</td><td>1/2" plywood 4&times;8</td><td>Gusset plates (98 total)</td></tr>
+      </table>
+
+      <div class="summary-box">
+        <h3>Totals</h3>
+        <p>2x4: 7&times;12' + 21&times;8'</p>
+        <p>2x6: 2&times;12' + ~10&times;8'</p>
+        <p>Plywood: ~2 sheets 1/2" + ~10 sheets 7/16" Zip</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Key Dimensions Reference</h2>
+  <div class="note">
+    <p><strong>Roof pitch:</strong> 6/12 (26.57&deg;)</p>
+    <p><strong>Span:</strong> 12'-0" (144") wall to wall</p>
+    <p><strong>Rise:</strong> 36" at peak above bottom chord</p>
+    <p><strong>Rafter angle for cuts:</strong> 26.6&deg; (plumb cuts on rafters, angle cuts on QP tops)</p>
+    <p><strong>Truss spacing:</strong> 24" o.c. (9 total: 2 end + 7 interior)</p>
+    <p><strong>Interior truss sits on:</strong> double top plate of N/S walls (wall_top_z)</p>
+    <p><strong>End truss sits 1.5" lower:</strong> bottom chord = E/W wall 2nd top plate</p>
+    <p><strong>No gable overhang</strong> (fly rafters and lookouts removed)</p>
+  </div>
+</div>
+
+</body>
+</html>
