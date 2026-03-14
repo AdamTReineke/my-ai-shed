@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gusset Plate Cut List — 12x16 Shed</title>
+<style>
+  @page { size: letter; margin: 0.5in; }
+  @media print {
+    .page { page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  .page {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 0.5in 0;
+  }
+  h1 {
+    font-size: 16pt;
+    border-bottom: 3px solid #000;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+  h1 .sub {
+    font-size: 11pt;
+    font-weight: normal;
+    color: #555;
+    margin-left: 12px;
+  }
+  h2 {
+    font-size: 11pt;
+    margin: 10px 0 4px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 2px;
+  }
+  h2 .sub {
+    font-weight: normal;
+    color: #555;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 10.5pt;
+  }
+  th {
+    text-align: left;
+    border-bottom: 2px solid #000;
+    padding: 3px 6px;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 2px 6px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .note {
+    font-size: 9.5pt;
+    color: #333;
+    margin-top: 8px;
+    padding: 6px 8px;
+    border-left: 3px solid #999;
+    background: #f8f8f8;
+  }
+  .note p { margin-bottom: 3px; }
+  .summary-box {
+    border: 2px solid #000;
+    padding: 10px 14px;
+    margin: 12px 0;
+  }
+  .summary-box h3 {
+    font-size: 11pt;
+    margin-bottom: 6px;
+  }
+
+  /* Sheet diagram styles */
+  .sheet-diagram {
+    position: relative;
+    border: 2px solid #000;
+    margin: 12px 0;
+    background: #f5f5f5;
+  }
+  .sheet-diagram .piece {
+    position: absolute;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8pt;
+    font-weight: bold;
+    overflow: hidden;
+  }
+  .piece-12x20 { background: #a8d5e2; }
+  .piece-10x8  { background: #f5c396; }
+  .sheet-label {
+    font-size: 9pt;
+    color: #555;
+    margin-top: 4px;
+  }
+  .legend {
+    display: flex;
+    gap: 16px;
+    margin: 8px 0 12px;
+    font-size: 9pt;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #000;
+  }
+  .dim-mark {
+    position: absolute;
+    font-size: 7pt;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== SHEET 1: LARGE GUSSETS ==================== -->
+<div class="page">
+  <h1>Gusset Plate Cut List <span class="sub">1/2" Plywood &mdash; 4'&times;8' sheets</span></h1>
+
+  <h2>Pieces Required</h2>
+  <table>
+    <tr><th>Piece</th><th>Size</th><th>Qty</th><th>Use</th></tr>
+    <tr><td>Large gusset</td><td>12" &times; 20"</td><td>14</td><td>Truss peak &amp; heel joints</td></tr>
+    <tr><td>Small gusset</td><td>10" &times; 8"</td><td>84</td><td>Truss web joints</td></tr>
+  </table>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch piece-12x20"></div> 12&times;20</div>
+    <div class="legend-item"><div class="legend-swatch piece-10x8"></div> 10&times;8</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: repeating-linear-gradient(45deg, transparent, transparent 3px, #ddd 3px, #ddd 4px); background-color: #f5f5f5;"></div> Waste</div>
+  </div>
+
+  <h2>Sheet 1 &mdash; Large Gussets <span class="sub">&mdash; 72.9% utilization &mdash; 14&times; 12x20</span></h2>
+  <!-- Scale: 1" = 5px, so 48" = 240px, 96" = 480px -->
+  <!-- Layout: 4 columns of 12" (=48"), rows of 20". 4 rows = 80", row 4 has 2 pieces. -->
+  <div class="sheet-diagram" style="width: 240px; height: 480px;">
+    <!-- Row 1: 4x 12x20 at y=0" -->
+    <div class="piece piece-12x20" style="left:0;top:0;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:60px;top:0;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:120px;top:0;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:180px;top:0;width:60px;height:100px;">12&times;20</div>
+    <!-- Row 2: 4x at y=20" -->
+    <div class="piece piece-12x20" style="left:0;top:100px;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:60px;top:100px;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:120px;top:100px;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:180px;top:100px;width:60px;height:100px;">12&times;20</div>
+    <!-- Row 3: 4x at y=40" -->
+    <div class="piece piece-12x20" style="left:0;top:200px;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:60px;top:200px;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:120px;top:200px;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:180px;top:200px;width:60px;height:100px;">12&times;20</div>
+    <!-- Row 4: 2x at y=60" -->
+    <div class="piece piece-12x20" style="left:0;top:300px;width:60px;height:100px;">12&times;20</div>
+    <div class="piece piece-12x20" style="left:60px;top:300px;width:60px;height:100px;">12&times;20</div>
+  </div>
+  <p class="sheet-label">48" wide &times; 96" tall &mdash; 4 rip cuts at 12", crosscut at 20"</p>
+
+  <div class="note">
+    <p><strong>Cutting:</strong> Rip the sheet into four 12" strips (4 &times; 12" = 48"). Crosscut each strip at 20" intervals. First 3 strips yield 4 pieces each (12), last strip yields 2 (14 total). Waste: a 24"&times;20" offcut + a 48"&times;16" strip at the bottom.</p>
+  </div>
+</div>
+
+<!-- ==================== SHEET 2: SMALL GUSSETS ==================== -->
+<div class="page">
+  <h2>Sheet 2 &mdash; Small Gussets <span class="sub">&mdash; 93.8% utilization &mdash; 54&times; 10x8</span></h2>
+  <!-- Layout: 6 columns of 8" (=48"), 9 rows of 10" (=90"), 6" waste at bottom -->
+  <!-- Scale: 1" = 5px, 8" = 40px, 10" = 50px -->
+  <div class="sheet-diagram" style="width: 240px; height: 480px;">
+    <!-- Row 0: y=0" -->
+    <div class="piece piece-10x8" style="left:0;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:0;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 1: y=10" -->
+    <div class="piece piece-10x8" style="left:0;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 2: y=20" -->
+    <div class="piece piece-10x8" style="left:0;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 3: y=30" -->
+    <div class="piece piece-10x8" style="left:0;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 4: y=40" -->
+    <div class="piece piece-10x8" style="left:0;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 5: y=50" -->
+    <div class="piece piece-10x8" style="left:0;top:250px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:250px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:250px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:250px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:250px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:250px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 6: y=60" -->
+    <div class="piece piece-10x8" style="left:0;top:300px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:300px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:300px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:300px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:300px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:300px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 7: y=70" -->
+    <div class="piece piece-10x8" style="left:0;top:350px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:350px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:350px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:350px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:350px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:350px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 8: y=80" -->
+    <div class="piece piece-10x8" style="left:0;top:400px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:400px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:400px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:400px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:400px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:400px;width:40px;height:50px;">10&times;8</div>
+  </div>
+  <p class="sheet-label">48" wide &times; 96" tall &mdash; 6 rip cuts at 8", crosscut at 10"</p>
+
+  <div class="note">
+    <p><strong>Cutting:</strong> Rip into six 8" strips (6 &times; 8" = 48"). Crosscut each strip every 10". Each strip yields 9 pieces (9 &times; 10" = 90"), with 6" waste. 6 strips &times; 9 = 54 pieces.</p>
+  </div>
+</div>
+
+<!-- ==================== SHEET 3: SMALL GUSSETS ==================== -->
+<div class="page">
+  <h2>Sheet 3 &mdash; Small Gussets <span class="sub">&mdash; 34.7% utilization &mdash; 30&times; 10x8</span></h2>
+  <!-- 30 pieces: 5 full rows of 6 -->
+  <div class="sheet-diagram" style="width: 240px; height: 480px;">
+    <!-- Row 0: y=0" -->
+    <div class="piece piece-10x8" style="left:0;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:0;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:0;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 1: y=10" -->
+    <div class="piece piece-10x8" style="left:0;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:50px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 2: y=20" -->
+    <div class="piece piece-10x8" style="left:0;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:100px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 3: y=30" -->
+    <div class="piece piece-10x8" style="left:0;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:150px;width:40px;height:50px;">10&times;8</div>
+    <!-- Row 4: y=40" -->
+    <div class="piece piece-10x8" style="left:0;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:40px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:80px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:120px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:160px;top:200px;width:40px;height:50px;">10&times;8</div>
+    <div class="piece piece-10x8" style="left:200px;top:200px;width:40px;height:50px;">10&times;8</div>
+  </div>
+  <p class="sheet-label">48" wide &times; 96" tall &mdash; same rip/crosscut pattern, only use 5 rows</p>
+
+  <div class="note">
+    <p><strong>Cutting:</strong> Same as Sheet 2 &mdash; rip six 8" strips, but only crosscut 5 pieces per strip (5 &times; 10" = 50"). Leaves a 48"&times;46" offcut for other use.</p>
+  </div>
+
+</div>
+
+<!-- ==================== SUMMARY ==================== -->
+<div class="page">
+  <h2>Material Summary</h2>
+  <div class="summary-box">
+    <h3>Buy: 3 sheets 1/2" plywood (4'&times;8')</h3>
+  </div>
+
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Total pieces</td><td>98 (14&times; 12x20 + 84&times; 10x8)</td></tr>
+    <tr><td>Sheets required</td><td>3</td></tr>
+    <tr><td>Sheet 1 (large)</td><td>14 pieces, 72.9% used</td></tr>
+    <tr><td>Sheet 2 (small)</td><td>54 pieces, 93.8% used</td></tr>
+    <tr><td>Sheet 3 (small)</td><td>30 pieces, 34.7% used</td></tr>
+    <tr><td>Total sheet area</td><td>96.0 sq ft</td></tr>
+    <tr><td>Used area</td><td>70.0 sq ft</td></tr>
+    <tr><td>Waste</td><td>26.0 sq ft (27.1%)</td></tr>
+  </table>
+
+  <div class="note">
+    <p><strong>Usable offcuts:</strong></p>
+    <p>Sheet 1: 24"&times;20" piece + 48"&times;16" strip (from bottom)</p>
+    <p>Sheet 3: 48"&times;46" (nearly half a sheet)</p>
+  </div>
+</div>
+
+</body>
+</html>
