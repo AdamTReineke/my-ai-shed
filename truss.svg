@@ -29,17 +29,17 @@
   <polygon points="60.0,208.0 636.0,208.0 636.0,222.0 60.0,222.0" class="board board-chord" />
   <polygon points="60.0,192.3 348.0,48.3 348.0,64.0 60.0,208.0" class="board board-rafter" />
   <polygon points="348.0,48.3 636.0,192.3 636.0,208.0 348.0,64.0" class="board board-rafter" />
-  <polygon points="252.0,112.0 238.0,119.0 238.0,208.0 252.0,208.0" class="board board-qp" />
-  <polygon points="458.0,119.0 444.0,112.0 444.0,208.0 458.0,208.0" class="board board-qp" />
-  <polygon points="252.0,112.0 444.0,112.0 444.0,126.0 252.0,126.0" class="board board-sb" />
+  <polygon points="259.0,108.5 245.0,115.5 245.0,208.0 259.0,208.0" class="board board-qp" />
+  <polygon points="451.0,115.5 437.0,108.5 437.0,208.0 451.0,208.0" class="board board-qp" />
+  <polygon points="259.0,108.5 437.0,108.5 437.0,122.5 259.0,122.5" class="board board-sb" />
 
   <!-- Board Labels -->
   <text x="348.0" y="215.0" class="label" text-anchor="middle" dominant-baseline="middle">Bottom Chord (2x4) - 12'</text>
   <text x="204.0" y="128.2" class="label" text-anchor="middle" dominant-baseline="middle" transform="rotate(-26.565051177077976, 204.0, 128.2)">Left Rafter (2x4) 6'-10.2", cut 26.6°</text>
   <text x="492.0" y="128.2" class="label" text-anchor="middle" dominant-baseline="middle" transform="rotate(-333.434948822922, 492.0, 128.2)">Right Rafter (2x4) 6'-10.2", cut 26.6°</text>
-  <text x="245.0" y="161.8" class="label" text-anchor="middle" dominant-baseline="middle">2x4 2', cut 26.6°</text>
-  <text x="451.0" y="161.8" class="label" text-anchor="middle" dominant-baseline="middle">2x4 2', cut 26.6°</text>
-  <text x="348.0" y="119.0" class="label" text-anchor="middle" dominant-baseline="middle">Straining Beam (2x4) - 4'</text>
+  <text x="252.0" y="160.0" class="label" text-anchor="middle" dominant-baseline="middle">2x4 2'-0.9", cut 26.6°</text>
+  <text x="444.0" y="160.0" class="label" text-anchor="middle" dominant-baseline="middle">2x4 2'-0.9", cut 26.6°</text>
+  <text x="348.0" y="115.5" class="label" text-anchor="middle" dominant-baseline="middle">Straining Beam (2x4) - 3'-8.5"</text>
 
   <!-- Overall Dimensions -->
   <line x1="70" y1="282" x2="626" y2="282" class="dim-line" />
@@ -50,5 +50,5 @@
   <line x1="696" y1="208" x2="736" y2="208" class="dim-tick" />
   <line x1="696" y1="64" x2="736" y2="64" class="dim-tick" />
   <text x="731" y="136" class="dim-text" dominant-baseline="middle">Rise: 3'</text>
-  <text x="245" y="203" class="dim-text" text-anchor="middle">QP @ 3'-10.3"</text>
+  <text x="252" y="203" class="dim-text" text-anchor="middle">QP @ 4'</text>
 </svg>

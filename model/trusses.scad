@@ -53,15 +53,21 @@ module queen_post_truss(x_pos, alpha = 1.0) {
 // End truss at a gable wall position
 // Includes notched rafters and vertical studs (no queen posts/straining beam)
 module end_truss(x_pos, alpha = 1.0) {
-    echo(str("CUTLIST,End truss bottom chord (x=", x_pos, "),2x4,1,144\""));
-    echo(str("CUTLIST,End truss south rafter (x=", x_pos, "),2x4,1,80.5\" plumb cuts"));
-    echo(str("CUTLIST,End truss north rafter (x=", x_pos, "),2x4,1,80.5\" plumb cuts"));
-    echo(str("CUTLIST,End truss south stud 0 (x=", x_pos, "),2x4,1,5.375\" angle cut top 26.6°"));
-    echo(str("CUTLIST,End truss south stud 1 (x=", x_pos, "),2x4,1,15.875\" angle cut top 26.6°"));
-    echo(str("CUTLIST,End truss south stud 2 (x=", x_pos, "),2x4,1,26.375\" angle cut top 26.6°"));
-    echo(str("CUTLIST,End truss north stud 0 (x=", x_pos, "),2x4,1,5.375\" angle cut top 26.6°"));
-    echo(str("CUTLIST,End truss north stud 1 (x=", x_pos, "),2x4,1,15.875\" angle cut top 26.6°"));
-    echo(str("CUTLIST,End truss north stud 2 (x=", x_pos, "),2x4,1,26.375\" angle cut top 26.6°"));
+    echo(str("CUTLIST,End truss bottom chord (x=", x_pos, "),2x6,1,144\""));
+    echo(str("CUTLIST,End truss south rafter (x=", x_pos, "),2x6,1,80.5\" plumb cuts"));
+    echo(str("CUTLIST,End truss north rafter (x=", x_pos, "),2x6,1,80.5\" plumb cuts"));
+    // Stud cut list from generated data (9 studs + 2 end fillers per truss)
+    for (i = [0 : len(end_truss_stud_ys) - 1]) {
+        y = end_truss_stud_ys[i];
+        y_left = y - 1.5/2;
+        // Rafter bottom Z at stud (matching generate-end-truss-data.js logic)
+        dist = abs(y_left - truss_span/2);
+        rafter_angle = atan(truss_pitch);
+        thickness_adj = (truss_member_depth - 1.5) / cos(rafter_angle);
+        rafter_z = 1.5 + truss_member_depth + truss_rise - dist * truss_pitch + thickness_adj;
+        h = rafter_z - 1.5;  // stud height (chord top to rafter bottom minus gaps)
+        echo(str("CUTLIST,End truss stud ", i, " (x=", x_pos, " y=", y, "),2x6,1,", h, "\" angle cut top 26.6°"));
+    }
     // End truss sits plate_thickness lower — its bottom chord acts as E/W wall's 2nd top plate
     color(color_truss, alpha)
     translate([x_pos, 0, wall_top_z - plate_thickness]) {

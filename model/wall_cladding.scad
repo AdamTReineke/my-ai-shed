@@ -295,10 +295,9 @@ module gable_peak_panel(x_left, x_right, z_bottom, z_top_left, z_top_right, peak
 }
 
 module gable_peak_sheathing(gable_x_start, total_width) {
-    // Z of the top of existing 4×8 panels (relative to wall_bottom_z)
-    _zip_z_offset = -wall_sheathing_below_floor;
-    _zip_ht = 96;
-    z_bottom = _zip_z_offset + _zip_ht;  // ~94.66" above wall_bottom_z
+    // Gable sheathing starts at single top plate top, covering the bottom chord
+    // E/W single top plate top is at wall_height - plate_thickness
+    z_bottom = wall_height - plate_thickness;  // 85.75" above wall_bottom_z
 
     // Rafter top Z at a given local X position (where local X = world Y)
     function rafter_top_z(local_x) =
@@ -310,59 +309,71 @@ module gable_peak_sheathing(gable_x_start, total_width) {
     peak_local_x = shed_width / 2 + gable_x_start;
     peak_z = rafter_top_z(peak_local_x);
 
-    t = osb_thickness;
+    t = osb_thickness - cladding_gap;
     gap = cladding_gap;
 
-    // Two right triangles: one for each side of the ridge.
-    // Each is cut from a single 4×8 sheet (base ~72", height ~36").
+    // Two trapezoids: one for each side of the ridge.
+    // Each is cut from a single 4×8 sheet (base ~72", peak height ~36", eave height ~7").
     half_w = total_width / 2;
 
-    // Left triangle: eave (bottom-left) to ridge (top-right)
-    xl_left = gable_x_start;
-    xr_left = gable_x_start + half_w;
-    hl = max(0, peak_z - z_bottom);  // height at ridge
+    // Height at ridge (peak) and at eave
+    h_peak = max(0, peak_z - z_bottom);           // ~36" at ridge
+    h_eave = max(0, rafter_top_z(gable_x_start) - z_bottom);  // ~7.4" at eave
 
-    echo(str("CUTLIST,Gable OSB,7/16\" OSB,1,", half_w, "\" x ", hl, "\" (right triangle, left half)"));
+    // Left trapezoid: short edge at eave (left), tall edge at ridge (right)
+    xl_left = gable_x_start;
+
+    echo(str("CUTLIST,Gable OSB,7/16\" OSB,1,", half_w, "\" x ", h_peak, "\" (trapezoid, left half)"));
     translate([xl_left + gap/2, 0, z_bottom + gap/2])
     polyhedron(
         points = [
-            [0,            0, 0],          // 0: bottom-left (eave)
-            [half_w - gap, 0, 0],          // 1: bottom-right (ridge base)
-            [half_w - gap, 0, hl - gap],   // 2: top-right (peak)
-            [0,            t, 0],          // 3: bottom-left (eave)
-            [half_w - gap, t, 0],          // 4: bottom-right (ridge base)
-            [half_w - gap, t, hl - gap],   // 5: top-right (peak)
+            // Back face (Y=0)
+            [0,            0, 0],              // 0: bottom-left (eave)
+            [half_w - gap, 0, 0],              // 1: bottom-right (ridge base)
+            [half_w - gap, 0, h_peak - gap],   // 2: top-right (peak)
+            [0,            0, h_eave - gap],   // 3: top-left (eave top)
+            // Front face (Y=t)
+            [0,            t, 0],              // 4: bottom-left (eave)
+            [half_w - gap, t, 0],              // 5: bottom-right (ridge base)
+            [half_w - gap, t, h_peak - gap],   // 6: top-right (peak)
+            [0,            t, h_eave - gap],   // 7: top-left (eave top)
         ],
         faces = [
-            [2, 1, 0],      // back
-            [3, 4, 5],      // front
-            [0, 1, 4, 3],   // bottom
-            [1, 2, 5, 4],   // right (vertical at ridge)
-            [0, 3, 5, 2],   // hypotenuse (roof slope)
+            [3, 2, 1, 0],   // back
+            [4, 5, 6, 7],   // front
+            [0, 1, 5, 4],   // bottom
+            [1, 2, 6, 5],   // right (vertical at ridge)
+            [2, 3, 7, 6],   // top (roof slope)
+            [0, 4, 7, 3],   // left (short vertical at eave)
         ]
     );
 
-    // Right triangle: ridge (top-left) to eave (bottom-right)
+    // Right trapezoid: tall edge at ridge (left), short edge at eave (right)
     xl_right = gable_x_start + half_w;
-    xr_right = gable_x_start + total_width;
+    h_eave_r = max(0, rafter_top_z(gable_x_start + total_width) - z_bottom);  // eave height (right side)
 
-    echo(str("CUTLIST,Gable OSB,7/16\" OSB,1,", half_w, "\" x ", hl, "\" (right triangle, right half)"));
+    echo(str("CUTLIST,Gable OSB,7/16\" OSB,1,", half_w, "\" x ", h_peak, "\" (trapezoid, right half)"));
     translate([xl_right + gap/2, 0, z_bottom + gap/2])
     polyhedron(
         points = [
-            [0,            0, hl - gap],   // 0: top-left (peak)
-            [0,            0, 0],          // 1: bottom-left (ridge base)
-            [half_w - gap, 0, 0],          // 2: bottom-right (eave)
-            [0,            t, hl - gap],   // 3: top-left (peak)
-            [0,            t, 0],          // 4: bottom-left (ridge base)
-            [half_w - gap, t, 0],          // 5: bottom-right (eave)
+            // Back face (Y=0)
+            [0,            0, 0],                // 0: bottom-left (ridge base)
+            [half_w - gap, 0, 0],                // 1: bottom-right (eave)
+            [half_w - gap, 0, h_eave_r - gap],   // 2: top-right (eave top)
+            [0,            0, h_peak - gap],      // 3: top-left (peak)
+            // Front face (Y=t)
+            [0,            t, 0],                // 4: bottom-left (ridge base)
+            [half_w - gap, t, 0],                // 5: bottom-right (eave)
+            [half_w - gap, t, h_eave_r - gap],   // 6: top-right (eave top)
+            [0,            t, h_peak - gap],      // 7: top-left (peak)
         ],
         faces = [
-            [0, 1, 2],      // back
-            [5, 4, 3],      // front
-            [1, 4, 5, 2],   // bottom
-            [0, 3, 4, 1],   // left (vertical at ridge)
-            [2, 5, 3, 0],   // hypotenuse (roof slope)
+            [3, 2, 1, 0],   // back
+            [4, 5, 6, 7],   // front
+            [0, 1, 5, 4],   // bottom
+            [1, 2, 6, 5],   // right (short vertical at eave)
+            [2, 3, 7, 6],   // top (roof slope)
+            [0, 4, 7, 3],   // left (vertical at ridge)
         ]
     );
 }
@@ -382,6 +393,9 @@ module wall_cladding() {
     wall_ht = wall_height;
     zip_ht = 96;  // Full 4×8 panel: 1.75 below subfloor + 87.25 wall + 7 truss end
     zip_z_offset = -wall_sheathing_below_floor;  // Start below subfloor
+    // E/W wall sheets stop at single top plate top
+    // E/W walls have single top plate; its top is at wall_height - plate_thickness
+    ew_zip_ht = wall_height - plate_thickness + wall_sheathing_below_floor;  // ~87.1"
     ns_length = shed_length;       // 192"
     ew_length = shed_width - 2 * stud_depth;  // 133" (short walls)
 
@@ -454,14 +468,14 @@ module wall_cladding() {
         if (show_osb)
             color(color_zip) {
             translate([-stud_depth, stud_depth/2 + osb_offset, zip_z_offset])
-                osb_panel(shed_width, zip_ht);
-            translate([0, stud_depth/2 + osb_offset, 0])
+                osb_panel(shed_width, ew_zip_ht);
+            translate([0, stud_depth/2, 0])
                 gable_peak_sheathing(-stud_depth, shed_width);
         }
         if (show_furring)
             color(color_furring)
             translate([0, stud_depth/2 + furring_offset, zip_z_offset])
-                gable_furring_strips(ew_studs, zip_ht, -stud_depth, zip_z_offset);
+                gable_furring_strips(ew_studs, ew_zip_ht, -stud_depth, zip_z_offset);
         if (show_siding)
             color(color_siding)
             translate([-(stud_depth + osb_thickness + furring_thickness + siding_thickness), stud_depth/2 + siding_offset, 0])
@@ -478,14 +492,14 @@ module wall_cladding() {
         if (show_osb)
             color(color_zip) {
             translate([-stud_depth, -stud_depth/2 - osb_offset, zip_z_offset])
-                osb_panel(shed_width, zip_ht);
-            translate([0, -stud_depth/2 - osb_offset, 0])
+                osb_panel(shed_width, ew_zip_ht);
+            translate([0, -stud_depth/2 - osb_thickness, 0])
                 gable_peak_sheathing(-stud_depth, shed_width);
         }
         if (show_furring)
             color(color_furring)
             translate([0, -stud_depth/2 - furring_offset, zip_z_offset])
-                gable_furring_strips(ew_studs, zip_ht, -stud_depth, zip_z_offset);
+                gable_furring_strips(ew_studs, ew_zip_ht, -stud_depth, zip_z_offset);
         if (show_siding)
             color(color_siding)
             translate([-(stud_depth + osb_thickness + furring_thickness + siding_thickness), -stud_depth/2 - siding_offset, 0])

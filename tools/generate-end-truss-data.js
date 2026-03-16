@@ -57,40 +57,41 @@ function rafterBottomZ(y) {
 
 
 // ============================================
-// PEAK STUD Y POSITIONS (16" o.c., aligned with E/W wall studs below)
+// PEAK STUD Y POSITIONS (center stud at Y=72", then 16" o.c. each direction)
 // ============================================
-// E/W wall studs are at Y = ewWallStudDepth + [0, 16, 32, 48, 64, 80, 96, 112, 128, 131.5]
-// in shed coordinates. Only include positions where the stud has positive height
-// (i.e., the rafter bottom is above the bottom chord top).
+// Center stud at ridge (Y=72") ensures gable sheathing half-sheets meet on a stud.
+// Studs spread 16" o.c. each direction from center: 8, 24, 40, 56, 72, 88, 104, 120, 136
 function peakStudYPositions() {
-  const ewWallLength = span - 2 * ewWallStudDepth;  // 133"
-  // E/W wall stud left-face positions in local wall coords
-  const wallStudLocalYs = [0];
-  for (let y = 16; y < ewWallLength - W; y += 16) {
-    wallStudLocalYs.push(y);
-  }
-  wallStudLocalYs.push(ewWallLength - W);  // end stud
+  const centerY = halfSpan;  // 72"
+  const positions = [];
 
-  // Convert to shed Y coords (offset by N/S wall stud depth)
-  // Stud center aligns with wall stud center (wall stud left face + stud_depth/2)
-  // But peak studs are 1.5" in Y (turned), so center = wall_left_face + W/2
-  // For alignment: match the wall stud's left face position
-  const shedYLefts = wallStudLocalYs.map(y => ewWallStudDepth + y);
+  // Build positions from center outward
+  // South side: 72, 56, 40, 24, 8
+  for (let y = centerY; y > 0; y -= 16) {
+    positions.push(y);
+  }
+  // North side: 88, 104, 120, 136
+  for (let y = centerY + 16; y < span; y += 16) {
+    positions.push(y);
+  }
+
+  // Sort by Y position
+  positions.sort((a, b) => a - b);
 
   // Filter to only studs that fit above bottom chord and below rafter
-  const positions = [];
-  for (const yLeft of shedYLefts) {
-    const yCenter = yLeft + W / 2;  // 1.5" wide in Y (turned — thin edge outward)
-    const yRight = yLeft + W;
+  const filtered = [];
+  for (const yCenter of positions) {
+    const yLeft = yCenter - W / 2;
+    const yRight = yCenter + W;
     const zBottom = W + gap;  // sits on bottom chord top (chord is W tall when laid flat)
     // Check height at the shorter edge (farther from peak)
     const shortEdge = Math.abs(yLeft - halfSpan) > Math.abs(yRight - halfSpan) ? yLeft : yRight;
     const zTop = rafterBottomZ(shortEdge) - gap;
     if (zTop - zBottom > 3.5) {  // at least 3.5" of height (worth framing)
-      positions.push(yCenter);
+      filtered.push(yCenter);
     }
   }
-  return positions;
+  return filtered;
 }
 
 
