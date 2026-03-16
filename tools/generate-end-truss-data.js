@@ -130,7 +130,9 @@ function bottomChord() {
     [y1, W],
     [y0, W],
   ];
-  return extrudeProfile(profile, D);
+  const geo = extrudeProfile(profile, D);
+  geo.cut = { name: 'Bottom Chord', size: '2x6', length: span, notes: 'Square cuts both ends' };
+  return geo;
 }
 
 // ============================================
@@ -149,7 +151,12 @@ function endTrussRafter(side) {
     [yEnd, rafterBottomZ(yEnd) + plumbTopOffset],
     [yStart, rafterBottomZ(yStart) + plumbTopOffset],
   ];
-  return extrudeProfile(profile, D);
+  const geo = extrudeProfile(profile, D);
+  // Cut length = physical half-span / cos(angle), ignoring rendering gap
+  const rafterLen = (halfSpan + overhang) / cosA;
+  const label = isSouth ? 'South' : 'North';
+  geo.cut = { name: `${label} Rafter`, size: '2x6', length: rafterLen, notes: 'Plumb cuts both ends' };
+  return geo;
 }
 
 // ============================================
@@ -180,14 +187,17 @@ function flyRafter(side) {
   for (const [y, z] of profile) {
     points.push([xPos, y, z]);
   }
-  return { points, faces: boxFaces };
+  const rafterRun = Math.abs(yEnd - yStart);
+  const rafterLen = rafterRun / cosA;
+  const label = isSouth ? 'South' : 'North';
+  return { points, faces: boxFaces, cut: { name: `${label} Fly Rafter`, size: '2x6', length: rafterLen, notes: 'Plumb cuts both ends' } };
 }
 
 // ============================================
 // VERTICAL STUDS (under outriggers)
 // ============================================
 // Peak stud: 2x6 turned 90° — 1.5" in Y (thin edge outward), 5.5" in X (insulation cavity)
-function verticalStud(yCenter) {
+function verticalStud(yCenter, index) {
   const yLeft = yCenter - W / 2;
   const yRight = yCenter + W / 2;
   const zBottom = W + gap;  // sits on bottom chord top (chord is W tall when laid flat)
@@ -202,7 +212,17 @@ function verticalStud(yCenter) {
     [yRight, zTopRight],
     [yLeft, zTopLeft],
   ];
-  return extrudeProfile(profile, D);  // 5.5" depth in X (insulation cavity)
+  const geo = extrudeProfile(profile, D);  // 5.5" depth in X (insulation cavity)
+  // Bounding box height = tallest corner minus bottom (what you'd cut from stock)
+  const longEdge = Math.max(zTopLeft, zTopRight) - zBottom;
+  geo.cut = {
+    name: `Stud #${index} (Y=${yCenter}")`,
+    size: '2x6',
+    length: longEdge,
+    notes: `Angle cut top @ ${rafterAngleDeg.toFixed(1)}°`,
+    yCenter,
+  };
+  return geo;
 }
 
 
@@ -210,7 +230,7 @@ function verticalStud(yCenter) {
 // END STUDS (at N/S wall lines, fill gap between chord and rafter at eave)
 // ============================================
 // These short studs sit at the very ends where regular trusses are taller
-function endStud(yCenter) {
+function endStud(yCenter, label) {
   const yLeft = yCenter - W / 2;
   const yRight = yCenter + W / 2;
   const zBottom = W + gap;  // sits on bottom chord top
@@ -224,53 +244,30 @@ function endStud(yCenter) {
     [yRight, zTopRight],
     [yLeft, zTopLeft],
   ];
-  return extrudeProfile(profile, D);
+  const geo = extrudeProfile(profile, D);
+  const longEdge = Math.max(zTopLeft, zTopRight) - zBottom;
+  geo.cut = {
+    name: `End ${label} filler`,
+    size: '2x6',
+    length: longEdge,
+    notes: 'Short filler at eave',
+    yCenter,
+  };
+  return geo;
 }
 
 // ============================================
-// CUT LIST
+// CUT LIST (derived from geometry)
 // ============================================
-function cutList(studYs, southOutriggerYs, northOutriggerYs) {
+function cutListFromMembers(members) {
   const lines = [];
   lines.push('// === CUT LIST (per end truss) ===');
-
-  // Bottom chord (physical length, no rendering gap)
-  const bcLen = span;
-  lines.push(`// Bottom Chord: 2x6 x ${bcLen.toFixed(2)}" (${toFeetInches(bcLen)})`);
-
-  // Rafters
-  const rafterRun = halfSpan + overhang;
-  const rafterLen = rafterRun / cosA;
-  lines.push(`// South Rafter: 2x6 x ${rafterLen.toFixed(1)}" (${toFeetInches(rafterLen)}) - plumb cuts both ends`);
-  lines.push(`// North Rafter: 2x6 x ${rafterLen.toFixed(1)}" (${toFeetInches(rafterLen)}) - plumb cuts both ends`);
-
-  // Fly rafters
-  lines.push(`// South Fly Rafter: 2x6 x ${rafterLen.toFixed(1)}" (${toFeetInches(rafterLen)}) - plumb cuts both ends`);
-  lines.push(`// North Fly Rafter: 2x6 x ${rafterLen.toFixed(1)}" (${toFeetInches(rafterLen)}) - plumb cuts both ends`);
-
-  // Vertical studs (2x6)
-  const studCount = studYs.length;
-  const heights = studYs.map(yCenter => {
-    const yLeft = yCenter - W / 2;
-    return rafterBottomZ(yLeft) - W;
-  });
-  const minH = Math.min(...heights);
-  const maxH = Math.max(...heights);
-  lines.push(`// Vertical Studs: ${studCount}x 2x6, heights ${minH.toFixed(1)}" to ${maxH.toFixed(1)}" - angle cut top at ${rafterAngleDeg.toFixed(1)}°`);
-
-  // Individual stud heights
-  studYs.forEach((yCenter, i) => {
-    const yLeft = yCenter - W / 2;
-    const h = rafterBottomZ(yLeft) - W;
-    const distFromSouth = yCenter;
-    lines.push(`//   Stud ${i}: Y=${distFromSouth.toFixed(1)}" h=${h.toFixed(1)}" (${toFeetInches(h)})`);
-  });
-
-  // Outriggers
-  const outriggerLen = gableOverhang + 24;
-  const totalOutriggers = southOutriggerYs.length + northOutriggerYs.length;
-  lines.push(`// Outriggers: ${totalOutriggers}x 2x6 x ${outriggerLen}" (${toFeetInches(outriggerLen)}) - flat in roof plane`);
-
+  lines.push('// Heights are bounding-box (long edge) — cut this length, then make the angle cut.');
+  for (const [name, data] of members) {
+    const c = data.cut;
+    if (!c) continue;
+    lines.push(`// ${c.name}: ${c.size} x ${c.length.toFixed(1)}" (${toFeetInches(c.length)}) - ${c.notes}`);
+  }
   return lines.join('\n');
 }
 
@@ -324,12 +321,12 @@ function generate() {
   // End studs at wall lines (fill gap between flat chord and roof plane at eave)
   const southEndY = W / 2 + gap;  // just inside south edge
   const northEndY = span - W / 2 - gap;  // just inside north edge
-  members.push(['end_stud_south', endStud(southEndY)]);
-  members.push(['end_stud_north', endStud(northEndY)]);
+  members.push(['end_stud_south', endStud(southEndY, 'S')]);
+  members.push(['end_stud_north', endStud(northEndY, 'N')]);
 
   // Vertical studs (2x6, 16" o.c. aligned with E/W wall studs)
   studYs.forEach((y, i) => {
-    members.push([`stud_${i}`, verticalStud(y)]);
+    members.push([`stud_${i}`, verticalStud(y, i)]);
   });
 
   // Build output
@@ -337,7 +334,7 @@ function generate() {
   output.push('// Auto-generated by generate-end-truss-data.js — do not edit by hand');
   output.push('// Run: node tools/generate-end-truss-data.js');
   output.push('');
-  output.push(cutList(studYs, [], []));
+  output.push(cutListFromMembers(members));
   output.push('');
 
   // Stud Y position constants for OpenSCAD
@@ -377,7 +374,33 @@ function generate() {
   fs.writeFileSync(outPath, output.join('\n'));
   console.log(`Wrote ${outPath}`);
   console.log('');
-  console.log(cutList(studYs, [], []));
+  console.log(cutListFromMembers(members));
 }
 
-generate();
+// ============================================
+// EXPORT: cut list data for use by other tools
+// ============================================
+// Returns array of { name, size, length, notes } for one end truss.
+// Fly rafters excluded (not part of the end truss lumber purchase).
+function getEndTrussCuts() {
+  const studYs = peakStudYPositions();
+  const members = [];
+  members.push(['bottom_chord', bottomChord()]);
+  members.push(['south_rafter', endTrussRafter('south')]);
+  members.push(['north_rafter', endTrussRafter('north')]);
+  const southEndY = W / 2 + gap;
+  const northEndY = span - W / 2 - gap;
+  members.push(['end_stud_south', endStud(southEndY, 'S')]);
+  members.push(['end_stud_north', endStud(northEndY, 'N')]);
+  studYs.forEach((y, i) => {
+    members.push([`stud_${i}`, verticalStud(y, i)]);
+  });
+  return members.map(([, data]) => data.cut).filter(Boolean);
+}
+
+module.exports = { getEndTrussCuts };
+
+// Run as CLI script
+if (require.main === module) {
+  generate();
+}

@@ -57,15 +57,20 @@ module end_truss(x_pos, alpha = 1.0) {
     echo(str("CUTLIST,End truss south rafter (x=", x_pos, "),2x6,1,80.5\" plumb cuts"));
     echo(str("CUTLIST,End truss north rafter (x=", x_pos, "),2x6,1,80.5\" plumb cuts"));
     // Stud cut list from generated data (9 studs + 2 end fillers per truss)
+    // Bounding-box height = max(zTopLeft, zTopRight) - zBottom, matching the
+    // actual polyhedron profile in end_truss_data.scad.
+    board_gap = 0.125;
     for (i = [0 : len(end_truss_stud_ys) - 1]) {
         y = end_truss_stud_ys[i];
         y_left = y - 1.5/2;
-        // Rafter bottom Z at stud (matching generate-end-truss-data.js logic)
-        dist = abs(y_left - truss_span/2);
+        y_right = y + 1.5/2;
         rafter_angle = atan(truss_pitch);
         thickness_adj = (truss_member_depth - 1.5) / cos(rafter_angle);
-        rafter_z = 1.5 + truss_member_depth + truss_rise - dist * truss_pitch + thickness_adj;
-        h = rafter_z - 1.5;  // stud height (chord top to rafter bottom minus gaps)
+        chord_offset = 1.5 + truss_member_depth;
+        z_top_left = chord_offset + truss_rise - abs(y_left - truss_span/2) * truss_pitch + thickness_adj - board_gap;
+        z_top_right = chord_offset + truss_rise - abs(y_right - truss_span/2) * truss_pitch + thickness_adj - board_gap;
+        z_bottom = 1.5 + board_gap;
+        h = max(z_top_left, z_top_right) - z_bottom;
         echo(str("CUTLIST,End truss stud ", i, " (x=", x_pos, " y=", y, "),2x6,1,", h, "\" angle cut top 26.6°"));
     }
     // End truss sits plate_thickness lower — its bottom chord acts as E/W wall's 2nd top plate

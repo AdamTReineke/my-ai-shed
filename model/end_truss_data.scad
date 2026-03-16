@@ -2,22 +2,23 @@
 // Run: node tools/generate-end-truss-data.js
 
 // === CUT LIST (per end truss) ===
-// Bottom Chord: 2x6 x 144.00" (12'-0.0")
-// South Rafter: 2x6 x 80.5" (6'-8.5") - plumb cuts both ends
-// North Rafter: 2x6 x 80.5" (6'-8.5") - plumb cuts both ends
-// South Fly Rafter: 2x6 x 80.5" (6'-8.5") - plumb cuts both ends
-// North Fly Rafter: 2x6 x 80.5" (6'-8.5") - plumb cuts both ends
-// Vertical Studs: 9x 2x6, heights 9.4" to 41.4" - angle cut top at 26.6°
-//   Stud 0: Y=8.0" h=9.4" (0'-9.4")
-//   Stud 1: Y=24.0" h=17.4" (1'-5.4")
-//   Stud 2: Y=40.0" h=25.4" (2'-1.4")
-//   Stud 3: Y=56.0" h=33.4" (2'-9.4")
-//   Stud 4: Y=72.0" h=41.4" (3'-5.4")
-//   Stud 5: Y=88.0" h=34.1" (2'-10.1")
-//   Stud 6: Y=104.0" h=26.1" (2'-2.1")
-//   Stud 7: Y=120.0" h=18.1" (1'-6.1")
-//   Stud 8: Y=136.0" h=10.1" (0'-10.1")
-// Outriggers: 0x 2x6 x 36" (3'-0.0") - flat in roof plane
+// Heights are bounding-box (long edge) — cut this length, then make the angle cut.
+// Bottom Chord: 2x6 x 144.0" (12'-0.0") - Square cuts both ends
+// South Rafter: 2x6 x 80.4" (6'-8.4") - Plumb cuts both ends
+// North Rafter: 2x6 x 80.4" (6'-8.4") - Plumb cuts both ends
+// South Fly Rafter: 2x6 x 80.4" (6'-8.4") - Plumb cuts both ends
+// North Fly Rafter: 2x6 x 80.4" (6'-8.4") - Plumb cuts both ends
+// End S filler: 2x6 x 6.3" (0'-6.3") - Short filler at eave
+// End N filler: 2x6 x 6.3" (0'-6.3") - Short filler at eave
+// Stud #0 (Y=8"): 2x6 x 9.9" (0'-9.9") - Angle cut top @ 26.6°
+// Stud #1 (Y=24"): 2x6 x 17.9" (1'-5.9") - Angle cut top @ 26.6°
+// Stud #2 (Y=40"): 2x6 x 25.9" (2'-1.9") - Angle cut top @ 26.6°
+// Stud #3 (Y=56"): 2x6 x 33.9" (2'-9.9") - Angle cut top @ 26.6°
+// Stud #4 (Y=72"): 2x6 x 41.1" (3'-5.1") - Angle cut top @ 26.6°
+// Stud #5 (Y=88"): 2x6 x 33.9" (2'-9.9") - Angle cut top @ 26.6°
+// Stud #6 (Y=104"): 2x6 x 25.9" (2'-1.9") - Angle cut top @ 26.6°
+// Stud #7 (Y=120"): 2x6 x 17.9" (1'-5.9") - Angle cut top @ 26.6°
+// Stud #8 (Y=136"): 2x6 x 9.9" (0'-9.9") - Angle cut top @ 26.6°
 
 // Peak stud Y centers (shed coords, 16" o.c. aligned with E/W wall studs)
 end_truss_stud_ys = [8.0000, 24.0000, 40.0000, 56.0000, 72.0000, 88.0000, 104.0000, 120.0000, 136.0000];
