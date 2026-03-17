@@ -63,6 +63,12 @@
     border-bottom: 1px solid #ddd;
     vertical-align: top;
   }
+  tr.note-row td {
+    padding: 1px 6px 4px 24px;
+    border-bottom: 1px solid #ccc;
+    font-size: 9.5pt;
+    color: #444;
+  }
   .note {
     font-size: 9.5pt;
     color: #333;
@@ -122,22 +128,32 @@
 
   <h2>Cut List (per truss &times; 7)</h2>
   <table>
-    <tr><th>Piece</th><th>Size</th><th>Qty</th><th>Cut Length</th><th>Notes</th></tr>
-    <tr><td>Bottom chord</td><td>2x4</td><td class="center">1</td><td>12'-0" (144")</td><td>Square cuts both ends</td></tr>
-    <tr><td>South rafter</td><td>2x4</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends @ 26.6&deg;</td></tr>
-    <tr><td>North rafter</td><td>2x4</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends @ 26.6&deg;</td></tr>
-    <tr><td>South queen post</td><td>2x4</td><td class="center">1</td><td>1'-10-1/4" (22.3")</td><td>Angle cut top @ 26.6&deg;, square bottom</td></tr>
-    <tr><td>North queen post</td><td>2x4</td><td class="center">1</td><td>1'-10-1/4" (22.3")</td><td>Angle cut top @ 26.6&deg;, square bottom</td></tr>
-    <tr><td>Straining beam</td><td>2x4</td><td class="center">1</td><td>4'-0" (48")</td><td>Square cuts both ends</td></tr>
+    <tr><th>Piece</th><th>Size</th><th>Qty</th><th>Cut Length</th></tr>
+    <tr><td>Bottom chord</td><td>2x4</td><td class="center">1</td><td>12'-0" (144")</td></tr>
+    <tr class="note-row"><td colspan="4">Square cuts both ends</td></tr>
+    <tr><td>South rafter</td><td>2x4</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td></tr>
+    <tr class="note-row"><td colspan="4">Plumb cuts both ends @ 26.6&deg;</td></tr>
+    <tr><td>North rafter</td><td>2x4</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td></tr>
+    <tr class="note-row"><td colspan="4">Plumb cuts both ends @ 26.6&deg;</td></tr>
+    <tr><td>South queen post</td><td>2x4</td><td class="center">1</td><td>1'-10-1/4" (22.3")</td></tr>
+    <tr class="note-row"><td colspan="4">Angle cut top @ 26.6&deg;, square bottom</td></tr>
+    <tr><td>North queen post</td><td>2x4</td><td class="center">1</td><td>1'-10-1/4" (22.3")</td></tr>
+    <tr class="note-row"><td colspan="4">Angle cut top @ 26.6&deg;, square bottom</td></tr>
+    <tr><td>Straining beam</td><td>2x4</td><td class="center">1</td><td>4'-0" (48")</td></tr>
+    <tr class="note-row"><td colspan="4">Square cuts both ends</td></tr>
   </table>
 
   <h2>Gusset Plates (per truss &times; 7)</h2>
   <table>
-    <tr><th>Joint</th><th>Material</th><th>Size</th><th>Qty</th><th>Notes</th></tr>
-    <tr><td>Peak</td><td>1/2" plywood</td><td>12" &times; 19.4" pentagon</td><td class="center">2</td><td>One each side</td></tr>
-    <tr><td>Queen post tops (each)</td><td>1/2" plywood</td><td>10" &times; 8" rectangle</td><td class="center">4</td><td>2 joints &times; 2 sides, roof-aligned</td></tr>
-    <tr><td>Queen post bottoms (each)</td><td>1/2" plywood</td><td>10" &times; 8" rectangle</td><td class="center">4</td><td>2 joints &times; 2 sides</td></tr>
-    <tr><td>Eave joints (each)</td><td>1/2" plywood</td><td>10" &times; 8" pentagon</td><td class="center">4</td><td>2 joints &times; 2 sides, clipped to rafter</td></tr>
+    <tr><th>Joint</th><th>Material</th><th>Size</th><th>Qty</th></tr>
+    <tr><td>Peak</td><td>1/2" plywood</td><td>12" &times; 19.4" pentagon</td><td class="center">2</td></tr>
+    <tr class="note-row"><td colspan="4">One each side</td></tr>
+    <tr><td>Queen post tops (each)</td><td>1/2" plywood</td><td>10" &times; 8" rectangle</td><td class="center">4</td></tr>
+    <tr class="note-row"><td colspan="4">2 joints &times; 2 sides, roof-aligned</td></tr>
+    <tr><td>Queen post bottoms (each)</td><td>1/2" plywood</td><td>10" &times; 8" rectangle</td><td class="center">4</td></tr>
+    <tr class="note-row"><td colspan="4">2 joints &times; 2 sides</td></tr>
+    <tr><td>Eave joints (each)</td><td>1/2" plywood</td><td>10" &times; 8" pentagon</td><td class="center">4</td></tr>
+    <tr class="note-row"><td colspan="4">2 joints &times; 2 sides, clipped to rafter</td></tr>
   </table>
 
   <div class="note">
@@ -224,26 +240,40 @@
 
   <h2>Cut List (per end truss &times; 2)</h2>
   <table>
-    <tr><th>Piece</th><th>Size</th><th>Qty</th><th>Cut Length</th><th>Notes</th></tr>
-    <tr><td>Bottom chord</td><td>2x6</td><td class="center">1</td><td>12'-0" (144")</td><td>Laid flat (1.5" tall), acts as wall 2nd plate</td></tr>
-    <tr><td>South rafter</td><td>2x6</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends</td></tr>
-    <tr><td>North rafter</td><td>2x6</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td><td>Plumb cuts both ends</td></tr>
+    <tr><th>Piece</th><th>Size</th><th>Qty</th><th>Cut Length</th></tr>
+    <tr><td>Bottom chord</td><td>2x6</td><td class="center">1</td><td>12'-0" (144")</td></tr>
+    <tr class="note-row"><td colspan="4">Laid flat (1.5" tall), acts as wall 2nd plate</td></tr>
+    <tr><td>South rafter</td><td>2x6</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td></tr>
+    <tr class="note-row"><td colspan="4">Plumb cuts both ends</td></tr>
+    <tr><td>North rafter</td><td>2x6</td><td class="center">1</td><td>6'-8-1/2" (80.5")</td></tr>
+    <tr class="note-row"><td colspan="4">Plumb cuts both ends</td></tr>
   </table>
 
   <h2>Vertical Studs (per end truss &times; 2)</h2>
   <table>
-    <tr><th>#</th><th>Y Position</th><th>Height (long edge)</th><th>Notes</th></tr>
-    <tr><td>End S</td><td>0.9" (south eave)</td><td>~6-1/4"</td><td>Short filler at eave</td></tr>
-    <tr><td>0</td><td>8"</td><td>9-7/8"</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>1</td><td>24"</td><td>17-7/8" (1'-5-7/8")</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>2</td><td>40"</td><td>25-7/8" (2'-1-7/8")</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>3</td><td>56"</td><td>33-7/8" (2'-9-7/8")</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>4</td><td>72" (ridge center)</td><td>41-1/8" (3'-5-1/8")</td><td>Tallest stud, center for gable sheathing joint</td></tr>
-    <tr><td>5</td><td>88"</td><td>33-7/8" (2'-9-7/8")</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>6</td><td>104"</td><td>25-7/8" (2'-1-7/8")</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>7</td><td>120"</td><td>17-7/8" (1'-5-7/8")</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>8</td><td>136"</td><td>9-7/8"</td><td>Angle cut top @ 26.6&deg;</td></tr>
-    <tr><td>End N</td><td>143.1" (north eave)</td><td>~6-1/4"</td><td>Short filler at eave</td></tr>
+    <tr><th>#</th><th>Y Position</th><th>Height (long edge)</th></tr>
+    <tr><td>End S</td><td>0.9" (south eave)</td><td>~6-1/4"</td></tr>
+    <tr class="note-row"><td colspan="3">Short filler at eave</td></tr>
+    <tr><td>0</td><td>8"</td><td>9-7/8"</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>1</td><td>24"</td><td>17-7/8" (1'-5-7/8")</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>2</td><td>40"</td><td>25-7/8" (2'-1-7/8")</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>3</td><td>56"</td><td>33-7/8" (2'-9-7/8")</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>4</td><td>72" (ridge center)</td><td>41-1/8" (3'-5-1/8")</td></tr>
+    <tr class="note-row"><td colspan="3">Tallest stud, center for gable sheathing joint</td></tr>
+    <tr><td>5</td><td>88"</td><td>33-7/8" (2'-9-7/8")</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>6</td><td>104"</td><td>25-7/8" (2'-1-7/8")</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>7</td><td>120"</td><td>17-7/8" (1'-5-7/8")</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>8</td><td>136"</td><td>9-7/8"</td></tr>
+    <tr class="note-row"><td colspan="3">Angle cut top @ 26.6&deg;</td></tr>
+    <tr><td>End N</td><td>143.1" (north eave)</td><td>~6-1/4"</td></tr>
+    <tr class="note-row"><td colspan="3">Short filler at eave</td></tr>
   </table>
 
   <div class="note">
