@@ -21,12 +21,12 @@ Wall and roof sheathing form a continuous Zip System envelope:
 - **Seams**: Zip System tape + roller at all panel joints
 - **Nail schedule**: 6" o.c. edges, 12" o.c. field
 
-### Layers Above Zip (TBD)
+### Layers Above Zip
 
-Future assembly above roof Zip sheathing:
-- [ ] Rigid foam insulation (polyiso)
-- [ ] Furring strips / purlins
-- [ ] Metal roofing (standing seam or exposed fastener)
+Above-deck assembly (see [A2-eaves-proposal.md](A2-eaves-proposal.md) for full details):
+- [x] **2" polyiso rigid foam** (R-13.1) — continuous over Zip deck, seams taped
+- [ ] 2x4 purlins (flat), 24" o.c., long-screwed through foam into rafters
+- [ ] Metal roofing (profile TBD — standing seam or exposed fastener)
 
 ---
 
@@ -54,15 +54,16 @@ For a 50-year building, standing seam is the better fit.
 
 Insulation goes at the roof plane — no attic ventilation (unvented assembly).
 
-### Cavity Insulation
-- Polyiso or Rockwool batts friction-fit between truss top chords (3.5" cavity)
-  - Rockwool ComfortBatt: R-15 in 3.5"
-  - Polyiso: R-20+ in 3.5" (if cut from board stock)
+### Exterior Rigid Foam (Above Deck)
+- **2" polyiso** (R-13.1) continuous over Zip roof sheathing
+- Single layer, seams taped with foil tape
+- Required for IRC R806.5 compliance: exterior insulation must be ≥40% of total roof R-value in zone 4C unvented assemblies. At R-13.1 / (R-13.1 + R-15) = **47%** — compliant.
+
+### Cavity Insulation (Between Rafters)
+- Rockwool ComfortBatt R-15 friction-fit between truss top chords (3.5" cavity)
 - Hold in place with insulation support wire (zig-zag wire stapled between rafters)
 
-### Optional Under-Rafter Boost
-- Add 1–1.5" rigid foam board under rafters for ~R-20 to R-23 total
-- Hold with cap screws into truss chords
+**Total roof R-value: ~R-28** (R-13.1 exterior + R-15 cavity)
 
 ### Interior Finish
 - 1/2" CDX plywood over Rockwool (can be painted)
