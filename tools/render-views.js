@@ -51,8 +51,10 @@ const ALL_FLAGS = [
   'show_floor_decking',
   'show_walls',
   'show_trusses',
-  'show_ladder_framing',
   'show_roof',
+  'show_polyiso',
+  'show_purlins',
+  'show_eaves',
   'show_osb',
   'show_furring',
   'show_siding',
@@ -118,7 +120,7 @@ const VIEWS = [
     show: [
       'show_piers', 'show_post_bases', 'show_posts', 'show_beams',
       'show_joists', 'show_rim_joists', 'show_blocking', 'show_hurricane_ties',
-      'show_floor_decking', 'show_walls', 'show_trusses', 'show_ladder_framing',
+      'show_floor_decking', 'show_walls', 'show_trusses', 'show_eaves',
     ],
   },
   {
@@ -136,7 +138,7 @@ const VIEWS = [
       'show_piers', 'show_post_bases', 'show_posts', 'show_beams',
       'show_joists', 'show_rim_joists', 'show_blocking', 'show_hurricane_ties',
       'show_floor_decking', 'show_walls',
-      'show_trusses', 'show_ladder_framing',
+      'show_trusses', 'show_eaves',
     ],
   },
   {
@@ -145,8 +147,9 @@ const VIEWS = [
     show: [
       'show_piers', 'show_post_bases', 'show_posts', 'show_beams',
       'show_joists', 'show_rim_joists', 'show_blocking', 'show_hurricane_ties',
-      'show_floor_decking', 'show_walls', 'show_trusses', 'show_ladder_framing',
-      'show_roof', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels',
+      'show_floor_decking', 'show_walls', 'show_trusses', 'show_eaves',
+      'show_roof', 'show_polyiso', 'show_purlins',
+      'show_osb', 'show_furring', 'show_siding', 'show_compass_labels',
     ],
   },
 
@@ -244,19 +247,29 @@ const VIEWS = [
     show: ['show_walls', 'show_trusses', 'show_compass_labels'],
   },
   {
-    name: 'iso-ladder-framing',
-    camera: 'roofCorner',
-    show: ['show_walls', 'show_trusses', 'show_ladder_framing', 'show_compass_labels'],
-  },
-  {
     name: 'iso-roof-framing',
     camera: 'elevated',
-    show: ['show_walls', 'show_trusses', 'show_ladder_framing', 'show_compass_labels'],
+    show: ['show_walls', 'show_trusses', 'show_eaves', 'show_compass_labels'],
   },
   {
     name: 'iso-roof-sheathing',
     camera: 'roofCorner',
-    show: ['show_walls', 'show_trusses', 'show_ladder_framing', 'show_roof', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels'],
+    show: ['show_walls', 'show_trusses', 'show_eaves', 'show_roof', 'show_polyiso', 'show_purlins', 'show_osb', 'show_furring', 'show_siding', 'show_compass_labels'],
+  },
+  {
+    name: 'iso-polyiso',
+    camera: 'roofCorner',
+    show: ['show_walls', 'show_trusses', 'show_roof', 'show_polyiso', 'show_compass_labels'],
+  },
+  {
+    name: 'iso-purlins',
+    camera: 'roofCorner',
+    show: ['show_walls', 'show_trusses', 'show_roof', 'show_polyiso', 'show_purlins', 'show_compass_labels'],
+  },
+  {
+    name: 'iso-eave-framing',
+    camera: 'roofCorner',
+    show: ['show_walls', 'show_trusses', 'show_roof', 'show_polyiso', 'show_purlins', 'show_eaves', 'show_compass_labels'],
   },
 ];
 
