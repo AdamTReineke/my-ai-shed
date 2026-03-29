@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 320 200" width="960" height="600">
+  <style>
+    text { font-family: monospace; font-size: 5px; }
+    .dim { font-size: 4px; fill: #666; }
+    .label { font-size: 4.5px; fill: #333; }
+  </style>
+
+  <!-- Scale: 1 unit = 1 inch. Roof is 80.5" tall (eave to ridge) x 192" wide (16') -->
+  <!-- Purlin width = 3.5" (2x4 on flat). Centered on their line position. -->
+
+  <!-- Shed roof outline -->
+  <rect x="0" y="0" width="192" height="80.5" fill="#f9f9f0" fill-opacity="0.3" stroke="#333" stroke-width="0.75"/>
+
+  <!-- Ridge at top (y=0), Eave at bottom (y=80.5) -->
+  <text x="96" y="-4" text-anchor="middle" class="label">RIDGE</text>
+  <text x="96" y="87" text-anchor="middle" class="label">EAVE</text>
+
+  <!-- Truss positions (vertical lines) - 9 trusses -->
+  <g stroke="#aaa" stroke-width="0.3" stroke-dasharray="2,2">
+    <line x1="0.75" y1="0" x2="0.75" y2="80.5"/>
+    <line x1="24" y1="0" x2="24" y2="80.5"/>
+    <line x1="48" y1="0" x2="48" y2="80.5"/>
+    <line x1="72" y1="0" x2="72" y2="80.5"/>
+    <line x1="96" y1="0" x2="96" y2="80.5"/>
+    <line x1="120" y1="0" x2="120" y2="80.5"/>
+    <line x1="144" y1="0" x2="144" y2="80.5"/>
+    <line x1="168" y1="0" x2="168" y2="80.5"/>
+    <line x1="191.25" y1="0" x2="191.25" y2="80.5"/>
+  </g>
+  <!-- Truss labels -->
+  <text x="0.75" y="-2" text-anchor="middle" class="dim">T1</text>
+  <text x="24" y="-2" text-anchor="middle" class="dim">T2</text>
+  <text x="48" y="-2" text-anchor="middle" class="dim">T3</text>
+  <text x="72" y="-2" text-anchor="middle" class="dim">T4</text>
+  <text x="96" y="-2" text-anchor="middle" class="dim">T5</text>
+  <text x="120" y="-2" text-anchor="middle" class="dim">T6</text>
+  <text x="144" y="-2" text-anchor="middle" class="dim">T7</text>
+  <text x="168" y="-2" text-anchor="middle" class="dim">T8</text>
+  <text x="191.25" y="-2" text-anchor="middle" class="dim">T9</text>
+
+  <!-- ==================== HORIZONTAL PURLINS (blue, 3.5" wide rects) ==================== -->
+  <!-- Centered vertically on their y position (y - 1.75) -->
+  <!-- Left side: x=-12 to x=42, Right side: x=150 to x=204 -->
+  <g fill="rgba(70,130,220,0.4)" stroke="blue" stroke-width="0.5">
+    <!-- y=0 (ridge) -->
+    <rect x="-12" y="0" width="54" height="3.5"/>
+    <rect x="150" y="0" width="54" height="3.5"/>
+    <!-- y=24 -->
+    <rect x="-12" y="22.25" width="54" height="3.5"/>
+    <rect x="150" y="22.25" width="54" height="3.5"/>
+    <!-- y=48 -->
+    <rect x="-12" y="46.25" width="54" height="3.5"/>
+    <rect x="150" y="46.25" width="54" height="3.5"/>
+    <!-- y=64 (shifted up to give short verticals room) -->
+    <rect x="-12" y="62.25" width="54" height="3.5"/>
+    <rect x="150" y="62.25" width="54" height="3.5"/>
+  </g>
+
+  <!-- ==================== MAIN VERTICAL PURLINS (red, 3.5" wide rects) ==================== -->
+  <!-- Centered horizontally on truss position (x - 1.75) -->
+  <!-- T3 through T7, ridge to eave+12" (y=0 to y=92.5) -->
+  <g fill="rgba(220,70,70,0.4)" stroke="red" stroke-width="0.5">
+    <rect x="46.25" y="0" width="3.5" height="92.5"/>
+    <rect x="70.25" y="0" width="3.5" height="92.5"/>
+    <rect x="94.25" y="0" width="3.5" height="92.5"/>
+    <rect x="118.25" y="0" width="3.5" height="92.5"/>
+    <rect x="142.25" y="0" width="3.5" height="92.5"/>
+  </g>
+
+  <!-- ==================== SHORT VERTICAL PURLINS (green, 3.5" wide rects) ==================== -->
+  <!-- 2" gap below bottom horizontal (bottom of horiz = 73.75, so start at 75.75) -->
+  <!-- Run to y=96.5 -->
+  <g fill="rgba(70,180,70,0.4)" stroke="green" stroke-width="0.5">
+    <!-- Left gable: T1 and T2 -->
+    <rect x="-1" y="67.75" width="3.5" height="24.75"/>
+    <rect x="22.25" y="67.75" width="3.5" height="24.75"/>
+    <!-- Right gable: T8 and T9 -->
+    <rect x="166.25" y="67.75" width="3.5" height="24.75"/>
+    <rect x="189.5" y="67.75" width="3.5" height="24.75"/>
+  </g>
+
+  <!-- ==================== BLOCKING (orange) ==================== -->
+  <!-- Horizontal blocks at the eave line connecting short vertical to main vertical purlins -->
+  <!-- These close off the bottom corners. Run along the eave overhang edge. -->
+  <g fill="rgba(220,160,50,0.4)" stroke="orange" stroke-width="0.5">
+    <!-- Vertical 2x2 blocking up gable edges, between horizontal purlins -->
+    <!-- Left edge: flush outside at x=-12, so x=-12 to x=-10.5 -->
+    <rect x="-12" y="3.5" width="1.5" height="18.75"/>    <!-- ridge to y=24 -->
+    <rect x="-12" y="25.75" width="1.5" height="20.5"/>   <!-- y=24 to y=48 -->
+    <rect x="-12" y="49.75" width="1.5" height="12.5"/>   <!-- y=48 to y=64 -->
+    <rect x="-12" y="65.75" width="1.5" height="25.25"/>  <!-- y=64 down to bottom blocking -->
+    <!-- Right edge: flush outside at x=204, so x=202.5 to x=204 -->
+    <rect x="202.5" y="3.5" width="1.5" height="18.75"/>    <!-- ridge to y=24 -->
+    <rect x="202.5" y="25.75" width="1.5" height="20.5"/>   <!-- y=24 to y=48 -->
+    <rect x="202.5" y="49.75" width="1.5" height="12.5"/>   <!-- y=48 to y=64 -->
+    <rect x="202.5" y="65.75" width="1.5" height="25.25"/>  <!-- y=64 down to bottom blocking -->
+
+    <!-- 2x2 blocking (1.5" wide) between purlins at eave overhang tip (y=91 to 92.5) -->
+    <!-- Left corner: between gable edge and T1, T1-T2, T2-T3 -->
+    <rect x="-12" y="91" width="11" height="1.5"/>       <!-- gable edge to T1 -->
+    <rect x="2.5" y="91" width="19.75" height="1.5"/>    <!-- T1 to T2 -->
+    <rect x="25.75" y="91" width="20.5" height="1.5"/>   <!-- T2 to T3 -->
+    <!-- Right corner: between T7-T8, T8-T9, T9-gable edge -->
+    <rect x="145.75" y="91" width="20.5" height="1.5"/>  <!-- T7 to T8 -->
+    <rect x="169.75" y="91" width="19.75" height="1.5"/> <!-- T8 to T9 -->
+    <rect x="193" y="91" width="11" height="1.5"/>       <!-- T9 to gable edge -->
+  </g>
+
+  <!-- Eave overhang line -->
+  <line x1="-12" y1="92.5" x2="204" y2="92.5" stroke="#ccc" stroke-width="0.3" stroke-dasharray="1,1"/>
+
+  <!-- Dimension: eave overhang -->
+  <line x1="210" y1="80.5" x2="210" y2="92.5" stroke="#666" stroke-width="0.3"/>
+  <line x1="208" y1="80.5" x2="212" y2="80.5" stroke="#666" stroke-width="0.3"/>
+  <line x1="208" y1="92.5" x2="212" y2="92.5" stroke="#666" stroke-width="0.3"/>
+  <text x="218" y="87" class="dim">12"</text>
+
+  <!-- Dimension: gable overhang left -->
+  <line x1="-12" y1="102" x2="0.75" y2="102" stroke="#666" stroke-width="0.3"/>
+  <line x1="-12" y1="100" x2="-12" y2="104" stroke="#666" stroke-width="0.3"/>
+  <line x1="0.75" y1="100" x2="0.75" y2="104" stroke="#666" stroke-width="0.3"/>
+  <text x="-6" y="108" text-anchor="middle" class="dim">12"</text>
+
+  <!-- Dimension: gable overhang right -->
+  <line x1="191.25" y1="102" x2="204" y2="102" stroke="#666" stroke-width="0.3"/>
+  <line x1="191.25" y1="100" x2="191.25" y2="104" stroke="#666" stroke-width="0.3"/>
+  <line x1="204" y1="100" x2="204" y2="104" stroke="#666" stroke-width="0.3"/>
+  <text x="197.5" y="108" text-anchor="middle" class="dim">12"</text>
+
+  <!-- Overall width dimension -->
+  <line x1="-12" y1="-20" x2="204" y2="-20" stroke="#666" stroke-width="0.3"/>
+  <line x1="-12" y1="-22" x2="-12" y2="-18" stroke="#666" stroke-width="0.3"/>
+  <line x1="204" y1="-22" x2="204" y2="-18" stroke="#666" stroke-width="0.3"/>
+  <text x="96" y="-23" text-anchor="middle" class="dim">18' (216")</text>
+
+  <!-- Shed width dimension -->
+  <line x1="0" y1="-12" x2="192" y2="-12" stroke="#666" stroke-width="0.3"/>
+  <line x1="0" y1="-14" x2="0" y2="-10" stroke="#666" stroke-width="0.3"/>
+  <line x1="192" y1="-14" x2="192" y2="-10" stroke="#666" stroke-width="0.3"/>
+  <text x="96" y="-14" text-anchor="middle" class="dim">16' (192")</text>
+
+  <!-- Rafter length dimension -->
+  <line x1="-25" y1="0" x2="-25" y2="80.5" stroke="#666" stroke-width="0.3"/>
+  <line x1="-27" y1="0" x2="-23" y2="0" stroke="#666" stroke-width="0.3"/>
+  <line x1="-27" y1="80.5" x2="-23" y2="80.5" stroke="#666" stroke-width="0.3"/>
+  <text x="-28" y="42" text-anchor="middle" class="dim" transform="rotate(-90,-28,42)">80.5"</text>
+
+  <!-- Legend -->
+  <line x1="-12" y1="118" x2="0" y2="118" stroke="blue" stroke-width="3.5"/>
+  <text x="3" y="119.5" class="label">Horizontal purlins (gable overhang)</text>
+  <line x1="-12" y1="124" x2="0" y2="124" stroke="red" stroke-width="3.5"/>
+  <text x="3" y="125.5" class="label">Vertical purlins (eave overhang)</text>
+  <line x1="-12" y1="130" x2="0" y2="130" stroke="green" stroke-width="3.5"/>
+  <text x="3" y="131.5" class="label">Short vertical purlins (gable eave)</text>
+  <line x1="-12" y1="136" x2="0" y2="136" stroke="orange" stroke-width="3.5"/>
+  <text x="3" y="137.5" class="label">Blocking (eave corners)</text>
+  <rect x="-13" y="140" width="12" height="4" fill="none" stroke="#333" stroke-width="0.75"/>
+  <text x="3" y="143" class="label">Shed roof (80.5" x 192")</text>
+</svg>
