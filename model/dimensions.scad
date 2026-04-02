@@ -226,23 +226,17 @@ roof_sheathing_thickness = 7/16;      // 7/16" Zip System roof sheathing
 polyiso_thickness = 2;
 color_polyiso = [0.75, 0.78, 0.8];    // Silver
 
-// Purlins (2x4 flat)
+// Battens (2x4 flat, vertical members running up the slope)
+batten_width = 3.5;                    // 2x4 wide face
+batten_height = 1.5;                   // 2x4 flat
+batten_overhang = 12;                  // How far battens extend past wall (adjustable)
+batten_ridge_gap = 3;                  // Stop 3" short of peak
+
+// Purlins (2x4 flat, horizontal members over battens)
 purlin_width = 3.5;                    // 2x4 wide face
 purlin_height = 1.5;                   // 2x4 flat
-purlin_overhang = 12;                  // 12" past each end truss
-purlin_length = shed_length + 2 * purlin_overhang;  // 216"
-
-// Eave / overhang framing
-eave_overhang_horiz = 12;
-slope_overhang = eave_overhang_horiz / cos(truss_rafter_angle);  // ~13.4"
-outrigger_length = 18;
-
-fascia_height = 7.25;                  // 1x8
-fascia_thickness = 0.75;
-color_fascia = [0.78, 0.7, 0.55];
-
-fly_rafter_depth = 3.5;
-fly_rafter_thickness = 1.5;
+purlin_gable_overhang = 12;            // E-W extension past shed ends (adjustable)
+purlin_length = shed_length + 2 * purlin_gable_overhang;  // 216"
 
 // Truss X positions array (shared by purlins and eave framing)
 num_trusses = floor(shed_length / 24) + 1;

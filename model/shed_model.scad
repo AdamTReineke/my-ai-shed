@@ -34,8 +34,7 @@ show_walls = true;
 show_trusses = true;            // Queen-post roof trusses
 show_roof = true;               // Zip System roof sheathing
 show_polyiso = true;            // 2" polyiso rigid foam insulation
-show_purlins = true;            // 2x4 purlins for metal roofing
-show_eaves = true;              // Outriggers, fascia, fly rafters, barge boards
+show_purlins = true;            // Batten + purlin grid for metal roofing
 show_osb = true;                 // 7/16" OSB sheathing (wall exterior)
 show_furring = false;             // 1×3 furring strips (rainscreen gap)
 show_siding = false;              // HardiePlank lap siding
@@ -63,7 +62,6 @@ include <trusses.scad>
 include <roof_sheathing.scad>
 include <roof_polyiso.scad>
 include <purlins.scad>
-include <eave_framing.scad>
 include <labels.scad>
 
 // ============================================
@@ -193,16 +191,10 @@ if (show_polyiso) {
     roof_polyiso();
 }
 
-// Purlins
+// Batten + purlin grid
 if (show_purlins) {
-    echo("CUTLIST,=== PURLINS ===,,,");
+    echo("CUTLIST,=== BATTENS & PURLINS ===,,,");
     purlins();
-}
-
-// Eave framing (outriggers, sub-fascia, fly rafters, fascia, barge boards)
-if (show_eaves) {
-    echo("CUTLIST,=== EAVE FRAMING ===,,,");
-    eave_framing();
 }
 
 // Compass labels
