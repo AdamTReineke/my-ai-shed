@@ -21,7 +21,7 @@ module purlins() {
     // Rows 2,4: evenly spaced between ridge and wall
     ridge_pos = ridge_gap_slope;
     wall_pos = slope_length;
-    eave_pos = slope_length + overhang_slope;
+    eave_pos = slope_length + overhang_slope - purlin_width / 2;  // edge-aligned with batten end
     span = wall_pos - ridge_pos;
     purlin_dists = [
         ridge_pos,
@@ -43,9 +43,12 @@ module purlins() {
                 _roof_grid(slope_length, foam_z, ridge_gap_slope, batten_length,
                            overhang_slope, purlin_dists, center_truss_x, side);
         } else {
+            // North slope: mirror the grid in Y so overhang extends north (past wall)
             color(color_stud)
             translate([0, shed_width, wall_top_z + rafter_top_z_eave])
             rotate([-truss_rafter_angle, 0, 0])
+            translate([0, -slope_length, 0])
+            mirror([0, 1, 0])
             translate([0, -slope_length, 0])
                 _roof_grid(slope_length, foam_z, ridge_gap_slope, batten_length,
                            overhang_slope, purlin_dists, center_truss_x, side);
