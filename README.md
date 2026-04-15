@@ -4,6 +4,8 @@
 
 I'm building a shed and this repository documents the design.
 
+<img width="4080" height="3072" alt="A photo of the shed from April 13, 2026" src="https://github.com/user-attachments/assets/467f1665-8e1b-4a26-a6e1-401311c206e2" />
+
 ## Table of Contents
 
 - [0 — Shed Design](docs/0-readme.md)
@@ -19,7 +21,7 @@ I'm building a shed and this repository documents the design.
 
 ## Screenshots of the Model
 
-![screenshot of the OpenSCAD rendering of the shed without any wall coverings](screenshots/image.png)
+![screenshot of the OpenSCAD rendering of the shed](https://github.com/AdamTReineke/my-ai-shed/blob/main/renders/08-complete.png)
 
 ![screenshot from below the floor plane showing some of the joist layout, ties, etc and the siding on the walls](screenshots/image-1.png)
 
