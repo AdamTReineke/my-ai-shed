@@ -92,12 +92,30 @@ Work bottom-up, one course at a time around the building. The cut list (`node to
 
 The two wall types terminate differently because the overhangs are built differently (no rafter tails — the eave is battens extended past the wall over the polyiso, open soffit, per [A2-eaves-proposal.md](A2-eaves-proposal.md)).
 
-**N/S eave walls — the gap merges with the roof vent channel.** The roof's airspace (between battens, above the foam, under the panels) passes directly over the wall top, and the soffit is open:
+**N/S eave walls — vented closure block between battens.** The roof's airspace (between battens, above the foam, under the panels) passes directly over the wall top. A blocking board in each batten bay terminates the siding, screens the exhaust, and covers the exposed deck/foam edges — all in one piece:
 
-- Run furring full height to the top of the wall Zip (top plate / heel blocking).
-- Leave the ¾" gap open at the top. Air path: up the wall gap → open eave bay → between-batten channel above the polyiso → ridge vent. Nothing to build — just don't block it.
-- **Bug screen the top of the gap** — the open soffit means the gap top is exposed. Same detail as the bottom, inverted: staple the 4" insect screen to the Zip above the siding line, fold it out over the furring tops, let the top course pin it.
-- No caulk, no closure trim. If a frieze board is ever added, space it off the siding so the slot stays open.
+```
+   slope ↗  metal panel / purlins
+  ═══════════════════════════════════
+   batten ─────────────────────────►  extends 12" past wall
+   ░░ 2" polyiso ░░│▒ ← mesh: stapled to block back (top edge),
+   ── Zip deck ────│▒       draped down cavity, stapled to wall Zip
+      heel blocking│▒┌───┐
+      / top plate  │ │blk│ ← 1×6 between battens, ¾" spacers behind,
+                   │¾│   │   face flush with furring plane
+   wall Zip ──────►│"│───┘
+                   │ ├───┐
+                   │g│sid│ ← ripped top course laps block bottom ~1",
+                   │a│ing│   face-nailed into the block
+                   │p│   │
+```
+
+- Cut blocks ~22.5" (24" o.c. battens minus 1.5") from 1×6 — PT like the furring, or primed. Height is measure-in-place: from ~1" below the siding top line up to the **top of the polyiso** (underside plane of the battens). Bevel the top edge at 26.6° if desired, but don't extend it up into the between-batten channel — that channel is the exhaust outlet.
+- **On the bench:** staple a 4" strip of insect mesh to the back of each block along its top edge.
+- Install each block on **¾" spacers** (furring offcuts) with 3" screws into the heel blocking/top plate — its face lands flush with the furring plane. Fold the mesh down the cavity behind and staple its lower edge to the wall Zip just above the furring tops. The mesh now screens the ¾" passage while air flows through.
+- Exhaust path: up the wall gap → through the mesh behind the block → into the 1.5" between-batten channel → open soffit and up-slope to the ridge vent. Do not fill the ¾" standoff — a block tight to the Zip corks the rainscreen.
+- Run the ripped top siding course up over the block's bottom edge and **face-nail into the block** (it doubles as the top-course nailer). No caulk along the top edge.
+- Bonus: the block shields the bare roof-deck and polyiso edges at the wall line from UV, mice, and woodpeckers.
 
 **E/W gable ends — terminated slot vent under the rake.** The gable gap cannot join the roof channel — the Zip deck edge, foam edge, and butyl-sealed gable trim close it off at the rake. It's a dead-end circuit: intake at the bottom mesh, exhaust through a screened slot under the rake overhang:
 
