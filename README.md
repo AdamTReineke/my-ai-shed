@@ -17,6 +17,14 @@ I'm building a shed and this repository documents the design.
 - [6 — Trusses (Queen-Post Design)](docs/6-trusses.md)
 - [7 — Roof](docs/7-roof.md)
 - [8 — Fastener Schedule](docs/8-fasteners.md)
+- [9 — Interior Finishings](docs/9-finishings.md)
+- [10 — Stairs & Landing](docs/10-stairs.md)
+- [11 — Trades & Mechanical](docs/11-trades.md)
+- [12 — Metal Roof](docs/12-metal-roof.md)
+- [13 — Siding Installation](docs/13-siding.md)
+- [A1 — Errata & Documentation Inconsistencies](docs/A1-errata.md)
+- [A2 — Eaves & Overhangs](docs/A2-eaves-proposal.md)
+- [A3 — Batten & Purlin Grid](docs/A3-purlin-proposal.md)
 - [Images](images.md)
 
 ## Screenshots of the Model
