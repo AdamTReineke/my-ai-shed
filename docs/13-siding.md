@@ -33,7 +33,7 @@ Total buildup off the Zip face: ¾" furring + 5/16" plank ≈ **1-1/16"**. Remem
 - **Extra furring where butt joints land.** Every plank butt joint must be backed by a furring strip. The cut list puts joints on stud lines, so the standard layout covers it — but if you improvise a joint mid-bay, add a strip behind it first.
 - **Mark gutter bracket and electrical box locations on the Zip now** (see Steps 6–7) and add backing before the siding hides everything.
 
-Leave the top of the gap open (it vents behind the frieze/soffit). The bottom gets closed next.
+Leave the top of the gap open — top venting differs by wall, see **Top-of-Wall Transitions** below. The bottom gets closed next.
 
 ## Step 2 — Bug Mesh at the Bottom
 
@@ -80,13 +80,31 @@ Work bottom-up, one course at a time around the building. The cut list (`node to
 - Confirm there's a **metal drip cap over the door head trim** before siding above it; the course above the door laps over the drip cap flange, with a ¼" air gap above the horizontal leg (don't caulk that gap — it drains).
 
 **Top course (N/S eave walls):**
-- 16 courses × 6.25" overshoots the 96" wall by ~4" — rip the top course to fit under the soffit/frieze, leaving the rainscreen exhaust gap open behind the frieze.
+- 16 courses × 6.25" overshoots the 96" wall by ~4" — rip the top course to end at the top of the wall Zip. Top-of-gap detail: see **Top-of-Wall Transitions** below.
 - A ripped top course loses its blind-nail zone: **face-nail** it (2 nails per furring, ¾" from the top edge), and dab the heads with sealant + touch-up paint.
 
 **Gable ends (E/W walls):**
 - The cut list covers only the 16 rectangular courses — the gable triangles are measure-in-place. Continue courses up the gable, cutting plank ends at the roof pitch angle (**6/12 = 26.6°**).
 - Gable planks need furring backing on the end-truss framing — add vertical 1×3 over the gable studs/webs before starting the triangle.
-- Hold gable plank cut edges ⅛"–¼" off the underside of the rake/barge trim; caulk is optional there, but the cut edges must be primed.
+- Hold the top cuts **~¾" below the rake underside** to form the exhaust slot — see **Top-of-Wall Transitions** below. Cut edges must be primed.
+
+### Top-of-Wall Transitions (Rainscreen Exhaust)
+
+The two wall types terminate differently because the overhangs are built differently (no rafter tails — the eave is battens extended past the wall over the polyiso, open soffit, per [A2-eaves-proposal.md](A2-eaves-proposal.md)).
+
+**N/S eave walls — the gap merges with the roof vent channel.** The roof's airspace (between battens, above the foam, under the panels) passes directly over the wall top, and the soffit is open:
+
+- Run furring full height to the top of the wall Zip (top plate / heel blocking).
+- Leave the ¾" gap open at the top. Air path: up the wall gap → open eave bay → between-batten channel above the polyiso → ridge vent. Nothing to build — just don't block it.
+- **Bug screen the top of the gap** — the open soffit means the gap top is exposed. Same detail as the bottom, inverted: staple the 4" insect screen to the Zip above the siding line, fold it out over the furring tops, let the top course pin it.
+- No caulk, no closure trim. If a frieze board is ever added, space it off the siding so the slot stays open.
+
+**E/W gable ends — terminated slot vent under the rake.** The gable gap cannot join the roof channel — the Zip deck edge, foam edge, and butyl-sealed gable trim close it off at the rake. It's a dead-end circuit: intake at the bottom mesh, exhaust through a screened slot under the rake overhang:
+
+- Cut furring tops parallel to the rake, **~¾" below the underside of the rake structure** (foam/batten edge, or barge board if installed).
+- Cut the siding top edges to the same line — this leaves a continuous downward-facing slot under the 12" rake overhang. Rain-protected; anything that blows in drains out the bottom mesh.
+- Screen the slot the same way — mesh stapled to the Zip, folded out over the furring tops.
+- **Do not caulk** the siding-to-rake edge.
 
 ## Step 6 — Electrical Mounting Blocks (outlets & lights)
 

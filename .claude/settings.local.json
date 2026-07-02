@@ -19,7 +19,9 @@
       "Bash(nslookup:*)",
       "Bash(command -v openscad)",
       "Bash(C:\\\\Program Files\\\\OpenSCAD\\\\openscad.com *)",
-      "Bash(\"C:\\\\Program Files\\\\OpenSCAD\\\\openscad.com\" -o tools/hinge-template.stl tools/hinge-template.scad)"
+      "Bash(\"C:\\\\Program Files\\\\OpenSCAD\\\\openscad.com\" -o tools/hinge-template.stl tools/hinge-template.scad)",
+      "Bash(git pull *)",
+      "Bash(git stash *)"
     ]
   },
   "enableAllProjectMcpServers": true,
