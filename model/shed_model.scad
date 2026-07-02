@@ -37,7 +37,9 @@ show_polyiso = true;            // 2" polyiso rigid foam insulation
 show_purlins = true;            // Batten + purlin grid for metal roofing
 show_osb = true;                 // 7/16" OSB sheathing (wall exterior)
 show_furring = false;             // 1×3 furring strips (rainscreen gap)
-show_siding = false;              // HardiePlank lap siding
+show_siding = false;              // HardiePlank lap siding (incl. gable courses)
+show_siding_trim = false;         // Starter strip, bug mesh, metal corner caps (13-siding.md)
+show_closure_blocks = false;      // Eave-wall closure blocks under P4 (13-siding.md)
 show_compass_labels = true;      // Direction labels (N/S/E/W)
 
 // Transparency settings (0-1, where 1 is opaque)
@@ -166,8 +168,8 @@ if (show_walls) {
     walls();
 }
 
-// Wall cladding (OSB, furring, siding — each toggled independently)
-if (show_osb || show_furring || show_siding) {
+// Wall cladding (OSB, furring, siding, trim — each toggled independently)
+if (show_osb || show_furring || show_siding || show_siding_trim || show_closure_blocks) {
     echo("CUTLIST,=== WALL CLADDING (OSB / FURRING / SIDING) ===,,,");
     wall_cladding();
 }
