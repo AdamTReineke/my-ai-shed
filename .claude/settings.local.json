@@ -14,7 +14,12 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(cd:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(tracert:*)",
+      "Bash(nslookup:*)",
+      "Bash(command -v openscad)",
+      "Bash(C:\\\\Program Files\\\\OpenSCAD\\\\openscad.com *)",
+      "Bash(\"C:\\\\Program Files\\\\OpenSCAD\\\\openscad.com\" -o tools/hinge-template.stl tools/hinge-template.scad)"
     ]
   },
   "enableAllProjectMcpServers": true,

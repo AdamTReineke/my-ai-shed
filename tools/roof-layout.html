@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Roof Layout Visualizer</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: monospace; background: #fff; color: #000; padding: 20px; }
+  h1 { margin-bottom: 10px; font-size: 18px; }
+  .controls { display: flex; gap: 20px; margin-bottom: 10px; font-size: 13px; }
+  .controls label { display: flex; align-items: center; gap: 4px; }
+  canvas { border: 1px solid #999; display: block; margin-bottom: 12px; }
+  .slope-page { margin-bottom: 30px; }
+  .slope-page h3 { margin: 8px 0 4px; }
+  .info { font-size: 13px; line-height: 1.6; }
+  .info table { border-collapse: collapse; margin: 8px 0; }
+  .info th, .info td { border: 1px solid #888; padding: 3px 8px; text-align: right; }
+  .info th { background: #ddd; text-align: left; }
+  .cut-table td.warn { font-weight: bold; text-decoration: underline; }
+  .cut-table td.ok { }
+  .verdict-square { font-weight: bold; }
+  .verdict-close { font-weight: bold; text-decoration: underline; }
+  .verdict-bad { font-weight: bold; text-decoration: underline; }
+
+  @media print {
+    .controls { display: none !important; }
+    body { padding: 0; font-size: 11px; }
+    h1 { font-size: 14px; }
+    .slope-page { page-break-after: always; margin-bottom: 0; }
+    .slope-page:last-child { page-break-after: auto; }
+    canvas { border: 1px solid #000; max-width: 100%; }
+    .info table { font-size: 11px; }
+    .info th, .info td { padding: 2px 6px; }
+  }
+</style>
+</head>
+<body>
+<h1>Shed Roof Layout — Purlin/Batten Trim Visualizer</h1>
+<div class="controls">
+  <label>Show: </label>
+  <label><input type="checkbox" id="showNorth" checked> North slope</label>
+  <label><input type="checkbox" id="showSouth" checked> South slope</label>
+  <label><input type="checkbox" id="showPanels" checked> 18' panel overlay</label>
+  <label><input type="checkbox" id="showCuts"> Cut lines</label>
+  <label><input type="checkbox" id="showSquare" checked> Squareness triangles</label>
+</div>
+<div id="output"></div>
+
+<script>
+// === AS-BUILT MEASUREMENTS ===
+
+const northBottom = 16*12 + 1/8;
+const northTop    = 16*12 + 1.5;
+const southBottom = 16*12 + 7/8;
+const southTop    = 16*12 + 1;
+
+const northSpacingWestEnd = [13.5, 38.5, 38.5+24, 38.5+24+25.75];
+const northSpacingEastEnd = [14, 39.5, 39.5+24, 39.5+24+25.5];
+const southSpacingWestEnd = [14, 38, 38+24, 38+24+26.75];
+const southSpacingEastEnd = [14, 38, 38+24, 38+24+27];
+
+const W = 3.5;
+const panelWidth = 18 * 12;
+const purlinOverhang = 20;
+
+// === DERIVED GEOMETRY ===
+
+function buildSlope(name, bottomW, topW, westSpacing, eastSpacing) {
+  const purlinY = [W / 2, westSpacing[0], westSpacing[1], westSpacing[2], westSpacing[3]];
+  const purlinYeast = [W / 2, eastSpacing[0], eastSpacing[1], eastSpacing[2], eastSpacing[3]];
+  const slopeHeight = Math.max(westSpacing[3], eastSpacing[3]) + W / 2;
+  return { name, bottomW, topW, purlinY, purlinYeast, slopeHeight };
+}
+
+const north = buildSlope('North', northBottom, northTop, northSpacingWestEnd, northSpacingEastEnd);
+const south = buildSlope('South', southBottom, southTop, southSpacingWestEnd, southSpacingEastEnd);
+
+// === FORMATTING ===
+
+function fmtIn(inches) {
+  const ft = Math.floor(inches / 12);
+  const rem = inches - ft * 12;
+  const whole = Math.floor(rem);
+  const frac = rem - whole;
+  let fracStr = '';
+  if (Math.abs(frac) < 0.01) fracStr = '';
+  else if (Math.abs(frac - 0.125) < 0.01) fracStr = '-1/8';
+  else if (Math.abs(frac - 0.25) < 0.01) fracStr = '-1/4';
+  else if (Math.abs(frac - 0.375) < 0.01) fracStr = '-3/8';
+  else if (Math.abs(frac - 0.5) < 0.01) fracStr = '-1/2';
+  else if (Math.abs(frac - 0.625) < 0.01) fracStr = '-5/8';
+  else if (Math.abs(frac - 0.75) < 0.01) fracStr = '-3/4';
+  else if (Math.abs(frac - 0.875) < 0.01) fracStr = '-7/8';
+  else fracStr = '+' + frac.toFixed(2);
+  if (ft > 0) return ft + "'" + (whole || fracStr ? ' ' + whole + fracStr + '"' : '');
+  return whole + fracStr + '"';
+}
+
+function fmtFrac(inches) {
+  const whole = Math.floor(inches);
+  const frac = inches - whole;
+  const sixteenths = Math.round(frac * 16);
+  if (sixteenths === 0) return whole + '"';
+  if (sixteenths === 16) return (whole + 1) + '"';
+  if (sixteenths === 8) return whole + '-1/2"';
+  if (sixteenths === 4) return whole + '-1/4"';
+  if (sixteenths === 12) return whole + '-3/4"';
+  if (sixteenths % 2 === 0) return whole + '-' + (sixteenths/2) + '/8"';
+  return whole + '-' + sixteenths + '/16"';
+}
+
+// === CANVAS RENDERING (one slope) ===
+
+function drawSlope(canvas, slope, opts) {
+  const ctx = canvas.getContext('2d');
+  const margin = 60;
+  const scale = 4;
+
+  const maxW = Math.max(slope.bottomW, slope.topW) + purlinOverhang * 2;
+  canvas.width = maxW * scale + margin * 2;
+  canvas.height = slope.slopeHeight * scale + margin * 2 + 30;
+
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  const ox = margin + purlinOverhang * scale;
+  const oy = margin;
+  const tx = (x) => ox + x * scale;
+  const ty = (y) => oy + (slope.slopeHeight - y) * scale;
+
+  // === Battens ===
+  ctx.strokeStyle = '#aaa';
+  ctx.lineWidth = W * scale;
+  ctx.lineCap = 'butt';
+  const battenCount = 9;
+  for (let i = 0; i < battenCount; i++) {
+    const frac = i / (battenCount - 1);
+    const xBot = frac * (slope.bottomW - W) + W / 2;
+    const xTop = frac * (slope.topW - W) + W / 2;
+    ctx.beginPath();
+    ctx.moveTo(tx(xBot), ty(0));
+    ctx.lineTo(tx(xTop), ty(slope.slopeHeight));
+    ctx.stroke();
+  }
+
+  // === Purlins ===
+  const purlinLabels = ['P5 (eave)', 'P4 (wall)', 'P3', 'P2', 'P1 (ridge)'];
+  for (let p = 0; p < 5; p++) {
+    const yw = slope.purlinY[p];
+    const ye = slope.purlinYeast[p];
+    const fracW = yw / slope.slopeHeight;
+    const fracE = ye / slope.slopeHeight;
+    const battenWatEast = (1 - fracE) * slope.bottomW + fracE * slope.topW;
+
+    ctx.strokeStyle = '#444';
+    ctx.lineWidth = W * scale;
+    ctx.beginPath();
+    ctx.moveTo(tx(-purlinOverhang), ty(yw));
+    ctx.lineTo(tx(battenWatEast + purlinOverhang), ty(ye));
+    ctx.stroke();
+
+    ctx.fillStyle = '#222';
+    ctx.font = '11px monospace';
+    ctx.textAlign = 'right';
+    ctx.fillText(purlinLabels[p], tx(-purlinOverhang - 1), ty(yw) + 4);
+
+    if (p > 0) {
+      const prevY = slope.purlinY[p - 1];
+      const midY = (yw + prevY) / 2;
+      ctx.fillStyle = '#666';
+      ctx.font = '10px monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText((yw - prevY).toFixed(1) + '"', tx(-purlinOverhang - 1), ty(midY) + 4);
+    }
+  }
+
+  // === 18' panel overlay ===
+  if (opts.showPanels) {
+    const centerBot = slope.bottomW / 2;
+    const centerTop = slope.topW / 2;
+    const westBot = centerBot - panelWidth / 2;
+    const westTop = centerTop - panelWidth / 2;
+    const eastBot = centerBot + panelWidth / 2;
+    const eastTop = centerTop + panelWidth / 2;
+
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([8, 4]);
+
+    ctx.beginPath();
+    ctx.moveTo(tx(westBot), ty(0));
+    ctx.lineTo(tx(westTop), ty(slope.slopeHeight));
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(tx(eastBot), ty(0));
+    ctx.lineTo(tx(eastTop), ty(slope.slopeHeight));
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = '#000';
+    ctx.font = '11px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText("18' panel width", tx(centerBot), ty(-3));
+  }
+
+  // === Cut lines ===
+  if (opts.showCuts) {
+    const centerBot = slope.bottomW / 2;
+    const centerTop = slope.topW / 2;
+    const center = (centerBot + centerTop) / 2;
+    const westBot = center - panelWidth / 2;
+    const eastBot = center + panelWidth / 2;
+
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([3, 3]);
+    ctx.beginPath();
+    ctx.moveTo(tx(westBot), ty(0));
+    ctx.lineTo(tx(westBot), ty(slope.slopeHeight));
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(tx(eastBot), ty(0));
+    ctx.lineTo(tx(eastBot), ty(slope.slopeHeight));
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // === Squareness triangles ===
+  let squareData = null;
+  if (opts.showSquare) {
+    const centerBot = slope.bottomW / 2;
+    const centerTop = slope.topW / 2;
+    const center = (centerBot + centerTop) / 2;
+    const westCutX = center - panelWidth / 2;
+    const eastCutX = center + panelWidth / 2;
+
+    const p4BottomW = slope.purlinY[1] - W / 2;
+    const p4BottomE = slope.purlinYeast[1] - W / 2;
+    const p1TopW = slope.purlinY[4] + W / 2;
+    const p1TopE = slope.purlinYeast[4] + W / 2;
+
+    const westVert = p1TopW - p4BottomW;
+    const eastVert = p1TopE - p4BottomE;
+    const horiz = panelWidth;
+    const diagSW_NE = Math.sqrt(horiz * horiz + (p1TopE - p4BottomW) * (p1TopE - p4BottomW));
+    const diagSE_NW = Math.sqrt(horiz * horiz + (p1TopW - p4BottomE) * (p1TopW - p4BottomE));
+    const diagDiff = Math.abs(diagSW_NE - diagSE_NW);
+
+    squareData = { westVert, eastVert, horiz, diagSW_NE, diagSE_NW, diagDiff };
+
+    // Rectangle
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([]);
+
+    ctx.beginPath();
+    ctx.moveTo(tx(westCutX), ty(p4BottomW));
+    ctx.lineTo(tx(westCutX), ty(p1TopW));
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(tx(eastCutX), ty(p4BottomE));
+    ctx.lineTo(tx(eastCutX), ty(p1TopE));
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(tx(westCutX), ty(p4BottomW));
+    ctx.lineTo(tx(eastCutX), ty(p4BottomE));
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(tx(westCutX), ty(p1TopW));
+    ctx.lineTo(tx(eastCutX), ty(p1TopE));
+    ctx.stroke();
+
+    // Diagonals
+    ctx.setLineDash([6, 3]);
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(tx(westCutX), ty(p4BottomW));
+    ctx.lineTo(tx(eastCutX), ty(p1TopE));
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(tx(eastCutX), ty(p4BottomE));
+    ctx.lineTo(tx(westCutX), ty(p1TopW));
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Labels
+    ctx.fillStyle = '#000';
+    ctx.font = '11px monospace';
+
+    ctx.textAlign = 'right';
+    ctx.fillText(fmtFrac(westVert), tx(westCutX - 2), ty((p4BottomW + p1TopW) / 2) + 4);
+    ctx.textAlign = 'left';
+    ctx.fillText(fmtFrac(eastVert), tx(eastCutX + 2), ty((p4BottomE + p1TopE) / 2) + 4);
+
+    ctx.textAlign = 'center';
+    const midX = (westCutX + eastCutX) / 2;
+    ctx.fillText(fmtFrac(horiz), tx(midX), ty((p4BottomW + p4BottomE) / 2) + 16);
+    ctx.fillText(fmtFrac(horiz), tx(midX), ty((p1TopW + p1TopE) / 2) - 6);
+
+    ctx.font = 'bold 12px monospace';
+    ctx.textAlign = 'left';
+    ctx.fillText('  ' + fmtFrac(diagSW_NE), tx(midX), ty((p4BottomW + p1TopE) / 2) - 2);
+    ctx.textAlign = 'right';
+    ctx.fillText(fmtFrac(diagSE_NW) + '  ', tx(midX), ty((p4BottomE + p1TopW) / 2) + 14);
+
+    // Verdict
+    const verdict = diagDiff < 0.0625 ? 'SQUARE' : diagDiff < 0.25 ? 'CLOSE (' + fmtFrac(diagDiff) + ' off)' : 'OUT OF SQUARE (' + fmtFrac(diagDiff) + ' off)';
+    ctx.font = 'bold 13px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(verdict, tx(midX), ty((p1TopW + p1TopE) / 2) - 20);
+  }
+
+  // === Title ===
+  ctx.fillStyle = '#000';
+  ctx.font = 'bold 14px monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText(slope.name + ' Slope', tx(slope.bottomW / 2), oy - 15);
+
+  // === Width dimensions ===
+  ctx.fillStyle = '#333';
+  ctx.font = '11px monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText(fmtIn(slope.bottomW) + ' (bottom)', tx(slope.bottomW / 2), ty(-7));
+  ctx.fillText(fmtIn(slope.topW) + ' (top)', tx(slope.topW / 2), ty(slope.slopeHeight + 5));
+
+  return squareData;
+}
+
+// === INFO HTML (one slope) ===
+
+function buildInfoHTML(slope, squareData) {
+  const purlinLabels = ['P5 (eave)', 'P4 (wall)', 'P3', 'P2', 'P1 (ridge)'];
+
+  const centerBot = slope.bottomW / 2;
+  const centerTop = slope.topW / 2;
+  const center = (centerBot + centerTop) / 2;
+  const westCut = center - panelWidth / 2;
+  const eastCut = center + panelWidth / 2;
+
+  let html = '';
+  html += `<p>Batten center: bottom=${fmtFrac(centerBot)}, top=${fmtFrac(centerTop)}, avg=${fmtFrac(center)}</p>`;
+  html += `<p>Panel cut lines: west at ${fmtFrac(westCut)} from west batten edge, east at ${fmtFrac(eastCut)}</p>`;
+
+  html += `<table class="cut-table"><tr><th>Purlin</th><th>Y west</th><th>Y east</th><th>Skew</th><th>Batten W at Y</th><th>West keep</th><th>East keep</th><th>Purlin len</th></tr>`;
+
+  for (let p = 0; p < 5; p++) {
+    const yw = slope.purlinY[p];
+    const ye = slope.purlinYeast[p];
+    const skew = Math.abs(ye - yw);
+    const fracW = yw / slope.slopeHeight;
+    const fracE = ye / slope.slopeHeight;
+    const bwW = (1 - fracW) * slope.bottomW + fracW * slope.topW;
+    const bwE = (1 - fracE) * slope.bottomW + fracE * slope.topW;
+    const avgBW = (bwW + bwE) / 2;
+    const westKeep = -westCut;
+    const eastKeep = eastCut - avgBW;
+    const cls = skew > 0.5 ? 'warn' : 'ok';
+
+    html += `<tr>
+      <td>${purlinLabels[p]}</td>
+      <td>${fmtFrac(yw)}</td>
+      <td>${fmtFrac(ye)}</td>
+      <td class="${cls}">${fmtFrac(skew)}</td>
+      <td>${fmtFrac(avgBW)}</td>
+      <td>${fmtFrac(westKeep)}</td>
+      <td>${fmtFrac(eastKeep)}</td>
+      <td>${fmtFrac(panelWidth)}</td>
+    </tr>`;
+  }
+  html += '</table>';
+  html += `<p>Measure from outer batten edge outward: west keep=${fmtFrac(-westCut)}, east keep=${fmtFrac(eastCut - (slope.bottomW+slope.topW)/2)}. Mark &amp; cut.</p>`;
+
+  if (squareData) {
+    const s = squareData;
+    const cls = s.diagDiff < 0.0625 ? 'verdict-square' : s.diagDiff < 0.25 ? 'verdict-close' : 'verdict-bad';
+    html += `<h4>Squareness Check (P4 bottom to P1 top)</h4>`;
+    html += `<table><tr><th>Measurement</th><th>Value</th></tr>`;
+    html += `<tr><td>West vertical (P4 bot to P1 top)</td><td>${fmtFrac(s.westVert)}</td></tr>`;
+    html += `<tr><td>East vertical (P4 bot to P1 top)</td><td>${fmtFrac(s.eastVert)}</td></tr>`;
+    html += `<tr><td>Horizontal (cut to cut)</td><td>${fmtFrac(s.horiz)}</td></tr>`;
+    html += `<tr><td>Diagonal SW-NE</td><td>${fmtFrac(s.diagSW_NE)}</td></tr>`;
+    html += `<tr><td>Diagonal SE-NW</td><td>${fmtFrac(s.diagSE_NW)}</td></tr>`;
+    html += `<tr><td>Diagonal difference</td><td class="${cls}">${fmtFrac(s.diagDiff)}</td></tr>`;
+    html += `</table>`;
+  }
+
+  return html;
+}
+
+// === SPACER CUTLIST ===
+
+function buildSpacerHTML() {
+  const slopes = [north, south];
+  const ends = ['West', 'East'];
+  const purlinLabels = ['P4-P3', 'P3-P2', 'P2-P1'];
+
+  let html = '<h3>Spacer Cutlist (between purlins, above outermost battens)</h3>';
+  html += '<p>12 spacers total: 3 per end &times; 2 ends &times; 2 slopes. Cut from 2&times;4 (3.5" wide).</p>';
+  html += '<table><tr><th>Slope</th><th>End</th><th>Gap</th><th>Center-to-center</th><th>Spacer length</th></tr>';
+
+  slopes.forEach(slope => {
+    ends.forEach((end, ei) => {
+      const yArr = ei === 0 ? slope.purlinY : slope.purlinYeast;
+      // P4=index1, P3=index2, P2=index3, P1=index4
+      for (let i = 0; i < 3; i++) {
+        const fromIdx = i + 1; // P4, P3, P2
+        const toIdx = i + 2;   // P3, P2, P1
+        const ctc = yArr[toIdx] - yArr[fromIdx];
+        const spacerLen = ctc - W; // subtract one purlin width
+        html += `<tr>
+          <td>${slope.name}</td>
+          <td>${end}</td>
+          <td>${purlinLabels[i]}</td>
+          <td>${fmtFrac(ctc)}</td>
+          <td>${fmtFrac(spacerLen)}</td>
+        </tr>`;
+      }
+    });
+  });
+
+  html += '</table>';
+  return html;
+}
+
+// === MAIN DRAW ===
+
+function draw() {
+  const showN = document.getElementById('showNorth').checked;
+  const showS = document.getElementById('showSouth').checked;
+  const showPanels = document.getElementById('showPanels').checked;
+  const showCuts = document.getElementById('showCuts').checked;
+  const showSquare = document.getElementById('showSquare').checked;
+
+  const opts = { showPanels, showCuts, showSquare };
+  const output = document.getElementById('output');
+  output.innerHTML = '';
+
+  const slopes = [];
+  if (showN) slopes.push(north);
+  if (showS) slopes.push(south);
+
+  if (slopes.length === 0) {
+    output.innerHTML = '<p style="color:#888;margin:40px">Select a slope to display.</p>';
+    return;
+  }
+
+  slopes.forEach(slope => {
+    // Diagram page
+    const diagramPage = document.createElement('div');
+    diagramPage.className = 'slope-page';
+    const canvas = document.createElement('canvas');
+    diagramPage.appendChild(canvas);
+    output.appendChild(diagramPage);
+    const squareData = drawSlope(canvas, slope, opts);
+
+    // Info page
+    const infoPage = document.createElement('div');
+    infoPage.className = 'slope-page info';
+    infoPage.innerHTML = `<h3>${slope.name} Slope — Cut Data</h3>` + buildInfoHTML(slope, squareData);
+    output.appendChild(infoPage);
+  });
+
+  // Spacer cutlist (once, after all slopes)
+  const spacerPage = document.createElement('div');
+  spacerPage.className = 'slope-page info';
+  spacerPage.innerHTML = buildSpacerHTML();
+  output.appendChild(spacerPage);
+}
+
+document.querySelectorAll('input[type=checkbox]').forEach(cb => cb.addEventListener('change', draw));
+draw();
+</script>
+</body>
+</html>
