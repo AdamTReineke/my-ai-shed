@@ -1,0 +1,670 @@
+<title>Siding Installation — Jobsite Reference</title>
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-soft: #4a4842;
+    --paper: #f7f5f0;
+    --paper-raised: #fbfaf6;
+    --accent: #8a6d4a;
+    --accent-soft: #cbb89a;
+    --rainscreen: #3d4a3f;
+    --rule: #c9c2b4;
+    --rule-strong: #a89e8a;
+    --warn: #93342a;
+    --warn-bg: #f2e3df;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #ece8de;
+      --ink-soft: #b8b2a2;
+      --paper: #1c1a16;
+      --paper-raised: #24211c;
+      --accent: #c9a876;
+      --accent-soft: #6e5a3d;
+      --rainscreen: #7c9484;
+      --rule: #46423a;
+      --rule-strong: #5c5648;
+      --warn: #e0897c;
+      --warn-bg: #3a2420;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #ece8de;
+    --ink-soft: #b8b2a2;
+    --paper: #1c1a16;
+    --paper-raised: #24211c;
+    --accent: #c9a876;
+    --accent-soft: #6e5a3d;
+    --rainscreen: #7c9484;
+    --rule: #46423a;
+    --rule-strong: #5c5648;
+    --warn: #e0897c;
+    --warn-bg: #3a2420;
+  }
+  :root[data-theme="light"] {
+    --ink: #1a1a18;
+    --ink-soft: #4a4842;
+    --paper: #f7f5f0;
+    --paper-raised: #fbfaf6;
+    --accent: #8a6d4a;
+    --accent-soft: #cbb89a;
+    --rainscreen: #3d4a3f;
+    --rule: #c9c2b4;
+    --rule-strong: #a89e8a;
+    --warn: #93342a;
+    --warn-bg: #f2e3df;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Noto Serif", serif;
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .mono {
+    font-family: "SF Mono", "Cascadia Mono", "Consolas", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.35rem;
+  }
+  .masthead .doc-no {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  h1 {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: 2.1rem;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0.15rem 0 0;
+  }
+  .subhead {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.3rem 0 1.6rem;
+    max-width: 62ch;
+  }
+  .subhead a { color: var(--accent); }
+  .meta-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.4rem;
+    margin-bottom: 1.8rem;
+  }
+  .meta-row strong { color: var(--ink); letter-spacing: normal; text-transform: none; font-weight: 600; }
+
+  /* ---- Section headings ---- */
+  h2 {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    margin: 2.4rem 0 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1.5px solid var(--ink);
+    text-wrap: balance;
+    break-after: avoid;
+  }
+  h2:first-of-type { margin-top: 1.4rem; }
+  h3 {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 1.4rem 0 0.5rem;
+    break-after: avoid;
+  }
+
+  p { margin: 0.6rem 0; }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+
+  ul, ol { margin: 0.5rem 0; padding-left: 1.4rem; }
+  li { margin: 0.35rem 0; }
+  li::marker { color: var(--accent); }
+
+  strong { font-weight: 700; color: var(--ink); }
+
+  /* ---- Checklist (prep) ---- */
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+  .checklist .box {
+    flex: none;
+    width: 0.85em;
+    height: 0.85em;
+    border: 1.5px solid var(--ink-soft);
+    margin-top: 0.28em;
+  }
+
+  /* ---- The Stack ---- */
+  .stack {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--rainscreen);
+    padding: 1.1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .stack-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.28rem 0;
+    font-size: 0.92rem;
+  }
+  .stack-row + .stack-row { border-top: 1px dotted var(--rule); }
+  .stack-depth { color: var(--rule-strong); font-size: 0.8rem; width: 1.6em; flex: none; }
+  .stack-note { color: var(--ink-soft); font-size: 0.85em; }
+  .stack-total {
+    margin-top: 0.7rem;
+    padding-top: 0.6rem;
+    border-top: 1.5px solid var(--ink);
+    font-size: 0.88rem;
+  }
+
+  /* ---- Numbered process steps (real sequence — build order) ---- */
+  .step {
+    display: grid;
+    grid-template-columns: 2.6rem 1fr;
+    gap: 0.9rem;
+    margin: 1.6rem 0;
+    break-inside: avoid;
+  }
+  .step-num {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--accent-soft);
+    line-height: 1;
+    text-align: right;
+  }
+  .step-body h3 { margin-top: 0; }
+
+  /* ---- Callouts ---- */
+  .note {
+    border-left: 3px solid var(--rainscreen);
+    background: color-mix(in srgb, var(--rainscreen) 8%, var(--paper));
+    padding: 0.6rem 0.9rem;
+    font-size: 0.88rem;
+    margin: 0.7rem 0;
+  }
+  .warn {
+    border-left: 3px solid var(--warn);
+    background: var(--warn-bg);
+    color: var(--ink);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.88rem;
+    margin: 0.7rem 0;
+  }
+  .warn strong { color: var(--warn); }
+
+  /* ---- Diagram ---- */
+  .diagram-wrap {
+    margin: 1.2rem 0;
+    padding: 1rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    overflow-x: auto;
+  }
+  .diagram-wrap svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 0.6rem;
+  }
+
+  /* ---- Tables ---- */
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1.5px solid var(--ink);
+  }
+
+  code {
+    font-family: "SF Mono", "Cascadia Mono", "Consolas", ui-monospace, monospace;
+    font-size: 0.86em;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    padding: 0.05em 0.35em;
+  }
+
+  hr { border: none; border-top: 1px solid var(--rule); margin: 2.2rem 0; }
+
+  footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", ui-sans-serif, sans-serif;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media print {
+    body { max-width: 100%; padding: 0; font-size: 12.5pt; }
+    .masthead, h2 { break-after: avoid; }
+    h2 { break-before: auto; }
+    .step, .stack, .diagram-wrap, table { break-inside: avoid; }
+    a { color: var(--ink); text-decoration: none; }
+    .warn, .note { border-left-width: 3pt; }
+    footer { display: none; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a:focus-visible, .box:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  }
+</style>
+
+<div class="masthead">
+  <span class="doc-no mono">DOC 13</span>
+  <span class="doc-no mono">12×16 SHED — REDMOND, WA</span>
+</div>
+<h1>Siding Installation</h1>
+<p class="subhead">Process guide for hanging HardiePlank lap siding over the rainscreen. Design background: <a href="5-wall-layers.md">5 — Wall Layers</a>. Fastener spec: <a href="8-fasteners.md">8 — Fasteners</a> §16. Cut list: <code>node tools/siding-cuts.js</code>.</p>
+<div class="meta-row">
+  <span><strong>77</strong> stock planks</span>
+  <span><strong>141</strong> pieces</span>
+  <span><strong>16</strong> courses / wall</span>
+  <span><strong>6.25"</strong> exposure</span>
+  <span><strong>8</strong> steps</span>
+</div>
+
+<h2>Where This Starts</h2>
+<p>Assumed already done before siding day:</p>
+<ul class="checklist">
+  <li><span class="box"></span> Zip sheathing up on all four walls, all seams taped and rolled</li>
+  <li><span class="box"></span> Door installed, trimmed, and caulked — siding butts to the existing trim</li>
+  <li><span class="box"></span> Z-flashing (or peel-and-stick) at the base of the Zip, lapping down over the rim/bottom plate</li>
+</ul>
+
+<h2>The Stack — Inside to Out</h2>
+<div class="stack">
+  <div class="stack-row"><span class="stack-depth mono">0"</span> Zip sheathing (WRB)</div>
+  <div class="stack-row"><span class="stack-depth mono">¾"</span> 1×3 PT furring, vertical @ 16" o.c. over studs <span class="stack-note">— rainscreen gap</span></div>
+  <div class="stack-row"><span class="stack-depth mono"></span> bug mesh closing the bottom of the gap</div>
+  <div class="stack-row"><span class="stack-depth mono"></span> ripped HardiePlank starter strip</div>
+  <div class="stack-row"><span class="stack-depth mono">5/16"</span> HardiePlank lap siding, 6.25" exposure, blind-nailed</div>
+  <div class="stack-row"><span class="stack-depth mono"></span> metal outside corners, one per corner per course</div>
+  <div class="stack-total mono">Total buildup off the Zip face: ¾" furring + 5/16" plank ≈ <strong>1-1/16"</strong> — every screw mounting anything to the finished wall has to cross it before reaching wood.</div>
+</div>
+
+<h2>Build Sequence</h2>
+
+<div class="step">
+  <div class="step-num mono">1</div>
+  <div class="step-body">
+    <h3>Furring — 1×3 PT, Vertical</h3>
+    <ul>
+      <li>One strip over <strong>every stud line</strong>, 16" o.c., plus a strip at each <strong>corner</strong> (both faces need an edge to nail to) and tight to each side of the <strong>door trim</strong>.</li>
+      <li>Fasten with <strong>#8 (or #9) × 2½"–3½" PT-rated screws</strong> into the studs, ~16" o.c. vertically. Screws, not nails — the furring holds the siding plane ¾" off the wall, so wind suction loads it in withdrawal, and a screw lets you back a bowed strip out and reset it.
+        <ul>
+          <li><strong>Coating:</strong> must be rated for ACQ/PT contact — 305 stainless, or a coated structural/deck screw carrying a PT rating (GRK, Spax, Deckmate). Plain steel and EG corrode out. These never touch the fiber cement, so unlike the siding nails they don't have to be stainless.</li>
+          <li><strong>Length:</strong> ¾" furring + 7/16" Zip = <strong>1.19" before the stud</strong> — 2½" buys 1.31" of thread, 3½" buys 2.31". 3" is the spec in <a href="8-fasteners.md">8-fasteners.md</a> §16 and the best all-rounder. Keep the longest screws for the field; at corners and door jambs you're driving near stud edges.</li>
+          <li>Don't drop below a #8 shank — a trim-head screw's head is too small to hold ¾" PT against the wall under suction.</li>
+        </ul>
+      </li>
+      <li>Check the furring plane for flatness as you go — a bowed strip telegraphs through every course above it. Shim or swap bad strips now, not later.</li>
+      <li><strong>Extra furring where butt joints land.</strong> The cut list puts joints on stud lines — but an improvised mid-bay joint needs a strip behind it first.</li>
+      <li><strong>Mark gutter bracket and electrical box locations on the Zip now</strong> (Steps 6–7) and add backing before the siding hides everything.</li>
+    </ul>
+    <p>Leave the top of the gap open — top venting differs by wall, see <a href="#transitions">Top-of-Wall Transitions</a>. The bottom gets closed next.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num mono">2</div>
+  <div class="step-body">
+    <h3>Bug Mesh at the Bottom</h3>
+    <p>Close the bottom of the ¾" gap so it vents but doesn't host wasps:</p>
+    <ul>
+      <li>Run the mesh (Cor-A-Vent SV-3 or insect screen strip) along the bottom of the wall, spanning the gap between the Zip face and the back of the siding plane.</li>
+      <li>If using screen roll rather than a rigid vent strip: staple one edge to the Zip just above the Z-flashing, wrap it forward under the furring bottoms, and let the siding's first course pin the front edge. Don't block the airflow — the mesh breathes, a solid closure doesn't.</li>
+      <li>Trim flush; it shouldn't be visible below the finished siding.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num mono">3</div>
+  <div class="step-body">
+    <h3>Rip the Starter Strip</h3>
+    <p>The starter strip kicks the first course out to the same angle as every other course (each normal course sits on the 2" of plank below it; course 1 has nothing under it without a starter).</p>
+    <ul>
+      <li>Rip <strong>1¼"-wide strips</strong> from one HardiePlank. One 12' plank ripped into 6 strips yields 72 lf — the perimeter needs ~53 lf, so <strong>one plank does the whole shed</strong> with spare.</li>
+      <li>Cut with a circular saw + fiber-cement (PCD) blade against a rip guide, <strong>outdoors, upwind, with an N95/P100 on</strong> — fiber cement dust is crystalline silica. Score-and-snap doesn't work well for long rips.</li>
+      <li>Nail the strips along the very bottom of the furring, bottom edges flush with the furring bottoms, one nail per strip per furring line.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num mono">4</div>
+  <div class="step-body">
+    <h3>Layout</h3>
+    <ul>
+      <li><strong>Story pole / chalk lines:</strong> mark course tops every <strong>6.25"</strong> up from the first-course line on the corner furring strips and snap lines, or make a story pole and transfer marks. 16 courses reach the top of the 8' wall (16 × 6.25" = 100", so the top course gets ripped down — see Step 5).</li>
+      <li><strong>First course:</strong> bottom edge hangs <strong>~¼" below the starter strip</strong> to form a drip over the Z-flashing. Keep the bottom edge at least 1" clear of any horizontal surface and 6" clear of grade (the floor is up on piers, so this should be automatic — verify at the low corner).</li>
+      <li><strong>Level check:</strong> the first course sets every course above it. Get it dead level with a laser or 8' level before nailing off.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num mono">5</div>
+  <div class="step-body">
+    <h3>Hang the Planks</h3>
+    <p>Work bottom-up, one course at a time around the building. The cut list (<code>node tools/siding-cuts.js</code>) gives every piece per wall per course with stagger already worked out — cut a few courses ahead, label the backs (<code>S-3-1</code> = south, course 3, piece 1).</p>
+
+    <h3>Nailing <span style="color:var(--ink-soft); font-weight:400; font-family:inherit;">— per 8-fasteners.md §16</span></h3>
+    <ul>
+      <li><strong>3" stainless ring-shank</strong>, blind-nailed <strong>1" down from the top edge</strong>, at <strong>every furring strip</strong> (16" o.c.).</li>
+      <li>Keep nails <strong>⅜" or more</strong> from plank ends.</li>
+      <li>Drive <strong>flush, not countersunk</strong> — an overdriven nail crushes the fiber cement and loses holding power. Set the gun pressure on a scrap first.</li>
+    </ul>
+
+    <h3>Butt Joints</h3>
+    <ul>
+      <li>Land on furring, <strong>⅛" gap</strong>, caulked with paintable sealant after hanging.</li>
+      <li>Prime every field-cut end before the piece goes up (touch-up primer or exterior acrylic paint — cut edges are bare cement).</li>
+    </ul>
+
+    <h3>Metal Outside Corners</h3>
+    <ul>
+      <li>One corner piece <strong>per corner per course</strong> (64 total). Hang the planks on both adjoining walls first, stopping each plank ⅛" shy of the corner (built into the cut list), then slip the corner cap over both plank ends and nail through its top flange. The next course's planks and cap cover the nailing.</li>
+      <li>E/W wall planks wrap over the N/S wall buildup at corners — that's why E/W courses are 146⅞", not 144" (one plank + a short piece per course, per the cut list).</li>
+    </ul>
+
+    <h3>North Wall / Door</h3>
+    <ul>
+      <li>Planks butt to the existing door trim with a <strong>⅛" caulked gap</strong> — do not nail within 2" of the trim edge.</li>
+      <li>Courses 0–12 are split by the door: long run west of the door (staggered butt joint), short 13⅜" pieces between door trim and the east corner. Courses 13–15 run over the door full-width.</li>
+      <li>Confirm there's a <strong>metal drip cap over the door head trim</strong> before siding above it; the course above the door laps over the drip cap flange, with a ¼" air gap above the horizontal leg (don't caulk that gap — it drains).</li>
+    </ul>
+
+    <h3>Top Course — N/S Eave Walls</h3>
+    <ul>
+      <li>16 courses × 6.25" overshoots the 96" wall by ~4" — rip the top course to end at the top of the wall Zip. See <a href="#transitions">Top-of-Wall Transitions</a>.</li>
+      <li>A ripped top course loses its blind-nail zone: <strong>face-nail</strong> it (2 nails per furring, ¾" from the top edge), and dab the heads with sealant + touch-up paint.</li>
+    </ul>
+
+    <h3>Gable Ends — E/W Walls</h3>
+    <ul>
+      <li>The cut list covers only the 16 rectangular courses — the gable triangles are measure-in-place. Continue courses up the gable, cutting plank ends at the roof pitch angle (<strong>6/12 = 26.6°</strong>).</li>
+      <li>Gable planks need furring backing on the end-truss framing — add vertical 1×3 over the gable studs/webs before starting the triangle.</li>
+      <li>Hold the top cuts <strong>~¾" below the rake underside</strong> to form the exhaust slot. See <a href="#transitions">Top-of-Wall Transitions</a>. Cut edges must be primed.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="transitions" style="margin-top:2rem; font-size:1.05rem; color:var(--ink); border-bottom:1.5px solid var(--ink); padding-bottom:0.4rem;">Top-of-Wall Transitions — Rainscreen Exhaust</h3>
+<p>The two wall types terminate differently because the overhangs are built differently (no rafter tails — the eave is battens extended past the wall over the polyiso, open soffit, per <a href="A2-eaves-proposal.md">A2-eaves-proposal.md</a>).</p>
+
+<h3>N/S Eave Walls — Closure Block Between Battens, Sealed Under P4</h3>
+<p>The P4 purlin row lands directly over the wall line (per <a href="A3-purlin-proposal.md">A3-purlin-proposal.md</a>). A block in each batten bay — face at the furring plane, top edge tight under P4 — terminates the siding, covers the exposed deck/foam edges, and seals the junction so the rainscreen exhaust turns inboard and vents at the ridge instead of spilling out under the open soffit.</p>
+
+<div class="diagram-wrap">
+  <svg viewBox="130 0 590 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scaled vertical section through a batten bay at the north or south eave wall, showing the roof assembly sloping out past the plumb wall, the P4 purlin over the wall line, and the closure block sealing the rainscreen gap beneath it">
+    <defs>
+      <pattern id="hatchFoam" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+        <rect width="7" height="7" fill="var(--paper-raised)"/>
+        <line x1="0" y1="0" x2="0" y2="7" stroke="var(--rainscreen)" stroke-width="1.3"/>
+      </pattern>
+      <pattern id="hatchWood" width="7" height="7" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse">
+        <rect width="7" height="7" fill="var(--paper-raised)"/>
+        <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent)" stroke-width="1.1"/>
+      </pattern>
+      <!-- end grain: member cut across its length -->
+      <pattern id="endGrain" width="9" height="9" patternUnits="userSpaceOnUse">
+        <rect width="9" height="9" fill="var(--paper-raised)"/>
+        <circle cx="4.5" cy="4.5" r="3.2" fill="none" stroke="var(--accent)" stroke-width="1"/>
+        <circle cx="4.5" cy="4.5" r="1.1" fill="none" stroke="var(--accent)" stroke-width="0.9"/>
+      </pattern>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="var(--rainscreen)"/>
+      </marker>
+      <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M2,8 L8,2" stroke="var(--ink-soft)" stroke-width="1.4"/>
+      </marker>
+    </defs>
+
+    <!-- ================= TRUSS HEEL (bearing on the plate) ================= -->
+    <!-- top chord / rafter: 3.5" perpendicular depth, cut plumb at the wall face -->
+    <polygon points="150.0,85.0 300.0,160.0 300.0,210.9 150.0,135.9" fill="url(#hatchWood)" stroke="var(--ink)" stroke-width="1.3"/>
+    <!-- heel blocking: fills between the chord underside and the top plate at the wall line -->
+    <polygon points="150.0,135.9 300.0,210.9 300.0,250 150.0,250" fill="url(#hatchWood)" stroke="var(--ink)" stroke-width="1.2" opacity="0.85"/>
+
+    <!-- ================= ROOF ASSEMBLY (slopes 26.57° out past the wall) ============ -->
+    <!-- metal panel -->
+    <line x1="183.1" y1="9.4" x2="513.6" y2="174.7" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/>
+    <line x1="184.9" y1="5.8" x2="515.4" y2="171.1" stroke="var(--ink)" stroke-width="1" opacity="0.45"/>
+    <text x="196" y="18" font-size="10.5" fill="var(--ink-soft)" class="mono" transform="rotate(26.57 196 18)">METAL PANEL · 6/12</text>
+
+    <!-- Zip roof deck -->
+    <polygon points="146.3,83.1 453.5,236.7 456.0,231.6 148.8,78.1" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+    <!-- 2" polyiso -->
+    <polygon points="148.8,78.1 456.0,231.6 467.6,208.4 160.5,54.8" fill="url(#hatchFoam)" stroke="var(--rainscreen)" stroke-width="1.2"/>
+    <!-- batten: 2x4 flat, running UP THE SLOPE — cut lengthwise in this section -->
+    <polygon points="160.5,54.8 467.6,208.4 476.3,190.9 169.2,37.4" fill="url(#hatchWood)" stroke="var(--ink)" stroke-width="1.4"/>
+    <!-- P4 purlin: runs E–W across the battens — cut in cross-section, centered on the wall line -->
+    <polygon points="311.6,108.6 329.1,117.3 337.8,99.9 320.3,91.1" fill="url(#endGrain)" stroke="var(--ink)" stroke-width="1.9"/>
+
+    <!-- ================= PLUMB WALL ================= -->
+    <!-- wall Zip sheathing (7/16"), runs up to the deck underside -->
+    <rect x="294.3" y="157" width="5.7" height="227" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+    <!-- double top plate -->
+    <rect x="150" y="250" width="144.3" height="45.5" fill="url(#hatchWood)" stroke="var(--ink)" stroke-width="1.3"/>
+    <line x1="150" y1="272.7" x2="294.3" y2="272.7" stroke="var(--ink)" stroke-width="1"/>
+    <!-- stud below the plate -->
+    <rect x="248.8" y="295.5" width="45.5" height="88.5" fill="url(#hatchWood)" stroke="var(--ink)" stroke-width="1.2"/>
+
+    <!-- ¾" rainscreen cavity -->
+    <rect x="300" y="157" width="9.75" height="227" fill="var(--rainscreen)" opacity="0.07"/>
+    <line x1="300" y1="300" x2="300" y2="384" stroke="var(--rainscreen)" stroke-width="0.9" stroke-dasharray="3 3"/>
+    <line x1="309.75" y1="300" x2="309.75" y2="384" stroke="var(--rainscreen)" stroke-width="0.9" stroke-dasharray="3 3"/>
+
+    <!-- 1x3 furring strip (below the block; the block takes over above) -->
+    <rect x="300" y="300" width="9.75" height="84" fill="url(#hatchWood)" stroke="var(--ink)" stroke-width="1.2"/>
+
+    <!-- ¾" spacer behind the closure block -->
+    <rect x="300" y="232" width="9.75" height="36" fill="url(#hatchWood)" stroke="var(--ink)" stroke-width="1.2"/>
+
+    <!-- CLOSURE BLOCK: face flush with the furring plane, top beveled 26.57° tight under the batten -->
+    <polygon points="300,124.6 309.75,129.4 309.75,268 300,268" fill="url(#endGrain)" stroke="var(--ink)" stroke-width="2"/>
+
+    <!-- ================= SIDING (ripped top course + 2 below, real 6.25" laps) ======= -->
+    <polygon points="309.75,255 313.8,255 315.8,281 309.75,281" fill="var(--paper-raised)" stroke="var(--ink)" stroke-width="1.4"/>
+    <polygon points="309.75,268 313.8,268 315.8,362 309.75,362" fill="var(--paper-raised)" stroke="var(--ink)" stroke-width="1.4"/>
+    <polygon points="309.75,349 313.8,349 315.8,384 309.75,384" fill="var(--paper-raised)" stroke="var(--ink)" stroke-width="1.4"/>
+    <!-- face nail through the ripped top course into the block -->
+    <line x1="316" y1="262" x2="299" y2="262" stroke="var(--ink)" stroke-width="1.6"/>
+    <circle cx="316" cy="262" r="1.9" fill="var(--ink)"/>
+
+    <!-- ================= AIRFLOW ================= -->
+    <!-- up the cavity, behind the block, over the plate, then up-slope in the batten bay -->
+    <path d="M305,384 L305,235 Q305,212 288,200 L232,172" fill="none" stroke="var(--rainscreen)" stroke-width="2.2" marker-end="url(#arrow)"/>
+    <text x="228" y="160" text-anchor="end" font-size="10.5" fill="var(--rainscreen)" font-weight="700">exhaust ↗ to ridge</text>
+    <text x="228" y="173" text-anchor="end" font-size="9.5" fill="var(--rainscreen)" class="mono">between battens</text>
+
+    <!-- ================= LABELS ================= -->
+    <!-- roof stack, leadered off the overhang end -->
+    <line x1="472" y1="199" x2="518" y2="176" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="522" y="173" font-size="10.5" fill="var(--ink)">2×4 batten (flat)</text>
+    <text x="522" y="186" font-size="9.5" fill="var(--ink-soft)" class="mono">runs up-slope, 24" o.c.</text>
+    <line x1="462" y1="220" x2="518" y2="212" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="522" y="209" font-size="10.5" fill="var(--rainscreen)">2" polyiso</text>
+    <line x1="455" y1="234" x2="518" y2="240" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="522" y="243" font-size="10.5" fill="var(--ink)">7/16" Zip deck</text>
+
+    <!-- overhang dimension, true 12" = 156px -->
+    <line x1="300" y1="272" x2="456" y2="272" stroke="var(--ink-soft)" stroke-width="0.9" marker-start="url(#tick)" marker-end="url(#tick)" stroke-dasharray="4 3"/>
+    <line x1="456" y1="238" x2="456" y2="276" stroke="var(--ink-soft)" stroke-width="0.7" stroke-dasharray="3 3"/>
+    <text x="378" y="266" text-anchor="middle" font-size="10" fill="var(--ink-soft)" class="mono">12" overhang · open soffit</text>
+
+    <!-- P4 -->
+    <line x1="334" y1="98" x2="392" y2="66" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="396" y="63" font-size="11.5" fill="var(--ink)" font-weight="700">P4 purlin</text>
+    <text x="396" y="76" font-size="9.5" fill="var(--ink-soft)" class="mono">cut across — sits on the wall line</text>
+
+    <!-- closure block -->
+    <line x1="309" y1="140" x2="392" y2="108" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="396" y="105" font-size="11.5" fill="var(--ink)" font-weight="700">closure block</text>
+    <text x="396" y="118" font-size="9.5" fill="var(--ink-soft)" class="mono">top beveled 26.6°, tight to batten</text>
+    <text x="396" y="131" font-size="9.5" fill="var(--ink-soft)" class="mono">on ¾" spacers — face flush w/ furring</text>
+
+    <!-- siding -->
+    <line x1="316" y1="258" x2="392" y2="330" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="396" y="333" font-size="11.5" fill="var(--ink)" font-weight="700">ripped top course</text>
+    <text x="396" y="346" font-size="9.5" fill="var(--ink-soft)" class="mono">laps block ~1", face-nailed into it</text>
+    <text x="396" y="359" font-size="9.5" fill="var(--ink-soft)" class="mono">no caulk at top edge</text>
+    <line x1="316" y1="370" x2="392" y2="370" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="396" y="373" font-size="10.5" fill="var(--ink)">HardiePlank, 6¼" exposure</text>
+
+    <!-- wall layers, left side -->
+    <line x1="240" y1="120" x2="196" y2="120" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="192" y="117" text-anchor="end" font-size="10.5" fill="var(--ink)">truss top chord</text>
+    <line x1="230" y1="228" x2="196" y2="228" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="192" y="225" text-anchor="end" font-size="10.5" fill="var(--ink)">heel blocking</text>
+    <line x1="220" y1="272" x2="196" y2="272" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="192" y="269" text-anchor="end" font-size="10.5" fill="var(--ink)">double top plate</text>
+    <line x1="294" y1="320" x2="196" y2="320" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="192" y="317" text-anchor="end" font-size="10.5" fill="var(--ink)">wall Zip (WRB)</text>
+    <line x1="270" y1="344" x2="196" y2="344" stroke="var(--ink-soft)" stroke-width="0.9"/>
+    <text x="192" y="341" text-anchor="end" font-size="10.5" fill="var(--ink)">2×4 stud / 1×3 furring</text>
+    <line x1="305" y1="368" x2="196" y2="368" stroke="var(--rainscreen)" stroke-width="0.9"/>
+    <text x="192" y="365" text-anchor="end" font-size="10.5" fill="var(--rainscreen)" font-weight="700">¾" rainscreen gap</text>
+
+    <!-- scale bar: 6" = 78px -->
+    <line x1="216" y1="396" x2="294" y2="396" stroke="var(--ink-soft)" stroke-width="1.4" marker-start="url(#tick)" marker-end="url(#tick)"/>
+    <text x="255" y="388" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)" class="mono">6" — drawn to scale</text>
+  </svg>
+  <p class="diagram-caption">Section through a batten bay at the eave wall — cut perpendicular to the ridge, drawn to scale. The batten is cut lengthwise (it runs up-slope); P4 is cut across (it runs E–W).</p>
+</div>
+
+<ul>
+  <li>Battens are 2×4 flat (3.5" wide) at 24" o.c., so the bays match the 2×2 eave-blocking cut list: <strong>six 20.5" blocks + two 19.75" end blocks per wall</strong> (16 total). Height is measure-in-place: from ~1" below the siding top line up to the underside of P4, top edge <strong>beveled 26.6°</strong> to seat flat under it. Likely 1×6 or 1×8 stock — PT like the furring, or primed.</li>
+  <li>Install each block on <strong>¾" spacers</strong> (furring offcuts) with 3" screws into the heel blocking/top plate — its face lands flush with the furring plane. Ends can be toe-screwed into the batten sides. Do not fill the ¾" standoff — a block tight to the Zip corks the rainscreen.</li>
+  <li>Exhaust path: up the wall gap → behind the block → inboard along the between-batten channel → under the panels to the ridge vent. The bay is closed on all sides (battens flanking, P4 above, block in front), so no air or bugs pass to/from the open soffit.</li>
+  <li><strong>No bug screen needed</strong> — the circuit is closed: bottom mesh in, ridge profile vent out. The only residual route is the panel corrugation flutes crossing over the top of P4 from the overhang — the same exposure the roof channel already has by design. Add a mesh strip behind the blocks if that bothers you.</li>
+  <li>Run the ripped top siding course up over the block's bottom edge and <strong>face-nail into the block</strong> (it doubles as the top-course nailer). No caulk along the top edge.</li>
+  <li>Bonus: the block shields the bare roof-deck and polyiso edges at the wall line from UV, mice, and woodpeckers.</li>
+</ul>
+
+<h3>E/W Gable Ends — Terminated Slot Vent Under the Rake</h3>
+<p>The gable gap cannot join the roof channel — the Zip deck edge, foam edge, and butyl-sealed gable trim close it off at the rake. It's a dead-end circuit: intake at the bottom mesh, exhaust through a screened slot under the rake overhang.</p>
+<ul>
+  <li>Cut furring tops parallel to the rake, <strong>~¾" below the underside of the rake structure</strong> (foam/batten edge, or barge board if installed).</li>
+  <li>Cut the siding top edges to the same line — this leaves a continuous downward-facing slot under the 12" rake overhang. Rain-protected; anything that blows in drains out the bottom mesh.</li>
+  <li>Screen the slot the same way — mesh stapled to the Zip, folded out over the furring tops.</li>
+  <li><strong>Do not caulk</strong> the siding-to-rake edge.</li>
+</ul>
+
+<div class="step">
+  <div class="step-num mono">6</div>
+  <div class="step-body">
+    <h3>Electrical Mounting Blocks — Outlets &amp; Lights</h3>
+    <p>Install the siding mounting blocks <strong>as the courses reach them</strong>, not after:</p>
+    <ol>
+      <li>Before siding (Step 1), confirm each box location has <strong>solid backing</strong> — a stud/furring line, or add a horizontal 1×3 block between furring strips (leave ½" drainage gaps at its ends so it doesn't dam the rainscreen).</li>
+      <li>Drill the wire penetration through the Zip, pull the cable, and <strong>seal the penetration</strong> with Zip tape or sealant — the WRB is the water barrier, not the block.</li>
+      <li>When the course row reaches the block height, fasten the block to the backing, then cut the surrounding planks to it with a <strong>⅛" caulked gap</strong> on sides and bottom.</li>
+      <li><strong>Flash the top:</strong> the block's built-in flange or a strip of Zip tape/drip cap behind the course above, so water sheds over the block face rather than behind it.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num mono">7</div>
+  <div class="step-body">
+    <h3>Gutters on the Wall</h3>
+    <p>Wall-mounted brackets have two problems on a rainscreen wall: the fastener has to reach real wood, and it must not crush the siding into the ¾" air gap.</p>
+    <ul>
+      <li><strong>Land every bracket on a stud line</strong> (which is also a furring line — 16" o.c.). Marks made on the Zip in Step 1 transfer up via the furring strips.</li>
+      <li><strong>Fastener:</strong> stainless or coated structural screw long enough for the buildup — 5/16" plank + ¾" furring + 7/16" Zip = 1.5" before wood, so a <strong>3½"–4" screw</strong> gets 2"+ into the stud.</li>
+      <li><strong>Pre-drill the HardiePlank</strong> at each screw location (fiber cement cracks if a lag wanders) and snug the screw until the bracket bears — <strong>stop before the plank deflects</strong>. Because the bracket lands over a furring strip, the sandwich is solid there; that's the whole reason for hitting the stud lines.</li>
+      <li>Bed each bracket in a dab of exterior sealant and cap the screw heads with the same. Any hole through the siding that misses (there's always one) gets filled with sealant immediately.</li>
+      <li>If a bracket must land between studs, add horizontal blocking behind the siding <strong>before</strong> that course goes up — there is no fixing this after.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num mono">8</div>
+  <div class="step-body">
+    <h3>Caulk and Paint</h3>
+    <ul>
+      <li><strong>Caulk:</strong> all butt joints, siding-to-door-trim, siding-to-mounting-block sides/bottoms. <strong>Do not caulk</strong> the bottom of any lap, the gap above the door drip cap, or the top/bottom rainscreen vents — those all drain or breathe by design.</li>
+      <li><strong>Paint:</strong> planks come pre-primed; finish-coat all faces with exterior acrylic. Every field cut should already have primer from Step 5 — the finish coat goes over it.</li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<h2>Cut List &amp; Materials</h2>
+<p>Full per-piece cut list: <code>node tools/siding-cuts.js</code> (77 stock planks, 141 pieces, stagger and corner gaps computed). Quantities table is in <a href="5-wall-layers.md">5-wall-layers.md</a>, with these deltas:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Item</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td>HardiePlank starter strip (5 × 12′)</td><td><strong>Not needed</strong> — rip 1 plank into 1¼" strips instead</td></tr>
+      <tr><td>Aluminum outside corners</td><td>64 pieces (4 corners × 16 courses); gable-course corners are N/A — gables have no outside corners</td></tr>
+      <tr><td>Structural screws for gutter brackets</td><td>3½"–4" SS/coated, qty per bracket count</td></tr>
+      <tr><td>Siding mounting blocks</td><td>Per fixture count (outlets + lights)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Safety Notes</h2>
+<div class="warn">
+  <strong>Silica dust:</strong> all fiber-cement cutting outdoors, upwind, N95/P100 respirator, PCD blade or fiber-cement shears. Shears make no dust — prefer them for notches and short cuts.
+</div>
+<div class="note">
+  HardiePlank is floppy and snaps under its own weight — carry 12' planks on edge, two people or a plank carrier.
+</div>
+
+<footer>
+  <span>12×16 Shed — Redmond, WA</span>
+  <span>Doc 13 of 13 + appendices</span>
+</footer>

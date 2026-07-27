@@ -28,7 +28,10 @@ Total buildup off the Zip face: ¾" furring + 5/16" plank ≈ **1-1/16"**. Remem
 ## Step 1 — Furring (1×3 PT, vertical)
 
 - One strip over **every stud line**, 16" o.c., plus a strip at each **corner** (both faces of the corner need an edge to nail to) and tight to each side of the **door trim**.
-- Fasten with #8 × 3" deck screws into the studs, ~16" o.c. vertically.
+- Fasten with **#8 (or #9) × 2½"–3½" PT-rated screws** into the studs, ~16" o.c. vertically. Screws, not nails — the furring holds the whole siding plane ¾" off the wall, so wind suction loads it in withdrawal, and a screw lets you back a bowed strip out and reset it.
+  - **Coating:** must be rated for ACQ/PT contact — 305 stainless, or a coated structural/deck screw carrying a PT rating (GRK, Spax, Deckmate). Plain steel and electro-galvanized corrode out. These screws never touch the fiber cement, so unlike the siding nails they don't have to be stainless.
+  - **Length:** ¾" furring + 7/16" Zip = **1.19" before the stud**, so 2½" buys 1.31" of thread and 3½" buys 2.31". Anything in that band works; 3" is the spec in [8-fasteners.md](8-fasteners.md) §16 and the best all-rounder. Keep the longest screws for the field — at corners and door jambs you're driving near stud edges, where an over-long screw can exit the side or reach the door jamb.
+  - Don't drop below a #8 shank — a trim-head screw's head is too small to hold ¾" PT against the wall under suction.
 - Check the furring plane for flatness as you go — a bowed strip telegraphs through every course above it. Shim or swap bad strips now, not later.
 - **Extra furring where butt joints land.** Every plank butt joint must be backed by a furring strip. The cut list puts joints on stud lines, so the standard layout covers it — but if you improvise a joint mid-bay, add a strip behind it first.
 - **Mark gutter bracket and electrical box locations on the Zip now** (see Steps 6–7) and add backing before the siding hides everything.

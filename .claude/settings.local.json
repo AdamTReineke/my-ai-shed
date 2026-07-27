@@ -23,7 +23,8 @@
       "Bash(git pull *)",
       "Bash(git stash *)",
       "PowerShell(New-Item *)",
-      "PowerShell($scratch = \"C:\\\\Users\\\\adamt\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-adamt-Projects-leave-projects-shed\\\\210fa8a9-2fb2-4ca2-a90f-1df90610e4db\\\\scratchpad\"; & \"C:\\\\Program Files\\\\OpenSCAD\\\\openscad.com\" -o \"$scratch\\\\check.echo\" -D show_siding=true -D show_furring=true -D show_siding_trim=true -D show_closure_blocks=true model\\\\shed_model.scad; \"--- exit: $LASTEXITCODE ---\"; if \\(Test-Path \"$scratch\\\\check.echo\"\\) { Select-String -Path \"$scratch\\\\check.echo\" -Pattern \"WARNING|ERROR\" | Select-Object -First 20 })"
+      "PowerShell($scratch = \"C:\\\\Users\\\\adamt\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-adamt-Projects-leave-projects-shed\\\\210fa8a9-2fb2-4ca2-a90f-1df90610e4db\\\\scratchpad\"; & \"C:\\\\Program Files\\\\OpenSCAD\\\\openscad.com\" -o \"$scratch\\\\check.echo\" -D show_siding=true -D show_furring=true -D show_siding_trim=true -D show_closure_blocks=true model\\\\shed_model.scad; \"--- exit: $LASTEXITCODE ---\"; if \\(Test-Path \"$scratch\\\\check.echo\"\\) { Select-String -Path \"$scratch\\\\check.echo\" -Pattern \"WARNING|ERROR\" | Select-Object -First 20 })",
+      "Read(//c/Users/adamt/Downloads/**)"
     ]
   },
   "enableAllProjectMcpServers": true,

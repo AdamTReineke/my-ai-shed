@@ -322,11 +322,13 @@ Per [5-wall-layers.md](5-wall-layers.md). Blind-nailed through furring + Zip OSB
   - Material depth: HardiePlank ~5/16" (0.31") + 1×3 furring 3/4" (0.75") + 7/16" Zip OSB (0.44") = 1.50" before stud; 3.0" nail gives 1.50" into stud — meets Hardie's minimum 1-1/4" stud penetration spec
   - SS required — fiber cement is alkaline and will corrode plain steel or HDG nails over time. James Hardie specifies SS or hot-dip galvanized; SS ring-shank preferred for longevity.
 
-- #8 × 3" SS deck screw
-  - Qty: at 24" o.c. per strip; ~120 total
+- #8 (or #9) × 3" PT-rated screw — **acceptable length range 2½"–3½"**
+  - Qty: ~50 strips × 7 screws (16" o.c. vertically over 8') = ~350; buy 500 to cover gable furring and waste
   - In contact with: 1×3 PT furring strip, Zip OSB sheathing, KD Hem-Fir stud
-  - Material depth: 1×3 furring 3/4" (0.75") + 7/16" Zip OSB (0.44") = 1.19" before stud; 3.0" screw gives 1.81" into stud — adequate
-  - SS required — furring is PT.
+  - Material depth: 1×3 furring 3/4" (0.75") + 7/16" Zip OSB (0.44") = 1.19" before stud. 2.5" screw gives 1.31" into stud (minimum acceptable); 3.0" gives 1.81" (preferred); 3.5" gives 2.31" (max reasonable — field only, not at corners/door jambs where stud edges are close).
+  - Coating: must be rated for ACQ/PT contact — 305 SS, or a coated structural/deck screw with a PT rating (GRK, Spax, Deckmate). Plain steel and EG corrode out. Unlike the §16 siding nails these never contact fiber cement, so SS is not strictly required.
+  - Screws rather than nails: the connection is loaded in withdrawal (wind suction on the standoff siding plane), and strips must be removable for flatness correction during install.
+  - Minimum #8 shank — trim-head screws lack the head bearing to hold 3/4" PT under suction.
 
 ---
 
